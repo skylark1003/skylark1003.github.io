@@ -18,12 +18,12 @@
   
   
   <title>414. Third Maximum Number | 雀栎</title>
-  <meta name="description" content="一、描述Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number. 二、例子Example 1:  Input: nums &#x3D; [3,2,1]Output: 1E">
+  <meta name="description" content="一、描述 Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number. 二、例子 Example 1:  Input: nums &#x3D; [3,2,1]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="414. Third Maximum Number">
 <meta property="og:url" content="http://example.com/2022/09/09/414-Third-Maximum-Number/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number. 二、例子Example 1:  Input: nums &#x3D; [3,2,1]Output: 1E">
+<meta property="og:description" content="一、描述 Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number. 二、例子 Example 1:  Input: nums &#x3D; [3,2,1]">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-09T08:27:27.000Z">
 <meta property="article:modified_time" content="2022-09-10T07:38:46.876Z">
@@ -321,7 +321,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -372,7 +372,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/09/414-Third-Maximum-Number/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 223(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 226(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -382,18 +382,40 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given an integer array <code>nums</code>, return <em>the <strong>third distinct maximum</strong> number in this array. If the third maximum does not exist, return the <strong>maximum</strong> number</em>.</p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+        <h1 id="一描述">一、描述</h1>
+<p>Given an integer array <code>nums</code>, return <em>the
+<strong>third distinct maximum</strong> number in this array. If the
+third maximum does not exist, return the <strong>maximum</strong>
+number</em>.</p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> nums = [3,2,1]<br><strong>Output:</strong> 1<br><strong>Explanation:</strong><br>The first distinct maximum is 3.<br>The second distinct maximum is 2.<br>The third distinct maximum is 1.</p>
+<p><strong>Input:</strong> nums = [3,2,1]<br />
+<strong>Output:</strong> 1<br />
+<strong>Explanation:</strong><br />
+The first distinct maximum is 3.<br />
+The second distinct maximum is 2.<br />
+The third distinct maximum is 1.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> nums = [1,2]<br><strong>Output:</strong> 2<br><strong>Explanation:</strong><br>The first distinct maximum is 2.<br>The second distinct maximum is 1.<br>The third distinct maximum does not exist, so the maximum (2) is returned instead.</p>
+<p><strong>Input:</strong> nums = [1,2]<br />
+<strong>Output:</strong> 2<br />
+<strong>Explanation:</strong><br />
+The first distinct maximum is 2.<br />
+The second distinct maximum is 1.<br />
+The third distinct maximum does not exist, so the maximum (2) is
+returned instead.</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> nums = [2,2,3,1]<br><strong>Output:</strong> 1<br><strong>Explanation:</strong><br>The first distinct maximum is 3.<br>The second distinct maximum is 2 (both 2’s are counted together since they have the same value).<br>The third distinct maximum is 1.</p>
+<p><strong>Input:</strong> nums = [2,2,3,1]<br />
+<strong>Output:</strong> 1<br />
+<strong>Explanation:</strong><br />
+The first distinct maximum is 3.<br />
+The second distinct maximum is 2 (both 2's are counted together since
+they have the same value).<br />
+The third distinct maximum is 1.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -401,7 +423,9 @@
 <li>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</li>
 </ul>
 <p><strong>Follow up:</strong> Can you find an O(n) solution?</p>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">thirdMax</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">        <span class="type">int</span> n = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> cur = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] != cur)&#123;</span><br><span class="line">                n ++;</span><br><span class="line">                cur = nums[i];</span><br><span class="line">                <span class="keyword">if</span>(n == <span class="number">3</span>)</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">3</span>)</span><br><span class="line">            <span class="keyword">return</span> cur;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="三代码">三、代码</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">thirdMax</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;());</span><br><span class="line">        <span class="type">int</span> n = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> cur = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] != cur)&#123;</span><br><span class="line">                n ++;</span><br><span class="line">                cur = nums[i];</span><br><span class="line">                <span class="keyword">if</span>(n == <span class="number">3</span>)</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">3</span>)</span><br><span class="line">            <span class="keyword">return</span> cur;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <div class="article-footer">

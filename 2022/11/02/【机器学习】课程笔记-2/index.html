@@ -18,21 +18,19 @@
   
   
   <title>【机器学习】课程笔记(2) | 雀栎</title>
-  <meta name="description" content="模型描述（Model Representation） 线性回归（Linear Regression）   一些符号： ​    m：训练样本的数量 ​    x’s：输入变量 ​    y’s：输出变量（预测的目标变量） ​    (x, y)：一个训练样本 ​    (x(i), y(i))：第i个训练样本   数据集 -&gt; 学习算法 -&gt; 函数h（hypothesis，用来预测输入">
+  <meta name="description" content="模型描述（Model Representation）  线性回归（Linear Regression）   一些符号： ​ m：训练样本的数量 ​ x&#39;s：输入变量 ​ y&#39;s：输出变量（预测的目标变量） ​ (x, y)：一个训练样本 ​ (x(i), y(i))：第i个训练样本   数据集 -&gt; 学习算法 -&gt; 函数h（hypothesis，用来预测输">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【机器学习】课程笔记(2)">
 <meta property="og:url" content="http://example.com/2022/11/02/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="模型描述（Model Representation） 线性回归（Linear Regression）   一些符号： ​    m：训练样本的数量 ​    x’s：输入变量 ​    y’s：输出变量（预测的目标变量） ​    (x, y)：一个训练样本 ​    (x(i), y(i))：第i个训练样本   数据集 -&gt; 学习算法 -&gt; 函数h（hypothesis，用来预测输入">
+<meta property="og:description" content="模型描述（Model Representation）  线性回归（Linear Regression）   一些符号： ​ m：训练样本的数量 ​ x&#39;s：输入变量 ​ y&#39;s：输出变量（预测的目标变量） ​ (x, y)：一个训练样本 ​ (x(i), y(i))：第i个训练样本   数据集 -&gt; 学习算法 -&gt; 函数h（hypothesis，用来预测输">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml2-1.01.png">
 <meta property="article:published_time" content="2022-11-02T06:33:11.000Z">
 <meta property="article:modified_time" content="2022-11-02T08:51:38.704Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml2-1.01.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/11/02/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-2/index.html">
   
@@ -321,7 +319,8 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%8F%8F%E8%BF%B0%EF%BC%88Model-Representation%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">模型描述（Model Representation）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0%EF%BC%88Cost-Function%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">代价函数（Cost Function）</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%8F%8F%E8%BF%B0model-representation"><span class="toc-number">1.</span> <span class="toc-text">模型描述（Model
+Representation）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0cost-function"><span class="toc-number">2.</span> <span class="toc-text">代价函数（Cost Function）</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -382,36 +381,43 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="模型描述（Model-Representation）"><a href="#模型描述（Model-Representation）" class="headerlink" title="模型描述（Model Representation）"></a>模型描述（Model Representation）</h1><ul>
+        <h1 id="模型描述model-representation">模型描述（Model
+Representation）</h1>
+<ul>
 <li><strong>线性回归（Linear Regression）</strong></li>
 </ul>
 <blockquote>
 <p>一些符号：</p>
-<p>​    m：训练样本的数量</p>
-<p>​    x’s：输入变量</p>
-<p>​    y’s：输出变量（预测的目标变量）</p>
-<p>​    (x, y)：一个训练样本</p>
-<p>​    (x<sup>(i)</sup>, y<sup>(i)</sup>)：第i个训练样本</p>
+<p>​ m：训练样本的数量</p>
+<p>​ x's：输入变量</p>
+<p>​ y's：输出变量（预测的目标变量）</p>
+<p>​ (x, y)：一个训练样本</p>
+<p>​ (x<sup>(i)</sup>, y<sup>(i)</sup>)：第i个训练样本</p>
 </blockquote>
 <ul>
-<li>数据集 -&gt; 学习算法 -&gt; 函数h（hypothesis，用来预测输入x所对应的y）</li>
+<li>数据集 -&gt; 学习算法 -&gt;
+函数h（hypothesis，用来预测输入x所对应的y）</li>
 </ul>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml2-1.01.png" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml2-1.01.png" /></p>
 <ul>
-<li>找到函数 <strong>h<sub>θ</sub>(x)=θ<sub>0</sub>+θ<sub>1</sub>x</strong> 与数据集相拟合</li>
+<li>找到函数
+<strong>h<sub>θ</sub>(x)=θ<sub>0</sub>+θ<sub>1</sub>x</strong>
+与数据集相拟合</li>
 </ul>
-<h1 id="代价函数（Cost-Function）"><a href="#代价函数（Cost-Function）" class="headerlink" title="代价函数（Cost Function）"></a>代价函数（Cost Function）</h1><ul>
-<li><p><strong>h<sub>θ</sub>(x)=θ<sub>0</sub>+θ<sub>1</sub>x</strong></p>
+<h1 id="代价函数cost-function">代价函数（Cost Function）</h1>
 <ul>
-<li>θ<sub>i</sub>‘s：模型参数（Parameters）</li>
+<li><strong>h<sub>θ</sub>(x)=θ<sub>0</sub>+θ<sub>1</sub>x</strong>
+<ul>
+<li>θ<sub>i</sub>'s：模型参数（Parameters）</li>
 <li>找到θ<sub>0</sub>和θ<sub>1</sub>使函数更好地拟合数据。</li>
+</ul></li>
+<li>最小化问题：</li>
 </ul>
-</li>
-<li><p>最小化问题：</p>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\displaystyle \sum^{m}_{i=1}(h_θ(x^{(i)})-y^{(i)})</script><ul>
+<p><span class="math display">\[
+\displaystyle \sum^{m}_{i=1}(h_θ(x^{(i)})-y^{(i)})
+\]</span></p>
+<ul>
 <li></li>
 </ul>
 

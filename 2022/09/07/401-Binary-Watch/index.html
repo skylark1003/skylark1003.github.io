@@ -18,14 +18,13 @@
   
   
   <title>401. Binary Watch | 雀栎</title>
-  <meta name="description" content="一、描述A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit on t">
+  <meta name="description" content="一、描述 A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="401. Binary Watch">
 <meta property="og:url" content="http://example.com/2022/09/07/401-Binary-Watch/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit on t">
+<meta property="og:description" content="一、描述 A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/401p1.png">
 <meta property="article:published_time" content="2022-09-07T03:06:19.000Z">
 <meta property="article:modified_time" content="2022-09-07T05:26:02.812Z">
 <meta property="article:author" content="雀栎">
@@ -35,7 +34,6 @@
 <meta property="article:tag" content="Bit Manipulation">
 <meta property="article:tag" content="Back Tracking">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/401p1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/09/07/401-Binary-Watch/index.html">
   
@@ -324,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -375,7 +373,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/07/401-Binary-Watch/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 316(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 318(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -385,33 +383,47 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit on the right.</p>
+        <h1 id="一描述">一、描述</h1>
+<p>A binary watch has 4 LEDs on the top to represent the hours (0-11),
+and 6 LEDs on the bottom to represent the minutes (0-59). Each LED
+represents a zero or one, with the least significant bit on the
+right.</p>
 <ul>
-<li>For example, the below binary watch reads “4:51”.</li>
+<li>For example, the below binary watch reads "4:51".</li>
 </ul>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/401p1.png" alt=""></p>
-<p>Given an integer <code>turnedOn</code> which represents the number of LEDs that are currently on (ignoring the PM), return <em>all possible times the watch could represent</em>. You may return the answer in <strong>any order</strong>.</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/401p1.png" /></p>
+<p>Given an integer <code>turnedOn</code> which represents the number of
+LEDs that are currently on (ignoring the PM), return <em>all possible
+times the watch could represent</em>. You may return the answer in
+<strong>any order</strong>.</p>
 <p>The hour must not contain a leading zero.</p>
 <ul>
-<li>For example, “01:00” is not valid. It should be “1:00”.</li>
+<li>For example, "01:00" is not valid. It should be "1:00".</li>
 </ul>
-<p>The minute must be consist of two digits and may contain a leading zero.</p>
+<p>The minute must be consist of two digits and may contain a leading
+zero.</p>
 <ul>
-<li>For example, “10:2” is not valid. It should be “10:02”.</li>
+<li>For example, "10:2" is not valid. It should be "10:02".</li>
 </ul>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> turnedOn = 1<br>Output: [“0:01”,”0:02”,”0:04”,”0:08”,”0:16”,”0:32”,”1:00”,”2:00”,”4:00”,”8:00”]</p>
+<p><strong>Input:</strong> turnedOn = 1<br />
+Output:
+["0:01","0:02","0:04","0:08","0:16","0:32","1:00","2:00","4:00","8:00"]</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> turnedOn = 9<br><strong>Output:</strong> []</p>
+<p><strong>Input:</strong> turnedOn = 9<br />
+<strong>Output:</strong> []</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>0 &lt;= turnedOn &lt;= 10</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>解法来自afrozchakure：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">readBinaryWatch</span><span class="params">(<span class="type">int</span> num)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        vector&lt;string&gt; result;</span><br><span class="line">        <span class="comment">//思路：判断每个时间点是否可以用num个亮钮表示出来</span></span><br><span class="line">        <span class="comment">//每个数字的二进制均含有一个1，即1的总数即为亮钮总数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> hours = <span class="number">0</span>; hours &lt; <span class="number">12</span>; hours++)  <span class="comment">//限制hour小于12</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> minute = <span class="number">0</span>; minute &lt; <span class="number">60</span>; minute++)  <span class="comment">//限制min小于60</span></span><br><span class="line">            &#123;</span><br><span class="line">                string temp = <span class="string">&quot;&quot;</span>;</span><br><span class="line">                <span class="keyword">if</span>(__builtin_popcount(hours) + __builtin_popcount(minute) == num )</span><br><span class="line">                &#123;</span><br><span class="line">                    temp += <span class="built_in">to_string</span>(hours) + <span class="string">&quot;:&quot;</span>;</span><br><span class="line">                    <span class="comment">//min加上前导0</span></span><br><span class="line">                    <span class="keyword">if</span>(minute &lt; <span class="number">10</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        temp += <span class="string">&quot;0&quot;</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    temp += <span class="built_in">to_string</span>(minute);</span><br><span class="line">                    result.<span class="built_in">push_back</span>(temp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="三代码">三、代码</h1>
+<p>解法来自afrozchakure： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">readBinaryWatch</span><span class="params">(<span class="type">int</span> num)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        vector&lt;string&gt; result;</span><br><span class="line">        <span class="comment">//思路：判断每个时间点是否可以用num个亮钮表示出来</span></span><br><span class="line">        <span class="comment">//每个数字的二进制均含有一个1，即1的总数即为亮钮总数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> hours = <span class="number">0</span>; hours &lt; <span class="number">12</span>; hours++)  <span class="comment">//限制hour小于12</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> minute = <span class="number">0</span>; minute &lt; <span class="number">60</span>; minute++)  <span class="comment">//限制min小于60</span></span><br><span class="line">            &#123;</span><br><span class="line">                string temp = <span class="string">&quot;&quot;</span>;</span><br><span class="line">                <span class="keyword">if</span>(__builtin_popcount(hours) + __builtin_popcount(minute) == num )</span><br><span class="line">                &#123;</span><br><span class="line">                    temp += <span class="built_in">to_string</span>(hours) + <span class="string">&quot;:&quot;</span>;</span><br><span class="line">                    <span class="comment">//min加上前导0</span></span><br><span class="line">                    <span class="keyword">if</span>(minute &lt; <span class="number">10</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        temp += <span class="string">&quot;0&quot;</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    temp += <span class="built_in">to_string</span>(minute);</span><br><span class="line">                    result.<span class="built_in">push_back</span>(temp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

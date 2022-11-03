@@ -18,12 +18,12 @@
   
   
   <title>412. Fizz Buzz | 雀栎</title>
-  <meta name="description" content="一、描述Given an integer n, return a string array answer (1-indexed) where:  answer[i] &#x3D;&#x3D; “FizzBuzz” if i is divisible by 3 and 5. answer[i] &#x3D;&#x3D; “Fizz” if i is divisible by 3. answer[i] &#x3D;&#x3D; “Buzz” if i is d">
+  <meta name="description" content="一、描述 Given an integer n, return a string array answer (1-indexed) where:  answer[i] &#x3D;&#x3D; &quot;FizzBuzz&quot; if i is divisible by 3 and 5. answer[i] &#x3D;&#x3D; &quot;Fizz&quot; if i is divisible by 3. answer[i] &#x3D;&#x3D; &quot;Buzz&quot; if">
 <meta property="og:type" content="article">
 <meta property="og:title" content="412. Fizz Buzz">
 <meta property="og:url" content="http://example.com/2022/07/19/412-Fizz-Buzz/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Given an integer n, return a string array answer (1-indexed) where:  answer[i] &#x3D;&#x3D; “FizzBuzz” if i is divisible by 3 and 5. answer[i] &#x3D;&#x3D; “Fizz” if i is divisible by 3. answer[i] &#x3D;&#x3D; “Buzz” if i is d">
+<meta property="og:description" content="一、描述 Given an integer n, return a string array answer (1-indexed) where:  answer[i] &#x3D;&#x3D; &quot;FizzBuzz&quot; if i is divisible by 3 and 5. answer[i] &#x3D;&#x3D; &quot;Fizz&quot; if i is divisible by 3. answer[i] &#x3D;&#x3D; &quot;Buzz&quot; if">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-19T07:16:45.000Z">
 <meta property="article:modified_time" content="2022-07-19T08:49:24.570Z">
@@ -322,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -373,7 +373,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/19/412-Fizz-Buzz/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 184(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 187(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -383,28 +383,38 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given an integer n, return a string array answer (1-indexed) where:</p>
+        <h1 id="一描述">一、描述</h1>
+<p>Given an integer n, return a string array answer (1-indexed)
+where:</p>
 <ul>
-<li>answer[i] == “FizzBuzz” if i is divisible by 3 and 5.</li>
-<li>answer[i] == “Fizz” if i is divisible by 3.</li>
-<li>answer[i] == “Buzz” if i is divisible by 5.</li>
-<li>answer[i] == i (as a string) if none of the above conditions are true.</li>
+<li>answer[i] == "FizzBuzz" if i is divisible by 3 and 5.</li>
+<li>answer[i] == "Fizz" if i is divisible by 3.</li>
+<li>answer[i] == "Buzz" if i is divisible by 5.</li>
+<li>answer[i] == i (as a string) if none of the above conditions are
+true.</li>
 </ul>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
 <blockquote>
-<p>Input: n = 3<br>Output: [“1”,”2”,”Fizz”]</p>
+<p>Input: n = 3<br />
+Output: ["1","2","Fizz"]</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p>Input: n = 5<br>Output: [“1”,”2”,”Fizz”,”4”,”Buzz”]</p>
+<p>Input: n = 5<br />
+Output: ["1","2","Fizz","4","Buzz"]</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
 <blockquote>
-<p>Input: n = 15<br>Output: [“1”,”2”,”Fizz”,”4”,”Buzz”,”Fizz”,”7”,”8”,”Fizz”,”Buzz”,”11”,”Fizz”,”13”,”14”,”FizzBuzz”]</p>
+<p>Input: n = 15<br />
+Output:
+["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <p>1 &lt;= n &lt;= 10<sup>4</sup></p>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">fizzBuzz</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; v;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(<span class="built_in">div</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">string <span class="title">div</span> <span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; n % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;FizzBuzz&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Fizz&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Buzz&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">to_string</span>(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="三代码">三、代码</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">fizzBuzz</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; v;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(<span class="built_in">div</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">string <span class="title">div</span> <span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; n % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;FizzBuzz&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Fizz&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Buzz&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">to_string</span>(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <div class="article-footer">

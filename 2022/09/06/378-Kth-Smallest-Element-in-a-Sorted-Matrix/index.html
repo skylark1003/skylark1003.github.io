@@ -18,12 +18,12 @@
   
   
   <title>378. Kth Smallest Element in a Sorted Matrix | 雀栎</title>
-  <meta name="description" content="一、描述Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order,">
+  <meta name="description" content="一、描述 Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="378. Kth Smallest Element in a Sorted Matrix">
 <meta property="og:url" content="http://example.com/2022/09/06/378-Kth-Smallest-Element-in-a-Sorted-Matrix/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order,">
+<meta property="og:description" content="一、描述 Given an n x n matrix where each of the rows and columns is sorted in ascending order, return the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted o">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-06T11:26:17.000Z">
 <meta property="article:modified_time" content="2022-09-06T12:10:54.378Z">
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -375,7 +375,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/06/378-Kth-Smallest-Element-in-a-Sorted-Matrix/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 267(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 270(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -385,31 +385,50 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given an <code>n x n</code> <code>matrix</code> where each of the rows and columns is sorted in ascending order, return <em>the k<sup>th</sup> smallest element in the matrix</em>.</p>
-<p>Note that it is the k<sup>th</sup> smallest element <strong>in the sorted order</strong>, not the k<sup>th</sup> <strong>distinct</strong> element.</p>
-<p>You must find a solution with a memory complexity better than O(n<sup>2</sup>).</p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+        <h1 id="一描述">一、描述</h1>
+<p>Given an <code>n x n</code> <code>matrix</code> where each of the
+rows and columns is sorted in ascending order, return <em>the
+k<sup>th</sup> smallest element in the matrix</em>.</p>
+<p>Note that it is the k<sup>th</sup> smallest element <strong>in the
+sorted order</strong>, not the k<sup>th</sup> <strong>distinct</strong>
+element.</p>
+<p>You must find a solution with a memory complexity better than
+O(n<sup>2</sup>).</p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8<br><strong>Output:</strong> 13<br><strong>Explanation:</strong> The elements in the matrix are [1,5,9,10,11,12,13,13,15], and the 8th smallest number is 13</p>
+<p><strong>Input:</strong> matrix = [[1,5,9],[10,11,13],[12,13,15]], k =
+8<br />
+<strong>Output:</strong> 13<br />
+<strong>Explanation:</strong> The elements in the matrix are
+[1,5,9,10,11,12,13,13,15], and the 8th smallest number is 13</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> matrix = [[-5]], k = 1<br><strong>Output:</strong> -5</p>
+<p><strong>Input:</strong> matrix = [[-5]], k = 1<br />
+<strong>Output:</strong> -5</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>n == matrix.length == matrix[i].length</li>
 <li>1 &lt;= n &lt;= 300</li>
 <li>-10<sup>9</sup> &lt;= matrix[i][j] &lt;= 10<sup>9</sup></li>
-<li>All the rows and columns of matrix are <strong>guaranteed</strong> to be sorted in <strong>non-decreasing order</strong>.</li>
+<li>All the rows and columns of matrix are <strong>guaranteed</strong>
+to be sorted in <strong>non-decreasing order</strong>.</li>
 <li>1 &lt;= k &lt;= n<sup>2</sup></li>
 </ul>
 <p><strong>Follow up:</strong></p>
 <ul>
-<li>Could you solve the problem with a constant memory (i.e., O(1) memory complexity)?</li>
-<li>Could you solve the problem in O(n) time complexity? The solution may be too advanced for an interview but you may find reading <a target="_blank" rel="noopener" href="http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf">this paper</a> fun.</li>
+<li>Could you solve the problem with a constant memory (i.e., O(1)
+memory complexity)?</li>
+<li>Could you solve the problem in O(n) time complexity? The solution
+may be too advanced for an interview but you may find reading <a
+target="_blank" rel="noopener" href="http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf">this paper</a>
+fun.</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>时间复杂度：O(n<sup>2</sup>)<br> 空间复杂度：O(n<sup>2</sup>)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">kthSmallest</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix.<span class="built_in">size</span>(); i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].<span class="built_in">size</span>(); j++)</span><br><span class="line">                v.<span class="built_in">push_back</span>(matrix[i][j]);</span><br><span class="line">        <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> v[k<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="三代码">三、代码</h1>
+<p>时间复杂度：O(n<sup>2</sup>)<br />
+空间复杂度：O(n<sup>2</sup>) <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">kthSmallest</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix.<span class="built_in">size</span>(); i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].<span class="built_in">size</span>(); j++)</span><br><span class="line">                v.<span class="built_in">push_back</span>(matrix[i][j]);</span><br><span class="line">        <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> v[k<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

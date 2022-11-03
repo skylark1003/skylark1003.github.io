@@ -18,12 +18,12 @@
   
   
   <title>26. Remove Duplicates from Sorted Array | 雀栎</title>
-  <meta name="description" content="一、描述Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the sa">
+  <meta name="description" content="一、描述 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept">
 <meta property="og:type" content="article">
 <meta property="og:title" content="26. Remove Duplicates from Sorted Array">
 <meta property="og:url" content="http://example.com/2022/07/22/26-Remove-Duplicates-from-Sorted-Array/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the sa">
+<meta property="og:description" content="一、描述 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-22T04:50:22.000Z">
 <meta property="article:modified_time" content="2022-07-22T05:09:05.566Z">
@@ -321,7 +321,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -382,23 +382,54 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove the duplicates <strong>in-place</strong> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>
-<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first k elements of <code>nums</code> should hold the final result. It does not matter what you leave beyond the first <code>k</code> elements.</p>
-<p>Return <code>k</code> after placing the final result in the first <code>k</code> slots of <code>nums</code>.</p>
-<p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array in-place</strong> with O(1) extra memory.</p>
+        <h1 id="一描述">一、描述</h1>
+<p>Given an integer array <code>nums</code> sorted in
+<strong>non-decreasing order</strong>, remove the duplicates
+<strong>in-place</strong> such that each unique element appears only
+<strong>once</strong>. The <strong>relative order</strong> of the
+elements should be kept the <strong>same</strong>.</p>
+<p>Since it is impossible to change the length of the array in some
+languages, you must instead have the result be placed in the
+<strong>first part</strong> of the array <code>nums</code>. More
+formally, if there are <code>k</code> elements after removing the
+duplicates, then the first k elements of <code>nums</code> should hold
+the final result. It does not matter what you leave beyond the first
+<code>k</code> elements.</p>
+<p>Return <code>k</code> after placing the final result in the first
+<code>k</code> slots of <code>nums</code>.</p>
+<p>Do <strong>not</strong> allocate extra space for another array. You
+must do this by <strong>modifying the input array in-place</strong> with
+O(1) extra memory.</p>
 <p><strong>Custom Judge:</strong></p>
-<p>The judge will test your solution with the following code:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] nums = [...]; <span class="comment">// Input array</span></span><br><span class="line"><span class="type">int</span>[] expectedNums = [...]; <span class="comment">// The expected answer with correct length</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> k = <span class="built_in">removeDuplicates</span>(nums); <span class="comment">// Calls your implementation</span></span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>If all assertions pass, then your solution will be <strong>accepted.</strong></p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
-<p><strong>Input:</strong> nums = [1,1,2]<br><strong>Output:</strong> 2, nums = [1,2,_]<br><strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.<br>It does not matter what you leave beyond the returned k (hence they are underscores).</p>
+<p>The judge will test your solution with the following code:
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] nums = [...]; <span class="comment">// Input array</span></span><br><span class="line"><span class="type">int</span>[] expectedNums = [...]; <span class="comment">// The expected answer with correct length</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> k = <span class="built_in">removeDuplicates</span>(nums); <span class="comment">// Calls your implementation</span></span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> If all assertions pass, then your solution will be
+<strong>accepted.</strong></p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
+<p><strong>Input:</strong> nums = [1,1,2]<br />
+<strong>Output:</strong> 2, nums = [1,2,_]<br />
+<strong>Explanation:</strong> Your function should return k = 2, with
+the first two elements of nums being 1 and 2 respectively.<br />
+It does not matter what you leave beyond the returned k (hence they are
+underscores).</p>
 <p><strong>Example 2:</strong></p>
-<p><strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]<br><strong>Output:</strong> 5, nums = [0,1,2,3,4,<em>,</em>,<em>,</em>,_]<br><strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.<br>It does not matter what you leave beyond the returned k (hence they are underscores).</p>
+<p><strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]<br />
+<strong>Output:</strong> 5, nums =
+[0,1,2,3,4,<em>,</em>,<em>,</em>,_]<br />
+<strong>Explanation:</strong> Your function should return k = 5, with
+the first five elements of nums being 0, 1, 2, 3, and 4
+respectively.<br />
+It does not matter what you leave beyond the returned k (hence they are
+underscores).</p>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></li>
 <li>-100 &lt;= nums[i] &lt;= 100</li>
 <li>nums is sorted in <strong>non-decreasing</strong> order.</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">removeDuplicates</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> a = <span class="number">-105</span>;</span><br><span class="line">        <span class="type">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] != a)&#123;</span><br><span class="line">                a = nums[i];    </span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                nums[i] = <span class="number">105</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="三代码">三、代码</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">removeDuplicates</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> a = <span class="number">-105</span>;</span><br><span class="line">        <span class="type">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] != a)&#123;</span><br><span class="line">                a = nums[i];    </span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                nums[i] = <span class="number">105</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <div class="article-footer">

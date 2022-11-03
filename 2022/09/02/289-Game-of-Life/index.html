@@ -18,15 +18,13 @@
   
   
   <title>289. Game of Life | 雀栎</title>
-  <meta name="description" content="一、描述According to Wikipedia’s article: “The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.” The board is made up of an">
+  <meta name="description" content="一、描述 According to Wikipedia&#39;s article: &quot;The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.&quot; The board is made up">
 <meta property="og:type" content="article">
 <meta property="og:title" content="289. Game of Life">
 <meta property="og:url" content="http://example.com/2022/09/02/289-Game-of-Life/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述According to Wikipedia’s article: “The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.” The board is made up of an">
+<meta property="og:description" content="一、描述 According to Wikipedia&#39;s article: &quot;The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.&quot; The board is made up">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/289p1.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/289p2.png">
 <meta property="article:published_time" content="2022-09-02T03:08:40.000Z">
 <meta property="article:modified_time" content="2022-09-02T03:39:56.251Z">
 <meta property="article:author" content="雀栎">
@@ -36,7 +34,6 @@
 <meta property="article:tag" content="Matrix">
 <meta property="article:tag" content="Simulation">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/289p1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/09/02/289-Game-of-Life/index.html">
   
@@ -325,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -386,24 +383,44 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>According to Wikipedia’s article: “The <strong>Game of Life</strong>, also known simply as <strong>Life</strong>, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.”</p>
-<p>The board is made up of an m x n grid of cells, where each cell has an initial state: <strong>live</strong> (represented by a 1) or <strong>dead</strong> (represented by a 0). Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):</p>
-<ol>
-<li>Any live cell with fewer than two live neighbors dies as if caused by under-population.</li>
-<li>Any live cell with two or three live neighbors lives on to the next generation.</li>
-<li>Any live cell with more than three live neighbors dies, as if by over-population.</li>
-<li>Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
+        <h1 id="一描述">一、描述</h1>
+<p>According to Wikipedia's article: "The <strong>Game of Life</strong>,
+also known simply as <strong>Life</strong>, is a cellular automaton
+devised by the British mathematician John Horton Conway in 1970."</p>
+<p>The board is made up of an m x n grid of cells, where each cell has
+an initial state: <strong>live</strong> (represented by a 1) or
+<strong>dead</strong> (represented by a 0). Each cell interacts with its
+eight neighbors (horizontal, vertical, diagonal) using the following
+four rules (taken from the above Wikipedia article):</p>
+<ol type="1">
+<li>Any live cell with fewer than two live neighbors dies as if caused
+by under-population.</li>
+<li>Any live cell with two or three live neighbors lives on to the next
+generation.</li>
+<li>Any live cell with more than three live neighbors dies, as if by
+over-population.</li>
+<li>Any dead cell with exactly three live neighbors becomes a live cell,
+as if by reproduction.</li>
 </ol>
-<p>The next state is created by applying the above rules simultaneously to every cell in the current state, where births and deaths occur simultaneously. Given the current state of the <code>m x n</code> grid <code>board</code>, return the next state.</p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/289p1.png" alt=""></p>
+<p>The next state is created by applying the above rules simultaneously
+to every cell in the current state, where births and deaths occur
+simultaneously. Given the current state of the <code>m x n</code> grid
+<code>board</code>, return the next state.</p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/289p1.png" /></p>
 <blockquote>
-<p><strong>Input:</strong> board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]<br><strong>Output:</strong> [[0,0,0],[1,0,1],[0,1,1],[0,1,0]] </p>
+<p><strong>Input:</strong> board =
+[[0,1,0],[0,0,1],[1,1,1],[0,0,0]]<br />
+<strong>Output:</strong> [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/289p2.png" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/289p2.png" /></p>
 <blockquote>
-<p><strong>Input:</strong> board = [[1,1],[1,0]]<br><strong>Output:</strong> [[1,1],[1,1]]</p>
+<p><strong>Input:</strong> board = [[1,1],[1,0]]<br />
+<strong>Output:</strong> [[1,1],[1,1]]</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -414,10 +431,17 @@
 </ul>
 <p><strong>Follow up:</strong></p>
 <ul>
-<li>Could you solve it in-place? Remember that the board needs to be updated simultaneously: You cannot update some cells first and then use their updated values to update other cells.</li>
-<li>In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause problems when the active area encroaches upon the border of the array (i.e., live cells reach the border). How would you address these problems?</li>
+<li>Could you solve it in-place? Remember that the board needs to be
+updated simultaneously: You cannot update some cells first and then use
+their updated values to update other cells.</li>
+<li>In this question, we represent the board using a 2D array. In
+principle, the board is infinite, which would cause problems when the
+active area encroaches upon the border of the array (i.e., live cells
+reach the border). How would you address these problems?</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">gameOfLife</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; flag;</span><br><span class="line">        flag = board;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; board.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; board[<span class="number">0</span>].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] == <span class="number">1</span> &amp;&amp; (<span class="built_in">livenum</span>(board, i, j) &lt; <span class="number">2</span> || <span class="built_in">livenum</span>(board, i, j) &gt; <span class="number">3</span>))</span><br><span class="line">                    flag[i][j] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(board[i][j] == <span class="number">0</span> &amp;&amp; <span class="built_in">livenum</span>(board, i, j) == <span class="number">3</span>)</span><br><span class="line">                    flag[i][j] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;       </span><br><span class="line">        board = flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">livenum</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; board, <span class="type">int</span> i, <span class="type">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> live = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(i<span class="number">-1</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(j<span class="number">-1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                live += board[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">            live += board[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j+<span class="number">1</span> &lt; board[<span class="number">0</span>].<span class="built_in">size</span>())</span><br><span class="line">                live += board[i<span class="number">-1</span>][j+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i+<span class="number">1</span> &lt; board.<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">if</span>(j<span class="number">-1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                live += board[i+<span class="number">1</span>][j<span class="number">-1</span>];</span><br><span class="line">            live += board[i+<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j+<span class="number">1</span> &lt; board[<span class="number">0</span>].<span class="built_in">size</span>())</span><br><span class="line">                live += board[i+<span class="number">1</span>][j+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j<span class="number">-1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                live += board[i][j<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">if</span>(j+<span class="number">1</span> &lt; board[<span class="number">0</span>].<span class="built_in">size</span>())</span><br><span class="line">                live += board[i][j+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> live;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="三代码">三、代码</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">gameOfLife</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; flag;</span><br><span class="line">        flag = board;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; board.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; board[<span class="number">0</span>].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] == <span class="number">1</span> &amp;&amp; (<span class="built_in">livenum</span>(board, i, j) &lt; <span class="number">2</span> || <span class="built_in">livenum</span>(board, i, j) &gt; <span class="number">3</span>))</span><br><span class="line">                    flag[i][j] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(board[i][j] == <span class="number">0</span> &amp;&amp; <span class="built_in">livenum</span>(board, i, j) == <span class="number">3</span>)</span><br><span class="line">                    flag[i][j] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;       </span><br><span class="line">        board = flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">livenum</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; board, <span class="type">int</span> i, <span class="type">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> live = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(i<span class="number">-1</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(j<span class="number">-1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                live += board[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">            live += board[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j+<span class="number">1</span> &lt; board[<span class="number">0</span>].<span class="built_in">size</span>())</span><br><span class="line">                live += board[i<span class="number">-1</span>][j+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i+<span class="number">1</span> &lt; board.<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">if</span>(j<span class="number">-1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                live += board[i+<span class="number">1</span>][j<span class="number">-1</span>];</span><br><span class="line">            live += board[i+<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(j+<span class="number">1</span> &lt; board[<span class="number">0</span>].<span class="built_in">size</span>())</span><br><span class="line">                live += board[i+<span class="number">1</span>][j+<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j<span class="number">-1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                live += board[i][j<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">if</span>(j+<span class="number">1</span> &lt; board[<span class="number">0</span>].<span class="built_in">size</span>())</span><br><span class="line">                live += board[i][j+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> live;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <div class="article-footer">

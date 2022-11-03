@@ -18,15 +18,13 @@
   
   
   <title>237. Delete Node in a Linked List | 雀栎</title>
-  <meta name="description" content="一、描述Write a function to delete a node in a singly-linked list. You will not be given access to the head of the list, instead you will be given access to the node to be deleted directly. It is guarante">
+  <meta name="description" content="一、描述 Write a function to delete a node in a singly-linked list. You will not be given access to the head of the list, instead you will be given access to the node to be deleted directly. It is gu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="237. Delete Node in a Linked List">
 <meta property="og:url" content="http://example.com/2022/08/05/237-Delete-Node-in-a-Linked-List/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Write a function to delete a node in a singly-linked list. You will not be given access to the head of the list, instead you will be given access to the node to be deleted directly. It is guarante">
+<meta property="og:description" content="一、描述 Write a function to delete a node in a singly-linked list. You will not be given access to the head of the list, instead you will be given access to the node to be deleted directly. It is gu">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/237p1.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/237p2.jpg">
 <meta property="article:published_time" content="2022-08-05T03:45:25.000Z">
 <meta property="article:modified_time" content="2022-08-30T03:03:24.076Z">
 <meta property="article:author" content="雀栎">
@@ -34,7 +32,6 @@
 <meta property="article:tag" content="Easy">
 <meta property="article:tag" content="Linked List">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/237p1.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/05/237-Delete-Node-in-a-Linked-List/index.html">
   
@@ -323,7 +320,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -374,7 +371,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/05/237-Delete-Node-in-a-Linked-List/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 294(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 296(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -384,27 +381,45 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Write a function to <strong>delete a node</strong> in a singly-linked list. You will <strong>not</strong> be given access to the <code>head</code> of the list, instead you will be given access to <strong>the node to be deleted</strong> directly.</p>
-<p>It is <strong>guaranteed</strong> that the node to be deleted is <strong>not a tail node</strong> in the list.</p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/237p1.jpg" alt=""></p>
+        <h1 id="一描述">一、描述</h1>
+<p>Write a function to <strong>delete a node</strong> in a singly-linked
+list. You will <strong>not</strong> be given access to the
+<code>head</code> of the list, instead you will be given access to
+<strong>the node to be deleted</strong> directly.</p>
+<p>It is <strong>guaranteed</strong> that the node to be deleted is
+<strong>not a tail node</strong> in the list.</p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/237p1.jpg" /></p>
 <blockquote>
-<p><strong>Input:</strong> head = [4,5,1,9], node = 5<br><strong>Output:</strong> [4,1,9]<br><strong>Explanation:</strong> You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.</p>
+<p><strong>Input:</strong> head = [4,5,1,9], node = 5<br />
+<strong>Output:</strong> [4,1,9]<br />
+<strong>Explanation:</strong> You are given the second node with value
+5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your
+function.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/237p2.jpg" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/237p2.jpg" /></p>
 <blockquote>
-<p><strong>Input:</strong> head = [4,5,1,9], node = 1<br><strong>Output:</strong> [4,5,9]<br><strong>Explanation:</strong> You are given the third node with value 1, the linked list should become 4 -&gt; 5 -&gt; 9 after calling your function.</p>
+<p><strong>Input:</strong> head = [4,5,1,9], node = 1<br />
+<strong>Output:</strong> [4,5,9]<br />
+<strong>Explanation:</strong> You are given the third node with value 1,
+the linked list should become 4 -&gt; 5 -&gt; 9 after calling your
+function.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li>The number of the nodes in the given list is in the range [2, 1000].</li>
+<li>The number of the nodes in the given list is in the range [2,
+1000].</li>
 <li>-1000 &lt;= Node.val &lt;= 1000</li>
 <li>The value of each node in the list is unique.</li>
 <li>The node to be deleted is in the list and is not a tail node</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        node -&gt; val = node -&gt; next -&gt; val;</span><br><span class="line">        node -&gt; next = node -&gt; next -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>最好delete一下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        node -&gt; val = node -&gt; next -&gt; val;</span><br><span class="line">        ListNode* q = node -&gt; next;</span><br><span class="line">        node -&gt; next = q -&gt; next;</span><br><span class="line">        <span class="built_in">delete</span>(q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="三代码">三、代码</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        node -&gt; val = node -&gt; next -&gt; val;</span><br><span class="line">        node -&gt; next = node -&gt; next -&gt; next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>最好delete一下： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        node -&gt; val = node -&gt; next -&gt; val;</span><br><span class="line">        ListNode* q = node -&gt; next;</span><br><span class="line">        node -&gt; next = q -&gt; next;</span><br><span class="line">        <span class="built_in">delete</span>(q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
