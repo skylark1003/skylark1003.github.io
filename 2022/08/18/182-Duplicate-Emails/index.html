@@ -431,15 +431,15 @@
 </thead>
 <tbody><tr>
 <td align="center">1</td>
-<td align="center"><a href="mailto:&#x61;&#x40;&#98;&#46;&#99;&#111;&#x6d;">&#x61;&#x40;&#98;&#46;&#99;&#111;&#x6d;</a></td>
+<td align="center"><a href="mailto:&#97;&#x40;&#98;&#46;&#99;&#111;&#x6d;">&#97;&#x40;&#98;&#46;&#99;&#111;&#x6d;</a></td>
 </tr>
 <tr>
 <td align="center">2</td>
-<td align="center"><a href="mailto:&#x63;&#64;&#x64;&#x2e;&#99;&#111;&#x6d;">&#x63;&#64;&#x64;&#x2e;&#99;&#111;&#x6d;</a></td>
+<td align="center"><a href="mailto:&#x63;&#64;&#x64;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#64;&#x64;&#46;&#x63;&#x6f;&#x6d;</a></td>
 </tr>
 <tr>
 <td align="center">3</td>
-<td align="center"><a href="mailto:&#97;&#64;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#97;&#64;&#x62;&#x2e;&#x63;&#x6f;&#109;</a></td>
+<td align="center"><a href="mailto:&#97;&#64;&#x62;&#x2e;&#x63;&#111;&#109;">&#97;&#64;&#x62;&#x2e;&#x63;&#111;&#109;</a></td>
 </tr>
 </tbody></table>
 <p><strong>Output:</strong> </p>
@@ -450,10 +450,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><a href="mailto:&#x61;&#64;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x61;&#64;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a></td>
+<td align="center"><a href="mailto:&#97;&#x40;&#98;&#46;&#x63;&#111;&#109;">&#97;&#x40;&#98;&#46;&#x63;&#111;&#109;</a></td>
 </tr>
 </tbody></table>
-<p><strong>Explanation:</strong> <a href="mailto:&#97;&#64;&#98;&#x2e;&#99;&#111;&#x6d;">&#97;&#64;&#98;&#x2e;&#99;&#111;&#x6d;</a> is repeated two times.</p>
+<p><strong>Explanation:</strong> <a href="mailto:&#97;&#x40;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#x40;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a> is repeated two times.</p>
 <h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">distinct</span> p1.email</span><br><span class="line"><span class="keyword">FROM</span> Person p1 <span class="keyword">JOIN</span> Person p2</span><br><span class="line"><span class="keyword">ON</span> p1.email <span class="operator">=</span> p2.email</span><br><span class="line"><span class="keyword">WHERE</span> p1.id <span class="operator">&lt;&gt;</span> p2.id</span><br></pre></td></tr></table></figure>
       
     </div>
