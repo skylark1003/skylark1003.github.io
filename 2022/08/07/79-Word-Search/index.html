@@ -18,13 +18,16 @@
   
   
   <title>79. Word Search | 雀栎</title>
-  <meta name="description" content="一、描述 Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cel">
+  <meta name="description" content="一、描述Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are">
 <meta property="og:type" content="article">
 <meta property="og:title" content="79. Word Search">
 <meta property="og:url" content="http://example.com/2022/08/07/79-Word-Search/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cel">
+<meta property="og:description" content="一、描述Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p1.jpg">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p2.jpg">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p3.jpg">
 <meta property="article:published_time" content="2022-08-07T08:42:19.000Z">
 <meta property="article:modified_time" content="2022-08-07T14:01:17.295Z">
 <meta property="article:author" content="雀栎">
@@ -35,6 +38,7 @@
 <meta property="article:tag" content="Matrix">
 <meta property="article:tag" content="Backtracking">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p1.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/07/79-Word-Search/index.html">
   
@@ -323,7 +327,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -384,40 +388,22 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an <code>m x n</code> grid of characters <code>board</code> and
-a string <code>word</code>, return <em><code>true</code> if word exists
-in the grid</em>.</p>
-<p>The word can be constructed from letters of sequentially adjacent
-cells, where adjacent cells are horizontally or vertically neighboring.
-The same letter cell may not be used more than once.</p>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p1.jpg" /></p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given an <code>m x n</code> grid of characters <code>board</code> and a string <code>word</code>, return <em><code>true</code> if word exists in the grid</em>.</p>
+<p>The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p1.jpg" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> board =
-[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word =
-"ABCCED"<br />
-<strong>Output:</strong> true</p>
+<p><strong>Input:</strong> board = [[“A”,”B”,”C”,”E”],[“S”,”F”,”C”,”S”],[“A”,”D”,”E”,”E”]], word = “ABCCED”<br><strong>Output:</strong> true</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p2.jpg" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p2.jpg" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> board =
-[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word =
-"SEE"<br />
-<strong>Output:</strong> true</p>
+<p><strong>Input:</strong> board = [[“A”,”B”,”C”,”E”],[“S”,”F”,”C”,”S”],[“A”,”D”,”E”,”E”]], word = “SEE”<br><strong>Output:</strong> true</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p3.jpg" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p3.jpg" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> board =
-[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word =
-"ABCB"<br />
-<strong>Output:</strong> false</p>
+<p><strong>Input:</strong> board = [[“A”,”B”,”C”,”E”],[“S”,”F”,”C”,”S”],[“A”,”D”,”E”,”E”]], word = “ABCB”<br><strong>Output:</strong> false</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -425,14 +411,10 @@ src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/79p3.jpg" /></p>
 <li>n = board[i].length</li>
 <li>1 &lt;= m, n &lt;= 6</li>
 <li>1 &lt;= word.length &lt;= 15</li>
-<li>board and word consists of only lowercase and uppercase English
-letters.</li>
+<li>board and word consists of only lowercase and uppercase English letters.</li>
 </ul>
-<p><strong>Follow up:</strong> Could you use search pruning to make your
-solution faster with a larger board?</p>
-<h1 id="三代码">三、代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">exist</span><span class="params">(vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board, string word)</span> </span>&#123;    </span><br><span class="line">        <span class="keyword">if</span>(word==<span class="string">&quot;&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; board.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; board[<span class="number">0</span>].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] == word[<span class="number">0</span>] &amp;&amp; <span class="built_in">mytest</span>(board, i, j, word, <span class="number">0</span>))&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">mytest</span><span class="params">(vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board, <span class="type">int</span> x, <span class="type">int</span> y, string word, <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="comment">//搜索完毕</span></span><br><span class="line">        <span class="keyword">if</span>(n == word.<span class="built_in">size</span>())  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//判断x、y取值是否合法</span></span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span> || x &gt;= board.<span class="built_in">size</span>() || y &gt;= board[<span class="number">0</span>].<span class="built_in">size</span>() || board[x][y] != word[n]) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//修改board值，防止重复搜索</span></span><br><span class="line">        board[x][y] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="comment">//搜索四个方向</span></span><br><span class="line">        <span class="type">bool</span> ans = <span class="built_in">mytest</span>(board, x, y + <span class="number">1</span>, word, n + <span class="number">1</span>) ||</span><br><span class="line">                   <span class="built_in">mytest</span>(board, x + <span class="number">1</span>, y, word, n + <span class="number">1</span>) ||</span><br><span class="line">                   <span class="built_in">mytest</span>(board, x, y - <span class="number">1</span>, word, n + <span class="number">1</span>) ||</span><br><span class="line">                   <span class="built_in">mytest</span>(board, x - <span class="number">1</span>, y, word, n + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">//复原字符，便于后续搜索</span></span><br><span class="line">        board[x][y] = word[n];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<p><strong>Follow up:</strong> Could you use search pruning to make your solution faster with a larger board?</p>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">exist</span><span class="params">(vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board, string word)</span> </span>&#123;    </span><br><span class="line">        <span class="keyword">if</span>(word==<span class="string">&quot;&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; board.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; board[<span class="number">0</span>].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] == word[<span class="number">0</span>] &amp;&amp; <span class="built_in">mytest</span>(board, i, j, word, <span class="number">0</span>))&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">mytest</span><span class="params">(vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board, <span class="type">int</span> x, <span class="type">int</span> y, string word, <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="comment">//搜索完毕</span></span><br><span class="line">        <span class="keyword">if</span>(n == word.<span class="built_in">size</span>())  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//判断x、y取值是否合法</span></span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span> || x &gt;= board.<span class="built_in">size</span>() || y &gt;= board[<span class="number">0</span>].<span class="built_in">size</span>() || board[x][y] != word[n]) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//修改board值，防止重复搜索</span></span><br><span class="line">        board[x][y] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="comment">//搜索四个方向</span></span><br><span class="line">        <span class="type">bool</span> ans = <span class="built_in">mytest</span>(board, x, y + <span class="number">1</span>, word, n + <span class="number">1</span>) ||</span><br><span class="line">                   <span class="built_in">mytest</span>(board, x + <span class="number">1</span>, y, word, n + <span class="number">1</span>) ||</span><br><span class="line">                   <span class="built_in">mytest</span>(board, x, y - <span class="number">1</span>, word, n + <span class="number">1</span>) ||</span><br><span class="line">                   <span class="built_in">mytest</span>(board, x - <span class="number">1</span>, y, word, n + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">//复原字符，便于后续搜索</span></span><br><span class="line">        board[x][y] = word[n];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">

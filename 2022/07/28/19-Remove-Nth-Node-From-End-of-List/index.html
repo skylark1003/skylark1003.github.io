@@ -18,13 +18,14 @@
   
   
   <title>19. Remove Nth Node From End of List | 雀栎</title>
-  <meta name="description" content="一、描述 Given the head of a linked list, remove the nth node from the end of the list and return its head. 二、例子 Example 1:   Input: head &#x3D; [1,2,3,4,5], n &#x3D; 2 Output: [1,2,3,5]  Example 2:  In">
+  <meta name="description" content="一、描述Given the head of a linked list, remove the nth node from the end of the list and return its head. 二、例子Example 1:   Input: head &#x3D; [1,2,3,4,5], n &#x3D; 2Output: [1,2,3,5]  Example 2:  Input: head &#x3D; [1]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="19. Remove Nth Node From End of List">
 <meta property="og:url" content="http://example.com/2022/07/28/19-Remove-Nth-Node-From-End-of-List/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given the head of a linked list, remove the nth node from the end of the list and return its head. 二、例子 Example 1:   Input: head &#x3D; [1,2,3,4,5], n &#x3D; 2 Output: [1,2,3,5]  Example 2:  In">
+<meta property="og:description" content="一、描述Given the head of a linked list, remove the nth node from the end of the list and return its head. 二、例子Example 1:   Input: head &#x3D; [1,2,3,4,5], n &#x3D; 2Output: [1,2,3,5]  Example 2:  Input: head &#x3D; [1]">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/19p1.jpg">
 <meta property="article:published_time" content="2022-07-28T13:09:09.000Z">
 <meta property="article:modified_time" content="2022-07-28T15:03:15.283Z">
 <meta property="article:author" content="雀栎">
@@ -33,6 +34,7 @@
 <meta property="article:tag" content="Two Pointers">
 <meta property="article:tag" content="Linked List">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/19p1.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/07/28/19-Remove-Nth-Node-From-End-of-List/index.html">
   
@@ -321,7 +323,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -372,7 +374,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/28/19-Remove-Nth-Node-From-End-of-List/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 261(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 258(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -382,26 +384,19 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given the <code>head</code> of a linked list, remove the
-n<sup>th</sup> node from the end of the list and return its head.</p>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/19p1.jpg" /></p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given the <code>head</code> of a linked list, remove the n<sup>th</sup> node from the end of the list and return its head.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/19p1.jpg" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> head = [1,2,3,4,5], n = 2<br />
-<strong>Output:</strong> [1,2,3,5]</p>
+<p><strong>Input:</strong> head = [1,2,3,4,5], n = 2<br><strong>Output:</strong> [1,2,3,5]</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> head = [1], n = 1<br />
-<strong>Output:</strong> []</p>
+<p><strong>Input:</strong> head = [1], n = 1<br><strong>Output:</strong> []</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> head = [1,2], n = 1 <strong>Output:</strong>
-[1]</p>
+<p><strong>Input:</strong> head = [1,2], n = 1<br><strong>Output:</strong> [1]</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -411,9 +406,7 @@ src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/19p1.jpg" /></p>
 <li>1 &lt;= n &lt;= sz</li>
 </ul>
 <p><strong>Follow up:</strong> Could you do this in one pass?</p>
-<h1 id="三代码">三、代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">        <span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">        v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>() + num - n);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(v.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        </span><br><span class="line">        ListNode* p = <span class="keyword">new</span> <span class="built_in">ListNode</span>(v[<span class="number">0</span>]);</span><br><span class="line">        ListNode* ans = p;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(v[i] != <span class="number">-1</span> &amp;&amp; i != v.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">                p -&gt; val = v[i];</span><br><span class="line">                p -&gt; next = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">                p = p -&gt; next;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(v[i] != <span class="number">-1</span> &amp;&amp; i == v.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">                p -&gt; val = v[i];</span><br><span class="line">                p -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;               </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">        <span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(head-&gt;val);</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">        v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>() + num - n);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(v.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        </span><br><span class="line">        ListNode* p = <span class="keyword">new</span> <span class="built_in">ListNode</span>(v[<span class="number">0</span>]);</span><br><span class="line">        ListNode* ans = p;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(v[i] != <span class="number">-1</span> &amp;&amp; i != v.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">                p -&gt; val = v[i];</span><br><span class="line">                p -&gt; next = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">                p = p -&gt; next;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(v[i] != <span class="number">-1</span> &amp;&amp; i == v.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">                p -&gt; val = v[i];</span><br><span class="line">                p -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;               </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
