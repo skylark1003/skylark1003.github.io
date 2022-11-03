@@ -18,29 +18,25 @@
   
   
   <title>108. Convert Sorted Array to Binary Search Tree | 雀栎</title>
-  <meta name="description" content="一、描述Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree. A height-balanced binary tree is a binary tree in which the depth">
+  <meta name="description" content="一、描述 Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree. A height-balanced binary tree is a binary tree in which the">
 <meta property="og:type" content="article">
 <meta property="og:title" content="108. Convert Sorted Array to Binary Search Tree">
 <meta property="og:url" content="http://example.com/2022/07/29/108-Convert-Sorted-Array-to-Binary-Search-Tree/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree. A height-balanced binary tree is a binary tree in which the depth">
+<meta property="og:description" content="一、描述 Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree. A height-balanced binary tree is a binary tree in which the">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p1.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p2.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p3.jpg">
 <meta property="article:published_time" content="2022-07-29T06:00:12.000Z">
 <meta property="article:modified_time" content="2022-07-29T08:44:12.093Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="☆">
 <meta property="article:tag" content="Easy">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="☆">
 <meta property="article:tag" content="Tree">
 <meta property="article:tag" content="Binary Tree">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Divide and Conquer">
 <meta property="article:tag" content="Binary Search Tree">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p1.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/07/29/108-Convert-Sorted-Array-to-Binary-Search-Tree/index.html">
   
@@ -329,7 +325,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -390,18 +386,33 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given an integer array nums where the elements are sorted in <strong>ascending order</strong>, convert it to a <strong>height-balanced</strong> <em>binary search tree</em>.</p>
-<p>A <strong>height-balanced</strong> binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.</p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p1.jpg" alt=""></p>
+        <h1 id="一描述">一、描述</h1>
+<p>Given an integer array nums where the elements are sorted in
+<strong>ascending order</strong>, convert it to a
+<strong>height-balanced</strong> <em>binary search tree</em>.</p>
+<p>A <strong>height-balanced</strong> binary tree is a binary tree in
+which the depth of the two subtrees of every node never differs by more
+than one.</p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p1.jpg" /></p>
 <blockquote>
-<p><strong>Input:</strong> nums = [-10,-3,0,5,9]<br><strong>Output:</strong> [0,-3,9,-10,null,5]<br><strong>Explanation:</strong> [0,-10,5,null,-3,null,9] is also accepted:</p>
+<p><strong>Input:</strong> nums = [-10,-3,0,5,9]<br />
+<strong>Output:</strong> [0,-3,9,-10,null,5]<br />
+<strong>Explanation:</strong> [0,-10,5,null,-3,null,9] is also
+accepted:</p>
 </blockquote>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p2.jpg" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p2.jpg" /></p>
 <p><strong>Example 2:</strong></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p3.jpg" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/108p3.jpg" /></p>
 <blockquote>
-<p><strong>Input:</strong> nums = [1,3]<br><strong>Output:</strong> [3,1]<br><strong>Explanation:</strong> [1,null,3] and [3,1] are both height-balanced BSTs.</p>
+<p><strong>Input:</strong> nums = [1,3]<br />
+<strong>Output:</strong> [3,1]<br />
+<strong>Explanation:</strong> [1,null,3] and [3,1] are both
+height-balanced BSTs.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -409,7 +420,8 @@
 <li>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></li>
 <li>nums is sorted in a strictly increasing order.</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>来自ahanavish：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>()==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>()==<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">TreeNode</span>(nums[<span class="number">0</span>]);</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> mid = nums.<span class="built_in">size</span>() / <span class="number">2</span>;</span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(nums[mid]);</span><br><span class="line">        </span><br><span class="line">        vector &lt;<span class="type">int</span>&gt; <span class="built_in">leftt</span> (nums.<span class="built_in">begin</span>(), nums.<span class="built_in">begin</span>()+mid); <span class="comment">//左开右闭区间</span></span><br><span class="line">        vector &lt;<span class="type">int</span>&gt; <span class="built_in">rightt</span> (nums.<span class="built_in">begin</span>()+mid+<span class="number">1</span>, nums.<span class="built_in">end</span>());</span><br><span class="line">        root-&gt;left = <span class="built_in">sortedArrayToBST</span>(leftt);</span><br><span class="line">        root-&gt;right = <span class="built_in">sortedArrayToBST</span>(rightt);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="三代码">三、代码</h1>
+<p>来自ahanavish： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>()==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>()==<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">TreeNode</span>(nums[<span class="number">0</span>]);</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> mid = nums.<span class="built_in">size</span>() / <span class="number">2</span>;</span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(nums[mid]);</span><br><span class="line">        </span><br><span class="line">        vector &lt;<span class="type">int</span>&gt; <span class="built_in">leftt</span> (nums.<span class="built_in">begin</span>(), nums.<span class="built_in">begin</span>()+mid); <span class="comment">//左开右闭区间</span></span><br><span class="line">        vector &lt;<span class="type">int</span>&gt; <span class="built_in">rightt</span> (nums.<span class="built_in">begin</span>()+mid+<span class="number">1</span>, nums.<span class="built_in">end</span>());</span><br><span class="line">        root-&gt;left = <span class="built_in">sortedArrayToBST</span>(leftt);</span><br><span class="line">        root-&gt;right = <span class="built_in">sortedArrayToBST</span>(rightt);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

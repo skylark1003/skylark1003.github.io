@@ -18,21 +18,19 @@
   
   
   <title>【笔记】C++中NULL和nullptr的区别 | 雀栎</title>
-  <meta name="description" content="nullptr是C++11版本中新加入的，它的出现是为了解决NULL表示空指针在C++中具有二义性的问题。 一、C语言中的NULL在C语言中，NULL通常被定义为：#define NULL ((void *)0) 所以说NULL实际上是一个空指针，如果在C语言中写入以下代码，编译是没有问题的，因为在C语言中把空指针赋给int和char指针的时候，发生了隐式类型转换，把void指针转换成了相应类型的">
+  <meta name="description" content="nullptr是C++11版本中新加入的，它的出现是为了解决NULL表示空指针在C++中具有二义性的问题。 一、C语言中的NULL 在C语言中，NULL通常被定义为：#define NULL ((void *)0) 所以说NULL实际上是一个空指针，如果在C语言中写入以下代码，编译是没有问题的，因为在C语言中把空指针赋给int和char指针的时候，发生了隐式类型转换，把void指针转换成了相">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【笔记】C++中NULL和nullptr的区别">
 <meta property="og:url" content="http://example.com/2022/08/30/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-%E4%B8%ADNULL%E5%92%8Cnullptr%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="nullptr是C++11版本中新加入的，它的出现是为了解决NULL表示空指针在C++中具有二义性的问题。 一、C语言中的NULL在C语言中，NULL通常被定义为：#define NULL ((void *)0) 所以说NULL实际上是一个空指针，如果在C语言中写入以下代码，编译是没有问题的，因为在C语言中把空指针赋给int和char指针的时候，发生了隐式类型转换，把void指针转换成了相应类型的">
+<meta property="og:description" content="nullptr是C++11版本中新加入的，它的出现是为了解决NULL表示空指针在C++中具有二义性的问题。 一、C语言中的NULL 在C语言中，NULL通常被定义为：#define NULL ((void *)0) 所以说NULL实际上是一个空指针，如果在C语言中写入以下代码，编译是没有问题的，因为在C语言中把空指针赋给int和char指针的时候，发生了隐式类型转换，把void指针转换成了相">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/NULLAndnullptr.png">
 <meta property="article:published_time" content="2022-08-30T07:13:29.000Z">
 <meta property="article:modified_time" content="2022-09-05T11:00:32.526Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="&#x2F;NULL">
 <meta property="article:tag" content="nullptr">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/NULLAndnullptr.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/30/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-%E4%B8%ADNULL%E5%92%8Cnullptr%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
   
@@ -321,7 +319,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84NULL"><span class="toc-number">1.</span> <span class="toc-text">一、C语言中的NULL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81C-%E4%B8%AD%E7%9A%84NULL"><span class="toc-number">2.</span> <span class="toc-text">二、C++中的NULL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81C-%E4%B8%AD%E7%9A%84nullptr"><span class="toc-number">3.</span> <span class="toc-text">三、C++中的nullptr</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84null"><span class="toc-number">1.</span> <span class="toc-text">一、C语言中的NULL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8Cc%E4%B8%AD%E7%9A%84null"><span class="toc-number">2.</span> <span class="toc-text">二、C++中的NULL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89c%E4%B8%AD%E7%9A%84nullptr"><span class="toc-number">3.</span> <span class="toc-text">三、C++中的nullptr</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -372,7 +370,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/30/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-%E4%B8%ADNULL%E5%92%8Cnullptr%E7%9A%84%E5%8C%BA%E5%88%AB/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 807(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 809(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -383,22 +381,31 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <p>nullptr是C++11版本中新加入的，它的出现是为了<strong>解决NULL表示空指针在C++中具有二义性的问题</strong>。</p>
-<h1 id="一、C语言中的NULL"><a href="#一、C语言中的NULL" class="headerlink" title="一、C语言中的NULL"></a>一、C语言中的NULL</h1><p>在C语言中，NULL通常被定义为：<code>#define NULL ((void *)0)</code></p>
+<h1 id="一c语言中的null">一、C语言中的NULL</h1>
+<p>在C语言中，NULL通常被定义为：<code>#define NULL ((void *)0)</code></p>
 <p>所以说NULL实际上是一个空指针，如果在C语言中写入以下代码，编译是没有问题的，因为在C语言中把空指针赋给int和char指针的时候，发生了隐式类型转换，把void指针转换成了相应类型的指针。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>  *pi = <span class="literal">NULL</span>;</span><br><span class="line"><span class="type">char</span> *pc = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="二、C-中的NULL"><a href="#二、C-中的NULL" class="headerlink" title="二、C++中的NULL"></a>二、C++中的NULL</h1><p>但是问题来了，以上代码如果使用C++编译器来编译则是会出错的，因为C++是<strong>强类型语言</strong>，void*是不能隐式转换成其他类型的指针的，所以实际上编译器提供的头文件做了相应的处理：</p>
+<h1 id="二c中的null">二、C++中的NULL</h1>
+<p>但是问题来了，以上代码如果使用C++编译器来编译则是会出错的，因为C++是<strong>强类型语言</strong>，void*是不能隐式转换成其他类型的指针的，所以实际上编译器提供的头文件做了相应的处理：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NULL 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NULL ((void *)0)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 <p>可见，在C++中，NULL实际上是0。因为C++中不能把void*类型的指针隐式转换成其他类型的指针，所以为了解决空指针的表示问题，C++引入了0来表示空指针，这样就有了上述代码中的NULL宏定义。</p>
 <p>但是实际上，用NULL代替0表示空指针在函数重载时会出现问题，程序执行的结果会与我们的想法不同，举例如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">void</span>* i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;func1&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;func2&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">func</span>(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">func</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="built_in">getchar</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/NULLAndnullptr.png" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/NULLAndnullptr.png" /></p>
 <p>在这段代码中，我们对函数func进行可重载，参数分别是<code>void*</code>类型和<code>int</code>类型，但是运行结果却与我们使用NULL的初衷是相违背的，因为我们本来是想用NULL来代替空指针，但是在将NULL输入到函数中时，它却选择了int形参这个函数版本，所以是有问题的，这就是用NULL代替空指针在C++程序中的二义性。</p>
-<h1 id="三、C-中的nullptr"><a href="#三、C-中的nullptr" class="headerlink" title="三、C++中的nullptr"></a>三、C++中的nullptr</h1><p>为解决NULL代指空指针存在的二义性问题，在C++11版本(2011年发布)中特意引入了nullptr这一新的关键字来代指空指针，从上面的例子中我们可以看到，使用nullptr作为实参，确实选择了正确的以void*作为形参的函数版本。</p>
+<h1 id="三c中的nullptr">三、C++中的nullptr</h1>
+<p>为解决NULL代指空指针存在的二义性问题，在C++11版本(2011年发布)中特意引入了nullptr这一新的关键字来代指空指针，从上面的例子中我们可以看到，使用nullptr作为实参，确实选择了正确的以void*作为形参的函数版本。</p>
 <p><strong>总结：</strong></p>
-<p>NULL在C++中就是0，这是因为在C++中void* 类型是不允许隐式转换成其他类型的，所以之前C++中用0来代表空指针，但是在重载整形的情况下，会出现上述的问题。所以，C++11加入了nullptr，可以保证在任何情况下都代表空指针，而不会出现上述的情况，因此，建议以后还是都用nullptr替代NULL吧，而NULL就当做0使用。</p>
+<p>NULL在C++中就是0，这是因为在C++中void*
+类型是不允许隐式转换成其他类型的，所以之前C++中用0来代表空指针，但是在重载整形的情况下，会出现上述的问题。所以，C++11加入了nullptr，可以保证在任何情况下都代表空指针，而不会出现上述的情况，因此，建议以后还是都用nullptr替代NULL吧，而NULL就当做0使用。</p>
 <blockquote>
-<p>其他：在没有C++ 11的nullptr的时候，我们怎么解决避免这个问题呢？<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="keyword">class</span> <span class="title class_">nullptr_t</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">operator</span> T*() <span class="type">const</span></span><br><span class="line">        &#123; <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">C</span>, <span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">operator</span> T C::*() <span class="type">const</span></span><br><span class="line">        &#123; <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"><span class="type">void</span> <span class="keyword">operator</span>&amp;() <span class="type">const</span>;</span><br><span class="line">&#125; <span class="literal">nullptr</span> = &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>以上内容转载自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liushui-sky/p/13826477.html">C++中NULL和nullptr的区别</a></p>
+<p>其他：在没有C++ 11的nullptr的时候，我们怎么解决避免这个问题呢？
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="keyword">class</span> <span class="title class_">nullptr_t</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">operator</span> T*() <span class="type">const</span></span><br><span class="line">        &#123; <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">C</span>, <span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">operator</span> T C::*() <span class="type">const</span></span><br><span class="line">        &#123; <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"><span class="type">void</span> <span class="keyword">operator</span>&amp;() <span class="type">const</span>;</span><br><span class="line">&#125; <span class="literal">nullptr</span> = &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>以上内容转载自<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/liushui-sky/p/13826477.html">C++中NULL和nullptr的区别</a></p>
 </blockquote>
 
       

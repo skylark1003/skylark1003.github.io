@@ -18,19 +18,19 @@
   
   
   <title>166. Fraction to Recurring Decimal | 雀栎</title>
-  <meta name="description" content="一、描述Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses. I">
+  <meta name="description" content="一、描述 Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parenthe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="166. Fraction to Recurring Decimal">
 <meta property="og:url" content="http://example.com/2022/08/18/166-Fraction-to-Recurring-Decimal/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses. I">
+<meta property="og:description" content="一、描述 Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parenthe">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-18T07:17:27.000Z">
 <meta property="article:modified_time" content="2022-08-18T08:57:32.795Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="String">
 <meta property="article:tag" content="Hash Table">
+<meta property="article:tag" content="String">
 <meta property="article:tag" content="Medium">
 <meta property="article:tag" content="Math">
 <meta name="twitter:card" content="summary">
@@ -322,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -373,59 +373,78 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/18/166-Fraction-to-Recurring-Decimal/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 613(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 625(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given two integers representing the <code>numerator</code> and <code>denominator</code> of a fraction, return <em>the fraction in string format</em>.</p>
-<p>If the fractional part is repeating, enclose the repeating part in parentheses.</p>
-<p>If multiple answers are possible, return <strong>any of them</strong>.</p>
-<p>It is <strong>guaranteed</strong> that the length of the answer string is less than 104 for all the given inputs.</p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+        <h1 id="一描述">一、描述</h1>
+<p>Given two integers representing the <code>numerator</code> and
+<code>denominator</code> of a fraction, return <em>the fraction in
+string format</em>.</p>
+<p>If the fractional part is repeating, enclose the repeating part in
+parentheses.</p>
+<p>If multiple answers are possible, return <strong>any of
+them</strong>.</p>
+<p>It is <strong>guaranteed</strong> that the length of the answer
+string is less than 104 for all the given inputs.</p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> numerator = 1, denominator = 2<br><strong>Output:</strong> “0.5”</p>
+<p><strong>Input:</strong> numerator = 1, denominator = 2<br />
+<strong>Output:</strong> "0.5"</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> numerator = 2, denominator = 1<br><strong>Output:</strong> “2”</p>
+<p><strong>Input:</strong> numerator = 2, denominator = 1<br />
+<strong>Output:</strong> "2"</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> numerator = 4, denominator = 333<br><strong>Output:</strong> “0.(012)”</p>
+<p><strong>Input:</strong> numerator = 4, denominator = 333<br />
+<strong>Output:</strong> "0.(012)"</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li>-2<sup>31</sup> &lt;= numerator, denominator &lt;= 2<sup>31</sup> - 1</li>
+<li>-2<sup>31</sup> &lt;= numerator, denominator &lt;= 2<sup>31</sup> -
+1</li>
 <li>denominator != 0</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">fractionToDecimal</span><span class="params">(<span class="type">int</span> numerator, <span class="type">int</span> denominator)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//如果答案为整数则运算返回</span></span><br><span class="line">        <span class="keyword">if</span>((<span class="type">long</span>)numerator % (<span class="type">long</span>)denominator == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="type">long</span> l = (<span class="type">long</span>)numerator / (<span class="type">long</span>)denominator;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">to_string</span>(l);</span><br><span class="line">        &#125;</span><br><span class="line">                    </span><br><span class="line">        <span class="comment">//处理负数</span></span><br><span class="line">        <span class="type">bool</span> positive;</span><br><span class="line">        <span class="keyword">if</span>((numerator&gt;<span class="number">0</span> &amp;&amp; denominator&gt;<span class="number">0</span>) || (numerator&lt;<span class="number">0</span> &amp;&amp; denominator&lt;<span class="number">0</span>))</span><br><span class="line">            positive = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            positive = <span class="literal">false</span>;</span><br><span class="line">        <span class="type">long</span> n = <span class="built_in">labs</span>(numerator);</span><br><span class="line">        <span class="type">long</span> d = <span class="built_in">labs</span>(denominator);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//如果答案为小数</span></span><br><span class="line">        string ans = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        ans = ans + <span class="built_in">to_string</span>(n / d) + <span class="string">&quot;.&quot;</span>;</span><br><span class="line">        <span class="type">long</span> remain = (n % d) * <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//存储被除数，用于搜索确定循环体</span></span><br><span class="line">        vector&lt;<span class="type">long</span>&gt; v;</span><br><span class="line">        v.<span class="built_in">push_back</span>(remain);          </span><br><span class="line">        <span class="comment">//存储循环位置</span></span><br><span class="line">        <span class="type">int</span> pos = <span class="number">-1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//小数部分</span></span><br><span class="line">        string dem = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="comment">//跳出循环：1.除尽；2.循环</span></span><br><span class="line">        <span class="keyword">while</span>(remain != <span class="number">0</span>)&#123;</span><br><span class="line">            dem += <span class="built_in">to_string</span>(remain / d);</span><br><span class="line">            remain = (remain % d) * <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), remain) != v.<span class="built_in">end</span>())&#123;</span><br><span class="line">                pos = <span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), remain) - v.<span class="built_in">begin</span>();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                v.<span class="built_in">push_back</span>(remain);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//是否循环</span></span><br><span class="line">        <span class="keyword">if</span>(pos != <span class="number">-1</span>)</span><br><span class="line">            ans = ans +dem.<span class="built_in">substr</span>(<span class="number">0</span>, pos) + <span class="string">&quot;(&quot;</span> + dem.<span class="built_in">substr</span>(pos, dem.<span class="built_in">size</span>()-pos) + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ans += dem;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//是否为正数</span></span><br><span class="line">        <span class="keyword">if</span>(!positive)</span><br><span class="line">            ans = <span class="string">&quot;-&quot;</span> + ans;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>思路：</p>
-<ol>
-<li>如果答案是整数，则直接计算返回。</li>
-<li>如果答案是小数<ol>
-<li>先获取整数部分</li>
-<li>小数部分计算方法为 <strong>余数 / 除数</strong> 的值添加到小数部分，之后 <strong>新余数 = 余数 % 除数 * 10</strong>，如此循环。</li>
-<li>直至<ul>
-<li>余数为0（非循环小数）</li>
-<li>余数可以在数组中找到（循环体出现）</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>注意：<ol>
-<li>由于负数在后续运算会添加负号，所以提前取绝对值进行运算。</li>
-<li>INT_MIN在取绝对值时会溢出，所以用long进行存储。</li>
-</ol>
-</li>
-</ol>
+<h1 id="三代码">三、代码</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">fractionToDecimal</span><span class="params">(<span class="type">int</span> numerator, <span class="type">int</span> denominator)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//如果答案为整数则运算返回</span></span><br><span class="line">        <span class="keyword">if</span>((<span class="type">long</span>)numerator % (<span class="type">long</span>)denominator == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="type">long</span> l = (<span class="type">long</span>)numerator / (<span class="type">long</span>)denominator;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">to_string</span>(l);</span><br><span class="line">        &#125;</span><br><span class="line">                    </span><br><span class="line">        <span class="comment">//处理负数</span></span><br><span class="line">        <span class="type">bool</span> positive;</span><br><span class="line">        <span class="keyword">if</span>((numerator&gt;<span class="number">0</span> &amp;&amp; denominator&gt;<span class="number">0</span>) || (numerator&lt;<span class="number">0</span> &amp;&amp; denominator&lt;<span class="number">0</span>))</span><br><span class="line">            positive = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            positive = <span class="literal">false</span>;</span><br><span class="line">        <span class="type">long</span> n = <span class="built_in">labs</span>(numerator);</span><br><span class="line">        <span class="type">long</span> d = <span class="built_in">labs</span>(denominator);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//如果答案为小数</span></span><br><span class="line">        string ans = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        ans = ans + <span class="built_in">to_string</span>(n / d) + <span class="string">&quot;.&quot;</span>;</span><br><span class="line">        <span class="type">long</span> remain = (n % d) * <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//存储被除数，用于搜索确定循环体</span></span><br><span class="line">        vector&lt;<span class="type">long</span>&gt; v;</span><br><span class="line">        v.<span class="built_in">push_back</span>(remain);          </span><br><span class="line">        <span class="comment">//存储循环位置</span></span><br><span class="line">        <span class="type">int</span> pos = <span class="number">-1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//小数部分</span></span><br><span class="line">        string dem = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="comment">//跳出循环：1.除尽；2.循环</span></span><br><span class="line">        <span class="keyword">while</span>(remain != <span class="number">0</span>)&#123;</span><br><span class="line">            dem += <span class="built_in">to_string</span>(remain / d);</span><br><span class="line">            remain = (remain % d) * <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), remain) != v.<span class="built_in">end</span>())&#123;</span><br><span class="line">                pos = <span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), remain) - v.<span class="built_in">begin</span>();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                v.<span class="built_in">push_back</span>(remain);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//是否循环</span></span><br><span class="line">        <span class="keyword">if</span>(pos != <span class="number">-1</span>)</span><br><span class="line">            ans = ans +dem.<span class="built_in">substr</span>(<span class="number">0</span>, pos) + <span class="string">&quot;(&quot;</span> + dem.<span class="built_in">substr</span>(pos, dem.<span class="built_in">size</span>()-pos) + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ans += dem;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//是否为正数</span></span><br><span class="line">        <span class="keyword">if</span>(!positive)</span><br><span class="line">            ans = <span class="string">&quot;-&quot;</span> + ans;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>思路： 1. 如果答案是整数，则直接计算返回。 2. 如果答案是小数 1.
+先获取整数部分 2. 小数部分计算方法为 <strong>余数 / 除数</strong>
+的值添加到小数部分，之后 <strong>新余数 = 余数 % 除数 *
+10</strong>，如此循环。 3. 直至 - 余数为0（非循环小数） -
+余数可以在数组中找到（循环体出现） 3. 注意： 1.
+由于负数在后续运算会添加负号，所以提前取绝对值进行运算。 2.
+INT_MIN在取绝对值时会溢出，所以用long进行存储。</p>
 <blockquote>
-<p><strong>例：1 / 8</strong><br>整数部分：1 / 8 = 0<br>小数部分：<br>余数：1 % 8 <em> 10 = 10<br>小数部分：10 / 8 = 1<br>余数：10 % 8 </em> 10 = 20<br>小数部分：20 / 8 = 2<br>余数：20 % 8 <em> 10 = 40<br>小数部分：40 / 8 = 5<br>余数：40 % 8 = 0（循环结束）<br>∴ 1 / 8 = 0.125<br><br><br><strong>例：1 / 6</strong><br>整数部分：1 / 6 = 0<br>小数部分：<br>余数：1 % 6 </em> 10 = 10<br>数组：10<br>小数部分：10 / 6 = 1<br>余数：10 % 6 <em> 10 = 40<br>数组：10, 40<br>小数部分：40 % 6 </em> 10 = 40<br>40可以在数组中找到，说明进入循环，且从下标为1处开始循环。<br>∴ 1 / 6 = 0.1(6)</p>
+<p><strong>例：1 / 8</strong><br />
+整数部分：1 / 8 = 0<br />
+小数部分：<br />
+余数：1 % 8 * 10 = 10<br />
+小数部分：10 / 8 = 1<br />
+余数：10 % 8 * 10 = 20<br />
+小数部分：20 / 8 = 2<br />
+余数：20 % 8 * 10 = 40<br />
+小数部分：40 / 8 = 5<br />
+余数：40 % 8 = 0（循环结束）<br />
+∴ 1 / 8 = 0.125<br />
+<br> <strong>例：1 / 6</strong><br />
+整数部分：1 / 6 = 0<br />
+小数部分：<br />
+余数：1 % 6 * 10 = 10 数组：10 小数部分：10 / 6 = 1<br />
+余数：10 % 6 * 10 = 40<br />
+数组：10, 40<br />
+小数部分：40 % 6 * 10 = 40<br />
+40可以在数组中找到，说明进入循环，且从下标为1处开始循环。<br />
+∴ 1 / 6 = 0.1(6)</p>
 </blockquote>
 
       
