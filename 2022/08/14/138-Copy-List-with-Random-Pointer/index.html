@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、描述A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list, or null. Construct a deep copy of the list. The deep copy s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="138. Copy List with Random Pointer">
+<meta property="og:url" content="http://example.com/2022/08/14/138-Copy-List-with-Random-Pointer/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、描述A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list, or null. Construct a deep copy of the list. The deep copy s">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/138p1.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/138p2.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/138p3.png">
+<meta property="article:published_time" content="2022-08-14T07:36:51.000Z">
+<meta property="article:modified_time" content="2022-08-14T08:21:15.920Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Hash Table">
+<meta property="article:tag" content="Medium">
+<meta property="article:tag" content="Linked List">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/138p1.png">
+
+
+<link rel="canonical" href="http://example.com/2022/08/14/138-Copy-List-with-Random-Pointer/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/08/14/138-Copy-List-with-Random-Pointer/","path":"2022/08/14/138-Copy-List-with-Random-Pointer/","title":"138. Copy List with Random Pointer"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>138. Copy List with Random Pointer | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">一、描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">二、例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">三、代码</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/14/138-Copy-List-with-Random-Pointer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="138. Copy List with Random Pointer | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          138. Copy List with Random Pointer
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-08-14 15:36:51 / Modified: 16:21:15" itemprop="dateCreated datePublished" datetime="2022-08-14T15:36:51+08:00">2022-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>A linked list of length <code>n</code> is given such that each node contains an additional random pointer, which could point to any node in the list, or <code>null</code>.</p>
+<p>Construct a deep copy of the list. The deep copy should consist of exactly <code>n</code> <strong>brand new</strong> nodes, where each new node has its value set to the value of its corresponding original node. Both the <code>next</code> and <code>random</code> pointer of the new nodes should point to new nodes in the copied list such that the pointers in the original list and copied list represent the same list state. <strong>None of the pointers in the new list should point to nodes in the original list.</strong></p>
+<p>For example, if there are two nodes <code>X</code> and <code>Y</code> in the original list, where <code>X.random --&gt; Y</code>, then for the corresponding two nodes <code>x</code> and <code>y</code> in the copied list, <code>x.random --&gt; y</code>.</p>
+<p>Return <em>the head of the copied linked list</em>.</p>
+<p>The linked list is represented in the input&#x2F;output as a list of <code>n</code> nodes. Each node is represented as a pair of <code>[val, random_index]</code> where:</p>
+<ul>
+<li><code>val</code>: an integer representing Node.val</li>
+<li><code>random_index</code>: the index of the node (range from 0 to n-1) that the random pointer points to, or null if it does not point to any node.</li>
+</ul>
+<p>Your code will <strong>only</strong> be given the head of the original linked list.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/138p1.png"></p>
+<blockquote>
+<p><strong>Input:</strong> head &#x3D; [[7,null],[13,0],[11,4],[10,2],[1,0]]<br><strong>Output:</strong> [[7,null],[13,0],[11,4],[10,2],[1,0]]</p>
+</blockquote>
+<p><strong>Example 2:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/138p2.png"></p>
+<blockquote>
+<p><strong>Input:</strong> head &#x3D; [[1,1],[2,1]]<br><strong>Output:</strong> [[1,1],[2,1]]</p>
+</blockquote>
+<p><strong>Example 3:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/138p3.png"></p>
+<blockquote>
+<p><strong>Input:</strong> head &#x3D; [[3,null],[3,0],[3,null]]<br><strong>Output:</strong> [[3,null],[3,0],[3,null]]</p>
+</blockquote>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>0 &lt;&#x3D; n &lt;&#x3D; 1000</li>
+<li>-10<sup>4</sup> &lt;&#x3D; Node.val &lt;&#x3D; 10<sup>4</sup></li>
+<li>Node.random is null or is pointing to some node in the linked list.</li>
+</ul>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">// Definition for a Node.</span></span><br><span class="line"><span class="comment">class Node &#123;</span></span><br><span class="line"><span class="comment">public:</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    Node* next;</span></span><br><span class="line"><span class="comment">    Node* random;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    Node(int _val) &#123;</span></span><br><span class="line"><span class="comment">        val = _val;</span></span><br><span class="line"><span class="comment">        next = NULL;</span></span><br><span class="line"><span class="comment">        random = NULL;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Node* <span class="title">copyRandomList</span><span class="params">(Node* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        vector&lt;Node*&gt; origin;</span><br><span class="line">        vector&lt;Node*&gt; copy;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; index;</span><br><span class="line">        </span><br><span class="line">        Node* h = head;</span><br><span class="line">        <span class="keyword">while</span>(h != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            origin.<span class="built_in">push_back</span>(h);</span><br><span class="line">            h = h-&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Node* ans = <span class="keyword">new</span> <span class="built_in">Node</span>(head-&gt;val);</span><br><span class="line">        Node* temp = ans;        </span><br><span class="line">        <span class="keyword">while</span>(head -&gt; next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            Node* n = <span class="keyword">new</span> <span class="built_in">Node</span>(head -&gt; next -&gt; val);</span><br><span class="line">            temp -&gt; next = n;</span><br><span class="line">            copy.<span class="built_in">push_back</span>(temp);</span><br><span class="line">            index.<span class="built_in">push_back</span>(<span class="built_in">find</span>(origin.<span class="built_in">begin</span>(), origin.<span class="built_in">end</span>(), head-&gt;random) - origin.<span class="built_in">begin</span>());</span><br><span class="line">            temp = temp -&gt; next;</span><br><span class="line">            head = head -&gt; next;                </span><br><span class="line">        &#125;       </span><br><span class="line">        temp -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">        copy.<span class="built_in">push_back</span>(temp);</span><br><span class="line">        index.<span class="built_in">push_back</span>(<span class="built_in">find</span>(origin.<span class="built_in">begin</span>(), origin.<span class="built_in">end</span>(), head-&gt;random) - origin.<span class="built_in">begin</span>());</span><br><span class="line">        </span><br><span class="line">        temp = ans;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(temp != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(index[i] == copy.<span class="built_in">size</span>())</span><br><span class="line">                temp -&gt; random = <span class="literal">NULL</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                temp -&gt; random = copy[index[i]];</span><br><span class="line">            temp = temp -&gt; next;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>解法来自someone_s：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Node* <span class="title">copyRandomList</span><span class="params">(Node* head)</span> </span>&#123;</span><br><span class="line">        map&lt;Node*, Node*&gt; m;</span><br><span class="line">        <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">        Node* ptr = head;</span><br><span class="line">        <span class="keyword">while</span> (ptr) &#123;</span><br><span class="line">            m[ptr] =<span class="keyword">new</span> <span class="built_in">Node</span>(ptr-&gt;val);</span><br><span class="line">            ptr = ptr-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ptr = head;</span><br><span class="line">        <span class="keyword">while</span> (ptr) &#123;</span><br><span class="line">            m[ptr]-&gt;next = m[ptr-&gt;next];</span><br><span class="line">            m[ptr]-&gt;random = m[ptr-&gt;random];</span><br><span class="line">            ptr = ptr-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m[head];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>回顾：</strong>  </p>
+<ul>
+<li>善于利用 &#x3D;&#x3D;map容器&#x3D;&#x3D; 。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+              <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
+              <a href="/tags/Medium/" rel="tag"># Medium</a>
+              <a href="/tags/Linked-List/" rel="tag"># Linked List</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/14/139-Word-Break/" rel="prev" title="139. Word Break">
+                  <i class="fa fa-chevron-left"></i> 139. Word Break
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/15/146-LRU-Cache/" rel="next" title="146. LRU Cache">
+                  146. LRU Cache <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

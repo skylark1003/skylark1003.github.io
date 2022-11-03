@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、作用__builtin_popcount(x)函数是C++自带的库函数，内部实现是用查表实现的。 作用： 统计数字在二进制下“1”的个数。 二、补充其他的__builtin函数：  __builtin_ffs(x)：返回x的最后一位1是从后向前第几位。 __builtin_clz(x)：返回x的二进制下前导的0的个数。 __builtin_ctz(x)：返回x的二进制下末尾的0的个数。 __b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】C++中的__builtin_popcount函数">
+<meta property="og:url" content="http://example.com/2022/09/03/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-%E4%B8%AD%E7%9A%84-builtin-popcount%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、作用__builtin_popcount(x)函数是C++自带的库函数，内部实现是用查表实现的。 作用： 统计数字在二进制下“1”的个数。 二、补充其他的__builtin函数：  __builtin_ffs(x)：返回x的最后一位1是从后向前第几位。 __builtin_clz(x)：返回x的二进制下前导的0的个数。 __builtin_ctz(x)：返回x的二进制下末尾的0的个数。 __b">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-03T04:41:48.000Z">
+<meta property="article:modified_time" content="2022-09-07T05:30:21.590Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="函数">
+<meta property="article:tag" content="二进制">
+<meta property="article:tag" content="__builtin_popcount">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/09/03/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-%E4%B8%AD%E7%9A%84-builtin-popcount%E5%87%BD%E6%95%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/09/03/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-%E4%B8%AD%E7%9A%84-builtin-popcount%E5%87%BD%E6%95%B0/","path":"2022/09/03/【笔记】C-中的-builtin-popcount函数/","title":"【笔记】C++中的__builtin_popcount函数"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【笔记】C++中的__builtin_popcount函数 | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">一、作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%A1%A5%E5%85%85"><span class="nav-number">2.</span> <span class="nav-text">二、补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BE%8B%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">三、例题</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/03/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-%E4%B8%AD%E7%9A%84-builtin-popcount%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【笔记】C++中的__builtin_popcount函数 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【笔记】C++中的__builtin_popcount函数
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-09-03 12:41:48" itemprop="dateCreated datePublished" datetime="2022-09-03T12:41:48+08:00">2022-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-09-07 13:30:21" itemprop="dateModified" datetime="2022-09-07T13:30:21+08:00">2022-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、作用"><a href="#一、作用" class="headerlink" title="一、作用"></a>一、作用</h1><p><code>__builtin_popcount(x)</code>函数是C++自带的库函数，内部实现是用查表实现的。</p>
+<p><strong>作用：</strong> 统计数字在二进制下“1”的个数。</p>
+<h1 id="二、补充"><a href="#二、补充" class="headerlink" title="二、补充"></a>二、补充</h1><p>其他的__builtin函数：</p>
+<ul>
+<li><code>__builtin_ffs(x)</code>：返回x的最后一位1是从后向前第几位。</li>
+<li><code>__builtin_clz(x)</code>：返回x的二进制下前导的0的个数。</li>
+<li><code>__builtin_ctz(x)</code>：返回x的二进制下末尾的0的个数。</li>
+<li><code>__builtin_popcount(x)</code>：返回x的二进制下1的个数。</li>
+<li><code>__builtin_parity(x)</code>：返回x的二进制下1的个数的奇偶性。</li>
+</ul>
+<h1 id="三、例题"><a href="#三、例题" class="headerlink" title="三、例题"></a>三、例题</h1><p><a target="_blank" rel="noopener" href="https://skylark1003.gitee.io/2022/09/03/338-Counting-Bits/">338. Counting Bits</a><br><a target="_blank" rel="noopener" href="https://skylark1003.gitee.io/2022/09/07/401-Binary-Watch/">401. Binary Watch</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%87%BD%E6%95%B0/" rel="tag"># 函数</a>
+              <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" rel="tag"># 二进制</a>
+              <a href="/tags/builtin-popcount/" rel="tag"># __builtin_popcount</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/03/324-Wiggle-Sort-II/" rel="prev" title="324. Wiggle Sort II">
+                  <i class="fa fa-chevron-left"></i> 324. Wiggle Sort II
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/09/04/345-Reverse-Vowels-of-a-String/" rel="next" title="345. Reverse Vowels of a String">
+                  345. Reverse Vowels of a String <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

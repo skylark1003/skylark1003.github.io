@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1、 演讲比赛程序需求 1.1 比赛规则 学校举行一场演讲比赛，共有12个人参加。比赛共两轮，第一轮为淘汰赛，第二轮为决赛。 比赛方式：分组比赛，每组6个人；选手每次要随机分组，进行比赛 每名选手都有对应的编号，如 10001 ~ 10012  第一轮分为两个小组，每组6个人。 整体按照选手编号进行抽签后顺序演讲。 当小组演讲完后，淘汰组内排名最后的三个选手，前三名晋级，进入下一轮的比赛。 第二轮">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第6阶段 实战基于STL泛化编程的演讲比赛">
+<meta property="og:url" content="http://example.com/2022/07/05/%E7%AC%AC6%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E5%9F%BA%E4%BA%8ESTL%E6%B3%9B%E5%8C%96%E7%BC%96%E7%A8%8B%E7%9A%84%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、 演讲比赛程序需求 1.1 比赛规则 学校举行一场演讲比赛，共有12个人参加。比赛共两轮，第一轮为淘汰赛，第二轮为决赛。 比赛方式：分组比赛，每组6个人；选手每次要随机分组，进行比赛 每名选手都有对应的编号，如 10001 ~ 10012  第一轮分为两个小组，每组6个人。 整体按照选手编号进行抽签后顺序演讲。 当小组演讲完后，淘汰组内排名最后的三个选手，前三名晋级，进入下一轮的比赛。 第二轮">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154762048.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548155966702.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548121881969.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122271773.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122420253.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122510869(1).png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122619712.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548123402593.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548123942072.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548124599641.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548124853576.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548124888578.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548141605742.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548141560164.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548143871202.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548143543475.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548143610682.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548144491984.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548144765146.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548146903960.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548146961550.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548148593215.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548148536395.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548149937860.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548149912863.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548150047975.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548151977242.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548152359604.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548152394715.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548152803116.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548153005042.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548153319587.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154340974.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548153571603.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154674242.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154004738.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154508831.png">
+<meta property="article:published_time" content="2022-07-05T15:37:03.000Z">
+<meta property="article:modified_time" content="2022-07-05T15:47:20.051Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154762048.png">
+
+
+<link rel="canonical" href="http://example.com/2022/07/05/%E7%AC%AC6%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E5%9F%BA%E4%BA%8ESTL%E6%B3%9B%E5%8C%96%E7%BC%96%E7%A8%8B%E7%9A%84%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/07/05/%E7%AC%AC6%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E5%9F%BA%E4%BA%8ESTL%E6%B3%9B%E5%8C%96%E7%BC%96%E7%A8%8B%E7%9A%84%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B/","path":"2022/07/05/第6阶段-实战基于STL泛化编程的演讲比赛/","title":"第6阶段 实战基于STL泛化编程的演讲比赛"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>第6阶段 实战基于STL泛化编程的演讲比赛 | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81-%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B%E7%A8%8B%E5%BA%8F%E9%9C%80%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">1、 演讲比赛程序需求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 比赛规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 程序功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E7%A8%8B%E5%BA%8F%E6%95%88%E6%9E%9C%E5%9B%BE%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 程序效果图：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">2、 项目创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 添加文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81-%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">3、 创建管理类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">3.1创建文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%A4%B4%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 头文件实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E6%BA%90%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 源文件实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81-%E8%8F%9C%E5%8D%95%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">4、 菜单功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%B7%BB%E5%8A%A0%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 添加成员函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E8%8F%9C%E5%8D%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 菜单功能实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E6%B5%8B%E8%AF%95%E8%8F%9C%E5%8D%95%E5%8A%9F%E8%83%BD"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 测试菜单功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">5、 退出功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%8F%90%E4%BE%9B%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%8F%A3"><span class="nav-number">5.1.</span> <span class="nav-text">5.1  提供功能接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%AE%9E%E7%8E%B0%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 实现退出功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD"><span class="nav-number">5.3.</span> <span class="nav-text">5.3测试功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B%E5%8A%9F%E8%83%BD"><span class="nav-number">6.</span> <span class="nav-text">6、演讲比赛功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E5%8A%9F%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 功能分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E5%88%9B%E5%BB%BA%E9%80%89%E6%89%8B%E7%B1%BB"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 创建选手类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-%E6%AF%94%E8%B5%9B"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 比赛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-1-%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7%E6%B7%BB%E5%8A%A0"><span class="nav-number">6.3.1.</span> <span class="nav-text">6.3.1 成员属性添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-2-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%B1%9E%E6%80%A7"><span class="nav-number">6.3.2.</span> <span class="nav-text">6.3.2 初始化属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-3-%E5%88%9B%E5%BB%BA%E9%80%89%E6%89%8B"><span class="nav-number">6.3.3.</span> <span class="nav-text">6.3.3 创建选手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-4-%E5%BC%80%E5%A7%8B%E6%AF%94%E8%B5%9B%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%B7%BB%E5%8A%A0"><span class="nav-number">6.3.4.</span> <span class="nav-text">6.3.4 开始比赛成员函数添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-5-%E6%8A%BD%E7%AD%BE"><span class="nav-number">6.3.5.</span> <span class="nav-text">6.3.5 抽签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-6-%E5%BC%80%E5%A7%8B%E6%AF%94%E8%B5%9B"><span class="nav-number">6.3.6.</span> <span class="nav-text">6.3.6 开始比赛</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-7-%E6%98%BE%E7%A4%BA%E6%AF%94%E8%B5%9B%E5%88%86%E6%95%B0"><span class="nav-number">6.3.7.</span> <span class="nav-text">6.3.7 显示比赛分数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-8-%E7%AC%AC%E4%BA%8C%E8%BD%AE%E6%AF%94%E8%B5%9B"><span class="nav-number">6.3.8.</span> <span class="nav-text">6.3.8 第二轮比赛</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-%E4%BF%9D%E5%AD%98%E5%88%86%E6%95%B0"><span class="nav-number">6.4.</span> <span class="nav-text">6.4 保存分数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81-%E6%9F%A5%E7%9C%8B%E8%AE%B0%E5%BD%95"><span class="nav-number">7.</span> <span class="nav-text">7、 查看记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E8%AF%BB%E5%8F%96%E8%AE%B0%E5%BD%95%E5%88%86%E6%95%B0"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 读取记录分数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E6%9F%A5%E7%9C%8B%E8%AE%B0%E5%BD%95%E5%8A%9F%E8%83%BD"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 查看记录功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 测试功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-bug%E8%A7%A3%E5%86%B3"><span class="nav-number">7.4.</span> <span class="nav-text">7.4 bug解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81-%E6%B8%85%E7%A9%BA%E8%AE%B0%E5%BD%95"><span class="nav-number">8.</span> <span class="nav-text">8、 清空记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-%E6%B8%85%E7%A9%BA%E8%AE%B0%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 清空记录功能实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-%E6%B5%8B%E8%AF%95%E6%B8%85%E7%A9%BA"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 测试清空</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/05/%E7%AC%AC6%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E5%9F%BA%E4%BA%8ESTL%E6%B3%9B%E5%8C%96%E7%BC%96%E7%A8%8B%E7%9A%84%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="第6阶段 实战基于STL泛化编程的演讲比赛 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第6阶段 实战基于STL泛化编程的演讲比赛
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-05 23:37:03 / Modified: 23:47:20" itemprop="dateCreated datePublished" datetime="2022-07-05T23:37:03+08:00">2022-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="1、-演讲比赛程序需求"><a href="#1、-演讲比赛程序需求" class="headerlink" title="1、 演讲比赛程序需求"></a>1、 演讲比赛程序需求</h2><p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154762048.png" alt="1548154762048"></p>
+<h3 id="1-1-比赛规则"><a href="#1-1-比赛规则" class="headerlink" title="1.1 比赛规则"></a>1.1 比赛规则</h3><ul>
+<li>学校举行一场演讲比赛，共有<strong>12个人</strong>参加。<strong>比赛共两轮</strong>，第一轮为淘汰赛，第二轮为决赛。</li>
+<li>比赛方式：<strong>分组比赛，每组6个人</strong>；选手每次要随机分组，进行比赛</li>
+<li>每名选手都有对应的<strong>编号</strong>，如 10001 ~ 10012 </li>
+<li>第一轮分为两个小组，每组6个人。 整体按照选手编号进行<strong>抽签</strong>后顺序演讲。</li>
+<li>当小组演讲完后，淘汰组内排名最后的三个选手，<strong>前三名晋级</strong>，进入下一轮的比赛。</li>
+<li>第二轮为决赛，<strong>前三名胜出</strong></li>
+<li>每轮比赛过后需要<strong>显示晋级选手的信息</strong></li>
+</ul>
+<h3 id="1-2-程序功能"><a href="#1-2-程序功能" class="headerlink" title="1.2 程序功能"></a>1.2 程序功能</h3><ul>
+<li>开始演讲比赛：完成整届比赛的流程，每个比赛阶段需要给用户一个提示，用户按任意键后继续下一个阶段</li>
+<li>查看往届记录：查看之前比赛前三名结果，每次比赛都会记录到文件中，文件用.csv后缀名保存</li>
+<li>清空比赛记录：将文件中数据清空</li>
+<li>退出比赛程序：可以退出当前程序</li>
+</ul>
+<h3 id="1-3-程序效果图："><a href="#1-3-程序效果图：" class="headerlink" title="1.3 程序效果图："></a>1.3 程序效果图：</h3><p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548155966702.png" alt="1548155966702"></p>
+<h2 id="2、-项目创建"><a href="#2、-项目创建" class="headerlink" title="2、 项目创建"></a>2、 项目创建</h2><p>创建项目步骤如下：</p>
+<ul>
+<li>创建新项目</li>
+<li>添加文件</li>
+</ul>
+<h3 id="2-1-创建项目"><a href="#2-1-创建项目" class="headerlink" title="2.1 创建项目"></a>2.1 创建项目</h3><ul>
+<li>打开vs2017后，点击创建新项目，创建新的C++项目</li>
+</ul>
+<p>如图：</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548121881969.png" alt="1548121881969"></p>
+<ul>
+<li>填写项目名称以及选取项目路径，点击确定生成项目</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122271773.png" alt="1548122271773"></p>
+<h3 id="2-2-添加文件"><a href="#2-2-添加文件" class="headerlink" title="2.2 添加文件"></a>2.2 添加文件</h3><ul>
+<li>右键源文件，进行添加文件操作</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122420253.png" alt="1548122420253"></p>
+<ul>
+<li>填写文件名称，点击添加</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122510869(1).png" alt="1548122510869"></p>
+<ul>
+<li>生成文件成功，效果如下图</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548122619712.png" alt="1548122619712"></p>
+<ul>
+<li>至此，项目已创建完毕</li>
+</ul>
+<h2 id="3、-创建管理类"><a href="#3、-创建管理类" class="headerlink" title="3、 创建管理类"></a>3、 创建管理类</h2><p><strong>功能描述：</strong></p>
+<ul>
+<li>提供菜单界面与用户交互</li>
+<li>对演讲比赛流程进行控制</li>
+<li>与文件的读写交互</li>
+</ul>
+<h3 id="3-1创建文件"><a href="#3-1创建文件" class="headerlink" title="3.1创建文件"></a>3.1创建文件</h3><ul>
+<li>在头文件和源文件的文件夹下分别创建speechManager.h 和 speechManager.cpp文件</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548123402593.png" alt="1548123402593"></p>
+<h3 id="3-2-头文件实现"><a href="#3-2-头文件实现" class="headerlink" title="3.2 头文件实现"></a>3.2 头文件实现</h3><p>在speechManager.h中设计管理类</p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//演讲管理类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SpeechManager</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="comment">//构造函数</span></span><br><span class="line">	<span class="built_in">SpeechManager</span>();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//析构函数</span></span><br><span class="line">	~<span class="built_in">SpeechManager</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-源文件实现"><a href="#3-3-源文件实现" class="headerlink" title="3.3 源文件实现"></a>3.3 源文件实现</h3><p>在speechManager.cpp中将构造和析构函数空实现补全</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;speechManager.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">SpeechManager::<span class="built_in">SpeechManager</span>()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SpeechManager::~<span class="built_in">SpeechManager</span>()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>至此演讲管理类以创建完毕</li>
+</ul>
+<h2 id="4、-菜单功能"><a href="#4、-菜单功能" class="headerlink" title="4、 菜单功能"></a>4、 菜单功能</h2><p>功能描述：与用户的沟通界面</p>
+<h3 id="4-1-添加成员函数"><a href="#4-1-添加成员函数" class="headerlink" title="4.1 添加成员函数"></a>4.1 添加成员函数</h3><p>在管理类speechManager.h中添加成员函数  <code>void show_Menu();</code></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548123942072.png" alt="1548123942072"></p>
+<h3 id="4-2-菜单功能实现"><a href="#4-2-菜单功能实现" class="headerlink" title="4.2 菜单功能实现"></a>4.2 菜单功能实现</h3><ul>
+<li>在管理类speechManager.cpp中实现 show_Menu()函数</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::show_Menu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;********************************************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*************  欢迎参加演讲比赛 ************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*************  1.开始演讲比赛  *************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*************  2.查看往届记录  *************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*************  3.清空比赛记录  *************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*************  0.退出比赛程序  *************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;********************************************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-3-测试菜单功能"><a href="#4-3-测试菜单功能" class="headerlink" title="4.3 测试菜单功能"></a>4.3 测试菜单功能</h3><ul>
+<li>在演讲比赛流程管理系统.cpp中测试菜单功能</li>
+</ul>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;speechManager.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	SpeechManager sm;</span><br><span class="line"></span><br><span class="line">	sm.<span class="built_in">show_Menu</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行效果如图：</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548124599641.png" alt="1548124599641"></p>
+<ul>
+<li>菜单界面搭建完毕</li>
+</ul>
+<h2 id="5、-退出功能"><a href="#5、-退出功能" class="headerlink" title="5、 退出功能"></a>5、 退出功能</h2><h3 id="5-1-提供功能接口"><a href="#5-1-提供功能接口" class="headerlink" title="5.1  提供功能接口"></a>5.1  提供功能接口</h3><ul>
+<li>在main函数中提供分支选择，提供每个功能接口</li>
+</ul>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	SpeechManager sm;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> choice = <span class="number">0</span>; <span class="comment">//用来存储用户的选项</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		sm.<span class="built_in">show_Menu</span>();</span><br><span class="line"></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入您的选择： &quot;</span> &lt;&lt; endl;</span><br><span class="line">		cin &gt;&gt; choice; <span class="comment">// 接受用户的选项</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span> (choice)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:  <span class="comment">//开始比赛</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:  <span class="comment">//查看记录</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:  <span class="comment">//清空记录</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:  <span class="comment">//退出系统</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>); <span class="comment">//清屏</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-2-实现退出功能"><a href="#5-2-实现退出功能" class="headerlink" title="5.2 实现退出功能"></a>5.2 实现退出功能</h3><p>在speechManager.h中提供退出系统的成员函数 <code>	void exitSystem();</code></p>
+<p>在speechManager.cpp中提供具体的功能实现</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::exitSystem</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;欢迎下次使用&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-3测试功能"><a href="#5-3测试功能" class="headerlink" title="5.3测试功能"></a>5.3测试功能</h3><p>在main函数分支 0  选项中，调用退出程序的接口</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548124853576.png" alt="1548124853576"></p>
+<p>运行测试效果如图：</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548124888578.png" alt="1548124888578"></p>
+<h2 id="6、演讲比赛功能"><a href="#6、演讲比赛功能" class="headerlink" title="6、演讲比赛功能"></a>6、演讲比赛功能</h2><h3 id="6-1-功能分析"><a href="#6-1-功能分析" class="headerlink" title="6.1 功能分析"></a>6.1 功能分析</h3><p>比赛流程分析：</p>
+<p>抽签 → 开始演讲比赛 → 显示第一轮比赛结果 → </p>
+<p>抽签 → 开始演讲比赛 → 显示前三名结果 → 保存分数</p>
+<h3 id="6-2-创建选手类"><a href="#6-2-创建选手类" class="headerlink" title="6.2 创建选手类"></a>6.2 创建选手类</h3><ul>
+<li>选手类中的属性包含：选手姓名、分数</li>
+<li>头文件中创建 speaker.h文件，并添加代码：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Speaker</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	string m_Name;  <span class="comment">//姓名</span></span><br><span class="line">	<span class="type">double</span> m_Score[<span class="number">2</span>]; <span class="comment">//分数  最多有两轮得分</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-3-比赛"><a href="#6-3-比赛" class="headerlink" title="6.3 比赛"></a>6.3 比赛</h3><h4 id="6-3-1-成员属性添加"><a href="#6-3-1-成员属性添加" class="headerlink" title="6.3.1 成员属性添加"></a>6.3.1 成员属性添加</h4><ul>
+<li>在speechManager.h中添加属性</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//比赛选手 容器  12人</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;v1;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第一轮晋级容器  6人</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;v2;</span><br><span class="line"></span><br><span class="line"><span class="comment">//胜利前三名容器  3人</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;vVictory;</span><br><span class="line"></span><br><span class="line"><span class="comment">//存放编号 以及对应的 具体选手 容器</span></span><br><span class="line">map&lt;<span class="type">int</span>, Speaker&gt; m_Speaker;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="6-3-2-初始化属性"><a href="#6-3-2-初始化属性" class="headerlink" title="6.3.2 初始化属性"></a>6.3.2 初始化属性</h4><ul>
+<li>在speechManager.h中提供开始比赛的的成员函数 <code>void initSpeech();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化属性</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">initSpeech</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现<code>void initSpeech();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::initSpeech</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//容器保证为空</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;v1.<span class="built_in">clear</span>();  </span><br><span class="line">	<span class="keyword">this</span>-&gt;v2.<span class="built_in">clear</span>();</span><br><span class="line">	<span class="keyword">this</span>-&gt;vVictory.<span class="built_in">clear</span>();</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Speaker.<span class="built_in">clear</span>();</span><br><span class="line">	<span class="comment">//初始化比赛轮数</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Index = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>SpeechManager构造函数中调用<code>void initSpeech();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SpeechManager::<span class="built_in">SpeechManager</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//初始化属性</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">initSpeech</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="6-3-3-创建选手"><a href="#6-3-3-创建选手" class="headerlink" title="6.3.3 创建选手"></a>6.3.3 创建选手</h4><ul>
+<li>在speechManager.h中提供开始比赛的的成员函数 <code>void createSpeaker();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化创建12名选手</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">createSpeaker</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现<code>void createSpeaker();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::createSpeaker</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	string nameSeed = <span class="string">&quot;ABCDEFGHIJKL&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nameSeed.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		string name = <span class="string">&quot;选手&quot;</span>;</span><br><span class="line">		name += nameSeed[i];</span><br><span class="line"></span><br><span class="line">		Speaker sp;</span><br><span class="line">		sp.m_Name = name;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			sp.m_Score[i] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//12名选手编号</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;v1.<span class="built_in">push_back</span>(i + <span class="number">10001</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//选手编号 以及对应的选手 存放到map容器中</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;m_Speaker.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(i + <span class="number">10001</span>, sp));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>SpeechManager类的 构造函数中调用<code>void createSpeaker();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SpeechManager::<span class="built_in">SpeechManager</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//初始化属性</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">initSpeech</span>();</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//创建选手</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">createSpeaker</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>测试 在main函数中，可以在创建完管理对象后，使用下列代码测试12名选手初始状态</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (map&lt;<span class="type">int</span>, Speaker&gt;::iterator it = sm.m_Speaker.<span class="built_in">begin</span>(); it != sm.m_Speaker.<span class="built_in">end</span>(); it++)</span><br><span class="line">&#123;</span><br><span class="line">	cout  &lt;&lt; <span class="string">&quot;选手编号：&quot;</span> &lt;&lt; it-&gt;first </span><br><span class="line">          &lt;&lt; <span class="string">&quot; 姓名： &quot;</span> &lt;&lt; it-&gt;second.m_Name </span><br><span class="line">          &lt;&lt; <span class="string">&quot; 成绩： &quot;</span> &lt;&lt; it-&gt;second.m_Score[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548141605742.png" alt="1548141605742"></p>
+<ul>
+<li>测试效果如图：</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548141560164.png" alt="1548141560164"></p>
+<ul>
+<li>测试完毕后，可以将测试代码删除或注释。</li>
+</ul>
+<h4 id="6-3-4-开始比赛成员函数添加"><a href="#6-3-4-开始比赛成员函数添加" class="headerlink" title="6.3.4 开始比赛成员函数添加"></a>6.3.4 开始比赛成员函数添加</h4><ul>
+<li>在speechManager.h中提供开始比赛的的成员函数 <code>void startSpeech();</code></li>
+<li>该函数功能是主要控制比赛的流程</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开始比赛 - 比赛流程控制</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">startSpeech</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中将startSpeech的空实现先写入</li>
+<li>我们可以先将整个比赛的流程 写到函数中</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开始比赛</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::startSpeech</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//第一轮比赛</span></span><br><span class="line">	<span class="comment">//1、抽签</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//2、比赛</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//3、显示晋级结果</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//第二轮比赛</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//1、抽签</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//2、比赛</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//3、显示最终结果</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//4、保存分数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="6-3-5-抽签"><a href="#6-3-5-抽签" class="headerlink" title="6.3.5 抽签"></a>6.3.5 抽签</h4><p><strong>功能描述：</strong></p>
+<ul>
+<li><p>正式比赛前，所有选手的比赛顺序需要打乱，我们只需要将存放选手编号的容器  打乱次序即可</p>
+</li>
+<li><p>在speechManager.h中提供抽签的的成员函数 <code>void speechDraw();</code></p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//抽签</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">speechDraw</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现成员函数 <code>void speechDraw();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::speechDraw</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第 &lt;&lt; &quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Index &lt;&lt; <span class="string">&quot; &gt;&gt; 轮比赛选手正在抽签&quot;</span>&lt;&lt;endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;---------------------&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;抽签后演讲顺序如下：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Index == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">random_shuffle</span>(v1.<span class="built_in">begin</span>(), v1.<span class="built_in">end</span>());</span><br><span class="line">		<span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = v1.<span class="built_in">begin</span>(); it != v1.<span class="built_in">end</span>(); it++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">random_shuffle</span>(v2.<span class="built_in">begin</span>(), v2.<span class="built_in">end</span>());</span><br><span class="line">		<span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = v2.<span class="built_in">begin</span>(); it != v2.<span class="built_in">end</span>(); it++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;---------------------&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在startSpeech比赛流程控制的函数中，调用抽签函数</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548143871202.png" alt="1548143871202"></p>
+<ul>
+<li>在main函数中，分支1选项中，调用开始比赛的接口</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548143543475.png" alt="1548143543475"></p>
+<ul>
+<li>测试</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548143610682.png" alt="1548143610682"></p>
+<h4 id="6-3-6-开始比赛"><a href="#6-3-6-开始比赛" class="headerlink" title="6.3.6 开始比赛"></a>6.3.6 开始比赛</h4><ul>
+<li>在speechManager.h中提供比赛的的成员函数 <code>void speechContest();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//比赛</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">speechContest</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现成员函数 <code>void speechContest();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::speechContest</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;------------- 第&quot;</span>&lt;&lt; <span class="keyword">this</span>-&gt;m_Index &lt;&lt; <span class="string">&quot;轮正式比赛开始：------------- &quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	multimap&lt;<span class="type">double</span>, <span class="type">int</span>, greater&lt;<span class="type">int</span>&gt;&gt; groupScore; <span class="comment">//临时容器，保存key分数 value 选手编号</span></span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> num = <span class="number">0</span>; <span class="comment">//记录人员数，6个为1组</span></span><br><span class="line"></span><br><span class="line">	vector &lt;<span class="type">int</span>&gt;v_Src;   <span class="comment">//比赛的人员容器</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Index == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		v_Src = v1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		v_Src = v2;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//遍历所有参赛选手</span></span><br><span class="line">	<span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = v_Src.<span class="built_in">begin</span>(); it != v_Src.<span class="built_in">end</span>(); it++)</span><br><span class="line">	&#123;</span><br><span class="line">		num++;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//评委打分</span></span><br><span class="line">		deque&lt;<span class="type">double</span>&gt;d;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">double</span> score = (<span class="built_in">rand</span>() % <span class="number">401</span> + <span class="number">600</span>) / <span class="number">10.f</span>;  <span class="comment">// 600 ~ 1000</span></span><br><span class="line">			<span class="comment">//cout &lt;&lt; score &lt;&lt; &quot; &quot;;</span></span><br><span class="line">			d.<span class="built_in">push_back</span>(score);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">sort</span>(d.<span class="built_in">begin</span>(), d.<span class="built_in">end</span>(), <span class="built_in">greater</span>&lt;<span class="type">double</span>&gt;());				<span class="comment">//排序</span></span><br><span class="line">		d.<span class="built_in">pop_front</span>();												<span class="comment">//去掉最高分</span></span><br><span class="line">		d.<span class="built_in">pop_back</span>();												<span class="comment">//去掉最低分</span></span><br><span class="line"></span><br><span class="line">		<span class="type">double</span> sum = <span class="built_in">accumulate</span>(d.<span class="built_in">begin</span>(), d.<span class="built_in">end</span>(), <span class="number">0.0f</span>);				<span class="comment">//获取总分</span></span><br><span class="line">		<span class="type">double</span> avg = sum / (<span class="type">double</span>)d.<span class="built_in">size</span>();									<span class="comment">//获取平均分</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//每个人平均分</span></span><br><span class="line">		<span class="comment">//cout &lt;&lt; &quot;编号： &quot; &lt;&lt; *it  &lt;&lt; &quot; 选手： &quot; &lt;&lt; this-&gt;m_Speaker[*it].m_Name &lt;&lt; &quot; 获取平均分为： &quot; &lt;&lt; avg &lt;&lt; endl;  //打印分数</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;m_Speaker[*it].m_Score[<span class="keyword">this</span>-&gt;m_Index - <span class="number">1</span>] = avg;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//6个人一组，用临时容器保存</span></span><br><span class="line">		groupScore.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(avg, *it));</span><br><span class="line">		<span class="keyword">if</span> (num % <span class="number">6</span> == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;第&quot;</span> &lt;&lt; num / <span class="number">6</span> &lt;&lt; <span class="string">&quot;小组比赛名次：&quot;</span> &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">for</span> (multimap&lt;<span class="type">double</span>, <span class="type">int</span>, greater&lt;<span class="type">int</span>&gt;&gt;::iterator it = groupScore.<span class="built_in">begin</span>(); it != groupScore.<span class="built_in">end</span>(); it++)</span><br><span class="line">			&#123;</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;编号: &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="string">&quot; 姓名： &quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Speaker[it-&gt;second].m_Name &lt;&lt; <span class="string">&quot; 成绩： &quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Speaker[it-&gt;second].m_Score[<span class="keyword">this</span>-&gt;m_Index - <span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">			<span class="comment">//取前三名</span></span><br><span class="line">			<span class="keyword">for</span> (multimap&lt;<span class="type">double</span>, <span class="type">int</span>, greater&lt;<span class="type">int</span>&gt;&gt;::iterator it = groupScore.<span class="built_in">begin</span>(); it != groupScore.<span class="built_in">end</span>() &amp;&amp; count &lt; <span class="number">3</span>; it++, count++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Index == <span class="number">1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					v2.<span class="built_in">push_back</span>((*it).second);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					vVictory.<span class="built_in">push_back</span>((*it).second);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			groupScore.<span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line">			cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;------------- 第&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Index &lt;&lt; <span class="string">&quot;轮比赛完毕  ------------- &quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在startSpeech比赛流程控制的函数中，调用比赛函数</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548144491984.png" alt="1548144491984"></p>
+<ul>
+<li>再次运行代码，测试比赛</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548144765146.png" alt="1548144765146"></p>
+<h4 id="6-3-7-显示比赛分数"><a href="#6-3-7-显示比赛分数" class="headerlink" title="6.3.7 显示比赛分数"></a>6.3.7 显示比赛分数</h4><ul>
+<li>在speechManager.h中提供比赛的的成员函数 <code>void showScore();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示比赛结果</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showScore</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现成员函数 <code>void  showScore();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::showScore</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;---------第&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Index &lt;&lt; <span class="string">&quot;轮晋级选手信息如下：-----------&quot;</span> &lt;&lt; endl;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt;v;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Index == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		v = v2;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		v = vVictory;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = v.<span class="built_in">begin</span>(); it != v.<span class="built_in">end</span>(); it++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;选手编号：&quot;</span> &lt;&lt; *it &lt;&lt; <span class="string">&quot; 姓名： &quot;</span> &lt;&lt; m_Speaker[*it].m_Name &lt;&lt; <span class="string">&quot; 得分： &quot;</span> &lt;&lt; m_Speaker[*it].m_Score[<span class="keyword">this</span>-&gt;m_Index - <span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">show_Menu</span>(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在startSpeech比赛流程控制的函数中，调用显示比赛分数函数</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548146903960.png" alt="1548146903960"></p>
+<ul>
+<li>运行代码，测试效果</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548146961550.png" alt="1548146961550"></p>
+<h4 id="6-3-8-第二轮比赛"><a href="#6-3-8-第二轮比赛" class="headerlink" title="6.3.8 第二轮比赛"></a>6.3.8 第二轮比赛</h4><p>第二轮比赛流程同第一轮，只是比赛的轮是+1，其余流程不变</p>
+<ul>
+<li>在startSpeech比赛流程控制的函数中，加入第二轮的流程</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548148593215.png" alt="1548148593215"></p>
+<p>测试，将整个比赛流程都跑通</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548148536395.png" alt="1548148536395"></p>
+<h3 id="6-4-保存分数"><a href="#6-4-保存分数" class="headerlink" title="6.4 保存分数"></a>6.4 保存分数</h3><p><strong>功能描述：</strong></p>
+<ul>
+<li>将每次演讲比赛的得分记录到文件中</li>
+</ul>
+<p><strong>功能实现：</strong></p>
+<ul>
+<li>在speechManager.h中添加保存记录的成员函数 <code>void saveRecord();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//保存记录</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">saveRecord</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现成员函数 <code>void saveRecord();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::saveRecord</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ofstream ofs;</span><br><span class="line">	ofs.<span class="built_in">open</span>(<span class="string">&quot;speech.csv&quot;</span>, ios::out | ios::app); <span class="comment">// 用输出的方式打开文件  -- 写文件</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//将每个人数据写入到文件中</span></span><br><span class="line">	<span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = vVictory.<span class="built_in">begin</span>(); it != vVictory.<span class="built_in">end</span>(); it++)</span><br><span class="line">	&#123;</span><br><span class="line">		ofs &lt;&lt; *it &lt;&lt; <span class="string">&quot;,&quot;</span></span><br><span class="line">			&lt;&lt; m_Speaker[*it].m_Score[<span class="number">1</span>] &lt;&lt; <span class="string">&quot;,&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	ofs &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//关闭文件</span></span><br><span class="line">	ofs.<span class="built_in">close</span>();</span><br><span class="line">    </span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;记录已经保存&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在startSpeech比赛流程控制的函数中，最后调用保存记录分数函数</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548149937860.png" alt="1548149937860"></p>
+<ul>
+<li>测试，整个比赛完毕后记录保存情况</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548149912863.png" alt="1548149912863"></p>
+<p>利用记事本打开文件 speech.csv，里面保存了前三名选手的编号以及得分</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548150047975.png" alt="1548150047975"></p>
+<p>至此，整个演讲比赛功能制作完毕！</p>
+<h2 id="7、-查看记录"><a href="#7、-查看记录" class="headerlink" title="7、 查看记录"></a>7、 查看记录</h2><h3 id="7-1-读取记录分数"><a href="#7-1-读取记录分数" class="headerlink" title="7.1 读取记录分数"></a>7.1 读取记录分数</h3><ul>
+<li>在speechManager.h中添加保存记录的成员函数 <code>void loadRecord();</code></li>
+<li>添加判断文件是否为空的标志  <code>bool fileIsEmpty;</code></li>
+<li>添加往届记录的容器<code>map&lt;int, vector&lt;string&gt;&gt; m_Record;</code></li>
+</ul>
+<p>其中m_Record 中的key代表第几届，value记录具体的信息</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取记录</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">loadRecord</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//文件为空的标志</span></span><br><span class="line"><span class="type">bool</span> fileIsEmpty;</span><br><span class="line"></span><br><span class="line"><span class="comment">//往届记录</span></span><br><span class="line">map&lt;<span class="type">int</span>, vector&lt;string&gt;&gt; m_Record;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现成员函数 <code>void loadRecord();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::loadRecord</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">ifstream <span class="title">ifs</span><span class="params">(<span class="string">&quot;speech.csv&quot;</span>, ios::in)</span></span>; <span class="comment">//输入流对象 读取文件</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!ifs.<span class="built_in">is_open</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;fileIsEmpty = <span class="literal">true</span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;文件不存在！&quot;</span> &lt;&lt; endl;</span><br><span class="line">		ifs.<span class="built_in">close</span>();</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	ifs &gt;&gt; ch;</span><br><span class="line">	<span class="keyword">if</span> (ifs.<span class="built_in">eof</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;文件为空!&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">this</span>-&gt;fileIsEmpty = <span class="literal">true</span>;</span><br><span class="line">		ifs.<span class="built_in">close</span>();</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//文件不为空</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;fileIsEmpty = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">	ifs.<span class="built_in">putback</span>(ch); <span class="comment">//读取的单个字符放回去</span></span><br><span class="line"></span><br><span class="line">	string data;</span><br><span class="line">	<span class="type">int</span> index = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (ifs &gt;&gt; data)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//cout &lt;&lt; data &lt;&lt; endl;</span></span><br><span class="line">		vector&lt;string&gt;v;</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> pos = <span class="number">-1</span>;</span><br><span class="line">		<span class="type">int</span> start = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			pos = data.<span class="built_in">find</span>(<span class="string">&quot;,&quot;</span>, start); <span class="comment">//从0开始查找 &#x27;,&#x27;</span></span><br><span class="line">			<span class="keyword">if</span> (pos == <span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">break</span>; <span class="comment">//找不到break返回</span></span><br><span class="line">			&#125;</span><br><span class="line">			string tmp = data.<span class="built_in">substr</span>(start, pos - start); <span class="comment">//找到了,进行分割 参数1 起始位置，参数2 截取长度</span></span><br><span class="line">			v.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">			start = pos + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>-&gt;m_Record.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(index, v));</span><br><span class="line">		index++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ifs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在SpeechManager构造函数中调用获取往届记录函数</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548151977242.png" alt="1548151977242"></p>
+<h3 id="7-2-查看记录功能"><a href="#7-2-查看记录功能" class="headerlink" title="7.2 查看记录功能"></a>7.2 查看记录功能</h3><ul>
+<li>在speechManager.h中添加保存记录的成员函数 <code>void showRecord();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示往届得分</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showRecord</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现成员函数 <code>void showRecord();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::showRecord</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;m_Record.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;第&quot;</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">&quot;届 &quot;</span> &lt;&lt;</span><br><span class="line">			<span class="string">&quot;冠军编号：&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Record[i][<span class="number">0</span>] &lt;&lt; <span class="string">&quot; 得分：&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Record[i][<span class="number">1</span>] &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">			<span class="string">&quot;亚军编号：&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Record[i][<span class="number">2</span>] &lt;&lt; <span class="string">&quot; 得分：&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Record[i][<span class="number">3</span>] &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">			<span class="string">&quot;季军编号：&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Record[i][<span class="number">4</span>] &lt;&lt; <span class="string">&quot; 得分：&quot;</span> &lt;&lt; <span class="keyword">this</span>-&gt;m_Record[i][<span class="number">5</span>] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7-3-测试功能"><a href="#7-3-测试功能" class="headerlink" title="7.3 测试功能"></a>7.3 测试功能</h3><p>在main函数分支 2  选项中，调用查看记录的接口</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548152359604.png" alt="1548152359604"></p>
+<p>显示效果如图：（本次测试添加了4条记录）</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548152394715.png" alt="1548152394715"></p>
+<h3 id="7-4-bug解决"><a href="#7-4-bug解决" class="headerlink" title="7.4 bug解决"></a>7.4 bug解决</h3><p>目前程序中有几处bug未解决：</p>
+<ol>
+<li>查看往届记录，若文件不存在或为空，并未提示</li>
+</ol>
+<p>解决方式：在showRecord函数中，开始判断文件状态并加以判断</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548152803116.png" alt="1548152803116"></p>
+<ol start="2">
+<li>若记录为空或不存在，比完赛后依然提示记录为空</li>
+</ol>
+<p>解决方式：saveRecord中更新文件为空的标志</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548153005042.png" alt="1548153005042"></p>
+<ol start="3">
+<li>比完赛后查不到本届比赛的记录，没有实时更新</li>
+</ol>
+<p>解决方式：比赛完毕后，所有数据重置</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548153319587.png" alt="1548153319587"></p>
+<ol start="4">
+<li>在初始化时，没有初始化记录容器</li>
+</ol>
+<p>解决方式：initSpeech中添加 初始化记录容器</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154340974.png" alt="1548154340974"></p>
+<ol start="5">
+<li>每次记录都是一样的</li>
+</ol>
+<p>解决方式：在main函数一开始 添加随机数种子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">srand</span>((<span class="type">unsigned</span> <span class="type">int</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<p>所有bug解决后 测试：</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548153571603.png" alt="1548153571603"></p>
+<h2 id="8、-清空记录"><a href="#8、-清空记录" class="headerlink" title="8、 清空记录"></a>8、 清空记录</h2><h3 id="8-1-清空记录功能实现"><a href="#8-1-清空记录功能实现" class="headerlink" title="8.1 清空记录功能实现"></a>8.1 清空记录功能实现</h3><ul>
+<li>在speechManager.h中添加保存记录的成员函数 <code>void clearRecord();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//清空记录</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">clearRecord</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在speechManager.cpp中实现成员函数 <code>void clearRecord();</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">SpeechManager::clearRecord</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;确认清空？&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;1、确认&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;2、返回&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> select = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; select;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (select == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//打开模式 ios::trunc 如果存在删除文件并重新创建</span></span><br><span class="line">		<span class="function">ofstream <span class="title">ofs</span><span class="params">(<span class="string">&quot;speech.csv&quot;</span>, ios::trunc)</span></span>;</span><br><span class="line">		ofs.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//初始化属性</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;<span class="built_in">initSpeech</span>();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//创建选手</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;<span class="built_in">createSpeaker</span>();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//获取往届记录</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;<span class="built_in">loadRecord</span>();</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;清空成功！&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-2-测试清空"><a href="#8-2-测试清空" class="headerlink" title="8.2 测试清空"></a>8.2 测试清空</h3><p>在main函数分支 3  选项中，调用清空比赛记录的接口</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154674242.png" alt="1548154674242"></p>
+<p>运行程序，测试清空记录：</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154004738.png" alt="1548154004738"></p>
+<p>speech.csv中记录也为空</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1548154508831.png" alt="1548154508831"></p>
+<ul>
+<li>至此本案例结束！ <code>^_^</code></li>
+</ul>
+<hr>
+<p><strong>以上内容均转载自黑马程序员C++资料讲义，用于今后随时查阅和回顾。</strong><br><strong>可以<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411b73Z">点击此处</a>观看完整视频教程</strong></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/05/%E7%AC%AC5%E9%98%B6%E6%AE%B5-C-%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B/" rel="prev" title="第5阶段 C++提高编程">
+                  <i class="fa fa-chevron-left"></i> 第5阶段 C++提高编程
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/05/%E7%AC%AC7%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6/" rel="next" title="第7阶段 实战机房预约">
+                  第7阶段 实战机房预约 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

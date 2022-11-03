@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、描述Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses. I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="166. Fraction to Recurring Decimal">
+<meta property="og:url" content="http://example.com/2022/08/18/166-Fraction-to-Recurring-Decimal/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、描述Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses. I">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-18T07:17:27.000Z">
+<meta property="article:modified_time" content="2022-08-18T08:57:32.795Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="String">
+<meta property="article:tag" content="Hash Table">
+<meta property="article:tag" content="Medium">
+<meta property="article:tag" content="Math">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/08/18/166-Fraction-to-Recurring-Decimal/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/08/18/166-Fraction-to-Recurring-Decimal/","path":"2022/08/18/166-Fraction-to-Recurring-Decimal/","title":"166. Fraction to Recurring Decimal"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>166. Fraction to Recurring Decimal | Hexo</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">一、描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">二、例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">三、代码</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/18/166-Fraction-to-Recurring-Decimal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="166. Fraction to Recurring Decimal | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          166. Fraction to Recurring Decimal
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-08-18 15:17:27 / Modified: 16:57:32" itemprop="dateCreated datePublished" datetime="2022-08-18T15:17:27+08:00">2022-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given two integers representing the <code>numerator</code> and <code>denominator</code> of a fraction, return <em>the fraction in string format</em>.</p>
+<p>If the fractional part is repeating, enclose the repeating part in parentheses.</p>
+<p>If multiple answers are possible, return <strong>any of them</strong>.</p>
+<p>It is <strong>guaranteed</strong> that the length of the answer string is less than 104 for all the given inputs.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> numerator &#x3D; 1, denominator &#x3D; 2<br><strong>Output:</strong> “0.5”</p>
+</blockquote>
+<p><strong>Example 2:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> numerator &#x3D; 2, denominator &#x3D; 1<br><strong>Output:</strong> “2”</p>
+</blockquote>
+<p><strong>Example 3:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> numerator &#x3D; 4, denominator &#x3D; 333<br><strong>Output:</strong> “0.(012)”</p>
+</blockquote>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>-2<sup>31</sup> &lt;&#x3D; numerator, denominator &lt;&#x3D; 2<sup>31</sup> - 1</li>
+<li>denominator !&#x3D; 0</li>
+</ul>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">fractionToDecimal</span><span class="params">(<span class="type">int</span> numerator, <span class="type">int</span> denominator)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//如果答案为整数则运算返回</span></span><br><span class="line">        <span class="keyword">if</span>((<span class="type">long</span>)numerator % (<span class="type">long</span>)denominator == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="type">long</span> l = (<span class="type">long</span>)numerator / (<span class="type">long</span>)denominator;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">to_string</span>(l);</span><br><span class="line">        &#125;</span><br><span class="line">                    </span><br><span class="line">        <span class="comment">//处理负数</span></span><br><span class="line">        <span class="type">bool</span> positive;</span><br><span class="line">        <span class="keyword">if</span>((numerator&gt;<span class="number">0</span> &amp;&amp; denominator&gt;<span class="number">0</span>) || (numerator&lt;<span class="number">0</span> &amp;&amp; denominator&lt;<span class="number">0</span>))</span><br><span class="line">            positive = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            positive = <span class="literal">false</span>;</span><br><span class="line">        <span class="type">long</span> n = <span class="built_in">labs</span>(numerator);</span><br><span class="line">        <span class="type">long</span> d = <span class="built_in">labs</span>(denominator);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//如果答案为小数</span></span><br><span class="line">        string ans = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        ans = ans + <span class="built_in">to_string</span>(n / d) + <span class="string">&quot;.&quot;</span>;</span><br><span class="line">        <span class="type">long</span> remain = (n % d) * <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//存储被除数，用于搜索确定循环体</span></span><br><span class="line">        vector&lt;<span class="type">long</span>&gt; v;</span><br><span class="line">        v.<span class="built_in">push_back</span>(remain);          </span><br><span class="line">        <span class="comment">//存储循环位置</span></span><br><span class="line">        <span class="type">int</span> pos = <span class="number">-1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//小数部分</span></span><br><span class="line">        string dem = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="comment">//跳出循环：1.除尽；2.循环</span></span><br><span class="line">        <span class="keyword">while</span>(remain != <span class="number">0</span>)&#123;</span><br><span class="line">            dem += <span class="built_in">to_string</span>(remain / d);</span><br><span class="line">            remain = (remain % d) * <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), remain) != v.<span class="built_in">end</span>())&#123;</span><br><span class="line">                pos = <span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), remain) - v.<span class="built_in">begin</span>();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                v.<span class="built_in">push_back</span>(remain);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//是否循环</span></span><br><span class="line">        <span class="keyword">if</span>(pos != <span class="number">-1</span>)</span><br><span class="line">            ans = ans +dem.<span class="built_in">substr</span>(<span class="number">0</span>, pos) + <span class="string">&quot;(&quot;</span> + dem.<span class="built_in">substr</span>(pos, dem.<span class="built_in">size</span>()-pos) + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ans += dem;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//是否为正数</span></span><br><span class="line">        <span class="keyword">if</span>(!positive)</span><br><span class="line">            ans = <span class="string">&quot;-&quot;</span> + ans;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>思路：</p>
+<ol>
+<li>如果答案是整数，则直接计算返回。</li>
+<li>如果答案是小数<ol>
+<li>先获取整数部分</li>
+<li>小数部分计算方法为 <strong>余数 &#x2F; 除数</strong> 的值添加到小数部分，之后 <strong>新余数 &#x3D; 余数 % 除数 * 10</strong>，如此循环。</li>
+<li>直至<ul>
+<li>余数为0（非循环小数）</li>
+<li>余数可以在数组中找到（循环体出现）</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>注意：<ol>
+<li>由于负数在后续运算会添加负号，所以提前取绝对值进行运算。</li>
+<li>INT_MIN在取绝对值时会溢出，所以用long进行存储。</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p><strong>例：1 &#x2F; 8</strong><br>整数部分：1 &#x2F; 8 &#x3D; 0<br>小数部分：<br>余数：1 % 8 * 10 &#x3D; 10<br>小数部分：10 &#x2F; 8 &#x3D; 1<br>余数：10 % 8 * 10 &#x3D; 20<br>小数部分：20 &#x2F; 8 &#x3D; 2<br>余数：20 % 8 * 10 &#x3D; 40<br>小数部分：40 &#x2F; 8 &#x3D; 5<br>余数：40 % 8 &#x3D; 0（循环结束）<br>∴ 1 &#x2F; 8 &#x3D; 0.125<br><br><br><strong>例：1 &#x2F; 6</strong><br>整数部分：1 &#x2F; 6 &#x3D; 0<br>小数部分：<br>余数：1 % 6 * 10 &#x3D; 10<br>数组：10<br>小数部分：10 &#x2F; 6 &#x3D; 1<br>余数：10 % 6 * 10 &#x3D; 40<br>数组：10, 40<br>小数部分：40 % 6 * 10 &#x3D; 40<br>40可以在数组中找到，说明进入循环，且从下标为1处开始循环。<br>∴ 1 &#x2F; 6 &#x3D; 0.1(6)</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+              <a href="/tags/String/" rel="tag"># String</a>
+              <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
+              <a href="/tags/Medium/" rel="tag"># Medium</a>
+              <a href="/tags/Math/" rel="tag"># Math</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/18/162-Find-Peak-Element/" rel="prev" title="162. Find Peak Element">
+                  <i class="fa fa-chevron-left"></i> 162. Find Peak Element
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/19/183-Customers-Who-Never-Order/" rel="next" title="183. Customers Who Never Order">
+                  183. Customers Who Never Order <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
