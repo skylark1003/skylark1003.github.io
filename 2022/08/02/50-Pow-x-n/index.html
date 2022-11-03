@@ -18,12 +18,12 @@
   
   
   <title>50. Pow(x, n) | 雀栎</title>
-  <meta name="description" content="一、描述 Implement pow(x, n), which calculates x raised to the power n (i.e., xn). 二、例子 Example 1:  Input: x &#x3D; 2.00000, n &#x3D; 10 Output: 1024.00000  Example 2:  Input: x &#x3D; 2.10000, n &#x3D; 3 Output:">
+  <meta name="description" content="一、描述Implement pow(x, n), which calculates x raised to the power n (i.e., xn). 二、例子Example 1:  Input: x &#x3D; 2.00000, n &#x3D; 10Output: 1024.00000  Example 2:  Input: x &#x3D; 2.10000, n &#x3D; 3Output: 9.26100  Exampl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="50. Pow(x, n)">
 <meta property="og:url" content="http://example.com/2022/08/02/50-Pow-x-n/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Implement pow(x, n), which calculates x raised to the power n (i.e., xn). 二、例子 Example 1:  Input: x &#x3D; 2.00000, n &#x3D; 10 Output: 1024.00000  Example 2:  Input: x &#x3D; 2.10000, n &#x3D; 3 Output:">
+<meta property="og:description" content="一、描述Implement pow(x, n), which calculates x raised to the power n (i.e., xn). 二、例子Example 1:  Input: x &#x3D; 2.00000, n &#x3D; 10Output: 1024.00000  Example 2:  Input: x &#x3D; 2.10000, n &#x3D; 3Output: 9.26100  Exampl">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-02T07:11:59.000Z">
 <meta property="article:modified_time" content="2022-08-02T08:01:59.418Z">
@@ -322,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -373,7 +373,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/02/50-Pow-x-n/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 166(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 162(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -383,26 +383,18 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Implement <code>pow(x, n)</code>, which calculates <code>x</code>
-raised to the power <code>n</code> (i.e., x<sup>n</sup>).</p>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Implement <code>pow(x, n)</code>, which calculates <code>x</code> raised to the power <code>n</code> (i.e., x<sup>n</sup>).</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> x = 2.00000, n = 10<br />
-<strong>Output:</strong> 1024.00000</p>
+<p><strong>Input:</strong> x = 2.00000, n = 10<br><strong>Output:</strong> 1024.00000</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> x = 2.10000, n = 3<br />
-<strong>Output:</strong> 9.26100</p>
+<p><strong>Input:</strong> x = 2.10000, n = 3<br><strong>Output:</strong> 9.26100</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> x = 2.00000, n = -2<br />
-<strong>Output:</strong> 0.25000<br />
-<strong>Explanation:</strong> 2-<sup>2</sup> = 1/2<sup>2</sup> = 1/4 =
-0.25</p>
+<p><strong>Input:</strong> x = 2.00000, n = -2<br><strong>Output:</strong> 0.25000<br><strong>Explanation:</strong> 2-<sup>2</sup> = 1/2<sup>2</sup> = 1/4 = 0.25</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -410,10 +402,7 @@ raised to the power <code>n</code> (i.e., x<sup>n</sup>).</p>
 <li>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup>-1</li>
 <li>-10<sup>4</sup> &lt;= xn &lt;= 10<sup>4</sup></li>
 </ul>
-<h1 id="三代码">三、代码</h1>
-<p>解法来自Ajna： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">myPow</span><span class="params">(<span class="type">double</span> x, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">double</span> ans = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//任何一个n可以拆成2的指数形式</span></span><br><span class="line">        <span class="comment">//例如：pow(x ,13) == pow(x, 1) * pow(x, 4) * pow(x, 8)</span></span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n % <span class="number">2</span>)</span><br><span class="line">            <span class="comment">//n为+，则*  n为-，则/</span></span><br><span class="line">                ans = n &gt; <span class="number">0</span> ? ans * x : ans / x;</span><br><span class="line">            x *= x;</span><br><span class="line">            n /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure> <strong>类似：</strong><a
-target="_blank" rel="noopener" href="https://skylark1003.gitee.io/2022/07/24/69-Sqrt-x/">69.
-Sqrt(x)</a></p>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>解法来自Ajna：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">myPow</span><span class="params">(<span class="type">double</span> x, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">double</span> ans = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//任何一个n可以拆成2的指数形式</span></span><br><span class="line">        <span class="comment">//例如：pow(x ,13) == pow(x, 1) * pow(x, 4) * pow(x, 8)</span></span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n % <span class="number">2</span>)</span><br><span class="line">            <span class="comment">//n为+，则*  n为-，则/</span></span><br><span class="line">                ans = n &gt; <span class="number">0</span> ? ans * x : ans / x;</span><br><span class="line">            x *= x;</span><br><span class="line">            n /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br><strong>类似：</strong><a target="_blank" rel="noopener" href="https://skylark1003.gitee.io/2022/07/24/69-Sqrt-x/">69. Sqrt(x)</a></p>
 
       
     </div>

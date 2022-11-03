@@ -18,13 +18,16 @@
   
   
   <title>141. Linked List Cycle | 雀栎</title>
-  <meta name="description" content="一、描述 Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continu">
+  <meta name="description" content="一、描述Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously">
 <meta property="og:type" content="article">
 <meta property="og:title" content="141. Linked List Cycle">
 <meta property="og:url" content="http://example.com/2022/08/01/141-Linked-List-Cycle/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continu">
+<meta property="og:description" content="一、描述Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p1.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p2.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p3.png">
 <meta property="article:published_time" content="2022-08-01T03:44:36.000Z">
 <meta property="article:modified_time" content="2022-08-01T05:18:50.381Z">
 <meta property="article:author" content="雀栎">
@@ -34,6 +37,7 @@
 <meta property="article:tag" content="Two Pointers">
 <meta property="article:tag" content="Linked List">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/01/141-Linked-List-Cycle/index.html">
   
@@ -322,7 +326,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -373,7 +377,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/01/141-Linked-List-Cycle/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 282(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 276(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -383,54 +387,31 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given head, the <code>head</code> of a linked list, determine if the
-linked list has a cycle in it.</p>
-<p>There is a cycle in a linked list if there is some node in the list
-that can be reached again by continuously following the
-<code>next</code> pointer. Internally, <code>pos</code> is used to
-denote the index of the node that tail's <code>next</code> pointer is
-connected to. <strong>Note that <code>pos</code> is not passed as a
-parameter.</strong></p>
-<p>Return <code>true</code> <em>if there is a cycle in the linked
-list</em>. Otherwise, return <code>false</code>.</p>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p1.png" /></p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given head, the <code>head</code> of a linked list, determine if the linked list has a cycle in it.</p>
+<p>There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the <code>next</code> pointer. Internally, <code>pos</code> is used to denote the index of the node that tail’s <code>next</code> pointer is connected to. <strong>Note that <code>pos</code> is not passed as a parameter.</strong></p>
+<p>Return <code>true</code> <em>if there is a cycle in the linked list</em>. Otherwise, return <code>false</code>.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p1.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> head = [3,2,0,-4], pos = 1<br />
-<strong>Output:</strong> true<br />
-<strong>Explanation:</strong> There is a cycle in the linked list, where
-the tail connects to the 1st node (0-indexed).</p>
+<p><strong>Input:</strong> head = [3,2,0,-4], pos = 1<br><strong>Output:</strong> true<br><strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p2.png" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p2.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> head = [1,2], pos = 0<br />
-<strong>Output:</strong> true<br />
-<strong>Explanation:</strong> There is a cycle in the linked list, where
-the tail connects to the 0th node.</p>
+<p><strong>Input:</strong> head = [1,2], pos = 0<br><strong>Output:</strong> true<br><strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 0th node.</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p3.png" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/141p3.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> head = [1], pos = -1<br />
-<strong>Output:</strong> false<br />
-<strong>Explanation:</strong> There is no cycle in the linked list.</p>
+<p><strong>Input:</strong> head = [1], pos = -1<br><strong>Output:</strong> false<br><strong>Explanation:</strong> There is no cycle in the linked list.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li>The number of the nodes in the list is in the range [0,
-10<sup>4</sup>].</li>
+<li>The number of the nodes in the list is in the range [0, 10<sup>4</sup>].</li>
 <li>-10<sup>5</sup> &lt;= Node.val &lt;= 10<sup>5</sup></li>
 <li>pos is -1 or a valid index in the linked-list.</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        vector&lt;ListNode*&gt; v;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="literal">NULL</span>)&#123;           </span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), head) != v.<span class="built_in">end</span>()) </span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                v.<span class="built_in">push_back</span>(head);</span><br><span class="line">                head = head -&gt; next;</span><br><span class="line">            &#125;                </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), head) != v.<span class="built_in">end</span>()) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        vector&lt;ListNode*&gt; v;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="literal">NULL</span>)&#123;           </span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), head) != v.<span class="built_in">end</span>()) </span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                v.<span class="built_in">push_back</span>(head);</span><br><span class="line">                head = head -&gt; next;</span><br><span class="line">            &#125;                </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), head) != v.<span class="built_in">end</span>()) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">

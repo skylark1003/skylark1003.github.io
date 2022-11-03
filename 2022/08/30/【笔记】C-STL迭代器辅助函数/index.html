@@ -18,12 +18,12 @@
   
   
   <title>【笔记】C++ STL迭代器辅助函数 | 雀栎</title>
-  <meta name="description" content="迭代器辅助函数 功能     advance(it, n) it 表示某个迭代器，n 为整数。该函数的功能是将 it 迭代器前进或后退 n 个位置。   distance(first, last) first 和 last 都是迭代器，该函数的功能是计算 first 和 last 之间的距离。   begin(cont) cont 表">
+  <meta name="description" content="迭代器辅助函数 功能     advance(it, n) it 表示某个迭代器，n 为整数。该函数的功能是将 it 迭代器前进或后退 n 个位置。   distance(first, last) first 和 last 都是迭代器，该函数的功能是计算 first 和 last 之间的距离。   begin(cont) cont 表示某个容器，该函数可以返回一个指向 cont 容器中第一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【笔记】C++ STL迭代器辅助函数">
 <meta property="og:url" content="http://example.com/2022/08/30/%E3%80%90%E7%AC%94%E8%AE%B0%E3%80%91C-STL%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="迭代器辅助函数 功能     advance(it, n) it 表示某个迭代器，n 为整数。该函数的功能是将 it 迭代器前进或后退 n 个位置。   distance(first, last) first 和 last 都是迭代器，该函数的功能是计算 first 和 last 之间的距离。   begin(cont) cont 表">
+<meta property="og:description" content="迭代器辅助函数 功能     advance(it, n) it 表示某个迭代器，n 为整数。该函数的功能是将 it 迭代器前进或后退 n 个位置。   distance(first, last) first 和 last 都是迭代器，该函数的功能是计算 first 和 last 之间的距离。   begin(cont) cont 表示某个容器，该函数可以返回一个指向 cont 容器中第一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-30T07:21:21.000Z">
 <meta property="article:modified_time" content="2022-08-30T07:25:08.021Z">
@@ -381,54 +381,42 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+        <div class="table-container">
+<table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">迭代器辅助函数</th>
-<th style="text-align: center;">功能</th>
+<tr>
+<th style="text-align:center">迭代器辅助函数</th>
+<th style="text-align:center">功能</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;"><code>advance(it, n)</code></td>
-<td style="text-align: center;">it 表示某个迭代器，n
-为整数。该函数的功能是将 it 迭代器前进或后退 n 个位置。</td>
+<tr>
+<td style="text-align:center"><code>advance(it, n)</code></td>
+<td style="text-align:center">it 表示某个迭代器，n 为整数。该函数的功能是将 it 迭代器前进或后退 n 个位置。</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><code>distance(first, last)</code></td>
-<td style="text-align: center;">first 和 last
-都是迭代器，该函数的功能是计算 first 和 last 之间的距离。</td>
+<tr>
+<td style="text-align:center"><code>distance(first, last)</code></td>
+<td style="text-align:center">first 和 last 都是迭代器，该函数的功能是计算 first 和 last 之间的距离。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><code>begin(cont)</code></td>
-<td style="text-align: center;">cont
-表示某个容器，该函数可以返回一个指向 cont
-容器中第一个元素的迭代器。</td>
+<tr>
+<td style="text-align:center"><code>begin(cont)</code></td>
+<td style="text-align:center">cont 表示某个容器，该函数可以返回一个指向 cont 容器中第一个元素的迭代器。</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><code>end(cont)</code></td>
-<td style="text-align: center;">cont
-表示某个容器，该函数可以返回一个指向 cont
-容器中最后一个元素之后位置的迭代器。</td>
+<tr>
+<td style="text-align:center"><code>end(cont)</code></td>
+<td style="text-align:center">cont 表示某个容器，该函数可以返回一个指向 cont 容器中最后一个元素之后位置的迭代器。</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><code>prev(it)</code></td>
-<td style="text-align: center;">it
-为指定的迭代器，该函数默认可以返回一个指向上一个位置处的迭代器。注意，it
-至少为双向迭代器。</td>
+<tr>
+<td style="text-align:center"><code>prev(it)</code></td>
+<td style="text-align:center">it 为指定的迭代器，该函数默认可以返回一个指向上一个位置处的迭代器。注意，it 至少为双向迭代器。</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><code>next(it)</code></td>
-<td style="text-align: center;">it
-为指定的迭代器，该函数默认可以返回一个指向下一个位置处的迭代器。注意，it
-最少为前向迭代器。</td>
+<tr>
+<td style="text-align:center"><code>next(it)</code></td>
+<td style="text-align:center">it 为指定的迭代器，该函数默认可以返回一个指向下一个位置处的迭代器。注意，it 最少为前向迭代器。</td>
 </tr>
 </tbody>
 </table>
+</div>
 
       
     </div>
