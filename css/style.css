@@ -150,6 +150,7 @@ pre,
 samp {
   font-family: monospace,monospace;
   font-size: 1em;
+  font-weight: 600;
 }
 
 button,
@@ -369,7 +370,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
   color: inherit;
 }
@@ -1951,6 +1952,8 @@ tbody.collapse.in {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+  font-family: 华文中宋;
+  font-size: 16px;
 }
 
 .nav:before,
@@ -3368,6 +3371,8 @@ svg {
 
 .text-dark {
   color: #333 !important;
+  font-family: 方正小标宋简体;
+  font-weight: 600;
 }
 
 .text-grey {
@@ -3660,6 +3665,7 @@ svg {
 
 .ml-1x {
   margin-left: 15px !important;
+  font-family: Javanese Text;
 }
 
 .ml-2x {
@@ -4876,11 +4882,19 @@ a.label:focus {
 
 .bg-gradient-warning span,
 .bg-gradient-warning:before {
+  background: #303030;
+  background: -webkit-linear-gradient(left, #000000 0%, #000000 80%, #000000 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(80%, #000000), to(#000000));
+  background: linear-gradient(to right, #303030 0%, #303030 80%, #303030 100%);
+}
+
+/* .bg-gradient-warning span,
+.bg-gradient-warning:before {
   background: #FF512F;
   background: -webkit-linear-gradient(left, #FF512F 0%, #F09819 80%, #F09819 100%);
   background: -webkit-gradient(linear, left top, right top, from(#FF512F), color-stop(80%, #F09819), to(#F09819));
   background: linear-gradient(to right, #FF512F 0%, #F09819 80%, #F09819 100%);
-}
+} */
 
 .bg-gradient-danger span,
 .bg-gradient-danger:before {
@@ -5531,9 +5545,10 @@ pre,
   margin: 10px 0;
   padding: 15px 10px;
   overflow: auto;
-  font-size: 13px;
+  font-size: 14px;
   color: #4d4d4c;
   line-height: 1.5;
+  font-family: Consolas;
 }
 
 .highlight .gutter pre,
@@ -5776,12 +5791,16 @@ body.no-sidebar .sidebar {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 0;
+  font-weight: 700;
+  font-family: 方正小标宋简体;
 }
 
 #title {
-  font-size: 13px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-family: Mistral;
 }
 
 /**
@@ -5846,7 +5865,7 @@ body.no-sidebar .sidebar {
 }
 
 .header .navbar-toggle .icon-bar {
-  background-color: #2196f3;
+  background-color: #303030;
 }
 
 /*
@@ -5968,6 +5987,7 @@ body.no-sidebar .sidebar {
 .widget .widget-title {
   font-size: 18px;
   color: #000;
+  font-weight: 700;
 }
 
 .widget time {
@@ -6439,7 +6459,9 @@ body.no-sidebar .sidebar {
 }
 
 .article-list .article-title {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 微软雅黑;
 }
 
 .article-toc .toc-title {
@@ -6484,14 +6506,14 @@ body.no-sidebar .sidebar {
 
 .marked-body h1 {
   padding-bottom: 0.3em;
-  font-size: 2em;
-  border-bottom: 1px solid #f2f2f2;
+  /* font-size: 2em; */
+  border-bottom: 2px solid #f2f2f2;
 }
 
 .marked-body h2 {
   padding-bottom: 0.3em;
-  font-size: 1.5em;
-  border-bottom: 1px solid #f2f2f2;
+  /* font-size: 1.5em; */
+  border-bottom: 2px solid #f2f2f2;
 }
 
 .marked-body a {
@@ -6964,7 +6986,7 @@ body.okayNav-loaded {
 .donate-box .donate-payimg {
   display: inline-block;
   padding: 10px;
-  border: 6px solid #ea5f00;
+  border: 6px solid #1e1f24;
   margin: 0 auto;
   border-radius: 3px;
 }
@@ -8800,7 +8822,7 @@ body.okayNav-loaded {
   }
 
   .sidebar-form .input-group-btn .btn {
-    color: #2196f3;
+    color: #303030;
   }
 
   .sidebar-form input[type="text"]:focus {
