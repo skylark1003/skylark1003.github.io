@@ -18,14 +18,13 @@
   
   
   <title>5. Longest Palindromic Substring | 雀栎</title>
-  <meta name="description" content="一、描述Given a string s, return the longest palindromic substring in s. 二、例子Example 1:  Input: s &#x3D; “babad”Output: “bab”Explanation: “aba” is also a valid answer.  Example 2:  Input: s &#x3D; “cbbd”Output: “bb">
+  <meta name="description" content="一、描述 Given a string s, return the longest palindromic substring in s. 二、例子 Example 1:  Input: s &#x3D; &quot;babad&quot; Output: &quot;bab&quot; Explanation: &quot;aba&quot; is also a valid answer.  Example 2:  Input: s &#x3D; &quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5. Longest Palindromic Substring">
 <meta property="og:url" content="http://example.com/2022/07/22/5-Longest-Palindromic-Substring/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述Given a string s, return the longest palindromic substring in s. 二、例子Example 1:  Input: s &#x3D; “babad”Output: “bab”Explanation: “aba” is also a valid answer.  Example 2:  Input: s &#x3D; “cbbd”Output: “bb">
+<meta property="og:description" content="一、描述 Given a string s, return the longest palindromic substring in s. 二、例子 Example 1:  Input: s &#x3D; &quot;babad&quot; Output: &quot;bab&quot; Explanation: &quot;aba&quot; is also a valid answer.  Example 2:  Input: s &#x3D; &quot;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/5p1.png">
 <meta property="article:published_time" content="2022-07-22T05:58:29.000Z">
 <meta property="article:modified_time" content="2022-07-22T15:32:08.943Z">
 <meta property="article:author" content="雀栎">
@@ -35,7 +34,6 @@
 <meta property="article:tag" content="☆">
 <meta property="article:tag" content="Medium">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/5p1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/07/22/5-Longest-Palindromic-Substring/index.html">
   
@@ -324,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -385,21 +383,29 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given a string <code>s</code>, return <strong>the longest palindromic substring</strong> in <code>s</code>.</p>
-<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+        <h1 id="一描述">一、描述</h1>
+<p>Given a string <code>s</code>, return <strong>the longest palindromic
+substring</strong> in <code>s</code>.</p>
+<h1 id="二例子">二、例子</h1>
+<p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> s = “babad”<br><strong>Output:</strong> “bab”<br><strong>Explanation:</strong> “aba” is also a valid answer.</p>
+<p><strong>Input:</strong> s = "babad"<br />
+<strong>Output:</strong> "bab"<br />
+<strong>Explanation:</strong> "aba" is also a valid answer.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> s = “cbbd”<br><strong>Output:</strong> “bb”</p>
+<p><strong>Input:</strong> s = "cbbd" <strong>Output:</strong> "bb"</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>1 &lt;= s.length &lt;= 1000</li>
 <li>s consist of only digits and English letters.</li>
 </ul>
-<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>暴力搜索超时，下面提供动态规划解法（来自fracta11）：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">longestPalindrome</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.<span class="built_in">size</span>() &lt; <span class="number">2</span>) </span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="type">int</span> max_len = <span class="number">0</span>;    <span class="comment">//字串长度</span></span><br><span class="line">        <span class="type">int</span> start_idx = <span class="number">0</span>;  <span class="comment">//字串开始位置</span></span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="type">int</span> r_ptr = i;  <span class="comment">//右指针</span></span><br><span class="line">            <span class="type">int</span> l_ptr = i;  <span class="comment">//左指针</span></span><br><span class="line">            <span class="comment">//find the middle of a palindrome 找到回文中间部分</span></span><br><span class="line">            <span class="keyword">while</span>(r_ptr &lt; s.<span class="built_in">size</span>()<span class="number">-1</span> &amp;&amp; s[r_ptr] == s[r_ptr + <span class="number">1</span>])   </span><br><span class="line">                r_ptr++;</span><br><span class="line">            i = r_ptr+<span class="number">1</span>;</span><br><span class="line">            <span class="comment">//expand from the middle out 从中间部分向外展开</span></span><br><span class="line">            <span class="keyword">while</span>(r_ptr &lt; s.<span class="built_in">size</span>()<span class="number">-1</span> &amp;&amp; l_ptr &gt; <span class="number">0</span> &amp;&amp; s[r_ptr + <span class="number">1</span>] == s[l_ptr - <span class="number">1</span>]) &#123;</span><br><span class="line">                r_ptr++;</span><br><span class="line">                l_ptr--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> new_len = r_ptr - l_ptr + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(new_len &gt; max_len) &#123;</span><br><span class="line">                start_idx = l_ptr;</span><br><span class="line">                max_len = new_len;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.<span class="built_in">substr</span>(start_idx, max_len);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/5p1.png" alt=""></p>
+<h1 id="三代码">三、代码</h1>
+<p>暴力搜索超时，下面提供动态规划解法（来自fracta11）： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">longestPalindrome</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.<span class="built_in">size</span>() &lt; <span class="number">2</span>) </span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="type">int</span> max_len = <span class="number">0</span>;    <span class="comment">//字串长度</span></span><br><span class="line">        <span class="type">int</span> start_idx = <span class="number">0</span>;  <span class="comment">//字串开始位置</span></span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="type">int</span> r_ptr = i;  <span class="comment">//右指针</span></span><br><span class="line">            <span class="type">int</span> l_ptr = i;  <span class="comment">//左指针</span></span><br><span class="line">            <span class="comment">//find the middle of a palindrome 找到回文中间部分</span></span><br><span class="line">            <span class="keyword">while</span>(r_ptr &lt; s.<span class="built_in">size</span>()<span class="number">-1</span> &amp;&amp; s[r_ptr] == s[r_ptr + <span class="number">1</span>])   </span><br><span class="line">                r_ptr++;</span><br><span class="line">            i = r_ptr+<span class="number">1</span>;</span><br><span class="line">            <span class="comment">//expand from the middle out 从中间部分向外展开</span></span><br><span class="line">            <span class="keyword">while</span>(r_ptr &lt; s.<span class="built_in">size</span>()<span class="number">-1</span> &amp;&amp; l_ptr &gt; <span class="number">0</span> &amp;&amp; s[r_ptr + <span class="number">1</span>] == s[l_ptr - <span class="number">1</span>]) &#123;</span><br><span class="line">                r_ptr++;</span><br><span class="line">                l_ptr--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> new_len = r_ptr - l_ptr + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(new_len &gt; max_len) &#123;</span><br><span class="line">                start_idx = l_ptr;</span><br><span class="line">                max_len = new_len;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.<span class="built_in">substr</span>(start_idx, max_len);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/5p1.png" /></p>
 
       
     </div>
