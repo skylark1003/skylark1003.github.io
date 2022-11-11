@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-11T05:45:29.010Z</updated>
+  <updated>2022-11-11T05:49:40.763Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【机器学习】课程笔记06_正则化(Regularization)</title>
+    <link href="http://example.com/2022/11/11/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B006/"/>
+    <id>http://example.com/2022/11/11/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B006/</id>
+    <published>2022-11-11T05:48:42.000Z</published>
+    <updated>2022-11-11T05:49:40.763Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="过拟合问题the-problem-of-overfitting"><a class="markdownIt-Anchor" href="#过拟合问题the-problem-of-overfitting"></a> 过拟合问题（The Problem of Overfitting）</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;过拟合问题the-problem-of-overfitting&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#过拟合问题the-problem-of-overfitting&quot;&gt;&lt;/a&gt; 过拟合问题（The Problem of Over</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>【机器学习】课程笔记05_逻辑回归(Logistic Regression)</title>
@@ -553,44 +579,6 @@
     <category term="Medium" scheme="http://example.com/tags/Medium/"/>
     
     <category term="Math" scheme="http://example.com/tags/Math/"/>
-    
-    <category term="Randomized" scheme="http://example.com/tags/Randomized/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>380. Insert Delete GetRandom O(1)</title>
-    <link href="http://example.com/2022/09/07/380-Insert-Delete-GetRandom-O-1/"/>
-    <id>http://example.com/2022/09/07/380-Insert-Delete-GetRandom-O-1/</id>
-    <published>2022-09-07T05:42:41.000Z</published>
-    <updated>2022-09-08T05:40:31.650Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Implement the <code>RandomizedSet</code> class:</p><ul><li><code>RandomizedSet()</code> Initializes the RandomizedSet object.</li><li><code>bool insert(int val)</code> Inserts an item val into the set if not present. Returns true if the item was not present, false otherwise.</li><li><code>bool remove(int val)</code> Removes an item val from the set if present. Returns true if the item was present, false otherwise.</li><li><code>int getRandom()</code> Returns a random element from the current set of elements (it’s guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.</li></ul><p>You must implement the functions of the class such that each function works in <strong>average O(1)</strong> time complexity.</p><h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p><blockquote><p><strong>Input</strong><br>[“RandomizedSet”, “insert”, “remove”, “insert”, “getRandom”, “remove”, “insert”, “getRandom”]<br>[[], [1], [2], [2], [], [1], [2], []]<br><strong>Output</strong><br>[null, true, false, true, 2, true, false, 2]</p><p><strong>Explanation</strong><br>RandomizedSet randomizedSet = new RandomizedSet();<br>randomizedSet.insert(1); // Inserts 1 to the set. Returns true as 1 was inserted successfully.<br>randomizedSet.remove(2); // Returns false as 2 does not exist in the set.<br>randomizedSet.insert(2); // Inserts 2 to the set, returns true. Set now contains [1,2].<br>randomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.<br>randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].<br>randomizedSet.insert(2); // 2 was already in the set, so return false.<br>randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.</p></blockquote><p><strong>Constraints:</strong></p><ul><li>-2<sup>31</sup> &lt;= val &lt;= 2<sup>31</sup> - 1</li><li>At most 2 * 105 calls will be made to insert, remove, and getRandom.</li><li>There will be at least one element in the data structure when getRandom is called.</li></ul><h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RandomizedSet</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">    <span class="built_in">RandomizedSet</span>() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), val) == v.<span class="built_in">end</span>())&#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(val);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt;::iterator it = <span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), val);</span><br><span class="line">        <span class="keyword">if</span>(it == v.<span class="built_in">end</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            v.<span class="built_in">erase</span>(it);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getRandom</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">random_shuffle</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> v[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your RandomizedSet object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * RandomizedSet* obj = new RandomizedSet();</span></span><br><span class="line"><span class="comment"> * bool param_1 = obj-&gt;insert(val);</span></span><br><span class="line"><span class="comment"> * bool param_2 = obj-&gt;remove(val);</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;getRandom();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;一、描述&quot;&gt;&lt;a href=&quot;#一、描述&quot; class=&quot;headerlink&quot; title=&quot;一、描述&quot;&gt;&lt;/a&gt;一、描述&lt;/h1&gt;&lt;p&gt;Implement the &lt;code&gt;RandomizedSet&lt;/code&gt; class:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="leetcode" scheme="http://example.com/categories/leetcode/"/>
-    
-    
-    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
-    
-    <category term="Array" scheme="http://example.com/tags/Array/"/>
-    
-    <category term="Hash Table" scheme="http://example.com/tags/Hash-Table/"/>
-    
-    <category term="Medium" scheme="http://example.com/tags/Medium/"/>
-    
-    <category term="Math" scheme="http://example.com/tags/Math/"/>
-    
-    <category term="Design" scheme="http://example.com/tags/Design/"/>
     
     <category term="Randomized" scheme="http://example.com/tags/Randomized/"/>
     
