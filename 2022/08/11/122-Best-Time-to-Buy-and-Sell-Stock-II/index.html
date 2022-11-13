@@ -18,20 +18,20 @@
   
   
   <title>122. Best Time to Buy and Sell Stock II | 雀栎</title>
-  <meta name="description" content="一、描述 You are given an integer array prices where prices[i] is the price of a given stock on the ith day. On each day, you may decide to buy and&#x2F;or sell the stock. You can only hold at most one sh">
+  <meta name="description" content="一、描述You are given an integer array prices where prices[i] is the price of a given stock on the ith day. On each day, you may decide to buy and&#x2F;or sell the stock. You can only hold at most one share of">
 <meta property="og:type" content="article">
 <meta property="og:title" content="122. Best Time to Buy and Sell Stock II">
 <meta property="og:url" content="http://example.com/2022/08/11/122-Best-Time-to-Buy-and-Sell-Stock-II/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 You are given an integer array prices where prices[i] is the price of a given stock on the ith day. On each day, you may decide to buy and&#x2F;or sell the stock. You can only hold at most one sh">
+<meta property="og:description" content="一、描述You are given an integer array prices where prices[i] is the price of a given stock on the ith day. On each day, you may decide to buy and&#x2F;or sell the stock. You can only hold at most one share of">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-11T06:01:14.000Z">
 <meta property="article:modified_time" content="2022-08-11T06:40:22.923Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Dynamic Programming">
 <meta property="article:tag" content="☆">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Medium">
 <meta property="article:tag" content="Greedy">
 <meta name="twitter:card" content="summary">
@@ -323,7 +323,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -374,7 +374,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/11/122-Best-Time-to-Buy-and-Sell-Stock-II/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 346(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 343(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -384,52 +384,28 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>You are given an integer array <code>prices</code> where
-<code>prices[i]</code> is the price of a given stock on the
-i<sup>th</sup> day.</p>
-<p>On each day, you may decide to buy and/or sell the stock. You can
-only hold <strong>at most one</strong> share of the stock at any time.
-However, you can buy it then immediately sell it on the <strong>same
-day</strong>.</p>
-<p>Find and return <em>the <strong>maximum</strong> profit you can
-achieve</em>.</p>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the i<sup>th</sup> day.</p>
+<p>On each day, you may decide to buy and/or sell the stock. You can only hold <strong>at most one</strong> share of the stock at any time. However, you can buy it then immediately sell it on the <strong>same day</strong>.</p>
+<p>Find and return <em>the <strong>maximum</strong> profit you can achieve</em>.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> prices = [7,1,5,3,6,4]<br />
-<strong>Output:</strong> 7<br />
-<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 3
-(price = 5), profit = 5-1 = 4.<br />
-Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit =
-6-3 = 3.<br />
-Total profit is 4 + 3 = 7.</p>
+<p><strong>Input:</strong> prices = [7,1,5,3,6,4]<br><strong>Output:</strong> 7<br><strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.<br>Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.<br>Total profit is 4 + 3 = 7.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> prices = [1,2,3,4,5]<br />
-<strong>Output:</strong> 4<br />
-<strong>Explanation:</strong> Buy on day 1 (price = 1) and sell on day 5
-(price = 5), profit = 5-1 = 4.<br />
-Total profit is 4.</p>
+<p><strong>Input:</strong> prices = [1,2,3,4,5]<br><strong>Output:</strong> 4<br><strong>Explanation:</strong> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.<br>Total profit is 4.</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> prices = [7,6,4,3,1]<br />
-<strong>Output:</strong> 0<br />
-<strong>Explanation:</strong> There is no way to make a positive profit,
-so we never buy the stock to achieve the maximum profit of 0.</p>
+<p><strong>Input:</strong> prices = [7,6,4,3,1]<br><strong>Output:</strong> 0<br><strong>Explanation:</strong> There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>1 &lt;= prices.length &lt;= 3 * 10<sup>4</sup></li>
 <li>0 &lt;= prices[i] &lt;= 104</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
-<p>解法来自chipbk10：</p>
-<p><strong>思路：</strong> 例如 [3, 2, 5, 8, 1,
-9]，虽然1最小，但从3开始连续减少到2，从2开始（购买价）连续递增到8，所以将其分割为
-[3, 2, 5, 8] 和 [1, 9]。 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxProfit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> buy = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> sell = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n = prices.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n)&#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; n &amp;&amp; prices[i+<span class="number">1</span>] &lt;= prices[i])</span><br><span class="line">                i++;</span><br><span class="line">            buy = prices[i];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; n &amp;&amp; prices[i+<span class="number">1</span>] &gt;= prices[i])</span><br><span class="line">                i++;</span><br><span class="line">            sell = prices[i];</span><br><span class="line">            profit += sell - buy;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>解法来自chipbk10：</p>
+<p><strong>思路：</strong> 例如 [3, 2, 5, 8, 1, 9]，虽然1最小，但从3开始连续减少到2，从2开始（购买价）连续递增到8，所以将其分割为 [3, 2, 5, 8] 和 [1, 9]。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxProfit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> buy = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> sell = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n = prices.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n)&#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; n &amp;&amp; prices[i+<span class="number">1</span>] &lt;= prices[i])</span><br><span class="line">                i++;</span><br><span class="line">            buy = prices[i];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; n &amp;&amp; prices[i+<span class="number">1</span>] &gt;= prices[i])</span><br><span class="line">                i++;</span><br><span class="line">            sell = prices[i];</span><br><span class="line">            profit += sell - buy;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

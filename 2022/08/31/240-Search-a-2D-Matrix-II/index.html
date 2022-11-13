@@ -18,13 +18,15 @@
   
   
   <title>240. Search a 2D Matrix II | 雀栎</title>
-  <meta name="description" content="一、描述 Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties:  Integers in each row are sorted in ascending from">
+  <meta name="description" content="一、描述Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties:  Integers in each row are sorted in ascending from left t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="240. Search a 2D Matrix II">
 <meta property="og:url" content="http://example.com/2022/08/31/240-Search-a-2D-Matrix-II/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties:  Integers in each row are sorted in ascending from">
+<meta property="og:description" content="一、描述Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties:  Integers in each row are sorted in ascending from left t">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/240p1.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/240p2.png">
 <meta property="article:published_time" content="2022-08-31T02:50:22.000Z">
 <meta property="article:modified_time" content="2022-08-31T03:19:49.980Z">
 <meta property="article:author" content="雀栎">
@@ -35,6 +37,7 @@
 <meta property="article:tag" content="Matrix">
 <meta property="article:tag" content="Binary Search">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/240p1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/31/240-Search-a-2D-Matrix-II/index.html">
   
@@ -323,7 +326,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -374,57 +377,42 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/31/240-Search-a-2D-Matrix-II/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 321(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 331(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Write an efficient algorithm that searches for a value
-<code>target</code> in an <code>m x n</code> integer matrix
-<code>matrix</code>. This matrix has the following properties:</p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Write an efficient algorithm that searches for a value <code>target</code> in an <code>m x n</code> integer matrix <code>matrix</code>. This matrix has the following properties:</p>
 <ul>
-<li>Integers in each row are sorted in ascending from left to
-right.</li>
-<li>Integers in each column are sorted in ascending from top to
-bottom.</li>
+<li>Integers in each row are sorted in ascending from left to right.</li>
+<li>Integers in each column are sorted in ascending from top to bottom.</li>
 </ul>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/240p1.png" /></p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/240p1.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> matrix =
-[[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]],
-target = 5<br />
-<strong>Output:</strong> true</p>
+<p><strong>Input:</strong> matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5<br><strong>Output:</strong> true</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/240p2.png" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/240p2.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> matrix =
-[[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]],
-target = 20<br />
-<strong>Output:</strong> false</p>
+<p><strong>Input:</strong> matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20<br><strong>Output:</strong> false</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>m == matrix.length</li>
 <li>n == matrix[i].length</li>
 <li>1 &lt;= n, m &lt;= 300</li>
-<li>-10<Sup>9</sup> &lt;= matrix[i][j] &lt;= 10<Sup>9</sup></li>
+<li>-10<Sup>9&lt;/sup&gt; &lt;= matrix[i][j] &lt;= 10<Sup>9&lt;/sup&gt;</li>
 <li>All the integers in each row are sorted in ascending order.</li>
 <li>All the integers in each column are sorted in ascending order.</li>
-<li>-10<Sup>9</sup> &lt;= target &lt;= 10<Sup>9</sup></li>
+<li>-10<Sup>9&lt;/sup&gt; &lt;= target &lt;= 10<Sup>9&lt;/sup&gt;</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
-<p>方法一： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">searchMatrix</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix.<span class="built_in">size</span>(); i++)</span><br><span class="line">            <span class="keyword">if</span>(target &lt;= matrix[i][matrix[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>] &amp;&amp; target &gt;= matrix[i][<span class="number">0</span>] &amp;&amp;</span><br><span class="line">               <span class="built_in">find</span>(matrix[i].<span class="built_in">begin</span>(), matrix[i].<span class="built_in">end</span>(), target) != matrix[i].<span class="built_in">end</span>())</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure> 方法二：从右上角开始扫描 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">searchMatrix</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> r = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> c = matrix[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(r &gt;= <span class="number">0</span> &amp;&amp; r &lt; matrix.<span class="built_in">size</span>() &amp;&amp; c &gt;= <span class="number">0</span> &amp;&amp; c &lt; matrix[<span class="number">0</span>].<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">if</span>(target==matrix[r][c])</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;matrix[r][c])</span><br><span class="line">                c -= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                r += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><p>方法一：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">searchMatrix</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix.<span class="built_in">size</span>(); i++)</span><br><span class="line">            <span class="keyword">if</span>(target &lt;= matrix[i][matrix[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>] &amp;&amp; target &gt;= matrix[i][<span class="number">0</span>] &amp;&amp;</span><br><span class="line">               <span class="built_in">find</span>(matrix[i].<span class="built_in">begin</span>(), matrix[i].<span class="built_in">end</span>(), target) != matrix[i].<span class="built_in">end</span>())</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br>方法二：从右上角开始扫描<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">searchMatrix</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> r = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> c = matrix[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(r &gt;= <span class="number">0</span> &amp;&amp; r &lt; matrix.<span class="built_in">size</span>() &amp;&amp; c &gt;= <span class="number">0</span> &amp;&amp; c &lt; matrix[<span class="number">0</span>].<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">if</span>(target==matrix[r][c])</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;matrix[r][c])</span><br><span class="line">                c -= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                r += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

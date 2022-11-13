@@ -18,19 +18,19 @@
   
   
   <title>55. Jump Game | 雀栎</title>
-  <meta name="description" content="一、描述 You are given an integer array nums. You are initially positioned at the array&#39;s first index, and each element in the array represents your maximum jump length at that position. Return true i">
+  <meta name="description" content="一、描述You are given an integer array nums. You are initially positioned at the array’s first index, and each element in the array represents your maximum jump length at that position. Return true if you">
 <meta property="og:type" content="article">
 <meta property="og:title" content="55. Jump Game">
 <meta property="og:url" content="http://example.com/2022/08/04/55-Jump-Game/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 You are given an integer array nums. You are initially positioned at the array&#39;s first index, and each element in the array represents your maximum jump length at that position. Return true i">
+<meta property="og:description" content="一、描述You are given an integer array nums. You are initially positioned at the array’s first index, and each element in the array represents your maximum jump length at that position. Return true if you">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-04T04:52:27.000Z">
 <meta property="article:modified_time" content="2022-08-04T05:16:10.031Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="Dynamic Programming">
 <meta property="article:tag" content="Array">
+<meta property="article:tag" content="Dynamic Programming">
 <meta property="article:tag" content="Medium">
 <meta property="article:tag" content="Greedy">
 <meta name="twitter:card" content="summary">
@@ -322,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -373,7 +373,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/04/55-Jump-Game/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 172(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 170(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -383,36 +383,22 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>You are given an integer array <code>nums</code>. You are initially
-positioned at the array's <strong>first index</strong>, and each element
-in the array represents your maximum jump length at that position.</p>
-<p>Return <em><code>true</code> if you can reach the last index, or
-<code>false</code> otherwise</em>.</p>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>You are given an integer array <code>nums</code>. You are initially positioned at the array’s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p>
+<p>Return <em><code>true</code> if you can reach the last index, or <code>false</code> otherwise</em>.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> nums = [2,3,1,1,4]<br />
-<strong>Output:</strong> true<br />
-<strong>Explanation:</strong> Jump 1 step from index 0 to 1, then 3
-steps to the last index.</p>
+<p><strong>Input:</strong> nums = [2,3,1,1,4]<br><strong>Output:</strong> true<br><strong>Explanation:</strong> Jump 1 step from index 0 to 1, then 3 steps to the last index.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> nums = [3,2,1,0,4]<br />
-<strong>Output:</strong> false<br />
-<strong>Explanation:</strong> You will always arrive at index 3 no
-matter what. Its maximum jump length is 0, which makes it impossible to
-reach the last index.</p>
+<p><strong>Input:</strong> nums = [3,2,1,0,4]<br><strong>Output:</strong> false<br><strong>Explanation:</strong> You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>1 &lt;= nums.length &lt;= 10<sup>4</sup></li>
 <li>0 &lt;= nums[i] &lt;= 10<sup>5</sup></li>
 </ul>
-<h1 id="三代码">三、代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canJump</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> maxs = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(maxs &lt; i)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            maxs = <span class="built_in">max</span>(maxs, nums[i] + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canJump</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> maxs = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(maxs &lt; i)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            maxs = <span class="built_in">max</span>(maxs, nums[i] + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">

@@ -18,22 +18,27 @@
   
   
   <title>160. Intersection of Two Linked Lists | 雀栎</title>
-  <meta name="description" content="一、描述 Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null. For example, t">
+  <meta name="description" content="一、描述Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null. For example, the fol">
 <meta property="og:type" content="article">
 <meta property="og:title" content="160. Intersection of Two Linked Lists">
 <meta property="og:url" content="http://example.com/2022/08/01/160-Intersection-of-Two-Linked-Lists/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null. For example, t">
+<meta property="og:description" content="一、描述Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null. For example, the fol">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p1.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p2.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p3.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p4.png">
 <meta property="article:published_time" content="2022-08-01T05:19:20.000Z">
 <meta property="article:modified_time" content="2022-08-01T05:52:45.094Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="Easy">
 <meta property="article:tag" content="Hash Table">
-<meta property="article:tag" content="Linked List">
 <meta property="article:tag" content="Two Pointers">
+<meta property="article:tag" content="Linked List">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/01/160-Intersection-of-Two-Linked-Lists/index.html">
   
@@ -322,7 +327,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -383,78 +388,35 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given the heads of two singly linked-lists <code>headA</code> and
-<code>headB</code>, return <em>the node at which the two lists
-intersect</em>. If the two linked lists have no intersection at all,
-return <code>null</code>.</p>
-<p>For example, the following two linked lists begin to intersect at
-node <code>c1</code>:</p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p1.png" /></p>
-<p>The test cases are generated such that there are no cycles anywhere
-in the entire linked structure.</p>
-<p><strong>Note</strong> that the linked lists must <strong>retain their
-original structure</strong> after the function returns.</p>
+        <h1 id="一、描述"><a href="#一、描述" class="headerlink" title="一、描述"></a>一、描述</h1><p>Given the heads of two singly linked-lists <code>headA</code> and <code>headB</code>, return <em>the node at which the two lists intersect</em>. If the two linked lists have no intersection at all, return <code>null</code>.</p>
+<p>For example, the following two linked lists begin to intersect at node <code>c1</code>:</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p1.png" alt=""></p>
+<p>The test cases are generated such that there are no cycles anywhere in the entire linked structure.</p>
+<p><strong>Note</strong> that the linked lists must <strong>retain their original structure</strong> after the function returns.</p>
 <p><strong>Custom Judge:</strong></p>
-<p>The inputs to the <strong>judge</strong> are given as follows (your
-program is <strong>not</strong> given these inputs):</p>
+<p>The inputs to the <strong>judge</strong> are given as follows (your program is <strong>not</strong> given these inputs):</p>
 <ul>
-<li><code>intersectVal</code> - The value of the node where the
-intersection occurs. This is <code>0</code> if there is no intersected
-node.</li>
+<li><code>intersectVal</code> - The value of the node where the intersection occurs. This is <code>0</code> if there is no intersected node.</li>
 <li><code>listA</code> - The first linked list.</li>
 <li><code>listB</code> - The second linked list.</li>
-<li><code>skipA</code> - The number of nodes to skip ahead in
-<code>listA</code> (starting from the head) to get to the intersected
-node.</li>
-<li><code>skipB</code> - The number of nodes to skip ahead in
-<code>listB</code> (starting from the head) to get to the intersected
-node.</li>
+<li><code>skipA</code> - The number of nodes to skip ahead in <code>listA</code> (starting from the head) to get to the intersected node.</li>
+<li><code>skipB</code> - The number of nodes to skip ahead in <code>listB</code> (starting from the head) to get to the intersected node.</li>
 </ul>
-<p>The judge will then create the linked structure based on these inputs
-and pass the two heads, <code>headA</code> and <code>headB</code> to
-your program. If you correctly return the intersected node, then your
-solution will be <strong>accepted</strong>.</p>
-<h1 id="二例子">二、例子</h1>
-<p><strong>Example 1:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p2.png" /></p>
+<p>The judge will then create the linked structure based on these inputs and pass the two heads, <code>headA</code> and <code>headB</code> to your program. If you correctly return the intersected node, then your solution will be <strong>accepted</strong>.</p>
+<h1 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h1><p><strong>Example 1:</strong></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p2.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> intersectVal = 8, listA = [4,1,8,4,5], listB
-= [5,6,1,8,4,5], skipA = 2, skipB = 3<br />
-<strong>Output:</strong> Intersected at '8'<br />
-<strong>Explanation:</strong> The intersected node's value is 8 (note
-that this must not be 0 if the two lists intersect).<br />
-From the head of A, it reads as [4,1,8,4,5]. From the head of B, it
-reads as [5,6,1,8,4,5]. There are 2 nodes before the intersected node in
-A; There are 3 nodes before the intersected node in B.</p>
+<p><strong>Input:</strong> intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3<br><strong>Output:</strong> Intersected at ‘8’<br><strong>Explanation:</strong> The intersected node’s value is 8 (note that this must not be 0 if the two lists intersect).<br>From the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,6,1,8,4,5]. There are 2 nodes before the intersected node in A; There are 3 nodes before the intersected node in B.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p3.png" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p3.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> intersectVal = 2, listA = [1,9,1,2,4], listB
-= [3,2,4], skipA = 3, skipB = 1<br />
-<strong>Output:</strong> Intersected at '2'<br />
-<strong>Explanation:</strong> The intersected node's value is 2 (note
-that this must not be 0 if the two lists intersect).<br />
-From the head of A, it reads as [1,9,1,2,4]. From the head of B, it
-reads as [3,2,4]. There are 3 nodes before the intersected node in A;
-There are 1 node before the intersected node in B.</p>
+<p><strong>Input:</strong> intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1<br><strong>Output:</strong> Intersected at ‘2’<br><strong>Explanation:</strong> The intersected node’s value is 2 (note that this must not be 0 if the two lists intersect).<br>From the head of A, it reads as [1,9,1,2,4]. From the head of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There are 1 node before the intersected node in B.</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p4.png" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/160p4.png" alt=""></p>
 <blockquote>
-<p><strong>Input:</strong> intersectVal = 0, listA = [2,6,4], listB =
-[1,5], skipA = 3, skipB = 2<br />
-<strong>Output:</strong> No intersection<br />
-<strong>Explanation:</strong> From the head of A, it reads as [2,6,4].
-From the head of B, it reads as [1,5]. Since the two lists do not
-intersect, intersectVal must be 0, while skipA and skipB can be
-arbitrary values.<br />
-Explanation: The two lists do not intersect, so return null.</p>
+<p><strong>Input:</strong> intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2<br><strong>Output:</strong> No intersection<br><strong>Explanation:</strong> From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.<br>Explanation: The two lists do not intersect, so return null.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -465,54 +427,20 @@ Explanation: The two lists do not intersect, so return null.</p>
 <li>0 &lt;= skipA &lt; m</li>
 <li>0 &lt;= skipB &lt; n</li>
 <li>intersectVal is 0 if listA and listB do not intersect.</li>
-<li>intersectVal == listA[skipA] == listB[skipB] if listA and listB
-intersect.</li>
+<li>intersectVal == listA[skipA] == listB[skipB] if listA and listB intersect.</li>
 </ul>
-<p><strong>Follow up:</strong> Could you write a solution that runs in
-O(m + n) time and use only O(1) memory?</p>
-<h1 id="三代码">三、代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        vector&lt;ListNode*&gt; v;</span><br><span class="line">        ListNode* cur = headA;</span><br><span class="line">        <span class="keyword">while</span>(cur -&gt; next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(cur);</span><br><span class="line">            cur = cur -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        v.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        </span><br><span class="line">        cur = headB;</span><br><span class="line">        <span class="keyword">while</span>(cur -&gt; next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), cur) != v.<span class="built_in">end</span>())</span><br><span class="line">                <span class="keyword">return</span> cur;</span><br><span class="line">            cur = cur -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), cur) != v.<span class="built_in">end</span>())</span><br><span class="line">            <span class="keyword">return</span> cur;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>他解（来自pankajgupta20）：</strong><br />
-1. <strong>Two-Pointers Solution</strong><br />
-Time Complexity : O(m + n)<br />
-Space Complexity : O(1)</p>
+<p><strong>Follow up:</strong> Could you write a solution that runs in O(m + n) time and use only O(1) memory?</p>
+<h1 id="三、代码"><a href="#三、代码" class="headerlink" title="三、代码"></a>三、代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        vector&lt;ListNode*&gt; v;</span><br><span class="line">        ListNode* cur = headA;</span><br><span class="line">        <span class="keyword">while</span>(cur -&gt; next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(cur);</span><br><span class="line">            cur = cur -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        v.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        </span><br><span class="line">        cur = headB;</span><br><span class="line">        <span class="keyword">while</span>(cur -&gt; next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), cur) != v.<span class="built_in">end</span>())</span><br><span class="line">                <span class="keyword">return</span> cur;</span><br><span class="line">            cur = cur -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), cur) != v.<span class="built_in">end</span>())</span><br><span class="line">            <span class="keyword">return</span> cur;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>他解（来自pankajgupta20）：</strong>  </p>
+<ol>
+<li><strong>Two-Pointers Solution</strong><br>Time Complexity : O(m + n)<br>Space Complexity : O(1)  </li>
+</ol>
 <blockquote>
-<p>Let assume the length of List A is <strong>a + c</strong> and length
-of List B is <strong>b + c</strong> (c is the length of the intersected
-or common part).<br />
-Length of A + Length of B == Length of A + Length of B == <strong>a + c
-+ b + c</strong>.<br />
-Let make ptr1 and ptr2 as start pointers of list A and list B
-respectively.<br />
-<strong>The idea is to traverse both pointers by same distance (a + b +
-c).</strong><br />
-First traverse both the pointers until they reach to the end of their
-respective lists and then to <strong>offset the length
-difference</strong> between the two lists we switch both the pointers
-i.e. we points ptr1 to head B after a + c iterations and points ptr2 to
-head A after b + c iterations.<br />
-In the second traversal, we traversed ptr1 by 'b' steps and ptr2 by 'a'
-steps.<br />
-After a + b + c iterations, both pointers will meet to the first
-intersection node.<br />
-Note:<br />
-If there is no intersection and length of both lists are same then both
-the pointers will points to NULL simultaneously in the <strong>first
-traversal</strong>.<br />
-If there is no intersection and length of both lists are different then
-both the pointers will points to NULL simultaneously in the
-<strong>second traversal</strong>. <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">		ListNode *ptr1 = headA;</span><br><span class="line">		ListNode *ptr2 = headB;</span><br><span class="line">		<span class="keyword">while</span>(ptr1 != ptr2)&#123;</span><br><span class="line">			<span class="keyword">if</span>(ptr1 == <span class="literal">NULL</span>)&#123;</span><br><span class="line">				ptr1 = headB;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				ptr1 = ptr1 -&gt; next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ptr2 == <span class="literal">NULL</span>)&#123;</span><br><span class="line">				ptr2 = headA;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				ptr2 = ptr2 -&gt; next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ptr1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure> 2. <strong>Length
-Difference Solution</strong><br />
-Time Complexity : O(m + n)<br />
-Space Complexity : O(1)</p>
-</blockquote>
-<blockquote>
-<p>Find the length of lists A and B.<br />
-Calculate the length difference.<br />
-Let assume the absolute difference of length is t.<br />
-Move the pointer of longer list by t steps.<br />
-Atlast traverse both the list and find the first intersection node.
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">		<span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> m = <span class="number">0</span>;</span><br><span class="line">		ListNode* ptr1 = headA;</span><br><span class="line">		ListNode* ptr2 = headB;</span><br><span class="line">		<span class="keyword">while</span>(ptr1 != <span class="literal">NULL</span>)&#123;</span><br><span class="line">			n++;</span><br><span class="line">			ptr1 = ptr1 -&gt; next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(ptr2 != <span class="literal">NULL</span>)&#123;</span><br><span class="line">			m++;</span><br><span class="line">			ptr2 = ptr2 -&gt; next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> t = <span class="built_in">abs</span>(n - m);</span><br><span class="line">		<span class="keyword">if</span>(n &gt; m)&#123;</span><br><span class="line">			<span class="keyword">while</span>(t)&#123;</span><br><span class="line">				headA = headA -&gt; next;</span><br><span class="line">				t--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(t)&#123;</span><br><span class="line">				headB = headB -&gt; next;</span><br><span class="line">				t--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(headA != <span class="literal">NULL</span> <span class="keyword">and</span> headB != <span class="literal">NULL</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(headA == headB)&#123;</span><br><span class="line">				<span class="keyword">return</span> headA;</span><br><span class="line">			&#125;</span><br><span class="line">			headA = headA -&gt; next;</span><br><span class="line">			headB = headB -&gt; next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>Let assume the length of List A is <strong>a + c</strong> and length of List B is <strong>b + c</strong> (c is the length of the intersected or common part).<br>Length of A + Length of B == Length of A + Length of B == <strong>a + c + b + c</strong>.<br>Let make ptr1 and ptr2 as start pointers of list A and list B respectively.<br><strong>The idea is to traverse both pointers by same distance (a + b + c).</strong><br>First traverse both the pointers until they reach to the end of their respective lists and then to <strong>offset the length difference</strong> between the two lists we switch<br>both the pointers i.e. we points ptr1 to head B after a + c iterations and points ptr2 to head A after b + c iterations.<br>In the second traversal, we traversed ptr1 by ‘b’ steps and ptr2 by ‘a’ steps.<br>After a + b + c iterations, both pointers will meet to the first intersection node.<br>Note:<br>If there is no intersection and length of both lists are same then both the pointers will points to NULL simultaneously in the <strong>first traversal</strong>.<br>If there is no intersection and length of both lists are different then both the pointers will points to NULL simultaneously in the <strong>second traversal</strong>.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">		ListNode *ptr1 = headA;</span><br><span class="line">		ListNode *ptr2 = headB;</span><br><span class="line">		<span class="keyword">while</span>(ptr1 != ptr2)&#123;</span><br><span class="line">			<span class="keyword">if</span>(ptr1 == <span class="literal">NULL</span>)&#123;</span><br><span class="line">				ptr1 = headB;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				ptr1 = ptr1 -&gt; next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ptr2 == <span class="literal">NULL</span>)&#123;</span><br><span class="line">				ptr2 = headA;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				ptr2 = ptr2 -&gt; next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ptr1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><strong>Length Difference Solution</strong><br>Time Complexity : O(m + n)<br>Space Complexity : O(1)  </li>
+</ol>
+<p>Find the length of lists A and B.<br>Calculate the length difference.<br>Let assume the absolute difference of length is t.<br>Move the pointer of longer list by t steps.<br>Atlast traverse both the list and find the first intersection node.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">		<span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> m = <span class="number">0</span>;</span><br><span class="line">		ListNode* ptr1 = headA;</span><br><span class="line">		ListNode* ptr2 = headB;</span><br><span class="line">		<span class="keyword">while</span>(ptr1 != <span class="literal">NULL</span>)&#123;</span><br><span class="line">			n++;</span><br><span class="line">			ptr1 = ptr1 -&gt; next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(ptr2 != <span class="literal">NULL</span>)&#123;</span><br><span class="line">			m++;</span><br><span class="line">			ptr2 = ptr2 -&gt; next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> t = <span class="built_in">abs</span>(n - m);</span><br><span class="line">		<span class="keyword">if</span>(n &gt; m)&#123;</span><br><span class="line">			<span class="keyword">while</span>(t)&#123;</span><br><span class="line">				headA = headA -&gt; next;</span><br><span class="line">				t--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">while</span>(t)&#123;</span><br><span class="line">				headB = headB -&gt; next;</span><br><span class="line">				t--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(headA != <span class="literal">NULL</span> <span class="keyword">and</span> headB != <span class="literal">NULL</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(headA == headB)&#123;</span><br><span class="line">				<span class="keyword">return</span> headA;</span><br><span class="line">			&#125;</span><br><span class="line">			headA = headA -&gt; next;</span><br><span class="line">			headB = headB -&gt; next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       

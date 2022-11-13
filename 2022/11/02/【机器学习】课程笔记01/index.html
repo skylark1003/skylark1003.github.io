@@ -18,19 +18,22 @@
   
   
   <title>【机器学习】课程笔记01_引言(Introduction) | 雀栎</title>
-  <meta name="description" content="前言  机器学习（Machine Learning）  从AI（人工智能）发展出来的一个领域 为计算机开发的一项新功能  应用领域：  数据挖掘（Database mining）：自动处理大量数据集（用户点击数据、医疗记录等）。 无法手动编写的程序：例如自动驾驶、手写文字识别、自然语言识别、计算机视觉。 私人定制程序：推荐算法。 理解人类的学习过程和大脑   什么是">
+  <meta name="description" content="前言 机器学习（Machine Learning） 从AI（人工智能）发展出来的一个领域 为计算机开发的一项新功能   应用领域： 数据挖掘（Database mining）：自动处理大量数据集（用户点击数据、医疗记录等）。 无法手动编写的程序：例如自动驾驶、手写文字识别、自然语言识别、计算机视觉。 私人定制程序：推荐算法。 理解人类的学习过程和大脑    什么是机器学习 在没有明确设置的情况下，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【机器学习】课程笔记01_引言(Introduction)">
 <meta property="og:url" content="http://example.com/2022/11/02/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B001/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言  机器学习（Machine Learning）  从AI（人工智能）发展出来的一个领域 为计算机开发的一项新功能  应用领域：  数据挖掘（Database mining）：自动处理大量数据集（用户点击数据、医疗记录等）。 无法手动编写的程序：例如自动驾驶、手写文字识别、自然语言识别、计算机视觉。 私人定制程序：推荐算法。 理解人类的学习过程和大脑   什么是">
+<meta property="og:description" content="前言 机器学习（Machine Learning） 从AI（人工智能）发展出来的一个领域 为计算机开发的一项新功能   应用领域： 数据挖掘（Database mining）：自动处理大量数据集（用户点击数据、医疗记录等）。 无法手动编写的程序：例如自动驾驶、手写文字识别、自然语言识别、计算机视觉。 私人定制程序：推荐算法。 理解人类的学习过程和大脑    什么是机器学习 在没有明确设置的情况下，">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml1-3.01.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml1-3.02.png">
 <meta property="article:published_time" content="2022-11-02T01:43:30.000Z">
 <meta property="article:modified_time" content="2022-11-10T07:19:36.900Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml1-3.01.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/11/02/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B001/index.html">
   
@@ -319,9 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">什么是机器学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0supervised-learning"><span class="toc-number">3.</span> <span class="toc-text">监督学习（Supervised
-Learning）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0unsupervised-learning"><span class="toc-number">4.</span> <span class="toc-text">无监督学习（Unsupervised
-Learning）</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">什么是机器学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88Supervised-Learning%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">监督学习（Supervised Learning）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88Unsupervised-Learning%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">无监督学习（Unsupervised Learning）</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -372,7 +373,7 @@ Learning）</span></a></li></ol>
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/11/02/%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B001/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 513(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 514(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -382,71 +383,54 @@ Learning）</span></a></li></ol>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="前言">前言</h1>
-<ul>
-<li>机器学习（Machine Learning）
-<ul>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>机器学习（Machine Learning）<ul>
 <li>从AI（人工智能）发展出来的一个领域</li>
 <li>为计算机开发的一项新功能</li>
-</ul></li>
-<li>应用领域：
-<ul>
-<li><strong>数据挖掘（Database
-mining）</strong>：自动处理大量数据集（用户点击数据、医疗记录等）。</li>
+</ul>
+</li>
+<li>应用领域：<ul>
+<li><strong>数据挖掘（Database mining）</strong>：自动处理大量数据集（用户点击数据、医疗记录等）。</li>
 <li><strong>无法手动编写的程序</strong>：例如自动驾驶、手写文字识别、自然语言识别、计算机视觉。</li>
 <li><strong>私人定制程序</strong>：推荐算法。</li>
 <li><strong>理解人类的学习过程和大脑</strong></li>
-</ul></li>
 </ul>
-<h1 id="什么是机器学习">什么是机器学习</h1>
-<ol type="1">
+</li>
+</ul>
+<h1 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h1><ol>
 <li>在没有明确设置的情况下，是计算机具有学习能力的研究领域。</li>
 <li>一个适当的学习问题定义如下：计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。</li>
 </ol>
 <ul>
-<li>学习算法分类：
-<ul>
-<li><strong>监督学习（Supervised
-learning）</strong>：我们教会计算机做某件事情。</li>
-<li><strong>无监督学习（Unsupervised
-learning）</strong>：计算机自己学习。</li>
+<li>学习算法分类：<ul>
+<li><strong>监督学习（Supervised learning）</strong>：我们教会计算机做某件事情。</li>
+<li><strong>无监督学习（Unsupervised learning）</strong>：计算机自己学习。</li>
 <li>强化学习、推荐系统</li>
-</ul></li>
 </ul>
-<h1 id="监督学习supervised-learning">监督学习（Supervised
-Learning）</h1>
-<ul>
-<li>我们给算法一个数据集，其中包含了正确答案（right
-answer），算法的目的是给出更多的正确答案。</li>
-<li><strong>回归问题（Regression
-Problem）</strong>：预测连续值输出（例如预测房价）。</li>
+</li>
 </ul>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml1-3.01.png" /></p>
-<ul>
-<li><strong>分类问题（Classification
-Problem）</strong>：预测离散值（Discrete）输出（例如判断肿瘤恶性良性）。</li>
+<h1 id="监督学习（Supervised-Learning）"><a href="#监督学习（Supervised-Learning）" class="headerlink" title="监督学习（Supervised Learning）"></a>监督学习（Supervised Learning）</h1><ul>
+<li>我们给算法一个数据集，其中包含了正确答案（right answer），算法的目的是给出更多的正确答案。</li>
+<li><strong>回归问题（Regression Problem）</strong>：预测连续值输出（例如预测房价）。</li>
 </ul>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml1-3.02.png" /></p>
-<h1 id="无监督学习unsupervised-learning">无监督学习（Unsupervised
-Learning）</h1>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml1-3.01.png" alt=""></p>
 <ul>
+<li><strong>分类问题（Classification Problem）</strong>：预测离散值（Discrete）输出（例如判断肿瘤恶性良性）。</li>
+</ul>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/ml1-3.02.png" alt=""></p>
+<h1 id="无监督学习（Unsupervised-Learning）"><a href="#无监督学习（Unsupervised-Learning）" class="headerlink" title="无监督学习（Unsupervised Learning）"></a>无监督学习（Unsupervised Learning）</h1><ul>
 <li>所用的数据没有任何标签或都具有相同标签，未被告知数据集用来干什么，从中发现某种结构。</li>
-<li><strong>聚类算法（Clustering
-Algorithm）</strong>：给定数据集，无监督学习算法可能判定该数据集包含两个不同的簇。（例如谷歌新闻自动分簇，DNA拥有特定基因程度）</li>
-<li>应用：
-<ul>
+<li><strong>聚类算法（Clustering Algorithm）</strong>：给定数据集，无监督学习算法可能判定该数据集包含两个不同的簇。（例如谷歌新闻自动分簇，DNA拥有特定基因程度）</li>
+<li>应用：<ul>
 <li>组织大型计算机集群</li>
 <li>社交网络的分析</li>
 <li>市场细分（区分客户群体）</li>
 <li>天文数据分析</li>
-</ul></li>
-<li><strong>鸡尾酒会算法（Cocktail Party
-Algorithm）</strong>：分离两个被叠加混合到一起的音频源。</li>
 </ul>
-<p>​
-<code>[W,s,v] = svd((repmat(sum(x.*x,1),size(x,1),1).*x)*x');</code></p>
+</li>
+<li><strong>鸡尾酒会算法（Cocktail Party Algorithm）</strong>：分离两个被叠加混合到一起的音频源。</li>
+</ul>
+<p>​    <code>[W,s,v] = svd((repmat(sum(x.*x,1),size(x,1),1).*x)*x&#39;);</code></p>
 
       
     </div>
