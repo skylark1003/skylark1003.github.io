@@ -18,12 +18,12 @@
   
   
   <title>75. Sort Colors | 雀栎</title>
-  <meta name="description" content="一、描述 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue. We will">
+  <meta name="description" content="一、描述 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue. We will use">
 <meta property="og:type" content="article">
 <meta property="og:title" content="75. Sort Colors">
 <meta property="og:url" content="http://example.com/2022/08/06/75-Sort-Colors/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue. We will">
+<meta property="og:description" content="一、描述 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue. We will use">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-06T06:28:44.000Z">
 <meta property="article:modified_time" content="2022-08-06T07:07:16.283Z">
@@ -322,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -383,16 +383,11 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an array <code>nums</code> with <code>n</code> objects colored
-red, white, or blue, sort them <strong>in-place</strong> so that objects
-of the same color are adjacent, with the colors in the order red, white,
-and blue.</p>
-<p>We will use the integers <code>0, 1</code>, and <code>2</code> to
-represent the color red, white, and blue, respectively.</p>
-<p>You must solve this problem without using the library's sort
-function.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given an array <code>nums</code> with <code>n</code> objects colored red, white, or blue, sort them <strong>in-place</strong> so that objects of the same color are adjacent, with the colors in the order red, white, and blue.</p>
+<p>We will use the integers <code>0, 1</code>, and <code>2</code> to represent the color red, white, and blue, respectively.</p>
+<p>You must solve this problem without using the library’s sort function.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> nums = [2,0,2,1,1,0]<br />
@@ -409,11 +404,9 @@ function.</p>
 <li>1 &lt;= n &lt;= 300</li>
 <li>nums[i] is either 0, 1, or 2.</li>
 </ul>
-<p><strong>Follow up:</strong> Could you come up with a one-pass
-algorithm using only constant extra space?</p>
-<h1 id="三代码">三、代码</h1>
+<p><strong>Follow up:</strong> Could you come up with a one-pass algorithm using only constant extra space?</p>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">sortColors</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>()<span class="number">-1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; nums.<span class="built_in">size</span>()<span class="number">-1</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[j] &gt; nums[j+<span class="number">1</span>])</span><br><span class="line">                    <span class="built_in">swap</span>(nums[j], nums[j+<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

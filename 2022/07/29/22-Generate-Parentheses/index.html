@@ -18,21 +18,21 @@
   
   
   <title>22. Generate Parentheses | 雀栎</title>
-  <meta name="description" content="一、描述 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. 二、例子 Example 1:  Input: n &#x3D; 3 Output: [&quot;((()))&quot;,&quot;(()())&quot;,&quot;(())()&quot;,&quot;()(())&quot;,&quot;()()()&quot;">
+  <meta name="description" content="一、描述 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.  二、例子 Example 1:  Input: n &#x3D; 3 Output: [“((()))”,“(()())”,“(())()”,“()(())”,“()()()”]  Exa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="22. Generate Parentheses">
 <meta property="og:url" content="http://example.com/2022/07/29/22-Generate-Parentheses/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. 二、例子 Example 1:  Input: n &#x3D; 3 Output: [&quot;((()))&quot;,&quot;(()())&quot;,&quot;(())()&quot;,&quot;()(())&quot;,&quot;()()()&quot;">
+<meta property="og:description" content="一、描述 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.  二、例子 Example 1:  Input: n &#x3D; 3 Output: [“((()))”,“(()())”,“(())()”,“()(())”,“()()()”]  Exa">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-29T07:49:07.000Z">
 <meta property="article:modified_time" content="2022-07-29T09:12:12.550Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Medium">
 <meta property="article:tag" content="String">
 <meta property="article:tag" content="Dynamic Programming">
 <meta property="article:tag" content="☆">
-<meta property="article:tag" content="Medium">
 <meta property="article:tag" content="Backtracking">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -323,7 +323,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -384,32 +384,28 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given <code>n</code> pairs of parentheses, write a function to
-<em>generate all combinations of well-formed parentheses</em>.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given <code>n</code> pairs of parentheses, write a function to <em>generate all combinations of well-formed parentheses</em>.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> n = 3<br />
-<strong>Output:</strong>
-["((()))","(()())","(())()","()(())","()()()"]</p>
+<strong>Output:</strong> [“((()))”,“(()())”,“(())()”,“()(())”,“()()()”]</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> n = 1<br />
-<strong>Output:</strong> ["()"]</p>
+<strong>Output:</strong> [“()”]</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>1 &lt;= n &lt;= 8</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <p>来自klyc0k：<br />
-<strong>思路：</strong>
-使用两个整数来计算剩余的左括号(n)和要添加的右括号(m)。在每个函数调用中，如果n&gt;0，加一个左括号，如果m&gt;0，加一个右括号。当m和n都为零时，附加结果并终止递归调用。<br />
+<strong>思路：</strong> 使用两个整数来计算剩余的左括号(n)和要添加的右括号(m)。在每个函数调用中，如果n&gt;0，加一个左括号，如果m&gt;0，加一个右括号。当m和n都为零时，附加结果并终止递归调用。<br />
 n表示剩下多少左括号，m表示剩下多少右括号。<strong>剩余的右括号应该大于左括号</strong>。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; res;</span><br><span class="line">        <span class="built_in">addingpar</span>(res, <span class="string">&quot;&quot;</span>, n, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addingpar</span><span class="params">(vector&lt;string&gt; &amp;v, string str, <span class="type">int</span> n, <span class="type">int</span> m)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span> &amp;&amp; m==<span class="number">0</span>) &#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(str);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(m &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">addingpar</span>(v, str+<span class="string">&quot;)&quot;</span>, n, m<span class="number">-1</span>);   <span class="comment">//匹配一个&quot;)&quot;则还需要的&quot;)&quot;个数减一</span></span><br><span class="line">        <span class="keyword">if</span>(n &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">addingpar</span>(v, str+<span class="string">&quot;(&quot;</span>, n<span class="number">-1</span>, m+<span class="number">1</span>);  <span class="comment">//多一个&quot;(&quot;说明多需要一个&quot;)&quot;，剩余的&quot;(&quot;减少一个</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

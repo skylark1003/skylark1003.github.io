@@ -18,18 +18,37 @@
   
   
   <title>第2阶段 实战通讯录管理系统 | 雀栎</title>
-  <meta name="description" content="1、系统需求 通讯录是一个可以记录亲人、好友信息的工具。 本教程主要利用C++来实现一个通讯录管理系统 系统中需要实现的功能如下：  添加联系人：向通讯录中添加新人，信息包括（姓名、性别、年龄、联系电话、家庭住址）最多记录1000人 显示联系人：显示通讯录中所有联系人信息 删除联系人：按照姓名进行删除指定联系人 查找联系人：按照姓名查看指定联系人信息 修改联系人：按照姓名重新修改">
+  <meta name="description" content="1、系统需求 通讯录是一个可以记录亲人、好友信息的工具。 本教程主要利用C++来实现一个通讯录管理系统 系统中需要实现的功能如下：  添加联系人：向通讯录中添加新人，信息包括（姓名、性别、年龄、联系电话、家庭住址）最多记录1000人 显示联系人：显示通讯录中所有联系人信息 删除联系人：按照姓名进行删除指定联系人 查找联系人：按照姓名查看指定联系人信息 修改联系人：按照姓名重新修改指定联系人 清空">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第2阶段 实战通讯录管理系统">
 <meta property="og:url" content="http://example.com/2022/07/05/%E7%AC%AC2%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、系统需求 通讯录是一个可以记录亲人、好友信息的工具。 本教程主要利用C++来实现一个通讯录管理系统 系统中需要实现的功能如下：  添加联系人：向通讯录中添加新人，信息包括（姓名、性别、年龄、联系电话、家庭住址）最多记录1000人 显示联系人：显示通讯录中所有联系人信息 删除联系人：按照姓名进行删除指定联系人 查找联系人：按照姓名查看指定联系人信息 修改联系人：按照姓名重新修改">
+<meta property="og:description" content="1、系统需求 通讯录是一个可以记录亲人、好友信息的工具。 本教程主要利用C++来实现一个通讯录管理系统 系统中需要实现的功能如下：  添加联系人：向通讯录中添加新人，信息包括（姓名、性别、年龄、联系电话、家庭住址）最多记录1000人 显示联系人：显示通讯录中所有联系人信息 删除联系人：按照姓名进行删除指定联系人 查找联系人：按照姓名查看指定联系人信息 修改联系人：按照姓名重新修改指定联系人 清空">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544151401138.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544151579620.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544161551746.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544161648175.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544162344057.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544149559893.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544163868043.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544165554002.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544166401582.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544167951559.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544168010831.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544170057646.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544170254021.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172265676.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172164141.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172228627.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172909693.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172943653.png">
 <meta property="article:published_time" content="2022-07-05T14:23:31.000Z">
 <meta property="article:modified_time" content="2022-07-05T14:36:16.457Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544151401138.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/07/05/%E7%AC%AC2%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
   
@@ -318,7 +337,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">1、系统需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">2、创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE-1"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">2.2添加文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">3、菜单功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">4、退出功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">5.</span> <span class="toc-text">5、添加联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%81%94%E7%B3%BB%E4%BA%BA%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 设计联系人结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E9%80%9A%E8%AE%AF%E5%BD%95%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 设计通讯录结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#main%E5%87%BD%E6%95%B0%E4%B8%AD%E5%88%9B%E5%BB%BA%E9%80%9A%E8%AE%AF%E5%BD%95"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 main函数中创建通讯录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%B7%BB%E5%8A%A0%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">5.4.</span> <span class="toc-text">5.4 封装添加联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%B7%BB%E5%8A%A0%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">5.5.</span> <span class="toc-text">5.5 测试添加联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">6.</span> <span class="toc-text">6、显示联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%98%BE%E7%A4%BA%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 封装显示联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%98%BE%E7%A4%BA%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 测试显示联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">7.</span> <span class="toc-text">7、删除联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%A3%80%E6%B5%8B%E8%81%94%E7%B3%BB%E4%BA%BA%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 封装检测联系人是否存在</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E5%88%A0%E9%99%A4%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 封装删除联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%88%A0%E9%99%A4%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">7.3.</span> <span class="toc-text">7.3 测试删除联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">8.</span> <span class="toc-text">8、查找联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%9F%A5%E6%89%BE%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 封装查找联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">8.2.</span> <span class="toc-text">8.2 测试查找指定联系人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">9.</span> <span class="toc-text">9、修改联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E4%BF%AE%E6%94%B9%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">9.1.</span> <span class="toc-text">9.1 封装修改联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%BF%AE%E6%94%B9%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">9.2.</span> <span class="toc-text">9.2 测试修改联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">10.</span> <span class="toc-text">10、清空联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%B8%85%E7%A9%BA%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">10.1.</span> <span class="toc-text">10.1 封装清空联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%B8%85%E7%A9%BA%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">10.2.</span> <span class="toc-text">10.2 测试清空联系人</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text"> 1、系统需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text"> 2、创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2添加文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%8F%9C%E5%8D%95%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text"> 3、菜单功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%80%80%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text"> 4、退出功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%B7%BB%E5%8A%A0%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">5.</span> <span class="toc-text"> 5、添加联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#51-%E8%AE%BE%E8%AE%A1%E8%81%94%E7%B3%BB%E4%BA%BA%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">5.1.</span> <span class="toc-text"> 5.1 设计联系人结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#52-%E8%AE%BE%E8%AE%A1%E9%80%9A%E8%AE%AF%E5%BD%95%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">5.2.</span> <span class="toc-text"> 5.2 设计通讯录结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#53-main%E5%87%BD%E6%95%B0%E4%B8%AD%E5%88%9B%E5%BB%BA%E9%80%9A%E8%AE%AF%E5%BD%95"><span class="toc-number">5.3.</span> <span class="toc-text"> 5.3 main函数中创建通讯录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#54-%E5%B0%81%E8%A3%85%E6%B7%BB%E5%8A%A0%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">5.4.</span> <span class="toc-text"> 5.4 封装添加联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#55-%E6%B5%8B%E8%AF%95%E6%B7%BB%E5%8A%A0%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">5.5.</span> <span class="toc-text"> 5.5 测试添加联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%98%BE%E7%A4%BA%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">6.</span> <span class="toc-text"> 6、显示联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#61-%E5%B0%81%E8%A3%85%E6%98%BE%E7%A4%BA%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text"> 6.1 封装显示联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#62-%E6%B5%8B%E8%AF%95%E6%98%BE%E7%A4%BA%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">6.2.</span> <span class="toc-text"> 6.2 测试显示联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%88%A0%E9%99%A4%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">7.</span> <span class="toc-text"> 7、删除联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#71-%E5%B0%81%E8%A3%85%E6%A3%80%E6%B5%8B%E8%81%94%E7%B3%BB%E4%BA%BA%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-number">7.1.</span> <span class="toc-text"> 7.1  封装检测联系人是否存在</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#72-%E5%B0%81%E8%A3%85%E5%88%A0%E9%99%A4%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">7.2.</span> <span class="toc-text"> 7.2 封装删除联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#73-%E6%B5%8B%E8%AF%95%E5%88%A0%E9%99%A4%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">7.3.</span> <span class="toc-text"> 7.3 测试删除联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%9F%A5%E6%89%BE%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">8.</span> <span class="toc-text"> 8、查找联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#81-%E5%B0%81%E8%A3%85%E6%9F%A5%E6%89%BE%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">8.1.</span> <span class="toc-text"> 8.1 封装查找联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#82-%E6%B5%8B%E8%AF%95%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">8.2.</span> <span class="toc-text"> 8.2 测试查找指定联系人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E4%BF%AE%E6%94%B9%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">9.</span> <span class="toc-text"> 9、修改联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#91-%E5%B0%81%E8%A3%85%E4%BF%AE%E6%94%B9%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">9.1.</span> <span class="toc-text"> 9.1 封装修改联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#92-%E6%B5%8B%E8%AF%95%E4%BF%AE%E6%94%B9%E8%81%94%E7%B3%BB%E4%BA%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">9.2.</span> <span class="toc-text"> 9.2 测试修改联系人功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%B8%85%E7%A9%BA%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">10.</span> <span class="toc-text"> 10、清空联系人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#101-%E5%B0%81%E8%A3%85%E6%B8%85%E7%A9%BA%E8%81%94%E7%B3%BB%E4%BA%BA%E5%87%BD%E6%95%B0"><span class="toc-number">10.1.</span> <span class="toc-text"> 10.1 封装清空联系人函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#102-%E6%B5%8B%E8%AF%95%E6%B8%85%E7%A9%BA%E8%81%94%E7%B3%BB%E4%BA%BA"><span class="toc-number">10.2.</span> <span class="toc-text"> 10.2  测试清空联系人</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -369,7 +388,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/05/%E7%AC%AC2%E9%98%B6%E6%AE%B5-%E5%AE%9E%E6%88%98%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3.3k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3.2k(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 14(分)</span>
@@ -379,7 +398,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="系统需求">1、系统需求</h2>
+        <h2 id="1-系统需求"><a class="markdownIt-Anchor" href="#1-系统需求"></a> 1、系统需求</h2>
 <p>通讯录是一个可以记录亲人、好友信息的工具。</p>
 <p>本教程主要利用C++来实现一个通讯录管理系统</p>
 <p>系统中需要实现的功能如下：</p>
@@ -392,78 +411,43 @@
 <li>清空联系人：清空通讯录中所有信息</li>
 <li>退出通讯录：退出当前使用的通讯录</li>
 </ul>
-<h2 id="创建项目">2、创建项目</h2>
+<h2 id="2-创建项目"><a class="markdownIt-Anchor" href="#2-创建项目"></a> 2、创建项目</h2>
 <p>创建项目步骤如下：</p>
 <ul>
 <li>创建新项目</li>
 <li>添加文件</li>
 </ul>
-<h3 id="创建项目-1">2.1 创建项目</h3>
+<h3 id="21-创建项目"><a class="markdownIt-Anchor" href="#21-创建项目"></a> 2.1 创建项目</h3>
 <p>打开vs2017后，点击创建新项目，创建新的C++项目</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544151401138.png"
-alt="1544151401138" />
-<figcaption aria-hidden="true">1544151401138</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544151401138.png" alt="1544151401138" /></p>
 <p>填写项目名称，选择项目路径</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544151579620.png"
-alt="1544151579620" />
-<figcaption aria-hidden="true">1544151579620</figcaption>
-</figure>
-<h3 id="添加文件">2.2添加文件</h3>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544161551746.png"
-alt="1544161551746" />
-<figcaption aria-hidden="true">1544161551746</figcaption>
-</figure>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544161648175.png"
-alt="1544161648175" />
-<figcaption aria-hidden="true">1544161648175</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544151579620.png" alt="1544151579620" /></p>
+<h3 id="22添加文件"><a class="markdownIt-Anchor" href="#22添加文件"></a> 2.2添加文件</h3>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544161551746.png" alt="1544161551746" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544161648175.png" alt="1544161648175" /></p>
 <p>添加成功后，效果如图：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544162344057.png"
-alt="1544162344057" />
-<figcaption aria-hidden="true">1544162344057</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544162344057.png" alt="1544162344057" /></p>
 <p>至此，项目已创建完毕</p>
-<h2 id="菜单功能">3、菜单功能</h2>
+<h2 id="3-菜单功能"><a class="markdownIt-Anchor" href="#3-菜单功能"></a> 3、菜单功能</h2>
 <p><strong>功能描述：</strong> 用户选择功能的界面</p>
 <p>菜单界面效果如下图：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544149559893.png"
-alt="1544149559893" />
-<figcaption aria-hidden="true">1544149559893</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544149559893.png" alt="1544149559893" /></p>
 <p><strong>步骤：</strong></p>
 <ul>
-<li>封装函数显示该界面 如 <code>void showMenu()</code></li>
+<li>封装函数显示该界面  如 <code>void showMenu()</code></li>
 <li>在main函数中调用封装好的函数</li>
 </ul>
 <p><strong>代码：</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//菜单界面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showMenu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;***************************&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****  1、添加联系人  *****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****  2、显示联系人  *****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****  3、删除联系人  *****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****  4、查找联系人  *****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****  5、修改联系人  *****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****  6、清空联系人  *****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*****  0、退出通讯录  *****&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;***************************&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">showMenu</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="退出功能">4、退出功能</h2>
+<h2 id="4-退出功能"><a class="markdownIt-Anchor" href="#4-退出功能"></a> 4、退出功能</h2>
 <p>功能描述：退出通讯录系统</p>
 <p>思路：根据用户不同的选择，进入不同的功能，可以选择switch分支结构，将整个架构进行搭建</p>
 <p>当用户选择0时候，执行退出，选择其他先不做操作，也不会退出程序</p>
 <p><strong>代码：</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> select = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">showMenu</span>();</span><br><span class="line"></span><br><span class="line">		cin &gt;&gt; select;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">switch</span> (select)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:  <span class="comment">//添加联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:  <span class="comment">//显示联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:  <span class="comment">//删除联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:  <span class="comment">//查找联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:  <span class="comment">//修改联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:  <span class="comment">//清空联系人</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">0</span>:  <span class="comment">//退出通讯录</span></span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;欢迎下次使用&quot;</span> &lt;&lt; endl;</span><br><span class="line">			<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>效果图：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544163868043.png"
-alt="1544163868043" />
-<figcaption aria-hidden="true">1544163868043</figcaption>
-</figure>
-<h2 id="添加联系人">5、添加联系人</h2>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544163868043.png" alt="1544163868043" /></p>
+<h2 id="5-添加联系人"><a class="markdownIt-Anchor" href="#5-添加联系人"></a> 5、添加联系人</h2>
 <p>功能描述：</p>
 <p>实现添加联系人功能，联系人上限为1000人，联系人信息包括（姓名、性别、年龄、联系电话、家庭住址）</p>
 <p>添加联系人实现步骤：</p>
@@ -474,54 +458,44 @@ alt="1544163868043" />
 <li>封装添加联系人函数</li>
 <li>测试添加联系人功能</li>
 </ul>
-<h3 id="设计联系人结构体">5.1 设计联系人结构体</h3>
+<h3 id="51-设计联系人结构体"><a class="markdownIt-Anchor" href="#51-设计联系人结构体"></a> 5.1 设计联系人结构体</h3>
 <p>联系人信息包括：姓名、性别、年龄、联系电话、家庭住址</p>
 <p>设计如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span>  <span class="comment">//string头文件</span></span></span><br><span class="line"><span class="comment">//联系人结构体</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line">	string m_Name; <span class="comment">//姓名</span></span><br><span class="line">	<span class="type">int</span> m_Sex; <span class="comment">//性别：1男 2女</span></span><br><span class="line">	<span class="type">int</span> m_Age; <span class="comment">//年龄</span></span><br><span class="line">	string m_Phone; <span class="comment">//电话</span></span><br><span class="line">	string m_Addr; <span class="comment">//住址</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="设计通讯录结构体">5.2 设计通讯录结构体</h3>
+<h3 id="52-设计通讯录结构体"><a class="markdownIt-Anchor" href="#52-设计通讯录结构体"></a> 5.2 设计通讯录结构体</h3>
 <p>设计时候可以在通讯录结构体中，维护一个容量为1000的存放联系人的数组，并记录当前通讯录中联系人数量</p>
 <p>设计如下</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 1000 <span class="comment">//最大人数</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//通讯录结构体</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Addressbooks</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">Person</span> personArray[MAX]; <span class="comment">//通讯录中保存的联系人数组</span></span><br><span class="line">	<span class="type">int</span> m_Size; <span class="comment">//通讯录中人员个数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="main函数中创建通讯录">5.3 main函数中创建通讯录</h3>
+<h3 id="53-main函数中创建通讯录"><a class="markdownIt-Anchor" href="#53-main函数中创建通讯录"></a> 5.3 main函数中创建通讯录</h3>
 <p>添加联系人函数封装好后，在main函数中创建一个通讯录变量，这个就是我们需要一直维护的通讯录</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mian函数起始位置添加：</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建通讯录</span></span><br><span class="line">	Addressbooks abs;</span><br><span class="line">	<span class="comment">//初始化通讯录中人数</span></span><br><span class="line">	abs.m_Size = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="封装添加联系人函数">5.4 封装添加联系人函数</h3>
+<h3 id="54-封装添加联系人函数"><a class="markdownIt-Anchor" href="#54-封装添加联系人函数"></a> 5.4 封装添加联系人函数</h3>
 <p>思路：添加联系人前先判断通讯录是否已满，如果满了就不再添加，未满情况将新联系人信息逐个加入到通讯录</p>
 <p>添加联系人代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、添加联系人信息</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">addPerson</span><span class="params">(Addressbooks *abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//判断电话本是否满了</span></span><br><span class="line">	<span class="keyword">if</span> (abs-&gt;m_Size == MAX)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;通讯录已满，无法添加&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//姓名</span></span><br><span class="line">		string name;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入姓名：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		cin &gt;&gt; name;</span><br><span class="line">		abs-&gt;personArray[abs-&gt;m_Size].m_Name = name;</span><br><span class="line"></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入性别：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;1 -- 男&quot;</span> &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;2 -- 女&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//性别</span></span><br><span class="line">		<span class="type">int</span> sex = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			cin &gt;&gt; sex;</span><br><span class="line">			<span class="keyword">if</span> (sex == <span class="number">1</span> || sex == <span class="number">2</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				abs-&gt;personArray[abs-&gt;m_Size].m_Sex = sex;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;输入有误，请重新输入&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//年龄</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入年龄：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="type">int</span> age = <span class="number">0</span>;</span><br><span class="line">		cin &gt;&gt; age;</span><br><span class="line">		abs-&gt;personArray[abs-&gt;m_Size].m_Age = age;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//联系电话</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入联系电话：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		string phone = <span class="string">&quot;&quot;</span>;</span><br><span class="line">		cin &gt;&gt; phone;</span><br><span class="line">		abs-&gt;personArray[abs-&gt;m_Size].m_Phone = phone;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//家庭住址</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入家庭住址：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		string address;</span><br><span class="line">		cin &gt;&gt; address;</span><br><span class="line">		abs-&gt;personArray[abs-&gt;m_Size].m_Addr = address;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//更新通讯录人数</span></span><br><span class="line">		abs-&gt;m_Size++;</span><br><span class="line"></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;添加成功&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">		<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="测试添加联系人功能">5.5 测试添加联系人功能</h3>
+<h3 id="55-测试添加联系人功能"><a class="markdownIt-Anchor" href="#55-测试添加联系人功能"></a> 5.5 测试添加联系人功能</h3>
 <p>选择界面中，如果玩家选择了1，代表添加联系人，我们可以测试下该功能</p>
 <p>在switch case 语句中，case1里添加：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">1</span>:  <span class="comment">//添加联系人</span></span><br><span class="line">	<span class="built_in">addPerson</span>(&amp;abs);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
 <p>测试效果如图：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544165554002.png"
-alt="1544165554002" />
-<figcaption aria-hidden="true">1544165554002</figcaption>
-</figure>
-<h2 id="显示联系人">6、显示联系人</h2>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544165554002.png" alt="1544165554002" /></p>
+<h2 id="6-显示联系人"><a class="markdownIt-Anchor" href="#6-显示联系人"></a> 6、显示联系人</h2>
 <p>功能描述：显示通讯录中已有的联系人信息</p>
 <p>显示联系人实现步骤：</p>
 <ul>
 <li>封装显示联系人函数</li>
 <li>测试显示联系人功能</li>
 </ul>
-<h3 id="封装显示联系人函数">6.1 封装显示联系人函数</h3>
+<h3 id="61-封装显示联系人函数"><a class="markdownIt-Anchor" href="#61-封装显示联系人函数"></a> 6.1 封装显示联系人函数</h3>
 <p>思路：判断如果当前通讯录中没有人员，就提示记录为空，人数大于0，显示通讯录中信息</p>
 <p>显示联系人代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2、显示所有联系人信息</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showPerson</span><span class="params">(Addressbooks * abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (abs-&gt;m_Size == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;当前记录为空&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; abs-&gt;m_Size; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;姓名：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Name &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;性别：&quot;</span> &lt;&lt; (abs-&gt;personArray[i].m_Sex == <span class="number">1</span> ? <span class="string">&quot;男&quot;</span> : <span class="string">&quot;女&quot;</span>) &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;年龄：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Age &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;电话：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Phone &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;住址：&quot;</span> &lt;&lt; abs-&gt;personArray[i].m_Addr &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="测试显示联系人功能">6.2 测试显示联系人功能</h3>
+<h3 id="62-测试显示联系人功能"><a class="markdownIt-Anchor" href="#62-测试显示联系人功能"></a> 6.2 测试显示联系人功能</h3>
 <p>在switch case语句中，case 2 里添加</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">2</span>:  <span class="comment">//显示联系人</span></span><br><span class="line">	<span class="built_in">showPerson</span>(&amp;abs);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
 <p>测试效果如图：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544166401582.png"
-alt="1544166401582" />
-<figcaption aria-hidden="true">1544166401582</figcaption>
-</figure>
-<h2 id="删除联系人">7、删除联系人</h2>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544166401582.png" alt="1544166401582" /></p>
+<h2 id="7-删除联系人"><a class="markdownIt-Anchor" href="#7-删除联系人"></a> 7、删除联系人</h2>
 <p>功能描述：按照姓名进行删除指定联系人</p>
 <p>删除联系人实现步骤：</p>
 <ul>
@@ -529,135 +503,88 @@ alt="1544166401582" />
 <li>封装删除联系人函数</li>
 <li>测试删除联系人功能</li>
 </ul>
-<h3 id="封装检测联系人是否存在">7.1 封装检测联系人是否存在</h3>
+<h3 id="71-封装检测联系人是否存在"><a class="markdownIt-Anchor" href="#71-封装检测联系人是否存在"></a> 7.1  封装检测联系人是否存在</h3>
 <p>设计思路：</p>
 <p>删除联系人前，我们需要先判断用户输入的联系人是否存在，如果存在删除，不存在提示用户没有要删除的联系人</p>
 <p>因此我们可以把检测联系人是否存在封装成一个函数中，如果存在，返回联系人在通讯录中的位置，不存在返回-1</p>
 <p>检测联系人是否存在代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断是否存在查询的人员，存在返回在数组中索引位置，不存在返回-1</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">isExist</span><span class="params">(Addressbooks * abs, string name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; abs-&gt;m_Size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (abs-&gt;personArray[i].m_Name == name)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="封装删除联系人函数">7.2 封装删除联系人函数</h3>
+<h3 id="72-封装删除联系人函数"><a class="markdownIt-Anchor" href="#72-封装删除联系人函数"></a> 7.2 封装删除联系人函数</h3>
 <p>根据用户输入的联系人判断该通讯录中是否有此人</p>
 <p>查找到进行删除，并提示删除成功</p>
 <p>查不到提示查无此人。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3、删除指定联系人信息</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">deletePerson</span><span class="params">(Addressbooks * abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入您要删除的联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	string name;</span><br><span class="line">	cin &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> ret = <span class="built_in">isExist</span>(abs, name);</span><br><span class="line">	<span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = ret; i &lt; abs-&gt;m_Size; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			abs-&gt;personArray[i] = abs-&gt;personArray[i + <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">         abs-&gt;m_Size--;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;删除成功&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;查无此人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="测试删除联系人功能">7.3 测试删除联系人功能</h3>
+<h3 id="73-测试删除联系人功能"><a class="markdownIt-Anchor" href="#73-测试删除联系人功能"></a> 7.3 测试删除联系人功能</h3>
 <p>在switch case 语句中，case3里添加：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">3</span>:  <span class="comment">//删除联系人</span></span><br><span class="line">	<span class="built_in">deletePerson</span>(&amp;abs);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
 <p>测试效果如图：</p>
 <p>存在情况：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544167951559.png"
-alt="1544167951559" />
-<figcaption aria-hidden="true">1544167951559</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544167951559.png" alt="1544167951559" /></p>
 <p>不存在情况：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544168010831.png"
-alt="1544168010831" />
-<figcaption aria-hidden="true">1544168010831</figcaption>
-</figure>
-<h2 id="查找联系人">8、查找联系人</h2>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544168010831.png" alt="1544168010831" /></p>
+<h2 id="8-查找联系人"><a class="markdownIt-Anchor" href="#8-查找联系人"></a> 8、查找联系人</h2>
 <p>功能描述：按照姓名查看指定联系人信息</p>
 <p>查找联系人实现步骤</p>
 <ul>
 <li>封装查找联系人函数</li>
 <li>测试查找指定联系人</li>
 </ul>
-<h3 id="封装查找联系人函数">8.1 封装查找联系人函数</h3>
+<h3 id="81-封装查找联系人函数"><a class="markdownIt-Anchor" href="#81-封装查找联系人函数"></a> 8.1 封装查找联系人函数</h3>
 <p>实现思路：判断用户指定的联系人是否存在，如果存在显示信息，不存在则提示查无此人。</p>
 <p>查找联系人代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//4、查找指定联系人信息</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">findPerson</span><span class="params">(Addressbooks * abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入您要查找的联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	string name;</span><br><span class="line">	cin &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> ret = <span class="built_in">isExist</span>(abs, name);</span><br><span class="line">	<span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;姓名：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Name &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;性别：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Sex &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;年龄：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Age &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;电话：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Phone &lt;&lt; <span class="string">&quot;\t&quot;</span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;住址：&quot;</span> &lt;&lt; abs-&gt;personArray[ret].m_Addr &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;查无此人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="测试查找指定联系人">8.2 测试查找指定联系人</h3>
+<h3 id="82-测试查找指定联系人"><a class="markdownIt-Anchor" href="#82-测试查找指定联系人"></a> 8.2 测试查找指定联系人</h3>
 <p>在switch case 语句中，case4里添加：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">4</span>:  <span class="comment">//查找联系人</span></span><br><span class="line">	<span class="built_in">findPerson</span>(&amp;abs);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
 <p>测试效果如图</p>
 <p>存在情况：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544170057646.png"
-alt="1544170057646" />
-<figcaption aria-hidden="true">1544170057646</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544170057646.png" alt="1544170057646" /></p>
 <p>不存在情况：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544170254021.png"
-alt="1544170254021" />
-<figcaption aria-hidden="true">1544170254021</figcaption>
-</figure>
-<h2 id="修改联系人">9、修改联系人</h2>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544170254021.png" alt="1544170254021" /></p>
+<h2 id="9-修改联系人"><a class="markdownIt-Anchor" href="#9-修改联系人"></a> 9、修改联系人</h2>
 <p>功能描述：按照姓名重新修改指定联系人</p>
 <p>修改联系人实现步骤</p>
 <ul>
 <li>封装修改联系人函数</li>
 <li>测试修改联系人功能</li>
 </ul>
-<h3 id="封装修改联系人函数">9.1 封装修改联系人函数</h3>
+<h3 id="91-封装修改联系人函数"><a class="markdownIt-Anchor" href="#91-封装修改联系人函数"></a> 9.1 封装修改联系人函数</h3>
 <p>实现思路：查找用户输入的联系人，如果查找成功进行修改操作，查找失败提示查无此人</p>
 <p>修改联系人代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5、修改指定联系人信息</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">modifyPerson</span><span class="params">(Addressbooks * abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入您要修改的联系人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	string name;</span><br><span class="line">	cin &gt;&gt; name;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> ret = <span class="built_in">isExist</span>(abs, name);</span><br><span class="line">	<span class="keyword">if</span> (ret != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//姓名</span></span><br><span class="line">		string name;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入姓名：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		cin &gt;&gt; name;</span><br><span class="line">		abs-&gt;personArray[ret].m_Name = name;</span><br><span class="line"></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入性别：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;1 -- 男&quot;</span> &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;2 -- 女&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//性别</span></span><br><span class="line">		<span class="type">int</span> sex = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			cin &gt;&gt; sex;</span><br><span class="line">			<span class="keyword">if</span> (sex == <span class="number">1</span> || sex == <span class="number">2</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				abs-&gt;personArray[ret].m_Sex = sex;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;输入有误，请重新输入&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//年龄</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入年龄：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="type">int</span> age = <span class="number">0</span>;</span><br><span class="line">		cin &gt;&gt; age;</span><br><span class="line">		abs-&gt;personArray[ret].m_Age = age;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//联系电话</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入联系电话：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		string phone = <span class="string">&quot;&quot;</span>;</span><br><span class="line">		cin &gt;&gt; phone;</span><br><span class="line">		abs-&gt;personArray[ret].m_Phone = phone;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//家庭住址</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;请输入家庭住址：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		string address;</span><br><span class="line">		cin &gt;&gt; address;</span><br><span class="line">		abs-&gt;personArray[ret].m_Addr = address;</span><br><span class="line"></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;修改成功&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;查无此人&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="测试修改联系人功能">9.2 测试修改联系人功能</h3>
+<h3 id="92-测试修改联系人功能"><a class="markdownIt-Anchor" href="#92-测试修改联系人功能"></a> 9.2 测试修改联系人功能</h3>
 <p>在switch case 语句中，case 5里添加：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">5</span>:  <span class="comment">//修改联系人</span></span><br><span class="line">	<span class="built_in">modifyPerson</span>(&amp;abs);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
 <p>测试效果如图：</p>
 <p>查不到指定联系人情况：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172265676.png"
-alt="1544172265676" />
-<figcaption aria-hidden="true">1544172265676</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172265676.png" alt="1544172265676" /></p>
 <p>查找到联系人，并修改成功：</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172164141.png"
-alt="1544172164141" />
-<figcaption aria-hidden="true">1544172164141</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172164141.png" alt="1544172164141" /></p>
 <p>再次查看通讯录，确认修改完毕</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172228627.png"
-alt="1544172228627" />
-<figcaption aria-hidden="true">1544172228627</figcaption>
-</figure>
-<h2 id="清空联系人">10、清空联系人</h2>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172228627.png" alt="1544172228627" /></p>
+<h2 id="10-清空联系人"><a class="markdownIt-Anchor" href="#10-清空联系人"></a> 10、清空联系人</h2>
 <p>功能描述：清空通讯录中所有信息</p>
 <p>清空联系人实现步骤</p>
 <ul>
 <li>封装清空联系人函数</li>
 <li>测试清空联系人</li>
 </ul>
-<h3 id="封装清空联系人函数">10.1 封装清空联系人函数</h3>
-<p>实现思路：
-将通讯录所有联系人信息清除掉，只要将通讯录记录的联系人数量置为0，做逻辑清空即可。</p>
+<h3 id="101-封装清空联系人函数"><a class="markdownIt-Anchor" href="#101-封装清空联系人函数"></a> 10.1 封装清空联系人函数</h3>
+<p>实现思路： 将通讯录所有联系人信息清除掉，只要将通讯录记录的联系人数量置为0，做逻辑清空即可。</p>
 <p>清空联系人代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//6、清空所有联系人</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cleanPerson</span><span class="params">(Addressbooks * abs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	abs-&gt;m_Size = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;通讯录已清空&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="测试清空联系人">10.2 测试清空联系人</h3>
+<h3 id="102-测试清空联系人"><a class="markdownIt-Anchor" href="#102-测试清空联系人"></a> 10.2  测试清空联系人</h3>
 <p>在switch case 语句中，case 6 里添加：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">6</span>:  <span class="comment">//清空联系人</span></span><br><span class="line">	<span class="built_in">cleanPerson</span>(&amp;abs);</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
 <p>测试效果如图：</p>
 <p>清空通讯录</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172909693.png"
-alt="1544172909693" />
-<figcaption aria-hidden="true">1544172909693</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172909693.png" alt="1544172909693" /></p>
 <p>再次查看信息，显示记录为空</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172943653.png"
-alt="1544172943653" />
-<figcaption aria-hidden="true">1544172943653</figcaption>
-</figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1544172943653.png" alt="1544172943653" /></p>
 <p><strong>至此，通讯录管理系统完成！</strong></p>
 <hr />
 <p><strong>以上内容均转载自黑马程序员C++资料讲义，用于今后随时查阅和回顾。</strong><br />
-<strong>可以<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411b73Z">点击此处</a>观看完整视频教程</strong></p>
+<strong>可以<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411b73Z">点击此处</a>观看完整视频教程</strong></p>
 
       
     </div>

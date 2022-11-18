@@ -18,13 +18,14 @@
   
   
   <title>130. Surrounded Regions | 雀栎</title>
-  <meta name="description" content="一、描述 Given an m x n matrix board containing &#39;X&#39; and &#39;O&#39;, capture all regions that are 4-directionally surrounded by &#39;X&#39;. A region is captured by flipping all &#39;O&#39;s into &#39;X&#39;s in that surrounded reg">
+  <meta name="description" content="一、描述 Given an m x n matrix board containing &#39;X&#39; and &#39;O&#39;, capture all regions that are 4-directionally surrounded by ‘X’. A region is captured by flipping all &#39;O&#39;s into &#39;X&#39;s in that surrounded region.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="130. Surrounded Regions">
 <meta property="og:url" content="http://example.com/2022/08/11/130-Surrounded-Regions/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an m x n matrix board containing &#39;X&#39; and &#39;O&#39;, capture all regions that are 4-directionally surrounded by &#39;X&#39;. A region is captured by flipping all &#39;O&#39;s into &#39;X&#39;s in that surrounded reg">
+<meta property="og:description" content="一、描述 Given an m x n matrix board containing &#39;X&#39; and &#39;O&#39;, capture all regions that are 4-directionally surrounded by ‘X’. A region is captured by flipping all &#39;O&#39;s into &#39;X&#39;s in that surrounded region.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/130p1.jpg">
 <meta property="article:published_time" content="2022-08-11T14:39:05.000Z">
 <meta property="article:modified_time" content="2022-08-12T07:54:25.150Z">
 <meta property="article:author" content="雀栎">
@@ -36,6 +37,7 @@
 <meta property="article:tag" content="Union Find">
 <meta property="article:tag" content="Matrix">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/130p1.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/11/130-Surrounded-Regions/index.html">
   
@@ -324,7 +326,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -385,43 +387,35 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an <code>m x n</code> matrix <code>board</code> containing
-<code>'X'</code> and <code>'O'</code>, <em>capture all regions that are
-4-directionally surrounded by 'X'</em>.</p>
-<p>A region is <strong>captured</strong> by flipping all
-<code>'O'</code>s into <code>'X'</code>s in that surrounded region.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given an <code>m x n</code> matrix <code>board</code> containing <code>'X'</code> and <code>'O'</code>, <em>capture all regions that are 4-directionally surrounded by ‘X’</em>.</p>
+<p>A region is <strong>captured</strong> by flipping all <code>'O'</code>s into <code>'X'</code>s in that surrounded region.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/130p1.jpg" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/130p1.jpg" alt="" /></p>
 <blockquote>
-<p><strong>Input:</strong> board =
-[["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]<br />
-<strong>Output:</strong>
-[["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]<br />
-<strong>Explanation:</strong> Notice that an 'O' should not be flipped
-if:<br />
+<p><strong>Input:</strong> board = [[“X”,“X”,“X”,“X”],[“X”,“O”,“O”,“X”],[“X”,“X”,“O”,“X”],[“X”,“O”,“X”,“X”]]<br />
+<strong>Output:</strong> [[“X”,“X”,“X”,“X”],[“X”,“X”,“X”,“X”],[“X”,“X”,“X”,“X”],[“X”,“O”,“X”,“X”]]<br />
+<strong>Explanation:</strong> Notice that an ‘O’ should not be flipped if:<br />
 - It is on the border, or<br />
-- It is adjacent to an 'O' that should not be flipped.<br />
-The bottom 'O' is on the border, so it is not flipped.<br />
-The other three 'O' form a surrounded region, so they are flipped.</p>
+- It is adjacent to an ‘O’ that should not be flipped.<br />
+The bottom ‘O’ is on the border, so it is not flipped.<br />
+The other three ‘O’ form a surrounded region, so they are flipped.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
-<p><strong>Input:</strong> board = [["X"]]<br />
-<strong>Output:</strong> [["X"]]</p>
+<p><strong>Input:</strong> board = [[“X”]]<br />
+<strong>Output:</strong> [[“X”]]</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>m == board.length</li>
 <li>n == board[i].length</li>
 <li>1 &lt;= m, n &lt;= 200</li>
-<li>board[i][j] is 'X' or 'O'.</li>
+<li>board[i][j] is ‘X’ or ‘O’.</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">flag</span>(board.<span class="built_in">size</span>(), <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(board[<span class="number">0</span>].<span class="built_in">size</span>(), <span class="number">1</span>));</span><br><span class="line">        <span class="comment">//标记左右两行</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; board.<span class="built_in">size</span>()<span class="number">-1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(board[i][<span class="number">0</span>] == <span class="string">&#x27;O&#x27;</span>)&#123;</span><br><span class="line">                flag[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">                <span class="built_in">recursion</span>(i, <span class="number">0</span>, board, flag);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(board[i][board[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>] == <span class="string">&#x27;O&#x27;</span>)&#123;</span><br><span class="line">                flag[i][board[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>] = <span class="number">0</span>;</span><br><span class="line">                <span class="built_in">recursion</span>(i, board[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>, board, flag);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//标记上下两行</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; board[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(board[<span class="number">0</span>][j] == <span class="string">&#x27;O&#x27;</span>)&#123;</span><br><span class="line">                flag[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">                <span class="built_in">recursion</span>(<span class="number">0</span>, j, board, flag);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(board[board.<span class="built_in">size</span>()<span class="number">-1</span>][j] == <span class="string">&#x27;O&#x27;</span>)&#123;</span><br><span class="line">                flag[board.<span class="built_in">size</span>()<span class="number">-1</span>][j] = <span class="number">0</span>;</span><br><span class="line">                <span class="built_in">recursion</span>(board.<span class="built_in">size</span>()<span class="number">-1</span>, j, board, flag);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将未标记的O均翻转为X</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; board.<span class="built_in">size</span>()<span class="number">-1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt; board[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] == <span class="string">&#x27;O&#x27;</span> &amp;&amp; flag[i][j] == <span class="number">1</span>)</span><br><span class="line">                    board[i][j] = <span class="string">&#x27;X&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//将与边界O相连的O的flag值均设为0，表示不可翻转</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">recursion</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j, vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; flag)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>((i == <span class="number">0</span> || board[i<span class="number">-1</span>][j] == <span class="string">&#x27;X&#x27;</span> || flag[i<span class="number">-1</span>][j] == <span class="number">0</span>) </span><br><span class="line">           &amp;&amp; (i == board.<span class="built_in">size</span>()<span class="number">-1</span> || board[i+<span class="number">1</span>][j] == <span class="string">&#x27;X&#x27;</span> || flag[i+<span class="number">1</span>][j] == <span class="number">0</span>)</span><br><span class="line">           &amp;&amp; (j == <span class="number">0</span> || board[i][j<span class="number">-1</span>] == <span class="string">&#x27;X&#x27;</span> || flag[i][j<span class="number">-1</span>] == <span class="number">0</span>)</span><br><span class="line">           &amp;&amp; (j == board[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span> || board[i][j+<span class="number">1</span>] == <span class="string">&#x27;X&#x27;</span> || flag[i][j+<span class="number">1</span>] == <span class="number">0</span>))</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span>(i != <span class="number">0</span> &amp;&amp; board[i<span class="number">-1</span>][j] == <span class="string">&#x27;O&#x27;</span> &amp;&amp; flag[i<span class="number">-1</span>][j] == <span class="number">1</span>)&#123;</span><br><span class="line">            flag[i<span class="number">-1</span>][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">recursion</span>(i<span class="number">-1</span>, j, board, flag);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">if</span>(i != board.<span class="built_in">size</span>()<span class="number">-1</span> &amp;&amp; board[i+<span class="number">1</span>][j] == <span class="string">&#x27;O&#x27;</span> &amp;&amp; flag[i+<span class="number">1</span>][j] == <span class="number">1</span>)&#123;</span><br><span class="line">            flag[i+<span class="number">1</span>][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">recursion</span>(i+<span class="number">1</span>, j, board, flag);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j != <span class="number">0</span> &amp;&amp; board[i][j<span class="number">-1</span>] == <span class="string">&#x27;O&#x27;</span> &amp;&amp; flag[i][j<span class="number">-1</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">            flag[i][j<span class="number">-1</span>] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">recursion</span>(i, j<span class="number">-1</span>, board, flag);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">if</span>(j != board[<span class="number">0</span>].<span class="built_in">size</span>()<span class="number">-1</span> &amp;&amp; board[i][j+<span class="number">1</span>] == <span class="string">&#x27;O&#x27;</span> &amp;&amp; flag[i][j+<span class="number">1</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">            flag[i][j+<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">recursion</span>(i, j+<span class="number">1</span>, board, flag);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

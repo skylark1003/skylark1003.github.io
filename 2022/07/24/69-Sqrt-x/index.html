@@ -18,13 +18,14 @@
   
   
   <title>69. Sqrt(x) | 雀栎</title>
-  <meta name="description" content="一、描述 Given a non-negative integer x, compute and return the square root of x. Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is ret">
+  <meta name="description" content="一、描述 Given a non-negative integer x, compute and return the square root of x. Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returne">
 <meta property="og:type" content="article">
 <meta property="og:title" content="69. Sqrt(x)">
 <meta property="og:url" content="http://example.com/2022/07/24/69-Sqrt-x/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given a non-negative integer x, compute and return the square root of x. Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is ret">
+<meta property="og:description" content="一、描述 Given a non-negative integer x, compute and return the square root of x. Since the return type is an integer, the decimal digits are truncated, and only the integer part of the result is returne">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1UWU%7D881736XV0~E0%60K%7DM%7B7.png">
 <meta property="article:published_time" content="2022-07-24T06:45:37.000Z">
 <meta property="article:modified_time" content="2022-07-25T15:07:28.995Z">
 <meta property="article:author" content="雀栎">
@@ -33,6 +34,7 @@
 <meta property="article:tag" content="Math">
 <meta property="article:tag" content="Binary Search">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1UWU%7D881736XV0~E0%60K%7DM%7B7.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/07/24/69-Sqrt-x/index.html">
   
@@ -321,7 +323,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -382,16 +384,11 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given a non-negative integer <code>x</code>, compute and return the
-square root of <code>x</code>.</p>
-<p>Since the return type is an integer, the decimal digits are
-<strong>truncated</strong>, and only <strong>the integer part</strong>
-of the result is returned.</p>
-<p><strong>Note:</strong> You are not allowed to use any built-in
-exponent function or operator, such as <code>pow(x, 0.5)</code> or
-<code>x ** 0.5</code>.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given a non-negative integer <code>x</code>, compute and return the square root of <code>x</code>.</p>
+<p>Since the return type is an integer, the decimal digits are <strong>truncated</strong>, and only <strong>the integer part</strong> of the result is returned.</p>
+<p><strong>Note:</strong> You are not allowed to use any built-in exponent function or operator, such as <code>pow(x, 0.5)</code> or <code>x ** 0.5</code>.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> x = 4<br />
@@ -401,17 +398,17 @@ exponent function or operator, such as <code>pow(x, 0.5)</code> or
 <blockquote>
 <p><strong>Input:</strong> x = 8<br />
 <strong>Output:</strong> 2<br />
-<strong>Explanation:</strong> The square root of 8 is 2.82842..., and
-since the decimal part is truncated, 2 is returned.</p>
+<strong>Explanation:</strong> The square root of 8 is 2.82842…, and since the decimal part is truncated, 2 is returned.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
 <li>0 &lt;= x &lt;= 2<sup>31</sup> - 1</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mySqrt</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i * i == x)&#123;</span><br><span class="line">                ans = i;</span><br><span class="line">                <span class="keyword">break</span>;                </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i * i &gt; x)&#123;</span><br><span class="line">                ans = i<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>他解（来自StefanPochmann）： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mySqrt</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> r = x;</span><br><span class="line">        <span class="keyword">while</span> (r*r &gt; x)</span><br><span class="line">            r = (r + x/r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure> <img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1UWU%7D881736XV0~E0%60K%7DM%7B7.png" /></p>
+<p>他解（来自StefanPochmann）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mySqrt</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> r = x;</span><br><span class="line">        <span class="keyword">while</span> (r*r &gt; x)</span><br><span class="line">            r = (r + x/r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/1UWU%7D881736XV0~E0%60K%7DM%7B7.png" alt="" /></p>
 
       
     </div>

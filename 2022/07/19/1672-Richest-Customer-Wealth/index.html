@@ -18,12 +18,12 @@
   
   
   <title>1672. Richest Customer Wealth | 雀栎</title>
-  <meta name="description" content="一、描述 You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest">
+  <meta name="description" content="一、描述 You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest cu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1672. Richest Customer Wealth">
 <meta property="og:url" content="http://example.com/2022/07/19/1672-Richest-Customer-Wealth/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest">
+<meta property="og:description" content="一、描述 You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest cu">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-19T08:23:29.000Z">
 <meta property="article:modified_time" content="2022-07-19T08:49:10.674Z">
@@ -321,7 +321,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -382,16 +382,10 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>You are given an <code>m</code> <code>x</code> <code>n</code> integer
-grid <code>accounts</code> where <code>accounts[i][j]</code> is the
-amount of money the i​​​​​​​​​​​<sup>th</sup>​​​​ customer has in the j​​​​​​​​​​​<sup>th</sup>​​​​
-bank. Return the <strong>wealth</strong> that the richest customer
-has.</p>
-<p>A customer's <strong>wealth</strong> is the amount of money they have
-in all their bank accounts. The richest customer is the customer that
-has the maximum <strong>wealth</strong>.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>You are given an <code>m</code> <code>x</code> <code>n</code> integer grid <code>accounts</code> where <code>accounts[i][j]</code> is the amount of money the i​​​​​​​​​​​<sup>th</sup>​​​​ customer has in the j​​​​​​​​​​​<sup>th</sup>​​​​ bank. Return the <strong>wealth</strong> that the richest customer has.</p>
+<p>A customer’s <strong>wealth</strong> is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum <strong>wealth</strong>.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> accounts = [[1,2,3],[3,2,1]]<br />
@@ -399,8 +393,7 @@ has the maximum <strong>wealth</strong>.</p>
 <strong>Explanation:</strong><br />
 1st customer has wealth = 1 + 2 + 3 = 6<br />
 2nd customer has wealth = 3 + 2 + 1 = 6<br />
-Both customers are considered the richest with a wealth of 6 each, so
-return 6.</p>
+Both customers are considered the richest with a wealth of 6 each, so return 6.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
@@ -417,12 +410,15 @@ The 2nd customer is the richest with a wealth of 10.</p>
 <p><strong>Input:</strong> accounts = [[2,8,7],[7,1,3],[1,9,5]]<br />
 <strong>Output:</strong> 17</p>
 </blockquote>
-<p><strong>Constraints:</strong> * m == accounts.length * n ==
-accounts[i].length * 1 &lt;= m, n &lt;= 50 * 1 &lt;= accounts[i][j]
-&lt;= 100</p>
-<h1 id="三代码">三、代码</h1>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>m == accounts.length</li>
+<li>n == accounts[i].length</li>
+<li>1 &lt;= m, n &lt;= 50</li>
+<li>1 &lt;= accounts[i][j] &lt;= 100</li>
+</ul>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumWealth</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; accounts)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> array[<span class="number">55</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">55</span>; i++)&#123;</span><br><span class="line">            array[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> money = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;::iterator it = accounts.<span class="built_in">begin</span>(); it != accounts.<span class="built_in">end</span>(); it++)&#123;</span><br><span class="line">            money = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(vector&lt;<span class="type">int</span>&gt;::iterator intit = (*it).<span class="built_in">begin</span>(); intit != (*it).<span class="built_in">end</span>(); intit++)&#123;</span><br><span class="line">                money += *intit;</span><br><span class="line">            &#125;</span><br><span class="line">            array[m] = money;</span><br><span class="line">            m++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> maxm = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(array[i]&gt;maxm)</span><br><span class="line">                maxm = array[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

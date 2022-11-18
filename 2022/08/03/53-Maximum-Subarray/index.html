@@ -18,21 +18,21 @@
   
   
   <title>53. Maximum Subarray | 雀栎</title>
-  <meta name="description" content="一、描述 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array. 二、例子 E">
+  <meta name="description" content="一、描述 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array.  二、例子 Exampl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="53. Maximum Subarray">
 <meta property="og:url" content="http://example.com/2022/08/03/53-Maximum-Subarray/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array. 二、例子 E">
+<meta property="og:description" content="一、描述 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array.  二、例子 Exampl">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-03T10:19:58.000Z">
 <meta property="article:modified_time" content="2022-08-14T08:26:24.249Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="Array">
+<meta property="article:tag" content="Medium">
 <meta property="article:tag" content="Dynamic Programming">
 <meta property="article:tag" content="☆">
-<meta property="article:tag" content="Medium">
 <meta property="article:tag" content="Divide and Conquer">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -323,7 +323,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -384,13 +384,10 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an integer array <code>nums</code>, find the contiguous
-subarray (containing at least one number) which has the largest sum and
-return <em>its sum</em>.</p>
-<p>A <strong>subarray</strong> is a <strong>contiguous</strong> part of
-an array.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return <em>its sum</em>.</p>
+<p>A <strong>subarray</strong> is a <strong>contiguous</strong> part of an array.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> nums = [-2,1,-3,4,-1,2,1,-5,4]<br />
@@ -412,34 +409,31 @@ an array.</p>
 <li>1 &lt;= nums.length &lt;= 10<sup>5</sup></li>
 <li>-104 &lt;= nums[i] &lt;= 10<sup>4</sup></li>
 </ul>
-<p><strong>Follow up:</strong> If you have figured out the O(n)
-solution, try coding another solution using the <strong>divide and
-conquer</strong> approach, which is more subtle.</p>
-<h1 id="三代码">三、代码</h1>
-<p>解法超时（时间复杂度为O(n<sup>2</sup>)： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxSubArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i; j &lt; nums.<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                cur += nums[j];</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-解法来自mathavanlazarus（时间复杂度O(n)）： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxSubArray</span><span class="params">(vector &lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> sum = nums[<span class="number">0</span>], maxi = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum = <span class="built_in">max</span>(nums[i],sum + nums[i]);</span><br><span class="line">            maxi = <span class="built_in">max</span>(maxi, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxi;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure> <strong>Kadane
-算法:</strong></p>
-<p>若更改对子数组的遍历方式，以子序列的结束节点为基准，先遍历出以某个节点为结束的所有子序列，因为每个节点都可能会是子序列的结束节点，因此要遍历下整个序列，如:
-以 b 为结束点的所有子序列: [a , b] [b] 以 c 为结束点的所有子序列: [a, b,
-c] [b, c] [ c ]。</p>
+<p><strong>Follow up:</strong> If you have figured out the O(n) solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
+<p>解法超时（时间复杂度为O(n<sup>2</sup>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxSubArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i; j &lt; nums.<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">                cur += nums[j];</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>解法来自mathavanlazarus（时间复杂度O(n)）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxSubArray</span><span class="params">(vector &lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> sum = nums[<span class="number">0</span>], maxi = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; nums.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum = <span class="built_in">max</span>(nums[i],sum + nums[i]);</span><br><span class="line">            maxi = <span class="built_in">max</span>(maxi, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxi;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>Kadane 算法:</strong></p>
+<p>若更改对子数组的遍历方式，以子序列的结束节点为基准，先遍历出以某个节点为结束的所有子序列，因为每个节点都可能会是子序列的结束节点，因此要遍历下整个序列，如: 以 b 为结束点的所有子序列: [a , b] [b] 以 c 为结束点的所有子序列: [a, b, c] [b, c] [ c ]。</p>
 <p>这样当我们想获取以c为结束点的子序列相关信息时，可以利用先前以b为结束点的子序列信息，比如若想知道子序列[a,b,c]之和，只要利用先前计算的[a,b]子序列之和再加上c即可，用递推式表示就是sum[i]=sum[i-1]+array[i]。</p>
 <p>总而言之，新的遍历方式可以产生递推关系，当前问题的解可以在先前问题的解的基础上获得，我们若保存先前问题的解，获得当前问题的解只需要常数时间。这样的算法效率自然得到了提高。采用这种遍历方式来解决问题，就是动态规划的思路。</p>
 <p><strong>动态规划</strong>的关键有三点，一是定义子问题。二是递推基，即问题规模在最简单的情况下解是怎样的。三是递推关系，即如何通过先前保存的子问题的解获得当前解。</p>
 <p>在最大子数组之和问题中，首先定义子问题。我们定义子问题是为了能在最终保存的所有子问题解中获得目标问题解。常见的定义子问题的方式有两种，一是定义目标问题为子问题，二是定义非目标问题为子问题，目标问题的解可以通过所保存的所有子问题的解来获得。</p>
-<p>我们首先通过尝试使用第一种方式来定义子问题。我们将目标问题抽象为array[0,n-1]的最大子数组之和maxSubSum(n-1)，其中n表示数组长度。子问题即求array[0,i]的最大子数组之和maxSubSum(i)，我们用数组dp来记录子问题的解。递推基为dp[0]=array[0]。递推关系需要思考maxSubSum(i-1)和maxSubSum(i)的关系。而这样的递推关系很难获得。例如，数组[-2,1,-3,4,-1,2,1,-5,4]递推基为dp[0]=-2，而dp[1]=1,
-dp[2]=1, dp[3]=4, dp[3]和dp[2]之间的关系并不明确。</p>
-<p>故尝试使用第二种方式来定义子问题。我们将子问题定义为求<strong>以i为终止下标的子数组之和的最大值</strong>，这样最终可以通过比较以0为下标的子数组最大值、以1为下标的子数组最大值......以n-1为下标的子数组最大值获得最终解。我们用数组dp来记录子问题的解。递推基为dp[0]=array[0]。递推关系相比下来就清晰明了多了，当我们对dp[i-1]和array[i]分正负讨论。
-- 若dp[i-1]&lt;0, array[i]&gt;0, dp[i]=array[i]， - 若dp[i-1]&lt;0,
-array[i]&lt;0, dp[i]=array[i]， - 若dp[i-1]&gt;0, array[i]&lt;0,
-dp[i]=dp[i-1]+array[i], - 若dp[i-1]&gt;0, array[i]&gt;0,
-dp[i]=dp[i-1]+array[i]。</p>
+<p>我们首先通过尝试使用第一种方式来定义子问题。我们将目标问题抽象为array[0,n-1]的最大子数组之和maxSubSum(n-1)，其中n表示数组长度。子问题即求array[0,i]的最大子数组之和maxSubSum(i)，我们用数组dp来记录子问题的解。递推基为dp[0]=array[0]。递推关系需要思考maxSubSum(i-1)和maxSubSum(i)的关系。而这样的递推关系很难获得。例如，数组[-2,1,-3,4,-1,2,1,-5,4]递推基为dp[0]=-2，而dp[1]=1, dp[2]=1, dp[3]=4, dp[3]和dp[2]之间的关系并不明确。</p>
+<p>故尝试使用第二种方式来定义子问题。我们将子问题定义为求<strong>以i为终止下标的子数组之和的最大值</strong>，这样最终可以通过比较以0为下标的子数组最大值、以1为下标的子数组最大值…以n-1为下标的子数组最大值获得最终解。我们用数组dp来记录子问题的解。递推基为dp[0]=array[0]。递推关系相比下来就清晰明了多了，当我们对dp[i-1]和array[i]分正负讨论。</p>
+<ul>
+<li>若dp[i-1]&lt;0, array[i]&gt;0, dp[i]=array[i]，</li>
+<li>若dp[i-1]&lt;0, array[i]&lt;0, dp[i]=array[i]，</li>
+<li>若dp[i-1]&gt;0, array[i]&lt;0, dp[i]=dp[i-1]+array[i],</li>
+<li>若dp[i-1]&gt;0, array[i]&gt;0, dp[i]=dp[i-1]+array[i]。</li>
+</ul>
 <p>最后, 原始问题的解即max(dp)。</p>
-<p>整个动态规划解法就浮现了。当然递推关系可以简化，<strong>dp[i]=max(dp[i-1]+array[i],
-array[i])</strong>。算法时间复杂度为O(n)，空间复杂度为O(n)。</p>
+<p>整个动态规划解法就浮现了。当然递推关系可以简化，<strong>dp[i]=max(dp[i-1]+array[i], array[i])</strong>。算法时间复杂度为O(n)，空间复杂度为O(n)。</p>
 <p>kadane算法是在动态规划解的基础上进一步优化。它使用一根指针保存以i为结尾的子数组最大值之和，使用另一根指针保存迄今为止的子数组最大值之和。算法时间复杂度为O（n）,空间复杂度为O(1)。代码非常漂亮优雅。</p>
 <blockquote>
-<p>以上内容转载自<a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85188269">滴滴面试手撕算法题-kadane算法</a>.</p>
+<p>以上内容转载自<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85188269">滴滴面试手撕算法题-kadane算法</a>.</p>
 </blockquote>
 
       

@@ -18,12 +18,12 @@
   
   
   <title>384. Shuffle an Array | 雀栎</title>
-  <meta name="description" content="一、描述 Given an integer array nums, design an algorithm to randomly shuffle the array. All permutations of the array should be equally likely as a result of the shuffling. Implement the Solution cla">
+  <meta name="description" content="一、描述 Given an integer array nums, design an algorithm to randomly shuffle the array. All permutations of the array should be equally likely as a result of the shuffling. Implement the Solution class:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="384. Shuffle an Array">
 <meta property="og:url" content="http://example.com/2022/09/07/384-Shuffle-an-Array/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an integer array nums, design an algorithm to randomly shuffle the array. All permutations of the array should be equally likely as a result of the shuffling. Implement the Solution cla">
+<meta property="og:description" content="一、描述 Given an integer array nums, design an algorithm to randomly shuffle the array. All permutations of the array should be equally likely as a result of the shuffling. Implement the Solution class:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-07T05:45:30.000Z">
 <meta property="article:modified_time" content="2022-09-08T05:48:45.633Z">
@@ -322,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -383,38 +383,29 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an integer array <code>nums</code>, design an algorithm to
-randomly shuffle the array. All permutations of the array should be
-<strong>equally likely</strong> as a result of the shuffling.</p>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given an integer array <code>nums</code>, design an algorithm to randomly shuffle the array. All permutations of the array should be <strong>equally likely</strong> as a result of the shuffling.</p>
 <p>Implement the <code>Solution</code> class:</p>
 <ul>
-<li><code>Solution(int[] nums)</code> Initializes the object with the
-integer array nums.</li>
-<li><code>int[] reset()</code> Resets the array to its original
-configuration and returns it.</li>
-<li><code>int[] shuffle()</code> Returns a random shuffling of the
-array.</li>
+<li><code>Solution(int[] nums)</code> Initializes the object with the integer array nums.</li>
+<li><code>int[] reset()</code> Resets the array to its original configuration and returns it.</li>
+<li><code>int[] shuffle()</code> Returns a random shuffling of the array.</li>
 </ul>
-<h1 id="二例子">二、例子</h1>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
-<p><strong>Input</strong> ["Solution", "shuffle", "reset",
-"shuffle"]<br />
+<p><strong>Input</strong><br />
+[“Solution”, “shuffle”, “reset”, “shuffle”]<br />
 [[[1, 2, 3]], [], [], []]<br />
 <strong>Output</strong><br />
 [null, [3, 1, 2], [1, 2, 3], [1, 3, 2]]</p>
 <p><strong>Explanation</strong><br />
 Solution solution = new Solution([1, 2, 3]);<br />
-solution.shuffle(); // Shuffle the array [1,2,3] and return its
-result.<br />
-// Any permutation of [1,2,3] must be equally likely to be
-returned.<br />
+solution.shuffle();    // Shuffle the array [1,2,3] and return its result.<br />
+// Any permutation of [1,2,3] must be equally likely to be returned.<br />
 // Example: return [3, 1, 2]<br />
-solution.reset(); // Resets the array back to its original configuration
-[1,2,3]. Return [1, 2, 3]<br />
-solution.shuffle(); // Returns the random shuffling of array [1,2,3].
-Example: return [1, 3, 2]</p>
+solution.reset();      // Resets the array back to its original configuration [1,2,3]. Return [1, 2, 3]<br />
+solution.shuffle();    // Returns the random shuffling of array [1,2,3]. Example: return [1, 3, 2]</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -423,9 +414,8 @@ Example: return [1, 3, 2]</p>
 <li>All the elements of nums are unique.</li>
 <li>At most 104 calls in total will be made to reset and shuffle.</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">    <span class="built_in">Solution</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        v = nums;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">reset</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">shuffle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; copy = v;</span><br><span class="line">        <span class="built_in">random_shuffle</span>(copy.<span class="built_in">begin</span>(), copy.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> copy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Solution object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Solution* obj = new Solution(nums);</span></span><br><span class="line"><span class="comment"> * vector&lt;int&gt; param_1 = obj-&gt;reset();</span></span><br><span class="line"><span class="comment"> * vector&lt;int&gt; param_2 = obj-&gt;shuffle();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

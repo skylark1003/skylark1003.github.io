@@ -18,12 +18,12 @@
   
   
   <title>197. Rising Temperature | 雀栎</title>
-  <meta name="description" content="一、描述  Weather   Column Name Type     id int   recordDate date   temperature int    id is the primary key for this table. This table contains information about the temperature">
+  <meta name="description" content="一、描述 Table: Weather    Column Name Type     id int   recordDate date   temperature int    id is the primary key for this table. This table contains information about the temperature on a certain day.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="197. Rising Temperature">
 <meta property="og:url" content="http://example.com/2022/08/21/197-Rising-Temperature/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述  Weather   Column Name Type     id int   recordDate date   temperature int    id is the primary key for this table. This table contains information about the temperature">
+<meta property="og:description" content="一、描述 Table: Weather    Column Name Type     id int   recordDate date   temperature int    id is the primary key for this table. This table contains information about the temperature on a certain day.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-21T12:25:27.000Z">
 <meta property="article:modified_time" content="2022-08-21T14:08:43.613Z">
@@ -320,7 +320,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -371,7 +371,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/21/197-Rising-Temperature/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 160(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 161(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -381,95 +381,91 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Table: Weather</p>
 <table>
-<caption>Weather</caption>
 <thead>
-<tr class="header">
-<th style="text-align: center;">Column Name</th>
-<th style="text-align: center;">Type</th>
+<tr>
+<th style="text-align:center">Column Name</th>
+<th style="text-align:center">Type</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">id</td>
-<td style="text-align: center;">int</td>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">recordDate</td>
-<td style="text-align: center;">date</td>
+<tr>
+<td style="text-align:center">recordDate</td>
+<td style="text-align:center">date</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">temperature</td>
-<td style="text-align: center;">int</td>
+<tr>
+<td style="text-align:center">temperature</td>
+<td style="text-align:center">int</td>
 </tr>
 </tbody>
 </table>
-<p>id is the primary key for this table. This table contains information
-about the temperature on a certain day.</p>
-<p>Write an SQL query to find all dates' Id with higher temperatures
-compared to its previous dates (yesterday).</p>
+<p>id is the primary key for this table.<br />
+This table contains information about the temperature on a certain day.</p>
+<p>Write an SQL query to find all dates’ Id with higher temperatures compared to its previous dates (yesterday).</p>
 <p>Return the result table in <strong>any order</strong>.</p>
 <p>The query result format is in the following example.</p>
-<h1 id="二例子">二、例子</h1>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <p><strong>Input:</strong><br />
 Weather table:</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">id</th>
-<th style="text-align: center;">recordDate</th>
-<th style="text-align: center;">temperature</th>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">recordDate</th>
+<th style="text-align:center">temperature</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2015-01-01</td>
-<td style="text-align: center;">10</td>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2015-01-01</td>
+<td style="text-align:center">10</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2015-01-02</td>
-<td style="text-align: center;">25</td>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2015-01-02</td>
+<td style="text-align:center">25</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">2015-01-03</td>
-<td style="text-align: center;">20</td>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2015-01-03</td>
+<td style="text-align:center">20</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">2015-01-04</td>
-<td style="text-align: center;">30</td>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2015-01-04</td>
+<td style="text-align:center">30</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Output:</strong></p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">id</th>
+<tr>
+<th style="text-align:center">id</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">2</td>
+<tr>
+<td style="text-align:center">2</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
+<tr>
+<td style="text-align:center">4</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Explanation:</strong><br />
-In 2015-01-02, the temperature was higher than the previous day (10
--&gt; 25).<br />
-In 2015-01-04, the temperature was higher than the previous day (20
--&gt; 30).</p>
-<h1 id="三代码">三、代码</h1>
+In 2015-01-02, the temperature was higher than the previous day (10 -&gt; 25).<br />
+In 2015-01-04, the temperature was higher than the previous day (20 -&gt; 30).</p>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"><span class="keyword">SELECT</span> w1.id</span><br><span class="line"><span class="keyword">FROM</span> Weather w1, Weather w2</span><br><span class="line"><span class="keyword">WHERE</span> TO_DAYS(w1.recordDate)<span class="operator">-</span>TO_DAYS(w2.recordDate)<span class="operator">=</span><span class="number">1</span></span><br><span class="line"><span class="keyword">AND</span> w1.temperature<span class="operator">&gt;</span>w2.temperature</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

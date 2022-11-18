@@ -18,12 +18,12 @@
   
   
   <title>347. Top K Frequent Elements | 雀栎</title>
-  <meta name="description" content="一、描述 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order. 二、例子 Example 1:  Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2 Output: [1,">
+  <meta name="description" content="一、描述 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.  二、例子 Example 1:  Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2 Output: [1,2]  Exa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="347. Top K Frequent Elements">
 <meta property="og:url" content="http://example.com/2022/09/05/347-Top-K-Frequent-Elements/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order. 二、例子 Example 1:  Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2 Output: [1,">
+<meta property="og:description" content="一、描述 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.  二、例子 Example 1:  Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2 Output: [1,2]  Exa">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-05T04:16:16.000Z">
 <meta property="article:modified_time" content="2022-09-05T08:27:01.432Z">
@@ -327,7 +327,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -388,12 +388,9 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an integer array <code>nums</code> and an integer
-<code>k</code>, return <em>the <code>k</code> most frequent
-elements</em>. You may return the answer in <strong>any
-order</strong>.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the <code>k</code> most frequent elements</em>. You may return the answer in <strong>any order</strong>.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> nums = [1,1,1,2,2,3], k = 2<br />
@@ -408,15 +405,12 @@ order</strong>.</p>
 <ul>
 <li>1 &lt;= nums.length &lt;= 10<sup>5</sup></li>
 <li>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></li>
-<li>k is in the range [1, the number of unique elements in the
-array].</li>
+<li>k is in the range [1, the number of unique elements in the array].</li>
 <li>It is guaranteed that the answer is unique.</li>
 </ul>
-<p><strong>Follow up:</strong> Your algorithm's time complexity must be
-better than O(n log n), where n is the array's size.</p>
-<h1 id="三代码">三、代码</h1>
+<p><strong>Follow up:</strong> Your algorithm’s time complexity must be better than O(n log n), where n is the array’s size.</p>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:    </span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">topKFrequent</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; mp;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x : nums)</span><br><span class="line">            mp[x]++;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">v</span>(mp.<span class="built_in">size</span>(), <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">2</span>, <span class="number">0</span>));</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x : mp)&#123;</span><br><span class="line">            v[i][<span class="number">0</span>] = x.first;</span><br><span class="line">            v[i][<span class="number">1</span>] = x.second;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), compare);</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">            ans.<span class="built_in">push_back</span>(v[i][<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">bool</span> <span class="title">compare</span><span class="params">(vector&lt;<span class="type">int</span>&gt; v1, vector&lt;<span class="type">int</span>&gt; v2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v1[<span class="number">1</span>] &gt; v2[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

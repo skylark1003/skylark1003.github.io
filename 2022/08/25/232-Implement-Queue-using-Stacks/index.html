@@ -18,12 +18,12 @@
   
   
   <title>232. Implement Queue using Stacks | 雀栎</title>
-  <meta name="description" content="一、描述 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty). Implement the MyQueu">
+  <meta name="description" content="一、描述 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty). Implement the MyQueue cl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="232. Implement Queue using Stacks">
 <meta property="og:url" content="http://example.com/2022/08/25/232-Implement-Queue-using-Stacks/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty). Implement the MyQueu">
+<meta property="og:description" content="一、描述 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty). Implement the MyQueue cl">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-25T06:24:47.000Z">
 <meta property="article:modified_time" content="2022-08-25T06:32:01.212Z">
@@ -322,7 +322,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -383,44 +383,32 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Implement a first in first out (FIFO) queue using only two stacks.
-The implemented queue should support all the functions of a normal queue
-(<code>push</code>, <code>peek</code>, <code>pop</code>, and
-<code>empty</code>).</p>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (<code>push</code>, <code>peek</code>, <code>pop</code>, and <code>empty</code>).</p>
 <p>Implement the <code>MyQueue</code> class:</p>
 <ul>
-<li><code>void push(int x)</code> Pushes element x to the back of the
-queue.</li>
-<li><code>int pop()</code> Removes the element from the front of the
-queue and returns it.</li>
-<li><code>int peek()</code> Returns the element at the front of the
-queue.</li>
-<li><code>boolean empty()</code> Returns true if the queue is empty,
-false otherwise.</li>
+<li><code>void push(int x)</code> Pushes element x to the back of the queue.</li>
+<li><code>int pop()</code> Removes the element from the front of the queue and returns it.</li>
+<li><code>int peek()</code> Returns the element at the front of the queue.</li>
+<li><code>boolean empty()</code> Returns true if the queue is empty, false otherwise.</li>
 </ul>
 <p><strong>Notes:</strong></p>
 <ul>
-<li>You must use <strong>only</strong> standard operations of a stack,
-which means only push to top, peek/pop from top, size, and is empty
-operations are valid.</li>
-<li>Depending on your language, the stack may not be supported natively.
-You may simulate a stack using a list or deque (double-ended queue) as
-long as you use only a stack's standard operations.</li>
+<li>You must use <strong>only</strong> standard operations of a stack, which means only push to top, peek/pop from top, size, and is empty operations are valid.</li>
+<li>Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack’s standard operations.</li>
 </ul>
-<h1 id="二例子">二、例子</h1>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input</strong><br />
-["MyQueue", "push", "push", "peek", "pop", "empty"]<br />
+[“MyQueue”, “push”, “push”, “peek”, “pop”, “empty”]<br />
 [[], [1], [2], [], [], []]<br />
 <strong>Output</strong><br />
 [null, null, null, 1, 1, false]</p>
 <p><strong>Explanation</strong><br />
 MyQueue myQueue = new MyQueue();<br />
 myQueue.push(1); // queue is: [1]<br />
-myQueue.push(2); // queue is: [1, 2] (leftmost is front of the
-queue)<br />
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)<br />
 myQueue.peek(); // return 1<br />
 myQueue.pop(); // return 1, queue is [2]<br />
 myQueue.empty(); // return false</p>
@@ -431,13 +419,9 @@ myQueue.empty(); // return false</p>
 <li>At most 100 calls will be made to push, pop, peek, and empty.</li>
 <li>All the calls to pop and peek are valid.</li>
 </ul>
-<p><strong>Follow-up:</strong> Can you implement the queue such that
-each operation is amortized O(1) time complexity? In other words,
-performing n operations will take overall O(n) time even if one of those
-operations may take longer.</p>
-<h1 id="三代码">三、代码</h1>
+<p><strong>Follow-up:</strong> Can you implement the queue such that each operation is amortized O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer.</p>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyQueue</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    deque&lt;<span class="type">int</span>&gt; dq;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">MyQueue</span>() &#123;</span><br><span class="line">        dq.<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        dq.<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = *dq.<span class="built_in">begin</span>();</span><br><span class="line">        dq.<span class="built_in">pop_front</span>();</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> *dq.<span class="built_in">begin</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(dq.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyQueue* obj = new MyQueue();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push(x);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj-&gt;pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;peek();</span></span><br><span class="line"><span class="comment"> * bool param_4 = obj-&gt;empty();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

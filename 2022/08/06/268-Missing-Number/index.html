@@ -18,12 +18,12 @@
   
   
   <title>268. Missing Number | 雀栎</title>
-  <meta name="description" content="一、描述 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array. 二、例子 Example 1:  Input: nums &#x3D; [3,0,1] Output: 2">
+  <meta name="description" content="一、描述 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.  二、例子 Example 1:  Input: nums &#x3D; [3,0,1] Output: 2 Expla">
 <meta property="og:type" content="article">
 <meta property="og:title" content="268. Missing Number">
 <meta property="og:url" content="http://example.com/2022/08/06/268-Missing-Number/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array. 二、例子 Example 1:  Input: nums &#x3D; [3,0,1] Output: 2">
+<meta property="og:description" content="一、描述 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.  二、例子 Example 1:  Input: nums &#x3D; [3,0,1] Output: 2 Expla">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-06T06:10:15.000Z">
 <meta property="article:modified_time" content="2022-08-06T06:27:20.491Z">
@@ -325,7 +325,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -386,34 +386,26 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an array <code>nums</code> containing <code>n</code> distinct
-numbers in the range <code>[0, n]</code>, return <em>the only number in
-the range that is missing from the array</em>.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given an array <code>nums</code> containing <code>n</code> distinct numbers in the range <code>[0, n]</code>, return <em>the only number in the range that is missing from the array</em>.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> nums = [3,0,1]<br />
 <strong>Output:</strong> 2<br />
-<strong>Explanation:</strong> n = 3 since there are 3 numbers, so all
-numbers are in the range [0,3]. 2 is the missing number in the range
-since it does not appear in nums.</p>
+<strong>Explanation:</strong> n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> nums = [0,1]<br />
 <strong>Output:</strong> 2<br />
-<strong>Explanation:</strong> n = 2 since there are 2 numbers, so all
-numbers are in the range [0,2]. 2 is the missing number in the range
-since it does not appear in nums.</p>
+<strong>Explanation:</strong> n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.</p>
 </blockquote>
 <p><strong>Example 3:</strong></p>
 <blockquote>
 <p><strong>Input:</strong> nums = [9,6,4,2,3,5,7,0,1]<br />
 <strong>Output:</strong> 8<br />
-<strong>Explanation:</strong> n = 9 since there are 9 numbers, so all
-numbers are in the range [0,9]. 8 is the missing number in the range
-since it does not appear in nums.</p>
+<strong>Explanation:</strong> n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
@@ -422,11 +414,9 @@ since it does not appear in nums.</p>
 <li>0 &lt;= nums[i] &lt;= n</li>
 <li>All the numbers of nums are unique.</li>
 </ul>
-<p><strong>Follow up:</strong> Could you implement a solution using only
-O(1) extra space complexity and O(n) runtime complexity?</p>
-<h1 id="三代码">三、代码</h1>
+<p><strong>Follow up:</strong> Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?</p>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i+<span class="number">1</span>] != nums[i] + <span class="number">1</span>)&#123;</span><br><span class="line">                ans = nums[i] + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;                </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(nums[nums.<span class="built_in">size</span>()<span class="number">-1</span>]!=nums.<span class="built_in">size</span>())</span><br><span class="line">            <span class="keyword">return</span> nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">

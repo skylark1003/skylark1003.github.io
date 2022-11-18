@@ -18,13 +18,15 @@
   
   
   <title>54. Spiral Matrix | 雀栎</title>
-  <meta name="description" content="一、描述 Given an m x n matrix, return all elements of the matrix in spiral order. 二、例子 Example 1:   Input: matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]] Output: [1,2,3,6,9,8,7,4,5]  Example 2:   Input:">
+  <meta name="description" content="一、描述 Given an m x n matrix, return all elements of the matrix in spiral order.  二、例子 Example 1:   Input: matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]] Output: [1,2,3,6,9,8,7,4,5]  Example 2:   Input: matrix &#x3D; [">
 <meta property="og:type" content="article">
 <meta property="og:title" content="54. Spiral Matrix">
 <meta property="og:url" content="http://example.com/2022/08/03/54-Spiral-Matrix/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、描述 Given an m x n matrix, return all elements of the matrix in spiral order. 二、例子 Example 1:   Input: matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]] Output: [1,2,3,6,9,8,7,4,5]  Example 2:   Input:">
+<meta property="og:description" content="一、描述 Given an m x n matrix, return all elements of the matrix in spiral order.  二、例子 Example 1:   Input: matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]] Output: [1,2,3,6,9,8,7,4,5]  Example 2:   Input: matrix &#x3D; [">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p1.jpg">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p2.jpg">
 <meta property="article:published_time" content="2022-08-03T14:36:56.000Z">
 <meta property="article:modified_time" content="2022-08-03T15:14:19.225Z">
 <meta property="article:author" content="雀栎">
@@ -34,6 +36,7 @@
 <meta property="article:tag" content="Matrix">
 <meta property="article:tag" content="Simulation">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p1.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/08/03/54-Spiral-Matrix/index.html">
   
@@ -322,7 +325,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text">二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">三、代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 一、描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BE%8B%E5%AD%90"><span class="toc-number">2.</span> <span class="toc-text"> 二、例子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text"> 三、代码</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -383,23 +386,19 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="一描述">一、描述</h1>
-<p>Given an <code>m x n matrix</code>, return <em>all elements of the
-<code>matrix</code> in spiral order</em>.</p>
-<h1 id="二例子">二、例子</h1>
+        <h1 id="一-描述"><a class="markdownIt-Anchor" href="#一-描述"></a> 一、描述</h1>
+<p>Given an <code>m x n matrix</code>, return <em>all elements of the <code>matrix</code> in spiral order</em>.</p>
+<h1 id="二-例子"><a class="markdownIt-Anchor" href="#二-例子"></a> 二、例子</h1>
 <p><strong>Example 1:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p1.jpg" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p1.jpg" alt="" /></p>
 <blockquote>
 <p><strong>Input:</strong> matrix = [[1,2,3],[4,5,6],[7,8,9]]<br />
 <strong>Output:</strong> [1,2,3,6,9,8,7,4,5]</p>
 </blockquote>
 <p><strong>Example 2:</strong></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p2.jpg" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p2.jpg" alt="" /></p>
 <blockquote>
-<p><strong>Input:</strong> matrix =
-[[1,2,3,4],[5,6,7,8],[9,10,11,12]]<br />
+<p><strong>Input:</strong> matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]<br />
 <strong>Output:</strong> [1,2,3,4,8,12,11,10,9,5,6,7]</p>
 </blockquote>
 <p><strong>Constraints:</strong></p>
@@ -409,9 +408,8 @@ src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/54p2.jpg" /></p>
 <li>1 &lt;= m, n &lt;= 10</li>
 <li>-100 &lt;= matrix[i][j] &lt;= 100</li>
 </ul>
-<h1 id="三代码">三、代码</h1>
+<h1 id="三-代码"><a class="markdownIt-Anchor" href="#三-代码"></a> 三、代码</h1>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> sx = <span class="number">0</span>, sy = <span class="number">0</span>;   <span class="comment">//Starting coordinates of this round</span></span><br><span class="line">        <span class="type">int</span> x = matrix.<span class="built_in">size</span>(), y = matrix[<span class="number">0</span>].<span class="built_in">size</span>();    <span class="comment">//matrix size of this round</span></span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; v;        </span><br><span class="line">        <span class="keyword">while</span>(x &gt; <span class="number">0</span> &amp;&amp; y &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = sx; i &lt; sx + x; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i == sx)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="type">int</span> j = sy; j &lt; sy + y; j++)</span><br><span class="line">                        v.<span class="built_in">push_back</span>(matrix[i][j]);</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(i == sx + x - <span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="type">int</span> j = sy + y - <span class="number">1</span>; j &gt;= sy; j--)</span><br><span class="line">                        v.<span class="built_in">push_back</span>(matrix[i][j]);</span><br><span class="line">                &#125;<span class="keyword">else</span></span><br><span class="line">                    v.<span class="built_in">push_back</span>(matrix[i][sy + y - <span class="number">1</span>]);</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">if</span>(y != <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = sx + x - <span class="number">2</span>; i &gt; sx; i--)&#123;</span><br><span class="line">                    v.<span class="built_in">push_back</span>(matrix[i][sx]);</span><br><span class="line">                &#125;                </span><br><span class="line">            &#125;</span><br><span class="line">            sx++;</span><br><span class="line">            sy++;</span><br><span class="line">            x -= <span class="number">2</span>;</span><br><span class="line">            y -= <span class="number">2</span>;</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     <div class="article-footer">
