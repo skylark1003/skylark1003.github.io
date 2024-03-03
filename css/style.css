@@ -473,17 +473,17 @@ h3,
 
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 p {
@@ -718,8 +718,8 @@ blockquote {
   padding: 10.5px 16px;
   margin: 0 0 21px;
   border: 1px dotted #eeeeee;
-  border-left: 3px solid #eeeeee;
-  background-color: #fbfbfb;
+  border-left: 4px solid #C0C0C0;
+  background-color: #F5F5F5;
 }
 
 blockquote p:last-child,
@@ -3261,8 +3261,8 @@ body {
 
 body {
   padding-right: 0 !important;
-  font-family: "微软雅黑", "PingHei","PingFang SC",Helvetica Neue,"Work Sans","Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif;
-  font-size: 14px;
+  font-family: "华文中宋", "PingHei","PingFang SC",Helvetica Neue,"Work Sans","Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif;
+  font-size: 16px;
   line-height: 1.57143;
   color: #333333;
   background-color: #fff;
@@ -5011,6 +5011,7 @@ a.label:focus {
 
 table {
   border: 1px solid #f2f2f2;
+  font-size: 15px;
 }
 
 table > thead > tr > th,
@@ -5537,7 +5538,7 @@ pre,
   margin: 10px 0;
   padding: 15px 10px;
   overflow: auto;
-  font-size: 13px;
+  font-size: 14px;
   color: #4d4d4c;
   line-height: 1.5;
 }
@@ -5646,6 +5647,7 @@ pre code {
   padding-right: 0;
   padding-left: 0;
   color: #ccc;
+  font-size: 16px;
 }
 
 /*
@@ -5932,6 +5934,7 @@ body.no-sidebar .sidebar {
 .main .article-meta {
   font-size: 13px;
   color: #999;
+  font-family: 华文中宋;
 }
 
 .main .article-meta a {
@@ -6419,6 +6422,7 @@ body.no-sidebar .sidebar {
 
 .article-header {
   margin-bottom: 20px;
+  font-family: 方正小标宋简体;
 }
 
 .article-footer {
@@ -6451,7 +6455,7 @@ body.no-sidebar .sidebar {
 
 .article-list .article-title {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .article-toc .toc-title {
@@ -6498,7 +6502,7 @@ body.no-sidebar .sidebar {
 .marked-body h1 {
   padding-bottom: 0.3em;
   /* font-size: 2em; */
-  border-bottom: 2px solid #f2f2f2;
+  border-bottom: 4px solid #f2f2f2;
 }
 
 .marked-body h2 {
@@ -6522,6 +6526,7 @@ body.no-sidebar .sidebar {
 .marked-body ol {
   padding-left: 0;
   margin-left: 20px;
+  line-height: 2;
 }
 
 /*

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Conda常用命令 | 雀栎</title>
+  <meta name="description" content="管理Conda 查看Conda版本 1conda --version 查看Conda环境配置 1conda config --show 设置镜像 12345678910# 设置清华镜像conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;conda config --add">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Conda常用命令">
+<meta property="og:url" content="http://example.com/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="管理Conda 查看Conda版本 1conda --version 查看Conda环境配置 1conda config --show 设置镜像 12345678910# 设置清华镜像conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;conda config --add">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/20240303conda01.png">
+<meta property="article:published_time" content="2024-03-03T09:13:52.000Z">
+<meta property="article:modified_time" content="2024-03-03T10:28:00.147Z">
+<meta property="article:author" content="雀栎">
+<meta property="article:tag" content="Conda">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/20240303conda01.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="aheader" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/skylark1003" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">雀栎</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">The skylark soar in the azure sky.</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Hubei, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://gitee.com/skylark1003" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/3298400311" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Skylark_1003" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p> &emsp;&emsp; 欢迎来到雀栎的个人小站，期待与各位的交流学习。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoDL/" rel="tag">AutoDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Conda/" rel="tag">Conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/AutoDL/" style="font-size: 13px;">AutoDL</a> <a href="/tags/ChatGPT/" style="font-size: 13px;">ChatGPT</a> <a href="/tags/Conda/" style="font-size: 13px;">Conda</a> <a href="/tags/PyQt5/" style="font-size: 14px;">PyQt5</a> <a href="/tags/VSCode/" style="font-size: 13px;">VSCode</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/markdown/" style="font-size: 14px;">markdown</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13px;">博客搭建</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Conda常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-03-03T09:13:52.000Z" itemprop="datePublished">2024-03-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/27/PyQt%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%AE%9E%E7%8E%B0%E4%BC%AA%E8%A3%85%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="title">PyQt5简单入门——实现伪装目标检测</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-26T16:00:00.000Z" itemprop="datePublished">2023-03-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/24/ChatGPT%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="title">ChatGPT注册使用流程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/24/VSCode%E9%85%8D%E7%BD%AEPyQt5%E8%BF%87%E7%A8%8B/" class="title">VSCode配置PyQt5过程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/03/24/%E4%BD%BF%E7%94%A8AutoDL%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/" class="title">使用AutoDL训练深度学习模型流程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%90%86conda"><span class="toc-number">1.</span> <span class="toc-text">管理Conda</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bconda%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.</span> <span class="toc-text">查看Conda版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">查看Conda环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F"><span class="toc-number">1.3.</span> <span class="toc-text">设置镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0conda"><span class="toc-number">1.4.</span> <span class="toc-text">更新Conda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0anaconda"><span class="toc-number">1.5.</span> <span class="toc-text">更新Anaconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%9F%90%E4%B8%AA%E5%91%BD%E4%BB%A4%E7%9A%84%E5%B8%AE%E5%8A%A9"><span class="toc-number">1.6.</span> <span class="toc-text">查询某个命令的帮助</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">管理环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">2.1.</span> <span class="toc-text">创建虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E7%9A%84%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84%E5%8C%85"><span class="toc-number">2.2.</span> <span class="toc-text">创建虚拟环境的同时安装必要的包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%88%97%E8%A1%A8"><span class="toc-number">2.3.</span> <span class="toc-text">查看虚拟环境列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">2.4.</span> <span class="toc-text">激活虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">2.5.</span> <span class="toc-text">退出虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">2.6.</span> <span class="toc-text">删除虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">2.7.</span> <span class="toc-text">导出虚拟环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%8C%85"><span class="toc-number">3.</span> <span class="toc-text">管理包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%8C%85%E5%88%97%E8%A1%A8"><span class="toc-number">3.1.</span> <span class="toc-text">查看包列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Banaconda%E4%BB%93%E5%BA%93%E4%B8%AD%E6%98%AF%E5%90%A6%E6%9C%89%E9%9C%80%E8%A6%81%E5%8C%85"><span class="toc-number">3.2.</span> <span class="toc-text">查看Anaconda仓库中是否有需要包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%9F%90%E4%B8%AA%E5%8C%85"><span class="toc-number">3.3.</span> <span class="toc-text">查看是否安装某个包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-number">3.4.</span> <span class="toc-text">安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%8C%85"><span class="toc-number">3.5.</span> <span class="toc-text">更新包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E5%8C%85"><span class="toc-number">3.6.</span> <span class="toc-text">卸载包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E7%BC%93%E5%AD%98"><span class="toc-number">3.7.</span> <span class="toc-text">清理缓存</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%90%86python"><span class="toc-number">4.</span> <span class="toc-text">管理python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E7%89%88%E6%9C%AC%E5%8F%98%E6%9B%B4"><span class="toc-number">4.1.</span> <span class="toc-text">python版本变更</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E6%9B%B4%E6%96%B0%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88"><span class="toc-number">4.2.</span> <span class="toc-text">python更新到最新版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#conda%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">Conda配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#condarc%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.</span> <span class="toc-text">.condarc文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E9%81%93%E7%AE%A1%E7%90%86"><span class="toc-number">5.2.</span> <span class="toc-text">通道管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#conda-install-%E5%92%8C-pip-install"><span class="toc-number">6.</span> <span class="toc-text">conda install 和 pip install</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-number">6.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%9C%B0%E5%9D%80"><span class="toc-number">6.2.</span> <span class="toc-text">安装地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-number">6.3.</span> <span class="toc-text">判断安装方式</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Conda常用命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Conda常用命令
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+	  <time datetime="2024-03-03T09:13:52.000Z" itemprop="datePublished">2024-03-03</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Conda/" rel="tag">Conda</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="管理conda">管理Conda</h1>
+<h2 id="查看conda版本">查看Conda版本</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
+<h2 id="查看conda环境配置">查看Conda环境配置</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --show</span><br></pre></td></tr></table></figure>
+<h2 id="设置镜像">设置镜像</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 设置清华镜像</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line"># 设置bioconda</span><br><span class="line">conda config --add channels bioconda</span><br><span class="line">conda config --add channels conda-forge</span><br><span class="line"># 设置搜索时显示通道地址</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
+<h2 id="更新conda">更新Conda</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update conda</span><br></pre></td></tr></table></figure>
+<h2 id="更新anaconda">更新Anaconda</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update anaconda</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>与<code>conda update conda</code>的区别是：<code>conda update conda</code>
+主要用于更新 Conda 包管理器本身，而 <code>conda update anaconda</code>
+则用于更新整个 Anaconda 发行版，包括 Conda 包管理器和默认软件包。</p>
+</blockquote>
+<h2 id="查询某个命令的帮助">查询某个命令的帮助</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h1 id="管理环境">管理环境</h1>
+<h2 id="创建虚拟环境">创建虚拟环境</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n env_name python=<span class="number">3</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>表示创建python版本为3.8、名字为env_name的虚拟环境。创建后，env_name文件可以在Anaconda安装目录envs文件下找到。</li>
+<li>在不指定python版本时，自动创建基于最新python版本的虚拟环境.</li>
+</ul>
+<h2 id="创建虚拟环境的同时安装必要的包">创建虚拟环境的同时安装必要的包</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n env_name numpy matplotlib python=<span class="number">3</span>.<span class="number">8</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>不建议这样做，简化每一条命令的任务在绝大多数时候都是明智的（一个例外是需要反复执行的脚本）。</li>
+</ul>
+<blockquote>
+<p>曾在安装包时遇到版本问题，通过在创建环境时安装指定版本的包解决。</p>
+</blockquote>
+<h2 id="查看虚拟环境列表">查看虚拟环境列表</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br><span class="line">conda info -e</span><br><span class="line">conda info --envs</span><br></pre></td></tr></table></figure>
+<ul>
+<li>三者任选其一</li>
+<li>带 * 的表示当前活动环境</li>
+</ul>
+<h2 id="激活虚拟环境">激活虚拟环境</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate env_name</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以使用<code>python --version</code>查看python版本是否为所需版本</li>
+</ul>
+<h2 id="退出虚拟环境">退出虚拟环境</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda activate    # 默认回到缺省环境base</span><br><span class="line">conda deactivate  # 退出当前环境回到base</span><br></pre></td></tr></table></figure>
+<h2 id="删除虚拟环境">删除虚拟环境</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name env_name --all</span><br></pre></td></tr></table></figure>
+<ul>
+<li>该命令将指定虚拟环境及其中所安装的包都删除</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name env_name package_name</span><br></pre></td></tr></table></figure>
+<ul>
+<li>该命令只删除虚拟环境中的某个或某些包</li>
+</ul>
+<h2 id="导出虚拟环境">导出虚拟环境</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 获取环境中的所有配置</span><br><span class="line">conda env export --name env_name &gt; env_name.yml</span><br><span class="line"># 重新还原环境</span><br><span class="line">conda env create -f env_name.yml</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方便在需要时恢复环境，或提供给别人用于创建完全相同的环境</li>
+</ul>
+<h1 id="管理包">管理包</h1>
+<h2 id="查看包列表">查看包列表</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+<h2 id="查看anaconda仓库中是否有需要包">查看Anaconda仓库中是否有需要包</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda search package_name</span><br></pre></td></tr></table></figure>
+<h2 id="查看是否安装某个包">查看是否安装某个包</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda list package_name</span><br><span class="line">conda list package_name*  # *表示支持模糊查找</span><br></pre></td></tr></table></figure>
+<h2 id="安装包">安装包</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda install package_name</span><br><span class="line">conda install package_name=<span class="number">0</span>.<span class="number">20</span>.<span class="number">3</span>          # 指定版本</span><br><span class="line">conda install package_name -c conda_forge  # 指定通道</span><br></pre></td></tr></table></figure>
+<h2 id="更新包">更新包</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update numpy</span><br></pre></td></tr></table></figure>
+<h2 id="卸载包">卸载包</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 依赖于这个包的所有其它包也同时卸载</span><br><span class="line">conda uninstall package_name</span><br><span class="line"># 不想删除依赖其当前要删除的包的其他包</span><br><span class="line"># 不建议会导致依赖其的包不可用，即使重新安装可能导致版本不兼容</span><br><span class="line">conda uninstall package_name --force</span><br></pre></td></tr></table></figure>
+<h2 id="清理缓存">清理缓存</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda clean -p      # 删除没有用的包 --packages</span><br><span class="line">conda clean -t      # 删除tar打包   --tarballs</span><br><span class="line">conda clean -y -all # 删除所有的安装包及cache(索引缓存、锁定文件、未使用过的包和tar包)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关于清除命令的更详细的说明，可以执行以命令<code>conda clean -h</code>进行查询</li>
+</ul>
+<h1 id="管理python">管理python</h1>
+<h2 id="python版本变更">python版本变更</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install python=<span class="number">3</span>.<span class="number">5</span></span><br><span class="line">python --version   # 查看版本</span><br></pre></td></tr></table></figure>
+<h2 id="python更新到最新版">python更新到最新版</h2>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update python</span><br></pre></td></tr></table></figure>
+<h1 id="conda配置文件">Conda配置文件</h1>
+<h2 id="condarc文件">.condarc文件</h2>
+<ul>
+<li><p>conda的配置文件为".condarc"，该文件在安装时不是缺省存在的。但是第一次运行conda
+config命令时它就被自动创建了。".condarc"配置文件遵循简单的YAML语法。</p></li>
+<li><p>执行<code>conda info</code>，会有信息显示如下所示：</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/20240303conda01.png" style="zoom:67%;"></p></li>
+</ul>
+<h2 id="通道管理">通道管理</h2>
+<ul>
+<li><p>追加conda-forge channel：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels conda-forge</span><br></pre></td></tr></table></figure></li>
+<li><p>移除conda-forge channel：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --remove channels conda-forge</span><br></pre></td></tr></table></figure></li>
+<li><p>查询当前配置中包含哪些channels：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --get channels</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="conda-install-和-pip-install">conda install 和 pip install</h1>
+<h2 id="区别">区别</h2>
+<ul>
+<li>conda可以管理非python包，pip只能管理python包。</li>
+<li>conda自己可以用来创建环境，pip不能，需要依赖virtualenv之类的。</li>
+<li>conda安装的包是编译好的二进制文件，安装包文件过程中会自动安装依赖包；pip安装的包是wheel或源码，装过程中不会去支持python语言之外的依赖项。</li>
+<li>conda安装的包会统一下载到一个目录文件中，当环境B需要下载的包，之前其他环境安装过，就只需要把之间下载的文件复制到环境B中，下载一次多次安装。pip是直接下载到对应环境中。</li>
+<li>conda只能在conda管理的环境中使用，例如比如conda所创建的虚环境中使用。pip可以在任何环境中使用，在conda创建的环境
+中使用pip命令，需要先安装pip（<code>conda install pip</code>
+），然后可以 环境A 中使用pip 。conda
+安装的包，pip可以卸载，但不能卸载依赖包，pip安装的包，只能用pip卸载。</li>
+</ul>
+<blockquote>
+<p>不建议混用。混用容易导致库的依赖关系出现混乱，甚至导致环境崩溃，安装不了新的包，无法进行conda
+update之类的。</p>
+<p>由于conda的库不如pip的库丰富，所以有时候迫不得已要使用pip安装。切记，只有在conda
+install搞不定时才使用pip intall。</p>
+</blockquote>
+<h2 id="安装地址">安装地址</h2>
+<ul>
+<li><code>conda install xxx</code>：安装的库会放在<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.518ex;" xmlns="http://www.w3.org/2000/svg" width="16.629ex" height="2.088ex" role="img" focusable="false" viewBox="0 -694 7350 923"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(525,0)"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(1050,0)"></path><path data-c="1D68C" d="M291 -6Q196 -6 131 60T66 216Q66 296 119 361Q154 403 200 421T273 439Q275 440 293 440H313Q400 440 433 409Q454 388 454 359Q454 335 439 321T402 306Q380 306 365 321T350 357V362L340 363Q339 363 326 363T303 364Q280 364 266 362Q217 352 184 313T151 215Q151 153 199 112T313 70Q341 70 357 85T381 118T394 140Q402 146 424 146Q443 146 447 144Q466 137 466 117Q466 106 457 88T429 47T374 10T291 -6Z" transform="translate(1575,0)"></path><path data-c="1D698" d="M52 216Q52 318 118 379T261 440Q343 440 407 378T472 216Q472 121 410 58T262 -6Q176 -6 114 58T52 216ZM388 225Q388 281 351 322T261 364Q213 364 175 325T136 225Q136 158 174 114T262 70T350 114T388 225Z" transform="translate(2100,0)"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(2625,0)"></path><path data-c="1D68D" d="M266 573Q266 596 277 603T314 611H352H385Q411 611 419 607T435 586V76H498Q512 67 516 60T520 38Q520 9 498 1H436Q429 1 417 1T398 0Q375 0 363 7T351 34V43L342 36Q288 -6 223 -6Q143 -6 87 58T31 216Q31 307 88 372T230 437Q292 437 342 405L351 399V535H320L289 536Q266 543 266 573ZM351 290Q347 302 337 316T302 346T244 361Q193 361 154 319T115 215Q115 152 152 111T235 70Q314 70 351 170V290Z" transform="translate(3150,0)"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(3675,0)"></path></g><g data-mml-node="mn" transform="translate(4200,0)"><path data-c="1D7F9" d="M260 546Q233 546 211 541T180 531T171 524L174 514Q177 505 177 497Q177 476 162 461T125 446Q106 446 90 459T73 504Q76 540 98 565T150 601T203 616T239 621Q241 622 265 622Q322 620 362 602T420 558T444 513T451 478Q451 386 369 329L375 326Q381 323 386 320T401 311T419 298T436 283T452 263T466 240T475 212T479 180Q479 99 416 44T259 -11T105 28T44 130Q44 154 59 168T95 183Q117 183 132 169T148 131Q148 119 139 101Q175 65 260 65Q316 65 355 97T395 179Q395 211 375 240Q336 292 253 292H234H215Q194 292 185 299T175 330Q175 350 184 359Q192 368 238 370T309 384Q336 398 351 423T367 474Q367 496 350 513Q321 546 260 546Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(4725,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(5250,0)"><path data-c="1D699" d="M89 431Q93 431 104 431T121 432Q173 432 173 401V396L182 402Q237 437 305 437Q376 437 434 378T492 217Q492 146 459 93T382 17T291 -6Q261 -6 232 5T188 26L174 37Q173 37 173 -54V-146H236Q250 -155 254 -162T258 -184Q258 -213 236 -221H27Q4 -214 4 -184Q4 -169 8 -162T27 -146H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89ZM409 215Q409 269 377 315T283 361Q255 361 224 344T177 297L173 290V167Q189 124 213 97T278 70Q330 70 369 111T409 215Z"></path><path data-c="1D694" d="M13 42Q13 63 23 69T69 76H102V535H69H54Q34 535 24 542T13 573Q13 588 15 593Q22 605 29 608T56 611H95Q113 611 122 611T140 610T152 609T159 607T163 603T167 597T173 589V413L174 237L295 355H275Q260 355 253 356T239 367T232 393Q232 419 243 425T304 431H359H464Q479 422 482 415T485 393Q485 364 464 356L431 355H398L293 254L427 76H486Q501 67 504 60T507 38Q507 28 507 24T501 12T486 1H314Q292 8 292 38Q292 62 308 73Q312 75 326 76L338 77L290 140Q279 154 267 171T248 196L242 204L207 171L173 139V76H206H221Q241 76 251 69T262 38Q262 11 244 3Q240 1 138 1Q123 1 100 1T70 0Q32 0 23 7T13 42Z" transform="translate(525,0)"></path><path data-c="1D690" d="M60 274Q60 337 107 386T233 436Q278 436 316 417L329 410L338 416Q384 442 427 442T489 423T509 381T494 345T460 332Q449 332 440 338Q432 341 427 348T419 360T415 365Q414 364 410 364L383 355Q406 320 406 274Q406 211 358 162T233 112Q189 112 155 128L146 133Q142 125 142 115Q142 99 150 85T175 71Q182 72 187 70Q188 70 195 70T218 70T254 69Q259 69 275 69T297 69T318 68T340 66T361 62T384 57T405 49T428 38Q495 -1 495 -76Q495 -143 427 -186T262 -229Q161 -229 94 -185T29 -73Q30 -60 33 -48T39 -26T47 -8T57 8T67 20T77 30T86 38L91 43Q91 44 86 53T75 80T70 117Q70 142 89 183L83 194Q60 232 60 274ZM321 274Q321 312 296 337T230 362Q197 362 171 338T145 274Q145 235 170 211T233 187Q273 187 297 212T321 274ZM422 -78Q422 -54 408 -38T366 -15T315 -6T255 -4H200Q198 -4 193 -4T183 -3Q148 -3 125 -26T102 -78Q102 -110 151 -132T261 -154Q321 -154 371 -132T422 -78Z" transform="translate(1050,0)"></path><path data-c="1D69C" d="M72 317Q72 361 108 396T229 439Q231 439 245 439T268 440Q303 439 324 435T353 427T363 423L372 432Q380 440 397 440Q430 440 430 395Q430 390 430 380T429 366V335Q429 311 422 302T387 293Q364 293 355 300T346 316T343 336T325 353Q306 364 257 364Q209 364 178 351T147 317Q147 284 231 272Q327 256 357 247Q458 210 458 129V121Q458 74 413 34T271 -6Q246 -6 224 -3T189 5T165 14T150 22T144 26Q142 23 139 18T135 11T132 6T128 1T124 -2T119 -4T113 -5T104 -6Q84 -6 78 6T71 43Q71 48 71 60T72 79Q72 132 73 141T81 157Q90 166 115 166Q135 166 142 162T157 140Q168 108 191 90T260 70Q297 70 323 76T361 91T379 110T384 129Q384 157 346 171T247 195T165 212Q119 228 96 256T72 317Z" transform="translate(1575,0)"></path></g></g></g></g></svg></mjx-container></span>目录下，好处是当在某个环境下已经下载好了某个库，再在另一个环境中还需要这个库时，就可以直接从pkgs目录下将该库复制至新环境而不用重复下载。</li>
+<li><code>pip install xxx</code>：
+<ul>
+<li>一种情况就是当前conda环境的python是conda安装的，和系统的不一样，那么会被安装到<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.518ex;" xmlns="http://www.w3.org/2000/svg" width="65.718ex" height="2.088ex" role="img" focusable="false" viewBox="0 -694 29047.4 923"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(525,0)"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(1050,0)"></path><path data-c="1D68C" d="M291 -6Q196 -6 131 60T66 216Q66 296 119 361Q154 403 200 421T273 439Q275 440 293 440H313Q400 440 433 409Q454 388 454 359Q454 335 439 321T402 306Q380 306 365 321T350 357V362L340 363Q339 363 326 363T303 364Q280 364 266 362Q217 352 184 313T151 215Q151 153 199 112T313 70Q341 70 357 85T381 118T394 140Q402 146 424 146Q443 146 447 144Q466 137 466 117Q466 106 457 88T429 47T374 10T291 -6Z" transform="translate(1575,0)"></path><path data-c="1D698" d="M52 216Q52 318 118 379T261 440Q343 440 407 378T472 216Q472 121 410 58T262 -6Q176 -6 114 58T52 216ZM388 225Q388 281 351 322T261 364Q213 364 175 325T136 225Q136 158 174 114T262 70T350 114T388 225Z" transform="translate(2100,0)"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(2625,0)"></path><path data-c="1D68D" d="M266 573Q266 596 277 603T314 611H352H385Q411 611 419 607T435 586V76H498Q512 67 516 60T520 38Q520 9 498 1H436Q429 1 417 1T398 0Q375 0 363 7T351 34V43L342 36Q288 -6 223 -6Q143 -6 87 58T31 216Q31 307 88 372T230 437Q292 437 342 405L351 399V535H320L289 536Q266 543 266 573ZM351 290Q347 302 337 316T302 346T244 361Q193 361 154 319T115 215Q115 152 152 111T235 70Q314 70 351 170V290Z" transform="translate(3150,0)"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(3675,0)"></path></g><g data-mml-node="mn" transform="translate(4200,0)"><path data-c="1D7F9" d="M260 546Q233 546 211 541T180 531T171 524L174 514Q177 505 177 497Q177 476 162 461T125 446Q106 446 90 459T73 504Q76 540 98 565T150 601T203 616T239 621Q241 622 265 622Q322 620 362 602T420 558T444 513T451 478Q451 386 369 329L375 326Q381 323 386 320T401 311T419 298T436 283T452 263T466 240T475 212T479 180Q479 99 416 44T259 -11T105 28T44 130Q44 154 59 168T95 183Q117 183 132 169T148 131Q148 119 139 101Q175 65 260 65Q316 65 355 97T395 179Q395 211 375 240Q336 292 253 292H234H215Q194 292 185 299T175 330Q175 350 184 359Q192 368 238 370T309 384Q336 398 351 423T367 474Q367 496 350 513Q321 546 260 546Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(4725,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(5250,0)"><path data-c="1D68E" d="M48 217Q48 295 100 361T248 439L258 440Q268 440 274 440Q329 438 369 416T428 359T456 292T464 228Q464 215 461 208T454 198T442 190L288 189H135L138 179Q153 132 199 102T303 71Q336 71 353 86T380 120T398 143Q404 146 422 146Q453 146 462 126Q464 120 464 116Q464 84 416 39T285 -6Q187 -6 118 59T48 217ZM377 264Q371 291 365 306T341 338T294 362Q288 363 264 363Q225 363 190 336T139 264H377Z"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(525,0)"></path><path data-c="1D69F" d="M24 392Q24 417 36 424T79 432Q85 432 103 432T132 431H215Q229 422 233 415T237 393Q237 355 198 355H193H172L262 77L352 355H331H323Q288 355 288 393Q288 409 291 415T310 431H478Q491 423 495 416T500 393Q500 364 478 356L452 355H426L374 190Q320 24 318 20Q307 -4 273 -4H262H251Q217 -4 206 20Q204 24 150 190L98 355H72L47 356Q24 363 24 392Z" transform="translate(1050,0)"></path><path data-c="1D69C" d="M72 317Q72 361 108 396T229 439Q231 439 245 439T268 440Q303 439 324 435T353 427T363 423L372 432Q380 440 397 440Q430 440 430 395Q430 390 430 380T429 366V335Q429 311 422 302T387 293Q364 293 355 300T346 316T343 336T325 353Q306 364 257 364Q209 364 178 351T147 317Q147 284 231 272Q327 256 357 247Q458 210 458 129V121Q458 74 413 34T271 -6Q246 -6 224 -3T189 5T165 14T150 22T144 26Q142 23 139 18T135 11T132 6T128 1T124 -2T119 -4T113 -5T104 -6Q84 -6 78 6T71 43Q71 48 71 60T72 79Q72 132 73 141T81 157Q90 166 115 166Q135 166 142 162T157 140Q168 108 191 90T260 70Q297 70 323 76T361 91T379 110T384 129Q384 157 346 171T247 195T165 212Q119 228 96 256T72 317Z" transform="translate(1575,0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(7350,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(7875,0)"><path data-c="1D68C" d="M291 -6Q196 -6 131 60T66 216Q66 296 119 361Q154 403 200 421T273 439Q275 440 293 440H313Q400 440 433 409Q454 388 454 359Q454 335 439 321T402 306Q380 306 365 321T350 357V362L340 363Q339 363 326 363T303 364Q280 364 266 362Q217 352 184 313T151 215Q151 153 199 112T313 70Q341 70 357 85T381 118T394 140Q402 146 424 146Q443 146 447 144Q466 137 466 117Q466 106 457 88T429 47T374 10T291 -6Z"></path><path data-c="1D69E" d="M4 393Q4 416 15 423T52 431H90Q141 431 151 429T168 417Q171 412 173 409V254L174 100Q182 70 244 70Q320 70 344 119Q349 130 350 144T351 248V355H320L289 356Q266 363 266 393Q266 408 270 415T289 431H351H386Q409 431 418 428T433 411Q435 406 435 241V76H498Q512 67 516 60T520 38Q520 9 498 1H436H394Q372 1 364 5T351 26L342 21Q293 -5 227 -5Q118 -5 96 67Q91 82 90 101T89 227V355H58L27 356Q4 363 4 393Z" transform="translate(525,0)"></path><path data-c="1D69B" d="M327 76Q359 76 369 70T380 38Q380 10 359 1H47Q24 8 24 38Q24 54 28 61T47 76H145V355H96L47 356Q24 363 24 393Q24 409 28 416T47 431H207Q223 419 226 414T229 393V387V369Q297 437 394 437Q436 437 461 417T487 368Q487 347 473 332T438 317Q428 317 420 320T407 327T398 337T393 347T390 356L388 361Q348 356 324 345Q228 299 228 170Q228 161 228 151T229 138V76H293H327Z" transform="translate(1050,0)"></path><path data-c="1D69B" d="M327 76Q359 76 369 70T380 38Q380 10 359 1H47Q24 8 24 38Q24 54 28 61T47 76H145V355H96L47 356Q24 363 24 393Q24 409 28 416T47 431H207Q223 419 226 414T229 393V387V369Q297 437 394 437Q436 437 461 417T487 368Q487 347 473 332T438 317Q428 317 420 320T407 327T398 337T393 347T390 356L388 361Q348 356 324 345Q228 299 228 170Q228 161 228 151T229 138V76H293H327Z" transform="translate(1575,0)"></path><path data-c="1D68E" d="M48 217Q48 295 100 361T248 439L258 440Q268 440 274 440Q329 438 369 416T428 359T456 292T464 228Q464 215 461 208T454 198T442 190L288 189H135L138 179Q153 132 199 102T303 71Q336 71 353 86T380 120T398 143Q404 146 422 146Q453 146 462 126Q464 120 464 116Q464 84 416 39T285 -6Q187 -6 118 59T48 217ZM377 264Q371 291 365 306T341 338T294 362Q288 363 264 363Q225 363 190 336T139 264H377Z" transform="translate(2100,0)"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(2625,0)"></path><path data-c="1D69D" d="M25 395Q26 405 26 408T29 416T35 423T48 431H145V481L146 532Q154 547 161 550T184 554H189Q218 554 227 534Q229 529 229 480V431H405Q406 430 411 427T418 422T422 416T426 407T427 393Q427 387 427 382T424 374T421 368T417 363T413 360T408 358L405 356L317 355H229V249Q229 237 229 214T228 179Q228 126 241 98T295 70Q354 70 365 149Q366 167 375 174Q383 182 407 182H415Q438 182 446 166Q448 161 448 148Q448 84 398 39T282 -6Q226 -6 189 29T146 128Q145 134 145 247V355H96H72Q45 355 35 362T25 395Z" transform="translate(3150,0)"></path></g><g data-mml-node="mi" transform="translate(11550,0)"><path data-c="5F" d="M57 -60Q57 -33 86 -25H438Q468 -34 468 -60T438 -95H86Q57 -86 57 -60Z"></path></g><g data-mml-node="mi" transform="translate(12075,0)"><path data-c="1D68E" d="M48 217Q48 295 100 361T248 439L258 440Q268 440 274 440Q329 438 369 416T428 359T456 292T464 228Q464 215 461 208T454 198T442 190L288 189H135L138 179Q153 132 199 102T303 71Q336 71 353 86T380 120T398 143Q404 146 422 146Q453 146 462 126Q464 120 464 116Q464 84 416 39T285 -6Q187 -6 118 59T48 217ZM377 264Q371 291 365 306T341 338T294 362Q288 363 264 363Q225 363 190 336T139 264H377Z"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(525,0)"></path><path data-c="1D69F" d="M24 392Q24 417 36 424T79 432Q85 432 103 432T132 431H215Q229 422 233 415T237 393Q237 355 198 355H193H172L262 77L352 355H331H323Q288 355 288 393Q288 409 291 415T310 431H478Q491 423 495 416T500 393Q500 364 478 356L452 355H426L374 190Q320 24 318 20Q307 -4 273 -4H262H251Q217 -4 206 20Q204 24 150 190L98 355H72L47 356Q24 363 24 392Z" transform="translate(1050,0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(13650,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(14175,0)"><path data-c="1D695" d="M51 573Q51 602 73 610H76Q79 610 84 610T97 610T113 610T133 611T155 611T179 611H282Q301 598 304 586V76H452Q466 67 470 60T474 38Q474 10 452 1H73Q51 9 51 32V38Q51 54 54 60T73 76H220V535H146L73 536Q51 545 51 567V573Z"></path><path data-c="1D692" d="M202 538T202 559T218 596T260 612Q283 612 300 597T317 560Q317 538 300 523T260 507Q235 507 219 522ZM411 76Q441 76 451 69T462 38Q462 29 462 26T460 18T453 9T440 1H94Q72 8 72 33V38Q72 46 72 49T74 58T81 68T94 76H233V355H167L102 356Q80 363 80 393Q80 418 91 425T138 432Q145 432 165 432T200 431H295Q297 429 303 425T310 420T314 415T317 404T317 389T318 363Q318 354 318 314T317 241V76H378H411Z" transform="translate(525,0)"></path><path data-c="1D68B" d="M4 573Q4 596 15 603T52 611H90H124Q146 611 155 608T171 591Q173 586 173 491V396L182 402Q217 424 256 431Q280 437 309 437Q376 437 434 379T492 217Q492 162 473 118T422 47T358 8T293 -6Q229 -6 174 38Q171 13 163 7T135 1H131H122Q99 1 90 23L89 279V535H58L27 536Q4 543 4 573ZM409 215Q409 269 377 315T283 361Q255 361 224 344T177 297L173 290V167Q189 124 213 97T278 70Q330 70 369 111T409 215Z" transform="translate(1050,0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(15750,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(16275,0)"><path data-c="1D699" d="M89 431Q93 431 104 431T121 432Q173 432 173 401V396L182 402Q237 437 305 437Q376 437 434 378T492 217Q492 146 459 93T382 17T291 -6Q261 -6 232 5T188 26L174 37Q173 37 173 -54V-146H236Q250 -155 254 -162T258 -184Q258 -213 236 -221H27Q4 -214 4 -184Q4 -169 8 -162T27 -146H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89ZM409 215Q409 269 377 315T283 361Q255 361 224 344T177 297L173 290V167Q189 124 213 97T278 70Q330 70 369 111T409 215Z"></path><path data-c="1D6A2" d="M26 393Q26 417 37 424T80 431H134H217Q232 422 235 416T239 393Q239 379 236 371T226 360T214 356T197 355L179 354V353L188 330Q197 306 209 272T235 201T259 133T271 89V84L274 95Q279 122 298 185T335 300T352 354Q352 355 331 355Q312 355 304 358Q288 368 288 393Q288 408 291 415T310 431H478Q479 430 484 427T491 422T495 416T499 407T500 393Q500 376 493 367T479 357T458 355H452Q426 355 425 353Q420 337 351 124T280 -94Q240 -195 168 -220Q147 -228 125 -228Q89 -228 66 -201T42 -139Q42 -116 56 -102T93 -87Q117 -87 130 -102T144 -135V-138H126Q121 -148 121 -150T130 -152Q182 -147 207 -87Q211 -78 223 -40T236 1Q230 10 102 355H75L49 356Q26 363 26 393Z" transform="translate(525,0)"></path><path data-c="1D69D" d="M25 395Q26 405 26 408T29 416T35 423T48 431H145V481L146 532Q154 547 161 550T184 554H189Q218 554 227 534Q229 529 229 480V431H405Q406 430 411 427T418 422T422 416T426 407T427 393Q427 387 427 382T424 374T421 368T417 363T413 360T408 358L405 356L317 355H229V249Q229 237 229 214T228 179Q228 126 241 98T295 70Q354 70 365 149Q366 167 375 174Q383 182 407 182H415Q438 182 446 166Q448 161 448 148Q448 84 398 39T282 -6Q226 -6 189 29T146 128Q145 134 145 247V355H96H72Q45 355 35 362T25 395Z" transform="translate(1050,0)"></path><path data-c="1D691" d="M4 573Q4 596 15 603T52 611H90H124Q146 611 155 608T171 591Q173 586 173 489Q173 394 175 394L186 402Q197 410 219 420T269 434Q278 436 306 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 10 286 32V38V46Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V535H58L27 536Q4 543 4 573Z" transform="translate(1575,0)"></path><path data-c="1D698" d="M52 216Q52 318 118 379T261 440Q343 440 407 378T472 216Q472 121 410 58T262 -6Q176 -6 114 58T52 216ZM388 225Q388 281 351 322T261 364Q213 364 175 325T136 225Q136 158 174 114T262 70T350 114T388 225Z" transform="translate(2100,0)"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(2625,0)"></path></g><g data-mml-node="mn" transform="translate(19425,0)"><path data-c="1D7F9" d="M260 546Q233 546 211 541T180 531T171 524L174 514Q177 505 177 497Q177 476 162 461T125 446Q106 446 90 459T73 504Q76 540 98 565T150 601T203 616T239 621Q241 622 265 622Q322 620 362 602T420 558T444 513T451 478Q451 386 369 329L375 326Q381 323 386 320T401 311T419 298T436 283T452 263T466 240T475 212T479 180Q479 99 416 44T259 -11T105 28T44 130Q44 154 59 168T95 183Q117 183 132 169T148 131Q148 119 139 101Q175 65 260 65Q316 65 355 97T395 179Q395 211 375 240Q336 292 253 292H234H215Q194 292 185 299T175 330Q175 350 184 359Q192 368 238 370T309 384Q336 398 351 423T367 474Q367 496 350 513Q321 546 260 546Z"></path><path data-c="2E" d="M193 70Q193 105 214 122T258 140Q291 140 311 120T332 70Q332 44 314 23T262 1Q234 1 214 18T193 70Z" transform="translate(525,0)"></path></g><g data-mml-node="mi" transform="translate(20475,0)"><path data-c="1D6A1" d="M35 393Q35 417 46 424T89 432Q95 432 112 432T141 431H223Q238 422 241 415T244 393Q244 389 244 383T237 367T216 355Q209 355 209 354L234 319Q259 286 260 286L308 354Q308 355 301 355Q285 356 278 365T270 384L271 393Q271 420 289 428Q295 431 376 431H459Q460 430 465 427T472 422T476 416T480 407T481 393Q481 368 470 362T434 355H425H392L344 290Q295 225 295 223Q294 223 309 203T350 149L405 77L439 76H453Q474 76 484 69T495 38Q495 10 473 1H303Q281 9 281 32V38Q281 49 282 54T290 67T313 76Q324 76 324 77L259 173L197 77Q202 76 209 76Q225 75 233 68T241 55T242 38Q242 28 242 24T236 12T221 1H51Q29 9 29 32V38Q29 48 29 51T31 59T38 67T51 76H117L171 149Q224 222 224 223L124 355H90H78Q54 355 45 361T35 393Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(21000,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(21525,0)"><path data-c="1D69C" d="M72 317Q72 361 108 396T229 439Q231 439 245 439T268 440Q303 439 324 435T353 427T363 423L372 432Q380 440 397 440Q430 440 430 395Q430 390 430 380T429 366V335Q429 311 422 302T387 293Q364 293 355 300T346 316T343 336T325 353Q306 364 257 364Q209 364 178 351T147 317Q147 284 231 272Q327 256 357 247Q458 210 458 129V121Q458 74 413 34T271 -6Q246 -6 224 -3T189 5T165 14T150 22T144 26Q142 23 139 18T135 11T132 6T128 1T124 -2T119 -4T113 -5T104 -6Q84 -6 78 6T71 43Q71 48 71 60T72 79Q72 132 73 141T81 157Q90 166 115 166Q135 166 142 162T157 140Q168 108 191 90T260 70Q297 70 323 76T361 91T379 110T384 129Q384 157 346 171T247 195T165 212Q119 228 96 256T72 317Z"></path><path data-c="1D692" d="M202 538T202 559T218 596T260 612Q283 612 300 597T317 560Q317 538 300 523T260 507Q235 507 219 522ZM411 76Q441 76 451 69T462 38Q462 29 462 26T460 18T453 9T440 1H94Q72 8 72 33V38Q72 46 72 49T74 58T81 68T94 76H233V355H167L102 356Q80 363 80 393Q80 418 91 425T138 432Q145 432 165 432T200 431H295Q297 429 303 425T310 420T314 415T317 404T317 389T318 363Q318 354 318 314T317 241V76H378H411Z" transform="translate(525,0)"></path><path data-c="1D69D" d="M25 395Q26 405 26 408T29 416T35 423T48 431H145V481L146 532Q154 547 161 550T184 554H189Q218 554 227 534Q229 529 229 480V431H405Q406 430 411 427T418 422T422 416T426 407T427 393Q427 387 427 382T424 374T421 368T417 363T413 360T408 358L405 356L317 355H229V249Q229 237 229 214T228 179Q228 126 241 98T295 70Q354 70 365 149Q366 167 375 174Q383 182 407 182H415Q438 182 446 166Q448 161 448 148Q448 84 398 39T282 -6Q226 -6 189 29T146 128Q145 134 145 247V355H96H72Q45 355 35 362T25 395Z" transform="translate(1050,0)"></path><path data-c="1D68E" d="M48 217Q48 295 100 361T248 439L258 440Q268 440 274 440Q329 438 369 416T428 359T456 292T464 228Q464 215 461 208T454 198T442 190L288 189H135L138 179Q153 132 199 102T303 71Q336 71 353 86T380 120T398 143Q404 146 422 146Q453 146 462 126Q464 120 464 116Q464 84 416 39T285 -6Q187 -6 118 59T48 217ZM377 264Q371 291 365 306T341 338T294 362Q288 363 264 363Q225 363 190 336T139 264H377Z" transform="translate(1575,0)"></path></g><g data-mml-node="mo" transform="translate(23847.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(24847.4,0)"><path data-c="1D699" d="M89 431Q93 431 104 431T121 432Q173 432 173 401V396L182 402Q237 437 305 437Q376 437 434 378T492 217Q492 146 459 93T382 17T291 -6Q261 -6 232 5T188 26L174 37Q173 37 173 -54V-146H236Q250 -155 254 -162T258 -184Q258 -213 236 -221H27Q4 -214 4 -184Q4 -169 8 -162T27 -146H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89ZM409 215Q409 269 377 315T283 361Q255 361 224 344T177 297L173 290V167Q189 124 213 97T278 70Q330 70 369 111T409 215Z"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(525,0)"></path><path data-c="1D68C" d="M291 -6Q196 -6 131 60T66 216Q66 296 119 361Q154 403 200 421T273 439Q275 440 293 440H313Q400 440 433 409Q454 388 454 359Q454 335 439 321T402 306Q380 306 365 321T350 357V362L340 363Q339 363 326 363T303 364Q280 364 266 362Q217 352 184 313T151 215Q151 153 199 112T313 70Q341 70 357 85T381 118T394 140Q402 146 424 146Q443 146 447 144Q466 137 466 117Q466 106 457 88T429 47T374 10T291 -6Z" transform="translate(1050,0)"></path><path data-c="1D694" d="M13 42Q13 63 23 69T69 76H102V535H69H54Q34 535 24 542T13 573Q13 588 15 593Q22 605 29 608T56 611H95Q113 611 122 611T140 610T152 609T159 607T163 603T167 597T173 589V413L174 237L295 355H275Q260 355 253 356T239 367T232 393Q232 419 243 425T304 431H359H464Q479 422 482 415T485 393Q485 364 464 356L431 355H398L293 254L427 76H486Q501 67 504 60T507 38Q507 28 507 24T501 12T486 1H314Q292 8 292 38Q292 62 308 73Q312 75 326 76L338 77L290 140Q279 154 267 171T248 196L242 204L207 171L173 139V76H206H221Q241 76 251 69T262 38Q262 11 244 3Q240 1 138 1Q123 1 100 1T70 0Q32 0 23 7T13 42Z" transform="translate(1575,0)"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(2100,0)"></path><path data-c="1D690" d="M60 274Q60 337 107 386T233 436Q278 436 316 417L329 410L338 416Q384 442 427 442T489 423T509 381T494 345T460 332Q449 332 440 338Q432 341 427 348T419 360T415 365Q414 364 410 364L383 355Q406 320 406 274Q406 211 358 162T233 112Q189 112 155 128L146 133Q142 125 142 115Q142 99 150 85T175 71Q182 72 187 70Q188 70 195 70T218 70T254 69Q259 69 275 69T297 69T318 68T340 66T361 62T384 57T405 49T428 38Q495 -1 495 -76Q495 -143 427 -186T262 -229Q161 -229 94 -185T29 -73Q30 -60 33 -48T39 -26T47 -8T57 8T67 20T77 30T86 38L91 43Q91 44 86 53T75 80T70 117Q70 142 89 183L83 194Q60 232 60 274ZM321 274Q321 312 296 337T230 362Q197 362 171 338T145 274Q145 235 170 211T233 187Q273 187 297 212T321 274ZM422 -78Q422 -54 408 -38T366 -15T315 -6T255 -4H200Q198 -4 193 -4T183 -3Q148 -3 125 -26T102 -78Q102 -110 151 -132T261 -154Q321 -154 371 -132T422 -78Z" transform="translate(2625,0)"></path><path data-c="1D68E" d="M48 217Q48 295 100 361T248 439L258 440Q268 440 274 440Q329 438 369 416T428 359T456 292T464 228Q464 215 461 208T454 198T442 190L288 189H135L138 179Q153 132 199 102T303 71Q336 71 353 86T380 120T398 143Q404 146 422 146Q453 146 462 126Q464 120 464 116Q464 84 416 39T285 -6Q187 -6 118 59T48 217ZM377 264Q371 291 365 306T341 338T294 362Q288 363 264 363Q225 363 190 336T139 264H377Z" transform="translate(3150,0)"></path><path data-c="1D69C" d="M72 317Q72 361 108 396T229 439Q231 439 245 439T268 440Q303 439 324 435T353 427T363 423L372 432Q380 440 397 440Q430 440 430 395Q430 390 430 380T429 366V335Q429 311 422 302T387 293Q364 293 355 300T346 316T343 336T325 353Q306 364 257 364Q209 364 178 351T147 317Q147 284 231 272Q327 256 357 247Q458 210 458 129V121Q458 74 413 34T271 -6Q246 -6 224 -3T189 5T165 14T150 22T144 26Q142 23 139 18T135 11T132 6T128 1T124 -2T119 -4T113 -5T104 -6Q84 -6 78 6T71 43Q71 48 71 60T72 79Q72 132 73 141T81 157Q90 166 115 166Q135 166 142 162T157 140Q168 108 191 90T260 70Q297 70 323 76T361 91T379 110T384 129Q384 157 346 171T247 195T165 212Q119 228 96 256T72 317Z" transform="translate(3675,0)"></path></g></g></g></g></svg></mjx-container></span>文件夹中;</li>
+<li>如果当前conda环境用的是系统的python，那么通常会被安装到<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.518ex;" xmlns="http://www.w3.org/2000/svg" width="44.093ex" height="2.088ex" role="img" focusable="false" viewBox="0 -694 19489.1 923"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(250,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mo" transform="translate(775,0)"><path data-c="2E" d="M193 70Q193 105 214 122T258 140Q291 140 311 120T332 70Q332 44 314 23T262 1Q234 1 214 18T193 70Z"></path></g><g data-mml-node="mi" transform="translate(1466.7,0)"><path data-c="1D695" d="M51 573Q51 602 73 610H76Q79 610 84 610T97 610T113 610T133 611T155 611T179 611H282Q301 598 304 586V76H452Q466 67 470 60T474 38Q474 10 452 1H73Q51 9 51 32V38Q51 54 54 60T73 76H220V535H146L73 536Q51 545 51 567V573Z"></path><path data-c="1D698" d="M52 216Q52 318 118 379T261 440Q343 440 407 378T472 216Q472 121 410 58T262 -6Q176 -6 114 58T52 216ZM388 225Q388 281 351 322T261 364Q213 364 175 325T136 225Q136 158 174 114T262 70T350 114T388 225Z" transform="translate(525,0)"></path><path data-c="1D68C" d="M291 -6Q196 -6 131 60T66 216Q66 296 119 361Q154 403 200 421T273 439Q275 440 293 440H313Q400 440 433 409Q454 388 454 359Q454 335 439 321T402 306Q380 306 365 321T350 357V362L340 363Q339 363 326 363T303 364Q280 364 266 362Q217 352 184 313T151 215Q151 153 199 112T313 70Q341 70 357 85T381 118T394 140Q402 146 424 146Q443 146 447 144Q466 137 466 117Q466 106 457 88T429 47T374 10T291 -6Z" transform="translate(1050,0)"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(1575,0)"></path><path data-c="1D695" d="M51 573Q51 602 73 610H76Q79 610 84 610T97 610T113 610T133 611T155 611T179 611H282Q301 598 304 586V76H452Q466 67 470 60T474 38Q474 10 452 1H73Q51 9 51 32V38Q51 54 54 60T73 76H220V535H146L73 536Q51 545 51 567V573Z" transform="translate(2100,0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(4091.7,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(4616.7,0)"><path data-c="1D695" d="M51 573Q51 602 73 610H76Q79 610 84 610T97 610T113 610T133 611T155 611T179 611H282Q301 598 304 586V76H452Q466 67 470 60T474 38Q474 10 452 1H73Q51 9 51 32V38Q51 54 54 60T73 76H220V535H146L73 536Q51 545 51 567V573Z"></path><path data-c="1D692" d="M202 538T202 559T218 596T260 612Q283 612 300 597T317 560Q317 538 300 523T260 507Q235 507 219 522ZM411 76Q441 76 451 69T462 38Q462 29 462 26T460 18T453 9T440 1H94Q72 8 72 33V38Q72 46 72 49T74 58T81 68T94 76H233V355H167L102 356Q80 363 80 393Q80 418 91 425T138 432Q145 432 165 432T200 431H295Q297 429 303 425T310 420T314 415T317 404T317 389T318 363Q318 354 318 314T317 241V76H378H411Z" transform="translate(525,0)"></path><path data-c="1D68B" d="M4 573Q4 596 15 603T52 611H90H124Q146 611 155 608T171 591Q173 586 173 491V396L182 402Q217 424 256 431Q280 437 309 437Q376 437 434 379T492 217Q492 162 473 118T422 47T358 8T293 -6Q229 -6 174 38Q171 13 163 7T135 1H131H122Q99 1 90 23L89 279V535H58L27 536Q4 543 4 573ZM409 215Q409 269 377 315T283 361Q255 361 224 344T177 297L173 290V167Q189 124 213 97T278 70Q330 70 369 111T409 215Z" transform="translate(1050,0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(6191.7,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(6716.7,0)"><path data-c="1D699" d="M89 431Q93 431 104 431T121 432Q173 432 173 401V396L182 402Q237 437 305 437Q376 437 434 378T492 217Q492 146 459 93T382 17T291 -6Q261 -6 232 5T188 26L174 37Q173 37 173 -54V-146H236Q250 -155 254 -162T258 -184Q258 -213 236 -221H27Q4 -214 4 -184Q4 -169 8 -162T27 -146H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89ZM409 215Q409 269 377 315T283 361Q255 361 224 344T177 297L173 290V167Q189 124 213 97T278 70Q330 70 369 111T409 215Z"></path><path data-c="1D6A2" d="M26 393Q26 417 37 424T80 431H134H217Q232 422 235 416T239 393Q239 379 236 371T226 360T214 356T197 355L179 354V353L188 330Q197 306 209 272T235 201T259 133T271 89V84L274 95Q279 122 298 185T335 300T352 354Q352 355 331 355Q312 355 304 358Q288 368 288 393Q288 408 291 415T310 431H478Q479 430 484 427T491 422T495 416T499 407T500 393Q500 376 493 367T479 357T458 355H452Q426 355 425 353Q420 337 351 124T280 -94Q240 -195 168 -220Q147 -228 125 -228Q89 -228 66 -201T42 -139Q42 -116 56 -102T93 -87Q117 -87 130 -102T144 -135V-138H126Q121 -148 121 -150T130 -152Q182 -147 207 -87Q211 -78 223 -40T236 1Q230 10 102 355H75L49 356Q26 363 26 393Z" transform="translate(525,0)"></path><path data-c="1D69D" d="M25 395Q26 405 26 408T29 416T35 423T48 431H145V481L146 532Q154 547 161 550T184 554H189Q218 554 227 534Q229 529 229 480V431H405Q406 430 411 427T418 422T422 416T426 407T427 393Q427 387 427 382T424 374T421 368T417 363T413 360T408 358L405 356L317 355H229V249Q229 237 229 214T228 179Q228 126 241 98T295 70Q354 70 365 149Q366 167 375 174Q383 182 407 182H415Q438 182 446 166Q448 161 448 148Q448 84 398 39T282 -6Q226 -6 189 29T146 128Q145 134 145 247V355H96H72Q45 355 35 362T25 395Z" transform="translate(1050,0)"></path><path data-c="1D691" d="M4 573Q4 596 15 603T52 611H90H124Q146 611 155 608T171 591Q173 586 173 489Q173 394 175 394L186 402Q197 410 219 420T269 434Q278 436 306 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 10 286 32V38V46Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V535H58L27 536Q4 543 4 573Z" transform="translate(1575,0)"></path><path data-c="1D698" d="M52 216Q52 318 118 379T261 440Q343 440 407 378T472 216Q472 121 410 58T262 -6Q176 -6 114 58T52 216ZM388 225Q388 281 351 322T261 364Q213 364 175 325T136 225Q136 158 174 114T262 70T350 114T388 225Z" transform="translate(2100,0)"></path><path data-c="1D697" d="M89 431Q94 431 105 431T122 432Q173 432 173 399Q173 394 175 394Q176 394 190 404T233 425T298 436Q343 436 371 423Q411 402 423 365T436 265Q436 257 436 239T435 211V198V76H498Q512 67 516 60T520 38Q520 9 498 1H308Q286 9 286 32V38V45Q286 65 303 73Q309 76 329 76H351V188Q351 204 351 230T352 266Q352 321 341 341T288 361Q253 361 222 341T176 274L174 264L173 170V76H236Q250 67 254 60T258 38Q258 9 236 1H27Q4 8 4 38Q4 53 8 60T27 76H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89Z" transform="translate(2625,0)"></path></g><g data-mml-node="mn" transform="translate(9866.7,0)"><path data-c="1D7F9" d="M260 546Q233 546 211 541T180 531T171 524L174 514Q177 505 177 497Q177 476 162 461T125 446Q106 446 90 459T73 504Q76 540 98 565T150 601T203 616T239 621Q241 622 265 622Q322 620 362 602T420 558T444 513T451 478Q451 386 369 329L375 326Q381 323 386 320T401 311T419 298T436 283T452 263T466 240T475 212T479 180Q479 99 416 44T259 -11T105 28T44 130Q44 154 59 168T95 183Q117 183 132 169T148 131Q148 119 139 101Q175 65 260 65Q316 65 355 97T395 179Q395 211 375 240Q336 292 253 292H234H215Q194 292 185 299T175 330Q175 350 184 359Q192 368 238 370T309 384Q336 398 351 423T367 474Q367 496 350 513Q321 546 260 546Z"></path><path data-c="2E" d="M193 70Q193 105 214 122T258 140Q291 140 311 120T332 70Q332 44 314 23T262 1Q234 1 214 18T193 70Z" transform="translate(525,0)"></path></g><g data-mml-node="mi" transform="translate(10916.7,0)"><path data-c="1D6A1" d="M35 393Q35 417 46 424T89 432Q95 432 112 432T141 431H223Q238 422 241 415T244 393Q244 389 244 383T237 367T216 355Q209 355 209 354L234 319Q259 286 260 286L308 354Q308 355 301 355Q285 356 278 365T270 384L271 393Q271 420 289 428Q295 431 376 431H459Q460 430 465 427T472 422T476 416T480 407T481 393Q481 368 470 362T434 355H425H392L344 290Q295 225 295 223Q294 223 309 203T350 149L405 77L439 76H453Q474 76 484 69T495 38Q495 10 473 1H303Q281 9 281 32V38Q281 49 282 54T290 67T313 76Q324 76 324 77L259 173L197 77Q202 76 209 76Q225 75 233 68T241 55T242 38Q242 28 242 24T236 12T221 1H51Q29 9 29 32V38Q29 48 29 51T31 59T38 67T51 76H117L171 149Q224 222 224 223L124 355H90H78Q54 355 45 361T35 393Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(11441.7,0)"><g data-mml-node="mo"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g><g data-mml-node="mi" transform="translate(11966.7,0)"><path data-c="1D69C" d="M72 317Q72 361 108 396T229 439Q231 439 245 439T268 440Q303 439 324 435T353 427T363 423L372 432Q380 440 397 440Q430 440 430 395Q430 390 430 380T429 366V335Q429 311 422 302T387 293Q364 293 355 300T346 316T343 336T325 353Q306 364 257 364Q209 364 178 351T147 317Q147 284 231 272Q327 256 357 247Q458 210 458 129V121Q458 74 413 34T271 -6Q246 -6 224 -3T189 5T165 14T150 22T144 26Q142 23 139 18T135 11T132 6T128 1T124 -2T119 -4T113 -5T104 -6Q84 -6 78 6T71 43Q71 48 71 60T72 79Q72 132 73 141T81 157Q90 166 115 166Q135 166 142 162T157 140Q168 108 191 90T260 70Q297 70 323 76T361 91T379 110T384 129Q384 157 346 171T247 195T165 212Q119 228 96 256T72 317Z"></path><path data-c="1D692" d="M202 538T202 559T218 596T260 612Q283 612 300 597T317 560Q317 538 300 523T260 507Q235 507 219 522ZM411 76Q441 76 451 69T462 38Q462 29 462 26T460 18T453 9T440 1H94Q72 8 72 33V38Q72 46 72 49T74 58T81 68T94 76H233V355H167L102 356Q80 363 80 393Q80 418 91 425T138 432Q145 432 165 432T200 431H295Q297 429 303 425T310 420T314 415T317 404T317 389T318 363Q318 354 318 314T317 241V76H378H411Z" transform="translate(525,0)"></path><path data-c="1D69D" d="M25 395Q26 405 26 408T29 416T35 423T48 431H145V481L146 532Q154 547 161 550T184 554H189Q218 554 227 534Q229 529 229 480V431H405Q406 430 411 427T418 422T422 416T426 407T427 393Q427 387 427 382T424 374T421 368T417 363T413 360T408 358L405 356L317 355H229V249Q229 237 229 214T228 179Q228 126 241 98T295 70Q354 70 365 149Q366 167 375 174Q383 182 407 182H415Q438 182 446 166Q448 161 448 148Q448 84 398 39T282 -6Q226 -6 189 29T146 128Q145 134 145 247V355H96H72Q45 355 35 362T25 395Z" transform="translate(1050,0)"></path><path data-c="1D68E" d="M48 217Q48 295 100 361T248 439L258 440Q268 440 274 440Q329 438 369 416T428 359T456 292T464 228Q464 215 461 208T454 198T442 190L288 189H135L138 179Q153 132 199 102T303 71Q336 71 353 86T380 120T398 143Q404 146 422 146Q453 146 462 126Q464 120 464 116Q464 84 416 39T285 -6Q187 -6 118 59T48 217ZM377 264Q371 291 365 306T341 338T294 362Q288 363 264 363Q225 363 190 336T139 264H377Z" transform="translate(1575,0)"></path></g><g data-mml-node="mo" transform="translate(14288.9,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(15289.1,0)"><path data-c="1D699" d="M89 431Q93 431 104 431T121 432Q173 432 173 401V396L182 402Q237 437 305 437Q376 437 434 378T492 217Q492 146 459 93T382 17T291 -6Q261 -6 232 5T188 26L174 37Q173 37 173 -54V-146H236Q250 -155 254 -162T258 -184Q258 -213 236 -221H27Q4 -214 4 -184Q4 -169 8 -162T27 -146H89V355H58L27 356Q4 363 4 393Q4 408 8 415T27 431H89ZM409 215Q409 269 377 315T283 361Q255 361 224 344T177 297L173 290V167Q189 124 213 97T278 70Q330 70 369 111T409 215Z"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(525,0)"></path><path data-c="1D68C" d="M291 -6Q196 -6 131 60T66 216Q66 296 119 361Q154 403 200 421T273 439Q275 440 293 440H313Q400 440 433 409Q454 388 454 359Q454 335 439 321T402 306Q380 306 365 321T350 357V362L340 363Q339 363 326 363T303 364Q280 364 266 362Q217 352 184 313T151 215Q151 153 199 112T313 70Q341 70 357 85T381 118T394 140Q402 146 424 146Q443 146 447 144Q466 137 466 117Q466 106 457 88T429 47T374 10T291 -6Z" transform="translate(1050,0)"></path><path data-c="1D694" d="M13 42Q13 63 23 69T69 76H102V535H69H54Q34 535 24 542T13 573Q13 588 15 593Q22 605 29 608T56 611H95Q113 611 122 611T140 610T152 609T159 607T163 603T167 597T173 589V413L174 237L295 355H275Q260 355 253 356T239 367T232 393Q232 419 243 425T304 431H359H464Q479 422 482 415T485 393Q485 364 464 356L431 355H398L293 254L427 76H486Q501 67 504 60T507 38Q507 28 507 24T501 12T486 1H314Q292 8 292 38Q292 62 308 73Q312 75 326 76L338 77L290 140Q279 154 267 171T248 196L242 204L207 171L173 139V76H206H221Q241 76 251 69T262 38Q262 11 244 3Q240 1 138 1Q123 1 100 1T70 0Q32 0 23 7T13 42Z" transform="translate(1575,0)"></path><path data-c="1D68A" d="M126 306Q105 306 90 321T74 359Q74 439 211 439Q268 439 276 438Q343 426 383 390T430 306Q431 301 431 190V81Q446 79 465 78T492 76T509 72T521 60T524 38Q524 11 506 3Q502 1 466 1Q426 1 406 5T379 14T355 36L345 30Q284 -6 205 -6Q135 -6 92 39T48 141Q48 182 79 212T158 256T252 278T342 285H347V290Q347 315 325 335T267 362Q258 363 224 363Q189 363 185 362H179L178 358Q178 353 178 352T176 345T174 337T170 330T165 322T158 316T150 311T139 308T126 306ZM132 140Q132 115 157 93T224 70Q269 70 302 87T344 133Q346 139 347 175V211H339Q256 209 194 190T132 140Z" transform="translate(2100,0)"></path><path data-c="1D690" d="M60 274Q60 337 107 386T233 436Q278 436 316 417L329 410L338 416Q384 442 427 442T489 423T509 381T494 345T460 332Q449 332 440 338Q432 341 427 348T419 360T415 365Q414 364 410 364L383 355Q406 320 406 274Q406 211 358 162T233 112Q189 112 155 128L146 133Q142 125 142 115Q142 99 150 85T175 71Q182 72 187 70Q188 70 195 70T218 70T254 69Q259 69 275 69T297 69T318 68T340 66T361 62T384 57T405 49T428 38Q495 -1 495 -76Q495 -143 427 -186T262 -229Q161 -229 94 -185T29 -73Q30 -60 33 -48T39 -26T47 -8T57 8T67 20T77 30T86 38L91 43Q91 44 86 53T75 80T70 117Q70 142 89 183L83 194Q60 232 60 274ZM321 274Q321 312 296 337T230 362Q197 362 171 338T145 274Q145 235 170 211T233 187Q273 187 297 212T321 274ZM422 -78Q422 -54 408 -38T366 -15T315 -6T255 -4H200Q198 -4 193 -4T183 -3Q148 -3 125 -26T102 -78Q102 -110 151 -132T261 -154Q321 -154 371 -132T422 -78Z" transform="translate(2625,0)"></path><path data-c="1D68E" d="M48 217Q48 295 100 361T248 439L258 440Q268 440 274 440Q329 438 369 416T428 359T456 292T464 228Q464 215 461 208T454 198T442 190L288 189H135L138 179Q153 132 199 102T303 71Q336 71 353 86T380 120T398 143Q404 146 422 146Q453 146 462 126Q464 120 464 116Q464 84 416 39T285 -6Q187 -6 118 59T48 217ZM377 264Q371 291 365 306T341 338T294 362Q288 363 264 363Q225 363 190 336T139 264H377Z" transform="translate(3150,0)"></path><path data-c="1D69C" d="M72 317Q72 361 108 396T229 439Q231 439 245 439T268 440Q303 439 324 435T353 427T363 423L372 432Q380 440 397 440Q430 440 430 395Q430 390 430 380T429 366V335Q429 311 422 302T387 293Q364 293 355 300T346 316T343 336T325 353Q306 364 257 364Q209 364 178 351T147 317Q147 284 231 272Q327 256 357 247Q458 210 458 129V121Q458 74 413 34T271 -6Q246 -6 224 -3T189 5T165 14T150 22T144 26Q142 23 139 18T135 11T132 6T128 1T124 -2T119 -4T113 -5T104 -6Q84 -6 78 6T71 43Q71 48 71 60T72 79Q72 132 73 141T81 157Q90 166 115 166Q135 166 142 162T157 140Q168 108 191 90T260 70Q297 70 323 76T361 91T379 110T384 129Q384 157 346 171T247 195T165 212Q119 228 96 256T72 317Z" transform="translate(3675,0)"></path></g></g></g></g></svg></mjx-container></span>文件夹中
+。</li>
+</ul></li>
+</ul>
+<h2 id="判断安装方式">判断安装方式</h2>
+<ul>
+<li>执行 <code>conda list</code>
+，用pip安装的包显示的build项为pypi。</li>
+</ul>
+<hr>
+<p><strong>参考：</strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/chenxy_bwave/article/details/119996001">Anaconda
+conda常用命令：从入门到精通</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Conda常用命令" target="_blank" rel="external">http://example.com/2024/03/03/Conda常用命令/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/skylark1003" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/skylark1003" target="_blank"><span class="text-dark">雀栎</span><small class="ml-1x">The skylark soar in the azure sky.</small></a></h3>
+        <div>Mangas | Literature | Coding | Music | Handicraft | Japanese dramas</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/03/27/PyQt%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%AE%9E%E7%8E%B0%E4%BC%AA%E8%A3%85%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" title="PyQt5简单入门——实现伪装目标检测"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/skylarkalipay.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/skylarkwechatpay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://gitee.com/skylark1003" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/3298400311" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Skylark_1003" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2024 雀栎
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'fm1laijAwK90cWzSl9ieRzWQ-gzGzoHsz',
+    appKey: 'iH6BzkY2Ih11Ns1tOxWg3xoL',
+    placeholder: '留下昵称和邮箱，记得保持友善哦。',
+    avatar: 'mp',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+  
+    <style>
+      .copy-btn {
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: 微软雅黑;
+        line-height: 20px;
+        color: #333;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+        user-select: none;
+        outline: 0;
+      }
+  
+      .highlight-wrap .copy-btn {
+        transition: opacity .3s ease-in-out;
+        opacity: 0;
+        padding: 2px 6px;
+        position: absolute;
+        right: 4px;
+        top: 8px;
+        z-index: 2;
+      }
+  
+      .highlight-wrap:hover .copy-btn,
+          .highlight-wrap .copy-btn:focus {
+        opacity: 1
+      }
+  
+      .highlight-wrap {
+        position: relative;
+      }
+    </style>
+    
+    <script>
+      addLoadEvent(()=>{
+        $('.highlight').each(function (i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+            var code = $(this).parent().find(".code")[0].innerText
+            
+                code += "\n/**\n* 感谢您复制代码，使用代码请注明引用出处\n* 雀栎 @ https://skylark1003.gitee.io/\n**/"
+            
+            var ta = document.createElement('textarea')
+            document.body.appendChild(ta)
+            ta.style.position = 'absolute'
+            ta.style.top = '0px'
+            ta.style.left = '0px'
+            ta.value = code
+            ta.select()
+            ta.focus()
+            var result = document.execCommand('copy')
+            document.body.removeChild(ta)
+            
+              if(result)$(this).text('复制成功')
+              else $(this).text('复制失败')
+            
+            $(this).blur()
+          })).on('mouseleave', function (e) {
+            var $b = $(this).find('.copy-btn')
+            setTimeout(function () {
+              $b.text('复制')
+            }, 300)
+          }).append(e)
+        })
+      })
+    </script>
+  
+</body>
+</html>

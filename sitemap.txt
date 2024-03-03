@@ -1,3 +1,4 @@
+http://example.com/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 http://example.com/2022/07/01/Markdown%E6%8F%92%E5%85%A5%E5%85%AC%E5%BC%8F/
 http://example.com/2022/07/01/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/
 http://example.com/2023/03/24/%E4%BD%BF%E7%94%A8AutoDL%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/
@@ -18,5 +19,6 @@ http://example.com/tags/VSCode/
 http://example.com/tags/hexo/
 http://example.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/
 http://example.com/tags/AutoDL/
+http://example.com/tags/Conda/
 http://example.com/categories/%E5%B7%A5%E5%85%B7/
 http://example.com/categories/%E5%AE%9E%E4%BE%8B/
