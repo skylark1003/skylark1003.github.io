@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-08-11T07:04:16.684Z</updated>
+  <updated>2024-08-11T07:25:22.658Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="http://example.com/2024/08/11/%E8%A7%A3%E5%86%B3%20GitHub%20%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/"/>
     <id>http://example.com/2024/08/11/%E8%A7%A3%E5%86%B3%20GitHub%20%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/</id>
     <published>2024-08-11T06:47:21.000Z</published>
-    <updated>2024-08-11T07:04:16.684Z</updated>
+    <updated>2024-08-11T07:25:22.658Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在连接使用 <code>git clone</code> 等命令连接 GitHub 时报错：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fatal: <span class="title">unable</span> <span class="title">to</span> <span class="title">access</span> &#x27;<span class="title">https</span>://<span class="title">github.com</span>/<span class="title">xxx</span>/<span class="title">xxx.git</span>/&#x27;: <span class="title">Failed</span> <span class="title">to</span> <span class="title">connect</span> <span class="title">to</span> <span class="title">github.com</span> <span class="title">port</span> 443 <span class="title">after</span> 21160 <span class="title">ms</span>: <span class="title">Couldn</span>&#x27;<span class="title">t</span> <span class="title">connect</span> <span class="title">to</span> <span class="title">server</span></span></span><br></pre></td></tr></table></figure><p>挂了梯子GitHub网页可以正常打开，但在命令行访问远程仓库时失败。</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy http://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:xxxxx</span><br><span class="line">git config --global http.proxy http://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:xxxxx</span><br></pre></td></tr></table></figure><p>该命令用于配置 Git 使用代理服务器，以便通过代理访问 Git 仓库，”xxxxx“表示所用梯子的代理端口号（根据clash、V2rayN等有所不同，我使用的时sukuracat，端口号为33210）。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="问题描述">问题描述</h1><p>在连接使用 <code>git clone</code> 等命令连接 GitHub 时报错：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fatal: <span class="title">unable</span> <span class="title">to</span> <span class="title">access</span> &#x27;<span class="title">https</span>://<span class="title">github.com</span>/<span class="title">xxx</span>/<span class="title">xxx.git</span>/&#x27;: <span class="title">Failed</span> <span class="title">to</span> <span class="title">connect</span> <span class="title">to</span> <span class="title">github.com</span> <span class="title">port</span> 443 <span class="title">after</span> 21160 <span class="title">ms</span>: <span class="title">Couldn</span>&#x27;<span class="title">t</span> <span class="title">connect</span> <span class="title">to</span> <span class="title">server</span></span></span><br></pre></td></tr></table></figure><p>挂了梯子GitHub网页可以正常打开，但在命令行访问远程仓库时失败。</p><h1 id="解决方法">解决方法</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy http://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:xxxxx</span><br><span class="line">git config --global http.proxy http://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:xxxxx</span><br></pre></td></tr></table></figure><p>该命令用于配置 Git 使用代理服务器，以便通过代理访问 Git仓库，“xxxxx”表示所用梯子的代理端口号（根据clash、V2rayN等有所不同，我使用的时sukuracat，端口号为33210）。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;在连接使用 &lt;code&gt;git clone&lt;/code&gt; 等命令连接 GitHub 时报错：&lt;/p&gt;
-&lt;figure cla</summary>
+    <summary type="html">&lt;h1 id=&quot;问题描述&quot;&gt;问题描述&lt;/h1&gt;
+&lt;p&gt;在连接使用 &lt;code&gt;git clone&lt;/code&gt; 等命令连接 GitHub 时报错：&lt;/p&gt;
+&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;</summary>
       
     
     
