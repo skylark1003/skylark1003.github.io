@@ -17,30 +17,28 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>VSCode配置PyQt5过程 | 雀栎</title>
-  <meta name="description" content="在毕业设计中，我需要使用PyQt5绘制简单的用户界面，所以准备在VSCode中配置PyQt5，步骤如下。 安装PyQt5组件 在命令行中执行如下命令进行安装： 12pip install PyQt5pip install PyQt5-tools 在VSCode中配置PyQt5插件 选择python解释器 在 管理 -&gt; 命令面板 中输入Python: 选择解释器，点击即可进行选">
+  <title>使用 AutoDL 训练深度学习模型流程 | 雀栎</title>
+  <meta name="description" content="租GPU在AutoDL官网选择符合要求的GPU，因为我的需求不高且资金不充裕所以选择按量计费，镜像选择和代码模型匹配的版本。   在容器实例中点击 JupyterLab -&gt; 终端 即可打开服务器。  运行代码准备数据集和模型代码将数据集dataset和模型model打包成（*.zip）文件，拖拽到服务器中，右下方的正在上传进度条满之后表示上传成功。   解压代码使用以下命令安装并设置arc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VSCode配置PyQt5过程">
-<meta property="og:url" content="http://example.com/2023/03/24/VSCode%E9%85%8D%E7%BD%AEPyQt5%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:title" content="使用 AutoDL 训练深度学习模型流程">
+<meta property="og:url" content="http://example.com/2023/03/24/%E4%BD%BF%E7%94%A8%20AutoDL%20%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在毕业设计中，我需要使用PyQt5绘制简单的用户界面，所以准备在VSCode中配置PyQt5，步骤如下。 安装PyQt5组件 在命令行中执行如下命令进行安装： 12pip install PyQt5pip install PyQt5-tools 在VSCode中配置PyQt5插件 选择python解释器 在 管理 -&gt; 命令面板 中输入Python: 选择解释器，点击即可进行选">
+<meta property="og:description" content="租GPU在AutoDL官网选择符合要求的GPU，因为我的需求不高且资金不充裕所以选择按量计费，镜像选择和代码模型匹配的版本。   在容器实例中点击 JupyterLab -&gt; 终端 即可打开服务器。  运行代码准备数据集和模型代码将数据集dataset和模型model打包成（*.zip）文件，拖拽到服务器中，右下方的正在上传进度条满之后表示上传成功。   解压代码使用以下命令安装并设置arc">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-01.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-02.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-04.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-05.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-06.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-09.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-10.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-01.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-02.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-05.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-03.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-04.png">
+<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-06.png">
 <meta property="article:published_time" content="2023-03-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-03T13:42:42.680Z">
+<meta property="article:modified_time" content="2024-08-11T07:10:56.322Z">
 <meta property="article:author" content="雀栎">
-<meta property="article:tag" content="PyQt5">
-<meta property="article:tag" content="VSCode">
+<meta property="article:tag" content="AutoDL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-01.png">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-01.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2023/03/24/VSCode%E9%85%8D%E7%BD%AEPyQt5%E8%BF%87%E7%A8%8B/index.html">
+  <link rel="canonical" href="http://example.com/2023/03/24/%E4%BD%BF%E7%94%A8%20AutoDL%20%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -217,7 +215,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -227,7 +225,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoDL/" rel="tag">AutoDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Conda/" rel="tag">Conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoDL/" rel="tag">AutoDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Conda/" rel="tag">Conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -237,7 +235,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/AutoDL/" style="font-size: 13px;">AutoDL</a> <a href="/tags/ChatGPT/" style="font-size: 13px;">ChatGPT</a> <a href="/tags/Conda/" style="font-size: 13px;">Conda</a> <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/PyQt5/" style="font-size: 14px;">PyQt5</a> <a href="/tags/VSCode/" style="font-size: 13px;">VSCode</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/markdown/" style="font-size: 14px;">markdown</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13px;">博客搭建</a>
+      <a href="/tags/AutoDL/" style="font-size: 13px;">AutoDL</a> <a href="/tags/ChatGPT/" style="font-size: 13px;">ChatGPT</a> <a href="/tags/Conda/" style="font-size: 13px;">Conda</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/PyQt5/" style="font-size: 14px;">PyQt5</a> <a href="/tags/VSCode/" style="font-size: 13px;">VSCode</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/markdown/" style="font-size: 14px;">markdown</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13px;">博客搭建</a>
     </div>
   </div>
 
@@ -246,7 +244,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -265,7 +263,22 @@
                 <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
               </p>
               <p class="item-title">
-                <a href="/2024/03/03/Git%20%E4%BD%BF%E7%94%A8/" class="title">Git常用命令</a>
+                <a href="/2024/08/11/%E8%A7%A3%E5%86%B3%20GitHub%20%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5/" class="title">解决 GitHub 连接失败</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-08-11T06:47:21.000Z" itemprop="datePublished">2024-08-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/03/03/Git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Git 常用命令</a>
               </p>
               <p class="item-date">
                 <time datetime="2024-03-03T13:33:00.000Z" itemprop="datePublished">2024-03-03</time>
@@ -280,7 +293,7 @@
                 <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
               </p>
               <p class="item-title">
-                <a href="/2024/03/03/Conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Conda常用命令</a>
+                <a href="/2024/03/03/Conda%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">Conda 常用命令</a>
               </p>
               <p class="item-date">
                 <time datetime="2024-03-03T09:13:52.000Z" itemprop="datePublished">2024-03-03</time>
@@ -295,7 +308,7 @@
                 <a class="category-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a>
               </p>
               <p class="item-title">
-                <a href="/2023/03/27/PyQt%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%AE%9E%E7%8E%B0%E4%BC%AA%E8%A3%85%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="title">PyQt5简单入门——实现伪装目标检测</a>
+                <a href="/2023/03/27/PyQt%20%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%AE%9E%E7%8E%B0%E4%BC%AA%E8%A3%85%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" class="title">PyQt5 简单入门——实现伪装目标检测</a>
               </p>
               <p class="item-date">
                 <time datetime="2023-03-26T16:00:00.000Z" itemprop="datePublished">2023-03-27</time>
@@ -310,22 +323,7 @@
                 <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
               </p>
               <p class="item-title">
-                <a href="/2023/03/24/ChatGPT%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="title">ChatGPT注册使用流程</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/03/24/VSCode%E9%85%8D%E7%BD%AEPyQt5%E8%BF%87%E7%A8%8B/" class="title">VSCode配置PyQt5过程</a>
+                <a href="/2023/03/24/ChatGPT%20%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="title">ChatGPT 注册使用流程</a>
               </p>
               <p class="item-date">
                 <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
@@ -348,21 +346,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85pyqt5%E7%BB%84%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装PyQt5组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEpyqt5%E6%8F%92%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">在VSCode中配置PyQt5插件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9python%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">选择python解释器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85pyqt-integration"><span class="toc-number">2.2.</span> <span class="toc-text">安装PYQT Integration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEpyqt-integration"><span class="toc-number">2.3.</span> <span class="toc-text">配置PYQT Integration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BApyqt%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">创建PyQt文件</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%9FGPU"><span class="toc-number">1.</span> <span class="toc-text">租GPU</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">运行代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE%E9%9B%86%E5%92%8C%E6%A8%A1%E5%9E%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">2.1.</span> <span class="toc-text">准备数据集和模型代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">2.2.</span> <span class="toc-text">解压代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81-1"><span class="toc-number">2.3.</span> <span class="toc-text">运行代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%9C%BA"><span class="toc-number">2.4.</span> <span class="toc-text">关机</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-VSCode配置PyQt5过程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-使用 AutoDL 训练深度学习模型流程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      VSCode配置PyQt5过程
+      使用 AutoDL 训练深度学习模型流程
     </h1>
   
 
@@ -370,7 +368,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2023/03/24/VSCode%E9%85%8D%E7%BD%AEPyQt5%E8%BF%87%E7%A8%8B/" class="article-date">
+	<a href="/2023/03/24/%E4%BD%BF%E7%94%A8%20AutoDL%20%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/" class="article-date">
 	  <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
 	</a>
 </span>
@@ -383,7 +381,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/PyQt5/" rel="tag">PyQt5</a>, <a class="article-tag-link-link" href="/tags/VSCode/" rel="tag">VSCode</a>
+	<a class="article-tag-link-link" href="/tags/AutoDL/" rel="tag">AutoDL</a>
   </span>
 
 
@@ -396,10 +394,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/03/24/VSCode%E9%85%8D%E7%BD%AEPyQt5%E8%BF%87%E7%A8%8B/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/03/24/%E4%BD%BF%E7%94%A8%20AutoDL%20%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 420(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 284(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -409,51 +407,24 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>在毕业设计中，我需要使用PyQt5绘制简单的用户界面，所以准备在VSCode中配置PyQt5，步骤如下。</p>
-<h1 id="安装pyqt5组件">安装PyQt5组件</h1>
-<p>在命令行中执行如下命令进行安装：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5</span><br><span class="line">pip install PyQt5-tools</span><br></pre></td></tr></table></figure>
-<h1 id="在vscode中配置pyqt5插件">在VSCode中配置PyQt5插件</h1>
-<h2 id="选择python解释器">选择python解释器</h2>
-<p>在 管理 -&gt; 命令面板 中输入Python:
-选择解释器，点击即可进行选择，我选择的是Python 3.8.7。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-01.png" alt="img" style="zoom:80%;" /></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-02.png" alt="img" style="zoom:80%;" /></p>
-<h2 id="安装pyqt-integration">安装PYQT Integration</h2>
-<p>在扩展中搜索 PYQT Integration
-并点击安装（我已安装所以显示为卸载）。</p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-03.png" /></p>
-<h2 id="配置pyqt-integration">配置PYQT Integration</h2>
-<p>点击 <strong>管理 -&gt; 扩展设置</strong>
-设置Pyuic和Qtdesigner的路径，可以搜索本地 pyuic5.exe 和 designer.exe
-的路径，我的地址为（星号为我的用户名）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\*****\AppData\Roaming\Python\Python38\Scripts\pyuic5.exe</span><br><span class="line">C:\Users\*****\AppData\Roaming\Python\Python38\site-packages\qt5_applications\Qt\bin\designer.exe</span><br></pre></td></tr></table></figure>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-04.png" alt="img" style="zoom: 67%;" /></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-05.png" alt="img" style="zoom:80%;" /></p>
-<h1 id="创建pyqt文件">创建PyQt文件</h1>
-<p>新建一个工作区文件夹，在资源管理器空白处右击选择 <strong>PYQT: New
-From</strong>，即可打开 QtDesigner，选择 Main Window 新建一个窗口。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-06.png" alt="img" style="zoom:80%;" /></p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-07.png" /></p>
-<p>在页面中随意拖拽几个控件，点击保存到该文件夹，文件格式为（*.ui）。</p>
-<p><img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-08.png" /></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-09.png" alt="img" style="zoom:67%;" /></p>
-<p>在文件夹中右击选择 PYQT: Compile
-Form，即可将该文件编译为（*.py）文件。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-10.png" alt="img" style="zoom:67%;" /></p>
-<p>为了显示界面，需要新建一个 main.py
-文件，编写如下代码（未包含业务逻辑代码）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtWidgets, QtGui</span><br><span class="line"><span class="keyword">from</span> ui_test <span class="keyword">import</span> Ui_MainWindow</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MainWindow</span>(QtWidgets.QMainWindow):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MainWindow, self).__init__()</span><br><span class="line">        <span class="comment"># 实例化由PyQt Designer生成的界面类</span></span><br><span class="line">        self.ui = Ui_MainWindow()</span><br><span class="line">        <span class="comment"># 设置界面</span></span><br><span class="line">        self.ui.setupUi(self)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 创建QApplication对象</span></span><br><span class="line">    app = QtWidgets.QApplication([])</span><br><span class="line">    <span class="comment"># 实例化主窗口类</span></span><br><span class="line">    window = MainWindow()</span><br><span class="line">    <span class="comment"># 显示主窗口</span></span><br><span class="line">    window.show()</span><br><span class="line">    <span class="comment"># 运行主循环</span></span><br><span class="line">    app.exec_()</span><br></pre></td></tr></table></figure>
-<p>运行该文件，即可显示界面。</p>
-<figure>
-<img
-src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt5-vscode-11.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+        <h1 id="租GPU"><a href="#租GPU" class="headerlink" title="租GPU"></a>租GPU</h1><p>在<a target="_blank" rel="noopener" href="https://www.autodl.com/market/list">AutoDL官网</a>选择符合要求的GPU，因为我的需求不高且资金不充裕所以选择按量计费，镜像选择和代码模型匹配的版本。</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-01.png" alt=""></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-02.png" alt=""></p>
+<p>在容器实例中点击 JupyterLab -&gt; 终端 即可打开服务器。</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-05.png" alt=""></p>
+<h1 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h1><h2 id="准备数据集和模型代码"><a href="#准备数据集和模型代码" class="headerlink" title="准备数据集和模型代码"></a>准备数据集和模型代码</h2><p>将数据集dataset和模型model打包成（*.zip）文件，拖拽到服务器中，右下方的正在上传进度条满之后表示上传成功。</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-03.png" alt="img" style="zoom:80%;" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-04.png" alt=""></p>
+<h2 id="解压代码"><a href="#解压代码" class="headerlink" title="解压代码"></a>解压代码</h2><p>使用以下命令安装并设置arc工具，用于创建、提取、查看和修改不同类型的压缩文件（如.tar、.zip等）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L -o /usr/bin/arc http://autodl-public.ks3-cn-beijing.ksyun.com/tool/arc &amp;&amp; chmod +x /usr/bin/arc</span><br></pre></td></tr></table></figure>
+<p>使用以下命令解压上传的压缩包。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arc decompress models.zip</span><br></pre></td></tr></table></figure>
+<h2 id="运行代码-1"><a href="#运行代码-1" class="headerlink" title="运行代码"></a>运行代码</h2><p>使用如下命令执行py文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test.py</span><br></pre></td></tr></table></figure>
+<p>如果代码运行需要下载额外的包可以通过pip安装。</p>
+<p>生成的文件可以 右击 -&gt; 下载 来下载到本地。</p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/autodl-06.png" alt="img" style="zoom:67%;" /></p>
+<h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><p>使用完毕之后，在容器实例中点击关机，结束计时。</p>
 
       
     </div>
@@ -463,7 +434,7 @@ alt="img" />
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2023/03/24/VSCode%E9%85%8D%E7%BD%AEPyQt5%E8%BF%87%E7%A8%8B/" title="VSCode配置PyQt5过程" target="_blank" rel="external">http://example.com/2023/03/24/VSCode配置PyQt5过程/</a>
+      <a href="http://example.com/2023/03/24/%E4%BD%BF%E7%94%A8%20AutoDL%20%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/" title="使用 AutoDL 训练深度学习模型流程" target="_blank" rel="external">http://example.com/2023/03/24/使用 AutoDL 训练深度学习模型流程/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -510,12 +481,12 @@ alt="img" />
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2023/03/24/ChatGPT%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" title="ChatGPT注册使用流程"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2023/03/24/VSCode%20%E9%85%8D%E7%BD%AE%20PyQt5%20%E8%BF%87%E7%A8%8B/" title="VSCode 配置 PyQt5 过程"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2023/03/24/%E4%BD%BF%E7%94%A8AutoDL%E8%AE%AD%E7%BB%83%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E6%B5%81%E7%A8%8B/" title="使用AutoDL训练深度学习模型流程"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/07/01/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="Markdown 基本语法"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
