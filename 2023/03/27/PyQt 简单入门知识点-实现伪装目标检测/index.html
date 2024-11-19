@@ -18,34 +18,30 @@
   
   
   <title>PyQt5 简单入门——实现伪装目标检测 | 雀栎</title>
-  <meta name="description" content="毕业设计其中一个环节是为伪装目标检测算法设计一个用户界面，实现选择图片或拍照上传原始图片，显示伪装目标检测结果，并且可以保存。 之前没有使用过Qt绘制界面编写代码，下面大致记录一下基本的使用方法。 前端界面绘制安装流程可以参考：VSCode配置PyQt5过程 新建ui文件 可以在VSCode工作区 右击-&gt;PYQT: New Form ，也可以在QtDesigner中新建ui文件。 对于已经">
+  <meta name="description" content="毕业设计其中一个环节是为伪装目标检测算法设计一个用户界面，实现选择图片或拍照上传原始图片，显示伪装目标检测结果，并且可以保存。 之前没有使用过Qt绘制界面编写代码，下面大致记录一下基本的使用方法。 前端界面绘制 安装流程可以参考：VSCode配置PyQt5过程 新建ui文件  可以在VSCode工作区 右击-&gt;PYQT: New Form ，也可以在QtDesigner中新建u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyQt5 简单入门——实现伪装目标检测">
 <meta property="og:url" content="http://example.com/2023/03/27/PyQt%20%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%AE%9E%E7%8E%B0%E4%BC%AA%E8%A3%85%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="毕业设计其中一个环节是为伪装目标检测算法设计一个用户界面，实现选择图片或拍照上传原始图片，显示伪装目标检测结果，并且可以保存。 之前没有使用过Qt绘制界面编写代码，下面大致记录一下基本的使用方法。 前端界面绘制安装流程可以参考：VSCode配置PyQt5过程 新建ui文件 可以在VSCode工作区 右击-&gt;PYQT: New Form ，也可以在QtDesigner中新建ui文件。 对于已经">
+<meta property="og:description" content="毕业设计其中一个环节是为伪装目标检测算法设计一个用户界面，实现选择图片或拍照上传原始图片，显示伪装目标检测结果，并且可以保存。 之前没有使用过Qt绘制界面编写代码，下面大致记录一下基本的使用方法。 前端界面绘制 安装流程可以参考：VSCode配置PyQt5过程 新建ui文件  可以在VSCode工作区 右击-&gt;PYQT: New Form ，也可以在QtDesigner中新建u">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-02.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-03.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-04.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-05.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-06.gif">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-07.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-08.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-09.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-10.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-11.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-12.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-13.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-14.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-15.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-16.gif">
 <meta property="article:published_time" content="2023-03-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-08-11T07:10:36.078Z">
 <meta property="article:author" content="雀栎">
 <meta property="article:tag" content="PyQt5">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-02.png">
+<meta name="twitter:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-03.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2023/03/27/PyQt%20%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%AE%9E%E7%8E%B0%E4%BC%AA%E8%A3%85%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/index.html">
   
@@ -224,7 +220,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">9</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -234,7 +230,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoDL/" rel="tag">AutoDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Conda/" rel="tag">Conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoDL/" rel="tag">AutoDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/" rel="tag">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Conda/" rel="tag">Conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pytorch/" rel="tag">Pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -244,7 +240,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/AutoDL/" style="font-size: 13px;">AutoDL</a> <a href="/tags/ChatGPT/" style="font-size: 13px;">ChatGPT</a> <a href="/tags/Conda/" style="font-size: 13px;">Conda</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/PyQt5/" style="font-size: 14px;">PyQt5</a> <a href="/tags/VSCode/" style="font-size: 13px;">VSCode</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/markdown/" style="font-size: 14px;">markdown</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13px;">博客搭建</a>
+      <a href="/tags/AutoDL/" style="font-size: 13px;">AutoDL</a> <a href="/tags/CUDA/" style="font-size: 13px;">CUDA</a> <a href="/tags/ChatGPT/" style="font-size: 13px;">ChatGPT</a> <a href="/tags/Conda/" style="font-size: 13px;">Conda</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/PyQt5/" style="font-size: 14px;">PyQt5</a> <a href="/tags/Pytorch/" style="font-size: 13px;">Pytorch</a> <a href="/tags/Ubuntu/" style="font-size: 13px;">Ubuntu</a> <a href="/tags/VSCode/" style="font-size: 13px;">VSCode</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/markdown/" style="font-size: 14px;">markdown</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13px;">博客搭建</a>
     </div>
   </div>
 
@@ -253,7 +249,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">十一月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -265,6 +261,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/11/19/Ubuntu%20%E9%85%8D%E7%BD%AE%20CUDA/" class="title">Ubuntu 配置 CUDA</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-11-19T06:23:05.000Z" itemprop="datePublished">2024-11-19</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -321,21 +332,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2023-03-26T16:00:00.000Z" itemprop="datePublished">2023-03-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/03/24/ChatGPT%20%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="title">ChatGPT 注册使用流程</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
               </p>
             </div>
           </li>
@@ -418,12 +414,19 @@
       
         <p>毕业设计其中一个环节是为伪装目标检测算法设计一个用户界面，实现选择图片或拍照上传原始图片，显示伪装目标检测结果，并且可以保存。</p>
 <p>之前没有使用过Qt绘制界面编写代码，下面大致记录一下基本的使用方法。</p>
-<h1 id="前端界面绘制"><a href="#前端界面绘制" class="headerlink" title="前端界面绘制"></a>前端界面绘制</h1><p>安装流程可以参考：<a target="_blank" rel="noopener" href="https://skylark1003.github.io/2023/03/24/VSCode配置PyQt5过程/">VSCode配置PyQt5过程</a></p>
-<h2 id="新建ui文件"><a href="#新建ui文件" class="headerlink" title="新建ui文件"></a>新建ui文件</h2><ul>
-<li>可以在VSCode工作区 右击-&gt;PYQT: New Form ，也可以在QtDesigner中新建ui文件。</li>
-<li>对于已经存在的ui文件可以 右击-&gt;PYQT: Edit in Designer ，也可以在QtDesigner中打开。</li>
+<h1 id="前端界面绘制">前端界面绘制</h1>
+<p>安装流程可以参考：<a
+target="_blank" rel="noopener" href="https://skylark1003.github.io/2023/03/24/VSCode配置PyQt5过程/">VSCode配置PyQt5过程</a></p>
+<h2 id="新建ui文件">新建ui文件</h2>
+<ul>
+<li>可以在VSCode工作区 右击-&gt;PYQT: New Form
+，也可以在QtDesigner中新建ui文件。</li>
+<li>对于已经存在的ui文件可以 右击-&gt;PYQT: Edit in Designer
+，也可以在QtDesigner中打开。</li>
 </ul>
-<h2 id="基本绘制"><a href="#基本绘制" class="headerlink" title="基本绘制"></a>基本绘制</h2><h3 id="模块介绍"><a href="#模块介绍" class="headerlink" title="模块介绍"></a>模块介绍</h3><ul>
+<h2 id="基本绘制">基本绘制</h2>
+<h3 id="模块介绍">模块介绍</h3>
+<ul>
 <li><p>以下是QtDesigner的主界面，主要包括以下几个部分：</p>
 <ul>
 <li><strong>组件工具箱</strong>：此处有很多可以使用的组件，根据需求可以直接拖拽至窗口中。</li>
@@ -431,10 +434,10 @@
 <li><strong>对象查看器</strong>：在这个区域可以看到该窗口中的所有对象及其包含关系，并对其进行删除、重命名等操作。</li>
 <li><strong>属性编辑器</strong>：在这个区域可以对所选对象进行具体属性的编辑，例如宽高、坐标、字体样式等。</li>
 <li><strong>信号和槽编辑器</strong>：该部分主要用于将前端和后端业务逻辑进行关联，前端发出信号，后端的槽函数做出反应。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><ul>
+<h3 id="布局">布局</h3>
+<ul>
 <li><p>可以将多个组件关联为一个layout组，用于方便我们的布局。</p>
 <ul>
 <li>首先选中所要关联的组件，例如我选中下方的五个button。</li>
@@ -442,20 +445,18 @@
 <li>在对象查看器中即可看到这些组件归到一个layout组下。</li>
 <li>在属性编辑器中可以对该布局进行操作，例如上下左右的margin（留白）和组件之间的padding（边距）属性。</li>
 </ul>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-02.png" alt=""></p>
-</li>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-02.png" /></p></li>
 <li><p>水平布局的button组件往往是非常的扁的（高根据字体大小适应），若要调节其高，可以在<strong>组件</strong>的属性中限制其最小高度。（相应地，在垂直布局中限制最小宽度）</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-03.png" alt="img" style="zoom:80%;" /></p>
-</li>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-03.png" alt="img" style="zoom:80%;" /></p></li>
 </ul>
-<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
-<li><p>因为这次的界面比较简单，没有非常复杂的设计，所以我的页面设计均在DtDesigner中进行，并未直接在代码中添加。</p>
-</li>
+<h3 id="样式">样式</h3>
+<ul>
+<li><p>因为这次的界面比较简单，没有非常复杂的设计，所以我的页面设计均在DtDesigner中进行，并未直接在代码中添加。</p></li>
 <li><p>具体流程如下：</p>
 <ul>
 <li><p>选中组件-&gt;右击-&gt;改变样式表</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-04.png" alt="img" style="zoom:80%;" /></p>
-</li>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-04.png" alt="img" style="zoom:80%;" /></p></li>
 <li><p>编写修改属性的代码</p>
 <ul>
 <li>我分别修改了背景颜色、文字颜色、按钮圆角和图标的本地路径。以及当鼠标悬浮在按钮上时的背景颜色。</li>
@@ -467,59 +468,57 @@
 </ul>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-07.png" alt="img" style="zoom: 80%;" /></p>
 <ul>
-<li>各种图标的下载可以去<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">iconfont</a></li>
+<li>各种图标的下载可以去<a
+target="_blank" rel="noopener" href="https://www.iconfont.cn/">iconfont</a></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li><p>如果需要禁止用户拖拽窗口大小，可以在窗口的属性中修改minimumSize和maxmumSize为当前窗口大小，则最大化按钮和窗口拖拽失效。</p>
-</li>
+<h3 id="其他">其他</h3>
+<ul>
+<li><p>如果需要禁止用户拖拽窗口大小，可以在窗口的属性中修改minimumSize和maxmumSize为当前窗口大小，则最大化按钮和窗口拖拽失效。</p></li>
 <li><p>如果窗口为MainWindow类型，且不需要上下的状态栏和菜单栏可以在右侧的对象查看器中右击移除。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-08.png" alt="img" style="zoom:80%;" /></p>
-</li>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-08.png" alt="img" style="zoom:80%;" /></p></li>
 <li><p>如果需要给应用程序添加一个图标，如图所示，则可以在窗口组件的属性中，上传本地图片作为图标。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-09.png" alt=""></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-10.png" alt="img" style="zoom:80%;" /></p>
-</li>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-09.png" /></p>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-10.png" alt="img" style="zoom:80%;" /></p></li>
 </ul>
-<h2 id="添加函数"><a href="#添加函数" class="headerlink" title="添加函数"></a>添加函数</h2><ul>
+<h2 id="添加函数">添加函数</h2>
+<ul>
 <li><p>要与后端交互，需要为组件添加槽函数，我这里只用到了button和且只用到了它的单击操作（clicked()），流程如下：</p>
 <ul>
 <li><p>点击工具栏中的 编辑信号/槽，即可进入信号和槽的编辑模式。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-11.png" alt="img" style="zoom:80%;" /></p>
-</li>
-<li><p>左键长按需要添加函数的组件并将其拖拽至空白处会出现配置连接窗口。</p>
-</li>
-<li><p>点击单机信号（clicked()）后点击右侧的编辑，编辑槽函数。</p>
-</li>
-<li><p>点击加号添加自定义函数并重命名。</p>
-</li>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-11.png" alt="img" style="zoom:80%;" /></p></li>
+<li><p>左键长按需要添加函数的组件并将其拖拽至空白处会出现配置连接窗口。</p></li>
+<li><p>点击单机信号（clicked()）后点击右侧的编辑，编辑槽函数。</p></li>
+<li><p>点击加号添加自定义函数并重命名。</p></li>
 <li><p>添加后点击确定。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-12.png" alt=""></p>
-</li>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-12.png" /></p></li>
 <li><p>点击新建的槽函数，并确定。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-13.png" alt="img" style="zoom:80%;" /></p>
-</li>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-13.png" alt="img" style="zoom:80%;" /></p></li>
 <li><p>即可看到该按钮的clicked()信号关联了一个名为my_func()的槽函数。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-14.png" alt="img" style="zoom:80%;" /></p>
-</li>
-<li><p>槽函数创建完成。</p>
-</li>
+<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-14.png" alt="img" style="zoom:80%;" /></p></li>
+<li><p>槽函数创建完成。</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 id="后端逻辑编码"><a href="#后端逻辑编码" class="headerlink" title="后端逻辑编码"></a>后端逻辑编码</h1><p>绘制好界面后，将ui文件保存至工作区文件夹中，系统会自动将其编译为py文件，如果为编译，可以 右击-&gt;PYQT: Compile Form 进行编译。</p>
-<h2 id="新建类"><a href="#新建类" class="headerlink" title="新建类"></a>新建类</h2><p>创建一个py文件作为主程序文件，因为代码较少，我将两个窗口类（MainWindow、CameraWindow）和main函数都定义在了main.py中。</p>
+<h1 id="后端逻辑编码">后端逻辑编码</h1>
+<p>绘制好界面后，将ui文件保存至工作区文件夹中，系统会自动将其编译为py文件，如果为编译，可以
+右击-&gt;PYQT: Compile Form 进行编译。</p>
+<h2 id="新建类">新建类</h2>
+<p>创建一个py文件作为主程序文件，因为代码较少，我将两个窗口类（MainWindow、CameraWindow）和main函数都定义在了main.py中。</p>
 <p>具体类结构如下，其中的函数均为我们定义的槽函数。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-15.png" alt="img" style="zoom:67%;" /></p>
-<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><p>编写主函数，显示主窗口。</p>
+<h2 id="主函数">主函数</h2>
+<p>编写主函数，显示主窗口。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app = QApplication([])</span><br><span class="line">    window = MainWindow()</span><br><span class="line">    window.show()</span><br><span class="line">    app.exec_()</span><br></pre></td></tr></table></figure>
-<h2 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h2><p>实现所需功能的具体函数代码不具有普适性和参考价值，只留作个人记录回顾。</p>
-<p>代码地址：<a target="_blank" rel="noopener" href="https://github.com/skylark1003/Camouflaged-Object-Detection">github仓库</a></p>
-<p>最终呈现效果如下： </p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-16.gif" alt=""></p>
+<h2 id="具体代码">具体代码</h2>
+<p>实现所需功能的具体函数代码不具有普适性和参考价值，只留作个人记录回顾。</p>
+<p>代码地址：<a
+target="_blank" rel="noopener" href="https://github.com/skylark1003/Camouflaged-Object-Detection">github仓库</a></p>
+<p>最终呈现效果如下：</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/pyqt-cod-16.gif" /></p>
 
       
     </div>

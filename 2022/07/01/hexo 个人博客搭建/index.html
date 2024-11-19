@@ -18,39 +18,21 @@
   
   
   <title>hexo 个人博客搭建 | 雀栎</title>
-  <meta name="description" content="本文将详细描述雀栎个人博客的搭建过程，供各位参考。该博客在Windows系统上基于Hexo框架的现成主题Pure和Gitee进行搭建，图床采用阿里云OSS服务和Picgo，优化主题涉及到CSS和ejs文件的修改。 Hexo博客搭建参考资料：CodeSheep的博客搭建教程 安装node.js在node.js官网下载node.js安装包，下载之后双击进行安装，一直next即可。  安装成功之后可以在">
+  <meta name="description" content="本文将详细描述雀栎个人博客的搭建过程，供各位参考。该博客在Windows系统上基于Hexo框架的现成主题Pure和Gitee进行搭建，图床采用阿里云OSS服务和Picgo，优化主题涉及到CSS和ejs文件的修改。 Hexo博客搭建 参考资料：CodeSheep的博客搭建教程 安装node.js 在node.js官网下载node.js安装包，下载之后双击进行安装，一直next即可。  安">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 个人博客搭建">
 <meta property="og:url" content="http://example.com/2022/07/01/hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文将详细描述雀栎个人博客的搭建过程，供各位参考。该博客在Windows系统上基于Hexo框架的现成主题Pure和Gitee进行搭建，图床采用阿里云OSS服务和Picgo，优化主题涉及到CSS和ejs文件的修改。 Hexo博客搭建参考资料：CodeSheep的博客搭建教程 安装node.js在node.js官网下载node.js安装包，下载之后双击进行安装，一直next即可。  安装成功之后可以在">
+<meta property="og:description" content="本文将详细描述雀栎个人博客的搭建过程，供各位参考。该博客在Windows系统上基于Hexo框架的现成主题Pure和Gitee进行搭建，图床采用阿里云OSS服务和Picgo，优化主题涉及到CSS和ejs文件的修改。 Hexo博客搭建 参考资料：CodeSheep的博客搭建教程 安装node.js 在node.js官网下载node.js安装包，下载之后双击进行安装，一直next即可。  安">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/nodedownload.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteemail.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteeurl.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newcangku.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/cangkumsg.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteepages.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/cangkuurl.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newgiteepages.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/themes.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/widget.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newleancloud.jpg">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/valine.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/gravatar%E5%AE%98%E6%96%B9%E5%9B%BE%E5%BD%A2.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/%E7%A5%9E%E7%A7%98%E4%BA%BA.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/%E6%8A%BD%E8%B1%A1%E5%87%A0%E4%BD%95.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/%E5%B0%8F%E6%80%AA%E7%89%A9.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/%E7%94%9F%E6%88%90%E5%A4%B4%E5%83%8F.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/%E5%83%8F%E7%B4%A0.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/%E6%9C%BA%E5%99%A8%E4%BA%BA.jpg">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/css.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/fontsize.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/h1.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/h2.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/oss.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/buyoss.png">
-<meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newbucket.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/bucketmsg.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/accesskey.png">
 <meta property="og:image" content="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/key.png">
@@ -240,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">9</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E4%BE%8B/">实例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -250,7 +232,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoDL/" rel="tag">AutoDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Conda/" rel="tag">Conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoDL/" rel="tag">AutoDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CUDA/" rel="tag">CUDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Conda/" rel="tag">Conda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pytorch/" rel="tag">Pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -260,7 +242,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/AutoDL/" style="font-size: 13px;">AutoDL</a> <a href="/tags/ChatGPT/" style="font-size: 13px;">ChatGPT</a> <a href="/tags/Conda/" style="font-size: 13px;">Conda</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/PyQt5/" style="font-size: 14px;">PyQt5</a> <a href="/tags/VSCode/" style="font-size: 13px;">VSCode</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/markdown/" style="font-size: 14px;">markdown</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13px;">博客搭建</a>
+      <a href="/tags/AutoDL/" style="font-size: 13px;">AutoDL</a> <a href="/tags/CUDA/" style="font-size: 13px;">CUDA</a> <a href="/tags/ChatGPT/" style="font-size: 13px;">ChatGPT</a> <a href="/tags/Conda/" style="font-size: 13px;">Conda</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/PyQt5/" style="font-size: 14px;">PyQt5</a> <a href="/tags/Pytorch/" style="font-size: 13px;">Pytorch</a> <a href="/tags/Ubuntu/" style="font-size: 13px;">Ubuntu</a> <a href="/tags/VSCode/" style="font-size: 13px;">VSCode</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/markdown/" style="font-size: 14px;">markdown</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13px;">博客搭建</a>
     </div>
   </div>
 
@@ -269,7 +251,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">十一月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -281,6 +263,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2024/11/19/Ubuntu%20%E9%85%8D%E7%BD%AE%20CUDA/" class="title">Ubuntu 配置 CUDA</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-11-19T06:23:05.000Z" itemprop="datePublished">2024-11-19</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -341,21 +338,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-              </p>
-              <p class="item-title">
-                <a href="/2023/03/24/ChatGPT%20%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/" class="title">ChatGPT 注册使用流程</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -371,7 +353,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">Hexo博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.2.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.</span> <span class="toc-text">创建博客文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="toc-number">1.4.</span> <span class="toc-text">创建博客文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Gitee"><span class="toc-number">2.</span> <span class="toc-text">部署Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8CGitee%E8%B4%A6%E5%8F%B7"><span class="toc-number">2.1.</span> <span class="toc-text">注册Gitee账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93"><span class="toc-number">2.2.</span> <span class="toc-text">新建博客仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE"><span class="toc-number">2.3.</span> <span class="toc-text">本地配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E4%B8%BB%E9%A1%B5"><span class="toc-number">2.4.</span> <span class="toc-text">部署到Gitee主页</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">主题优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%AF%BC%E8%88%AA%E6%A0%8F%E8%B7%B3%E8%BD%AC%E9%97%AE%E9%A2%98"><span class="toc-number">3.2.</span> <span class="toc-text">解决导航栏跳转问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E4%B8%BB%E9%A2%98"><span class="toc-number">3.3.</span> <span class="toc-text">优化主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.1.</span> <span class="toc-text">站点配置文件修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.2.</span> <span class="toc-text">主题配置文件修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.2.1.</span> <span class="toc-text">基础修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E7%9B%AE%E5%BD%95"><span class="toc-number">3.3.2.2.</span> <span class="toc-text">启用目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.3.2.3.</span> <span class="toc-text">评论系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE"><span class="toc-number">3.3.2.4.</span> <span class="toc-text">代码块复制按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%88%B0%E9%A1%B6%E7%AB%AF%E6%8C%89%E9%92%AE"><span class="toc-number">3.3.2.5.</span> <span class="toc-text">移动到顶端按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%8A%A8%E7%94%BB"><span class="toc-number">3.3.2.6.</span> <span class="toc-text">背景动画</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.3.</span> <span class="toc-text">CSS修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%AF%B9%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81"><span class="toc-number">3.3.4.</span> <span class="toc-text">添加对数学公式的支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo-math"><span class="toc-number">3.3.4.1.</span> <span class="toc-text">安装hexo-math</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.4.2.</span> <span class="toc-text">修改站点配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.4.3.</span> <span class="toc-text">修改主题配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E5%BC%8F%E5%90%8E%E8%A1%A8%E6%A0%BC%E8%A1%A8%E5%A4%B4%E6%B8%B2%E6%9F%93%E5%BC%82%E5%B8%B8"><span class="toc-number">3.3.4.4.</span> <span class="toc-text">添加公式后表格表头渲染异常</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A"><span class="toc-number">4.</span> <span class="toc-text">搭建图床</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91OSS"><span class="toc-number">4.1.</span> <span class="toc-text">阿里云OSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E9%98%BF%E9%87%8C%E4%BA%91OSS"><span class="toc-number">4.1.1.</span> <span class="toc-text">购买阿里云OSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BABucket"><span class="toc-number">4.1.2.</span> <span class="toc-text">创建Bucket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAAccessKey"><span class="toc-number">4.1.3.</span> <span class="toc-text">创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PicGo"><span class="toc-number">4.2.</span> <span class="toc-text">PicGo</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">Hexo博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node.js"><span class="toc-number">1.1.</span> <span class="toc-text">安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.2.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.</span> <span class="toc-text">创建博客文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="toc-number">1.4.</span> <span class="toc-text">创建博客文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2gitee"><span class="toc-number">2.</span> <span class="toc-text">部署Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8Cgitee%E8%B4%A6%E5%8F%B7"><span class="toc-number">2.1.</span> <span class="toc-text">注册Gitee账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93"><span class="toc-number">2.2.</span> <span class="toc-text">新建博客仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE"><span class="toc-number">2.3.</span> <span class="toc-text">本地配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0gitee%E4%B8%BB%E9%A1%B5"><span class="toc-number">2.4.</span> <span class="toc-text">部署到Gitee主页</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">主题优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%AF%BC%E8%88%AA%E6%A0%8F%E8%B7%B3%E8%BD%AC%E9%97%AE%E9%A2%98"><span class="toc-number">3.2.</span> <span class="toc-text">解决导航栏跳转问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E4%B8%BB%E9%A2%98"><span class="toc-number">3.3.</span> <span class="toc-text">优化主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.1.</span> <span class="toc-text">站点配置文件修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.2.</span> <span class="toc-text">主题配置文件修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.2.1.</span> <span class="toc-text">基础修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E7%9B%AE%E5%BD%95"><span class="toc-number">3.3.2.2.</span> <span class="toc-text">启用目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.3.2.3.</span> <span class="toc-text">评论系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE"><span class="toc-number">3.3.2.4.</span> <span class="toc-text">代码块复制按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%88%B0%E9%A1%B6%E7%AB%AF%E6%8C%89%E9%92%AE"><span class="toc-number">3.3.2.5.</span> <span class="toc-text">移动到顶端按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E5%8A%A8%E7%94%BB"><span class="toc-number">3.3.2.6.</span> <span class="toc-text">背景动画</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E4%BF%AE%E6%94%B9"><span class="toc-number">3.3.3.</span> <span class="toc-text">CSS修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%AF%B9%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81"><span class="toc-number">3.3.4.</span> <span class="toc-text">添加对数学公式的支持</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo-math"><span class="toc-number">3.3.4.1.</span> <span class="toc-text">安装hexo-math</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.4.2.</span> <span class="toc-text">修改站点配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.4.3.</span> <span class="toc-text">修改主题配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E5%BC%8F%E5%90%8E%E8%A1%A8%E6%A0%BC%E8%A1%A8%E5%A4%B4%E6%B8%B2%E6%9F%93%E5%BC%82%E5%B8%B8"><span class="toc-number">3.3.4.4.</span> <span class="toc-text">添加公式后表格表头渲染异常</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A"><span class="toc-number">4.</span> <span class="toc-text">搭建图床</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BF%E9%87%8C%E4%BA%91oss"><span class="toc-number">4.1.</span> <span class="toc-text">阿里云OSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E9%98%BF%E9%87%8C%E4%BA%91oss"><span class="toc-number">4.1.1.</span> <span class="toc-text">购买阿里云OSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAbucket"><span class="toc-number">4.1.2.</span> <span class="toc-text">创建Bucket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAaccesskey"><span class="toc-number">4.1.3.</span> <span class="toc-text">创建AccessKey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#picgo"><span class="toc-number">4.2.</span> <span class="toc-text">PicGo</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -433,221 +415,334 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <p>本文将详细描述雀栎个人博客的搭建过程，供各位参考。该博客在Windows系统上基于Hexo框架的现成主题Pure和Gitee进行搭建，图床采用阿里云OSS服务和Picgo，优化主题涉及到CSS和ejs文件的修改。</p>
-<h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><p>参考资料：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">CodeSheep的博客搭建教程</a></p>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>在<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">node.js官网</a>下载node.js安装包，下载之后双击进行安装，一直next即可。</p>
+<h1 id="hexo博客搭建">Hexo博客搭建</h1>
+<p>参考资料：<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">CodeSheep的博客搭建教程</a></p>
+<h2 id="安装node.js">安装node.js</h2>
+<p>在<a
+target="_blank" rel="noopener" href="https://nodejs.org/en/download/">node.js官网</a>下载node.js安装包，下载之后双击进行安装，一直next即可。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/nodedownload.png" alt="官网安装链接" style="zoom: 67%;" /></p>
 <p>安装成功之后可以在cmd输入<code>node -v</code>查看node.js版本。</p>
 <p>输入<code>npm -v</code>查看npm版本。</p>
 <p>输入<code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>安装淘宝的cnpm管理器。</p>
 <p>安装成功之后输入<code>cnpm -v</code>查看cnpm版本。</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>输入<code>cnpm install -g hexo-cli</code>安装hexo框架。</p>
+<h2 id="安装hexo">安装hexo</h2>
+<p>输入<code>cnpm install -g hexo-cli</code>安装hexo框架。</p>
 <p>输入<code>hexo -v</code>查看hexo版本。</p>
-<h2 id="创建博客文件夹"><a href="#创建博客文件夹" class="headerlink" title="创建博客文件夹"></a>创建博客文件夹</h2><p>在合适的路径创建博客文件夹，在这里文件夹名称以Blog为例，可以手动创建也可以输入命令<code>mkdir Blog</code>创建。</p>
+<h2 id="创建博客文件夹">创建博客文件夹</h2>
+<p>在合适的路径创建博客文件夹，在这里文件夹名称以Blog为例，可以手动创建也可以输入命令<code>mkdir Blog</code>创建。</p>
 <p>创建好之后通过命令<code>cd Blog</code>进入Blog目录，或在Blog目录下打开cmd。</p>
 <p>输入<code>hexo init</code>生成并初始化博客。</p>
-<p>输入<code>hexo s</code>启动本地博客服务，Ctrl并点击地址 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 可以访问本地博客。</p>
-<h2 id="创建博客文章"><a href="#创建博客文章" class="headerlink" title="创建博客文章"></a>创建博客文章</h2><p>输入<code>hexo n &quot;文章名称&quot;</code>创建新的文章，在 Blog/resource/_post 路径下生成 <strong>文章名称. md</strong> 文件，可以用vscode等工具进行编辑，Markdown基础语法可以参考<a target="_blank" rel="noopener" href="https://skylark1003.gitee.io/skylark1003/2022/07/01/Markdown基本语法/">Markdown基本语法</a>。</p>
+<p>输入<code>hexo s</code>启动本地博客服务，Ctrl并点击地址
+http://localhost:4000/ 可以访问本地博客。</p>
+<h2 id="创建博客文章">创建博客文章</h2>
+<p>输入<code>hexo n "文章名称"</code>创建新的文章，在
+Blog/resource/_post 路径下生成 <strong>文章名称. md</strong>
+文件，可以用vscode等工具进行编辑，Markdown基础语法可以参考<a
+target="_blank" rel="noopener" href="https://skylark1003.gitee.io/skylark1003/2022/07/01/Markdown基本语法/">Markdown基本语法</a>。</p>
 <p>编辑完成后，在Blog路径下输入<code>hexo clean</code>清理。</p>
 <p>输入<code>hexo g</code>生成。</p>
 <p>输入<code>hexo s</code>再次启动查看，可以看到新建的md文件已被上传。</p>
 <p>即每次修改之后可以通过以下命令进行本地效果查看：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p>至此，本地hexo博客搭建完成，下面将其部署到Gitee仓库中。</p>
-<h1 id="部署Gitee"><a href="#部署Gitee" class="headerlink" title="部署Gitee"></a>部署Gitee</h1><p>参考资料：<a target="_blank" rel="noopener" href="https://lds1997.gitee.io/2022/04/02/da-jian-ge-ren-bo-ke/">如何从0到1搭建个人博客</a></p>
+<h1 id="部署gitee">部署Gitee</h1>
+<p>参考资料：<a
+target="_blank" rel="noopener" href="https://lds1997.gitee.io/2022/04/02/da-jian-ge-ren-bo-ke/">如何从0到1搭建个人博客</a></p>
 <blockquote>
-<p>因为Gitee经常出现违禁信息且不好排查，后来我把博客迁移到了Github，基本流程类似，且省去了在Gitee Pages更新的流程。</p>
+<p>因为Gitee经常出现违禁信息且不好排查，后来我把博客迁移到了Github，基本流程类似，且省去了在Gitee
+Pages更新的流程。</p>
 </blockquote>
-<h2 id="注册Gitee账号"><a href="#注册Gitee账号" class="headerlink" title="注册Gitee账号"></a>注册Gitee账号</h2><p>在<a target="_blank" rel="noopener" href="https://gitee.com/">码云（Gitee）官网</a>注册账号，在个人设置的邮箱管理中添加邮箱地址。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteemail.png" alt=""></p>
+<h2 id="注册gitee账号">注册Gitee账号</h2>
+<p>在<a
+target="_blank" rel="noopener" href="https://gitee.com/">码云（Gitee）官网</a>注册账号，在个人设置的邮箱管理中添加邮箱地址。</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteemail.png" /></p>
 <p>在个人资料中绑定个人空间地址，该地址即为后期博客访问的地址。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteeurl.png" alt=""></p>
-<h2 id="新建博客仓库"><a href="#新建博客仓库" class="headerlink" title="新建博客仓库"></a>新建博客仓库</h2><p>新建一个仓库用于部署博客，填写内容如下。</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteeurl.png" /></p>
+<h2 id="新建博客仓库">新建博客仓库</h2>
+<p>新建一个仓库用于部署博客，填写内容如下。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newcangku.png" alt="img" style="zoom:60%;" /></p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/cangkumsg.png" alt="img" style="zoom:60%;" /></p>
-<p>开启Gitee Pages服务，该申请认证需要审核，审核时间为一个工作日之内。申请材料：身份证正反面、手持身份证照片。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteepages.png" alt=""></p>
-<h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><p>在cmd中输入以下命令进行配置。</p>
+<p>开启Gitee
+Pages服务，该申请认证需要审核，审核时间为一个工作日之内。申请材料：身份证正反面、手持身份证照片。</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/giteepages.png" /></p>
+<h2 id="本地配置">本地配置</h2>
+<p>在cmd中输入以下命令进行配置。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;此处填写你注册时的用户名&quot;</span><br><span class="line">git config --global user.email &quot;此处填写你注册时的邮箱&quot;</span><br></pre></td></tr></table></figure>
 <p>输入<code>cnpm install --save hexo-deployer-git</code>安装git部署插件。</p>
 <p>配置Blog文件夹下的_config.yml文件，将末尾修改为如下内容。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://gitee.com/skylark1003/skylark1003.git</span>  <span class="comment">#新建的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span>  <span class="comment">#如果创建的时候没有选择分支，默认就是master分支。如果改了，填对应的。</span></span><br></pre></td></tr></table></figure>
 <p>仓库地址可以在此处复制获得。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/cangkuurl.png" alt=""></p>
-<h2 id="部署到Gitee主页"><a href="#部署到Gitee主页" class="headerlink" title="部署到Gitee主页"></a>部署到Gitee主页</h2><p>在Blog文件夹下输入<code>hexo d</code>将本地博客部署到Github仓库里。</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/cangkuurl.png" /></p>
+<h2 id="部署到gitee主页">部署到Gitee主页</h2>
+<p>在Blog文件夹下输入<code>hexo d</code>将本地博客部署到Github仓库里。</p>
 <p>更新Gitee Pages。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newgiteepages.png" alt="img" style="zoom:67%;" /></p>
-<p>更新之后即可通过网站地址 <a target="_blank" rel="noopener" href="https://skylark1003.gitee.io">https://skylark1003.gitee.io</a> 进行访问。</p>
+<p>更新之后即可通过网站地址 https://skylark1003.gitee.io 进行访问。</p>
 <p>即每次修改之后可以通过以下步骤进行部署：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s    （本地查看效果）</span><br><span class="line">ctrl + C  （停止本地运行，关闭4000端口）</span><br><span class="line">hexo d    （无误后部署到Gitee）</span><br></pre></td></tr></table></figure>
 <p>部署后更新Gitee Pages即可访问博客地址。</p>
-<h1 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h1><p>该博客基于作者<a target="_blank" rel="noopener" href="https://github.com/cofess">cofess</a>制作的主题<a target="_blank" rel="noopener" href="https://github.com/cofess/hexo-theme-pure">pure</a>。以下流程只针对个人修改内容，其他功能可以参考以下参考资料或自行另外搜索。</p>
+<h1 id="主题优化">主题优化</h1>
+<p>该博客基于作者<a
+target="_blank" rel="noopener" href="https://github.com/cofess">cofess</a>制作的主题<a
+target="_blank" rel="noopener" href="https://github.com/cofess/hexo-theme-pure">pure</a>。以下流程只针对个人修改内容，其他功能可以参考以下参考资料或自行另外搜索。</p>
 <p>参考资料：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://blog.cofess.com/2017/11/01/hexo-blog-theme-pure-usage-description.html">Hexo博客主题pure使用说明</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.iwwee.com/posts/hexo-optimize.html">Hexo / pure 优化记录</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.iteye.com/blog/wx1569484809-2487786">Hexo博客主题pure修改记录</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunfove/article/details/111106363">Hexo中使用插入数学公式</a></li>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://blog.cofess.com/2017/11/01/hexo-blog-theme-pure-usage-description.html">Hexo博客主题pure使用说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.iwwee.com/posts/hexo-optimize.html">Hexo /
+pure 优化记录</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.iteye.com/blog/wx1569484809-2487786">Hexo博客主题pure修改记录</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/sunfove/article/details/111106363">Hexo中使用插入数学公式</a></li>
 </ol>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>首先在<a target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">Hexo主题库</a>中寻找自己喜欢的主题，一般会有主题github链接，将其clone到本地（或下载压缩包并解压），将文件夹保存至Blog/themes文件夹下。</p>
+<h2 id="更换主题">更换主题</h2>
+<p>首先在<a
+target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">Hexo主题库</a>中寻找自己喜欢的主题，一般会有主题github链接，将其clone到本地（或下载压缩包并解压），将文件夹保存至Blog/themes文件夹下。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/themes.png" alt="img" style="zoom:80%;" /></p>
 <p>并将BLog/_config.yml文件中的themes字段值改为选择的主题文件夹名称。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">hexo-theme-pure-master</span></span><br></pre></td></tr></table></figure>
 <p>再次清理、生成、部署、更新即可生效（以下步骤为每次修改后的常规操作，后面不再赘述）。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s    （本地查看效果）</span><br><span class="line">ctrl + C  （停止本地运行，关闭4000端口）</span><br><span class="line">hexo d    （无误后部署到Gitee）</span><br></pre></td></tr></table></figure>
 <p>以下提供一些个人比较喜欢的hexo主题，供大家参考：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">hexo-theme-aircloud</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/cofess/hexo-theme-pure">hexo-theme-pure</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/zheli-design/hexo-theme-one-paper">hexo-theme-one-paper</a></p>
-<h2 id="解决导航栏跳转问题"><a href="#解决导航栏跳转问题" class="headerlink" title="解决导航栏跳转问题"></a>解决导航栏跳转问题</h2><p>在点击主题左侧导航栏进行跳转时，会出现以下空白的问题：</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/widget.png" alt=""></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">hexo-theme-aircloud</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/cofess/hexo-theme-pure">hexo-theme-pure</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/zheli-design/hexo-theme-one-paper">hexo-theme-one-paper</a></p>
+<h2 id="解决导航栏跳转问题">解决导航栏跳转问题</h2>
+<p>在点击主题左侧导航栏进行跳转时，会出现以下空白的问题：</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/widget.png" /></p>
 <p><strong>解决方法：</strong></p>
 <ul>
-<li><p>在<code>Blog/source/</code>文件夹下创建每个导航类别的文件夹，例如categories、tags、links等</p>
-</li>
-<li><p>在每个文件夹下创建<code>index.md</code>文件</p>
-</li>
+<li><p>在<code>Blog/source/</code>文件夹下创建每个导航类别的文件夹，例如categories、tags、links等</p></li>
+<li><p>在每个文件夹下创建<code>index.md</code>文件</p></li>
 <li><p>添加以下内容（以categories为例，其他相同）</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories     # 跳转后显示的标题</span><br><span class="line">type: categories</span><br><span class="line"><span class="section">layout: &quot;categories&quot;  # 与主题文件夹中layout下的.ejs文件名称对应</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories     # 跳转后显示的标题</span><br><span class="line">type: categories</span><br><span class="line"><span class="section">layout: &quot;categories&quot;  # 与主题文件夹中layout下的.ejs文件名称对应</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="优化主题"><a href="#优化主题" class="headerlink" title="优化主题"></a>优化主题</h2><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中一份位于站点根目录下Blog/_config.yml，主要包含 Hexo 本身的配置；另一份位于主题目录下Blog/themes/主题名称/_config.yml，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
-<p>为了描述方便，在以下说明中，将前者称为<strong>站点配置文件</strong>， 后者称为<strong>主题配置文件</strong>。</p>
-<h3 id="站点配置文件修改"><a href="#站点配置文件修改" class="headerlink" title="站点配置文件修改"></a>站点配置文件修改</h3><p>在站点配置文件中，我只修改了作者和语言。（之前的配置中还修改了主题和deploy部署。）</p>
+<h2 id="优化主题">优化主题</h2>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。
+其中一份位于站点根目录下Blog/_config.yml，主要包含 Hexo
+本身的配置；另一份位于主题目录下Blog/themes/主题名称/_config.yml，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为<strong>站点配置文件</strong>，
+后者称为<strong>主题配置文件</strong>。</p>
+<h3 id="站点配置文件修改">站点配置文件修改</h3>
+<p>在站点配置文件中，我只修改了作者和语言。（之前的配置中还修改了主题和deploy部署。）</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">author:</span> <span class="string">雀栎</span>      <span class="comment">#作者名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>   <span class="comment">#语言，中文为zh-CN</span></span><br></pre></td></tr></table></figure>
-<h3 id="主题配置文件修改"><a href="#主题配置文件修改" class="headerlink" title="主题配置文件修改"></a>主题配置文件修改</h3><h4 id="基础修改"><a href="#基础修改" class="headerlink" title="基础修改"></a>基础修改</h4><p>首先按需安装插件：</p>
+<h3 id="主题配置文件修改">主题配置文件修改</h3>
+<h4 id="基础修改">基础修改</h4>
+<p>首先按需安装插件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br><span class="line">npm install hexo-generator-json-content --save</span><br><span class="line">npm install hexo-generator-feed --savenpm install </span><br><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
 <p>其次对主题配置文件内容进行修改，以下为我的修改内容：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># menu 导航菜单，把不需要的功能注释掉即可</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Home:</span> <span class="string">.</span></span><br><span class="line">  <span class="attr">Archives:</span> <span class="string">archives</span>       <span class="comment"># 归档</span></span><br><span class="line">  <span class="attr">Categories:</span> <span class="string">categories</span>   <span class="comment"># 分类</span></span><br><span class="line">  <span class="attr">Tags:</span> <span class="string">tags</span>               <span class="comment"># 标签</span></span><br><span class="line">  <span class="comment">#Repository: repository  # github repositories</span></span><br><span class="line">  <span class="comment">#Books: books            # 豆瓣书单</span></span><br><span class="line">  <span class="comment">#Links: links            # 友链</span></span><br><span class="line">  <span class="attr">About:</span> <span class="string">about</span>             <span class="comment"># 关于</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">site:</span></span><br><span class="line">  <span class="attr">logo:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">width:</span> <span class="number">40</span></span><br><span class="line">    <span class="attr">height:</span> <span class="number">40</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">images/logo.png</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">雀栎</span>                <span class="comment"># 页面title</span></span><br><span class="line">  <span class="attr">favicon:</span> <span class="string">images/logo.png</span>   <span class="comment"># 页面图标路径即浏览器标签页图标</span></span><br><span class="line">  <span class="attr">board:</span> <span class="string">&lt;p&gt;</span> <span class="string">&amp;emsp;&amp;emsp;</span> <span class="string">欢迎来到雀栎的个人小站，期待与各位的交流学习。&lt;/p&gt;</span>                   </span><br><span class="line">  <span class="comment"># 站点公告位于页面右侧</span></span><br><span class="line">  <span class="attr">copyright:</span> <span class="literal">true</span>            <span class="comment"># 底部版权信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Donate 打赏信息</span></span><br><span class="line"><span class="attr">donate:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 微信打赏</span></span><br><span class="line">  <span class="attr">wechatpay:</span></span><br><span class="line">    <span class="attr">qrcode:</span> <span class="string">images/donate/skylarkwechatpay.png</span>  <span class="comment">#更换为自己的收款码路径</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">微信支付</span></span><br><span class="line">  <span class="comment"># 支付宝打赏</span></span><br><span class="line">  <span class="attr">alipay:</span> </span><br><span class="line">    <span class="attr">qrcode:</span> <span class="string">images/donate/skylarkalipay.jpg</span>     <span class="comment">#更换为自己的收款码路径</span></span><br><span class="line">    <span class="attr">title:</span> <span class="string">支付宝</span></span><br><span class="line"></span><br><span class="line"><span class="attr">share:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># 是否启用分享，可以选择性删除添加</span></span><br><span class="line">  <span class="attr">sites:</span> <span class="string">weibo,qq,wechat,facebook,twitter</span>  <span class="comment"># PC端显示的分享图标</span></span><br><span class="line">  <span class="attr">mobile_sites:</span> <span class="string">weibo,qq,qzone</span>             <span class="comment"># 移动端显示的分享图标</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pv:</span></span><br><span class="line">  <span class="attr">busuanzi:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>   <span class="comment"># 不蒜子统计 统计访问人数</span></span><br><span class="line">  <span class="attr">leancloud:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span>  <span class="comment"># leancloud统计</span></span><br><span class="line">    <span class="attr">app_id:</span>  <span class="comment"># leancloud &lt;AppID&gt;</span></span><br><span class="line">    <span class="attr">app_key:</span> <span class="comment"># leancloud &lt;AppKey&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">postCount:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">wordcount:</span> <span class="literal">true</span>  <span class="comment"># 文章字数统计</span></span><br><span class="line">  <span class="attr">min2read:</span> <span class="literal">true</span>   <span class="comment"># 阅读时长预计 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># profile</span></span><br><span class="line"><span class="attr">profile:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span>           <span class="comment"># Whether to show profile bar</span></span><br><span class="line">  <span class="attr">articleSelfBlock:</span> <span class="literal">false</span> <span class="comment"># 关闭文章下方的自我介绍</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">images/avatar.jpg</span>     <span class="comment">#个人头像（页面左上角）</span></span><br><span class="line">  <span class="attr">gravatar:</span> <span class="comment"># Gravatar email address, if you enable Gravatar, your avatar config will be overriden</span></span><br><span class="line">  <span class="attr">author:</span> <span class="string">雀栎</span>                  <span class="comment">#个人昵称</span></span><br><span class="line">  <span class="attr">author_title:</span> <span class="string">The</span> <span class="string">skylark</span> <span class="string">soar</span> <span class="string">in</span> <span class="string">the</span> <span class="string">azure</span> <span class="string">sky</span> <span class="comment">#昵称下文字</span></span><br><span class="line">  <span class="attr">author_description:</span> <span class="string">Mangas</span> <span class="string">|</span> <span class="string">Literature</span> <span class="string">|</span> <span class="string">Coding</span> <span class="string">|</span> <span class="string">Music</span> <span class="string">|</span> <span class="string">Handicraft</span> <span class="string">|</span> <span class="string">Japanese</span> <span class="string">dramas</span>  <span class="comment">#个人描述</span></span><br><span class="line">  <span class="attr">location:</span> <span class="string">Hubei,</span> <span class="string">China</span>        <span class="comment">#地理位置</span></span><br><span class="line">  <span class="attr">follow:</span> <span class="string">https://gitee.com/skylark1003</span>  <span class="comment">#点击头像跳转链接</span></span><br><span class="line">  <span class="comment"># Social Links</span></span><br><span class="line">  <span class="attr">social:</span></span><br><span class="line">    <span class="attr">links:</span>  <span class="comment">#可根据需要增删改</span></span><br><span class="line">      <span class="attr">gitee:</span> <span class="string">https://gitee.com/skylark1003</span></span><br><span class="line">      <span class="attr">twitter:</span> <span class="string">https://twitter.com/Skylark_1003</span></span><br><span class="line">      <span class="attr">weibo:</span> <span class="string">https://weibo.com/u/3298400311</span></span><br><span class="line">      <span class="comment"># facebook: /</span></span><br><span class="line">      <span class="comment"># dribbble: /</span></span><br><span class="line">      <span class="comment">#behance: https://www.behance.net/cofess</span></span><br><span class="line">      <span class="comment">#rss: atom.xml</span></span><br><span class="line">    <span class="attr">link_tooltip:</span> <span class="literal">true</span> <span class="comment"># enable the social link tooltip, options: true, false</span></span><br><span class="line">  <span class="comment"># My Skills </span></span><br><span class="line">  <span class="attr">skills:</span>  <span class="comment">#可随意增删改</span></span><br><span class="line">    <span class="string">C++:</span> <span class="string">★★★☆☆</span></span><br><span class="line">    <span class="string">HTML+CSS:</span> <span class="string">★★★☆☆</span></span><br><span class="line">    <span class="attr">Javascript:</span> <span class="string">★★★☆☆</span></span><br><span class="line">    <span class="comment"># Bootstrap: ★★★☆☆</span></span><br><span class="line">    <span class="comment"># ThinkPHP: ★★★☆☆</span></span><br><span class="line">    <span class="comment"># 平面设计: ★★★☆☆</span></span><br><span class="line">  <span class="comment"># My Personal Links</span></span><br><span class="line">  <span class="attr">links:</span>  <span class="comment">#可随意增删改</span></span><br><span class="line">    <span class="attr">Mox.moe:</span> <span class="string">https://mox.moe/</span></span><br><span class="line">    <span class="string">追新番:</span> <span class="string">http://www.fanxinzhui.com/</span></span><br><span class="line">    <span class="attr">Z-library:</span> <span class="string">https://zh.usa1lib.org/</span></span><br><span class="line">    <span class="string">青空文庫:</span> <span class="string">https://www.aozora.gr.jp/</span></span><br><span class="line">    <span class="attr">Mikutap:</span> <span class="string">https://aidn.jp/mikutap/</span></span><br><span class="line">  <span class="comment"># My Personal Labels</span></span><br><span class="line">  <span class="attr">labels:</span>  <span class="comment">#可随意增删改</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">前端</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">前端开发</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">前端重构</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">Web前端</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">网页重构</span></span><br></pre></td></tr></table></figure>
-<h4 id="启用目录"><a href="#启用目录" class="headerlink" title="启用目录"></a>启用目录</h4><p><strong>主题配置文件</strong>中将toc属性值改为true。</p>
+<h4 id="启用目录">启用目录</h4>
+<p><strong>主题配置文件</strong>中将toc属性值改为true。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">toc:</span> <span class="literal">true</span> <span class="comment"># 是否开启文章章节目录导航</span></span><br></pre></td></tr></table></figure>
 <p>之后在发布文章时，每篇文章（*.md文件）的开头部分添加以下代码即可。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Markdown基本语法</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-07-01 11:37:25</span></span><br><span class="line"><span class="attr">tags:</span>        <span class="comment"># 标签 </span></span><br><span class="line"><span class="bullet">-</span> <span class="string">markdown</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">基本语法</span></span><br><span class="line"><span class="attr">categories:</span>  <span class="comment"># 分类</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">工具</span></span><br><span class="line"><span class="attr">toc:</span> <span class="string">ture</span>    <span class="comment"># 是否启用目录索引</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<h4 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h4><p>我采用的是<a target="_blank" rel="noopener" href="https://valine.js.org/">valine评论系统</a>，首先<a target="_blank" rel="noopener" href="https://console.leancloud.cn/#/signin">登录</a>或<a target="_blank" rel="noopener" href="https://console.leancloud.cn/#/signup">注册</a>LeanCLoud，进入<a target="_blank" rel="noopener" href="https://console.leancloud.cn/apps">控制台</a>后点击左下角<a target="_blank" rel="noopener" href="https://leancloud.cn/dashboard/applist.html#/newapp">创建应用</a>：</p>
+<h4 id="评论系统">评论系统</h4>
+<p>我采用的是<a target="_blank" rel="noopener" href="https://valine.js.org/">valine评论系统</a>，首先<a
+target="_blank" rel="noopener" href="https://console.leancloud.cn/#/signin">登录</a>或<a
+target="_blank" rel="noopener" href="https://console.leancloud.cn/#/signup">注册</a>LeanCLoud，进入<a
+target="_blank" rel="noopener" href="https://console.leancloud.cn/apps">控制台</a>后点击左下角<a
+target="_blank" rel="noopener" href="https://leancloud.cn/dashboard/applist.html#/newapp">创建应用</a>：</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newleancloud.jpg" alt="img" style="zoom:67%;" /></p>
 <p>创建好之后点开该应用，在设置的应用凭证中可以看到AppID和AppKey，接下来将其填写进主题配置文件。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/valine.png" alt="img" style="zoom:67%;" /></p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comment:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">valine</span>  <span class="comment"># 启用哪种评论系统</span></span><br><span class="line">  <span class="attr">disqus:</span>  <span class="comment"># enter disqus shortname here</span></span><br><span class="line">  <span class="attr">valine:</span>  <span class="comment"># Valine. https://valine.js.org</span></span><br><span class="line">    <span class="attr">appid:</span>   </span><br><span class="line">    <span class="comment"># your leancloud application appid</span></span><br><span class="line">    <span class="attr">appkey:</span> </span><br><span class="line">    <span class="comment"># your leancloud application appkey</span></span><br><span class="line">    <span class="attr">notify:</span> <span class="literal">false</span> </span><br><span class="line">    <span class="comment"># mail notifier , https://github.com/xCss/Valine/wiki</span></span><br><span class="line">    <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line">    <span class="attr">placeholder:</span> <span class="string">留下昵称和邮箱，记得保持友善哦。</span> </span><br><span class="line">    <span class="comment"># comment box placeholder 聊天框默认内容</span></span><br><span class="line">    <span class="attr">avatar:</span> <span class="string">mp</span>   <span class="comment"># gravatar style 头像风格</span></span><br><span class="line">    <span class="attr">meta:</span> <span class="string">nick,mail</span> <span class="comment"># custom comment header</span></span><br><span class="line">    <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># pagination size</span></span><br><span class="line">    <span class="attr">visitor:</span> <span class="literal">false</span> <span class="comment"># Article reading statistic https://valine.js.org/visitor.html</span></span><br></pre></td></tr></table></figure>
 <p>其中<strong>avatar</strong>为评论人的头像风格，具体参数和效果如下：</p>
-<div class="table-container">
 <table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 58%" />
+<col style="width: 31%" />
+</colgroup>
 <thead>
-<tr>
-<th style="text-align:center">参数值</th>
-<th style="text-align:center">表现形式</th>
-<th style="text-align:center">备注</th>
+<tr class="header">
+<th style="text-align: center;">参数值</th>
+<th style="text-align: center;">表现形式</th>
+<th style="text-align: center;">备注</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center">空字符串’’</td>
-<td style="text-align:center"><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/gravatar官方图形.jpg" alt="img"></td>
-<td style="text-align:center">Gravatar官方图形</td>
+<tr class="odd">
+<td style="text-align: center;">空字符串''</td>
+<td style="text-align: center;"><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/gravatar官方图形.jpg"
+alt="img" /></td>
+<td style="text-align: center;">Gravatar官方图形</td>
 </tr>
-<tr>
-<td style="text-align:center">mp</td>
-<td style="text-align:center"><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/神秘人.jpg" alt="img"></td>
-<td style="text-align:center">神秘人(一个灰白头像)</td>
+<tr class="even">
+<td style="text-align: center;">mp</td>
+<td style="text-align: center;"><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/神秘人.jpg"
+alt="img" /></td>
+<td style="text-align: center;">神秘人(一个灰白头像)</td>
 </tr>
-<tr>
-<td style="text-align:center">identicon</td>
-<td style="text-align:center"><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/抽象几何.jpg" alt="img"></td>
-<td style="text-align:center">抽象几何图形</td>
+<tr class="odd">
+<td style="text-align: center;">identicon</td>
+<td style="text-align: center;"><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/抽象几何.jpg"
+alt="img" /></td>
+<td style="text-align: center;">抽象几何图形</td>
 </tr>
-<tr>
-<td style="text-align:center">monsterid</td>
-<td style="text-align:center"><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/小怪物.jpg" alt="img"></td>
-<td style="text-align:center">小怪物</td>
+<tr class="even">
+<td style="text-align: center;">monsterid</td>
+<td style="text-align: center;"><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/小怪物.jpg"
+alt="img" /></td>
+<td style="text-align: center;">小怪物</td>
 </tr>
-<tr>
-<td style="text-align:center">wavatar</td>
-<td style="text-align:center"><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/生成头像.jpg" alt="img"></td>
-<td style="text-align:center">用不同面孔和背景组合生成的头像</td>
+<tr class="odd">
+<td style="text-align: center;">wavatar</td>
+<td style="text-align: center;"><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/生成头像.jpg"
+alt="img" /></td>
+<td style="text-align: center;">用不同面孔和背景组合生成的头像</td>
 </tr>
-<tr>
-<td style="text-align:center">retro</td>
-<td style="text-align:center"><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/像素.jpg" alt="img"></td>
-<td style="text-align:center">八位像素复古头像</td>
+<tr class="even">
+<td style="text-align: center;">retro</td>
+<td style="text-align: center;"><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/像素.jpg"
+alt="img" /></td>
+<td style="text-align: center;">八位像素复古头像</td>
 </tr>
-<tr>
-<td style="text-align:center">robohash</td>
-<td style="text-align:center"><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/机器人.jpg" alt="img"></td>
-<td style="text-align:center">一种具有不同颜色、面部等的机器人</td>
+<tr class="odd">
+<td style="text-align: center;">robohash</td>
+<td style="text-align: center;"><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/机器人.jpg"
+alt="img" /></td>
+<td style="text-align: center;">一种具有不同颜色、面部等的机器人</td>
 </tr>
-<tr>
-<td style="text-align:center">hide</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">不显示头像</td>
+<tr class="even">
+<td style="text-align: center;">hide</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">不显示头像</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p><strong>meta</strong>为评论者可以输入的信息，nick为昵称，mail为邮箱。</p>
-<p>当填入的邮箱在<a target="_blank" rel="noopener" href="http://cn.gravatar.com/">Gravatar</a>已经注册，则显示的头像为注册头像。</p>
-<h4 id="代码块复制按钮"><a href="#代码块复制按钮" class="headerlink" title="代码块复制按钮"></a>代码块复制按钮</h4><p><strong>① 增加全局函数addLoadEvent</strong><br>在/themes/pure/source/js目录下打开application.js，在文件最后追加以下代码：</p>
+<p>当填入的邮箱在<a
+target="_blank" rel="noopener" href="http://cn.gravatar.com/">Gravatar</a>已经注册，则显示的头像为注册头像。</p>
+<h4 id="代码块复制按钮">代码块复制按钮</h4>
+<p><strong>① 增加全局函数addLoadEvent</strong>
+在/themes/pure/source/js目录下打开application.js，在文件最后追加以下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">addLoadEvent</span>(<span class="params">func</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> oldonload = <span class="variable language_">window</span>.<span class="property">onload</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">window</span>.<span class="property">onload</span> != <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="property">onload</span> = func;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="title function_">oldonload</span>();</span><br><span class="line">            <span class="title function_">func</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>② 新增按钮</strong><br>pure默认情况下是没有代码复制功能的，需要对hexo增加复制代码块功能。在/themes/pure/layout/_partial目录下新增<strong>article-copy-code.ejs</strong>文件，其代码如下：</p>
+<p><strong>② 新增按钮</strong>
+pure默认情况下是没有代码复制功能的，需要对hexo增加复制代码块功能。在/themes/pure/layout/_partial目录下新增<strong>article-copy-code.ejs</strong>文件，其代码如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if(theme.codeblock.copy_button.enable)&#123; %&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .copy-btn &#123;</span><br><span class="line">      display: inline-block;</span><br><span class="line">      padding: 6px 12px;</span><br><span class="line">      font-size: 13px;</span><br><span class="line">      font-weight: 500;</span><br><span class="line">      font-family: 微软雅黑;</span><br><span class="line">      line-height: 20px;</span><br><span class="line">      color: #333;</span><br><span class="line">      white-space: nowrap;</span><br><span class="line">      vertical-align: middle;</span><br><span class="line">      cursor: pointer;</span><br><span class="line">      background-color: #eee;</span><br><span class="line">      background-image: linear-gradient(#fcfcfc, #eee);</span><br><span class="line">      border: 1px solid #d5d5d5;</span><br><span class="line">      border-radius: 3px;</span><br><span class="line">      user-select: none;</span><br><span class="line">      outline: 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .highlight-wrap .copy-btn &#123;</span><br><span class="line">      transition: opacity .3s ease-in-out;</span><br><span class="line">      opacity: 0;</span><br><span class="line">      padding: 2px 6px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      right: 4px;</span><br><span class="line">      top: 8px;</span><br><span class="line">      z-index: 2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .highlight-wrap:hover .copy-btn,</span><br><span class="line">        .highlight-wrap .copy-btn:focus &#123;</span><br><span class="line">      opacity: 1</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .highlight-wrap &#123;</span><br><span class="line">      position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    addLoadEvent(()=&gt;&#123;</span><br><span class="line">      $(&#x27;.highlight&#x27;).each(function (i, e) &#123;</span><br><span class="line">        var $wrap = $(&#x27;&lt;div&gt;&#x27;).addClass(&#x27;highlight-wrap&#x27;)</span><br><span class="line">        $(e).after($wrap)</span><br><span class="line">        $wrap.append($(&#x27;&lt;button&gt;&#x27;).addClass(&#x27;copy-btn&#x27;).append(&#x27;&lt;%= __(&quot;codeblock.copy_button&quot;) %&gt;&#x27;).on(&#x27;click&#x27;, function (e) &#123;</span><br><span class="line">          var code = $(this).parent().find(&quot;.code&quot;)[0].innerText</span><br><span class="line">          &lt;% if(theme.codeblock.copyright.enable)&#123; %&gt;</span><br><span class="line">              code += &quot;&lt;%= theme.codeblock.copyright.content %&gt;&quot;</span><br><span class="line">          &lt;% &#125; %&gt;</span><br><span class="line">          var ta = document.createElement(&#x27;textarea&#x27;)</span><br><span class="line">          document.body.appendChild(ta)</span><br><span class="line">          ta.style.position = &#x27;absolute&#x27;</span><br><span class="line">          ta.style.top = &#x27;0px&#x27;</span><br><span class="line">          ta.style.left = &#x27;0px&#x27;</span><br><span class="line">          ta.value = code</span><br><span class="line">          ta.select()</span><br><span class="line">          ta.focus()</span><br><span class="line">          var result = document.execCommand(&#x27;copy&#x27;)</span><br><span class="line">          document.body.removeChild(ta)</span><br><span class="line">          &lt;% if(theme.codeblock.copy_button.result)&#123; %&gt;</span><br><span class="line">            if(result)$(this).text(&#x27;&lt;%= __(&quot;codeblock.copy_success&quot;) %&gt;&#x27;)</span><br><span class="line">            else $(this).text(&#x27;&lt;%= __(&quot;codeblock.copy_failure&quot;) %&gt;&#x27;)</span><br><span class="line">          &lt;% &#125; %&gt;</span><br><span class="line">          $(this).blur()</span><br><span class="line">        &#125;)).on(&#x27;mouseleave&#x27;, function (e) &#123;</span><br><span class="line">          var $b = $(this).find(&#x27;.copy-btn&#x27;)</span><br><span class="line">          setTimeout(function () &#123;</span><br><span class="line">            $b.text(&#x27;&lt;%= __(&quot;codeblock.copy_button&quot;) %&gt;&#x27;)</span><br><span class="line">          &#125;, 300)</span><br><span class="line">        &#125;).append(e)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>③ 插入到界面</strong><br>编辑 <strong>/themes/pure/layout/layout.ejs</strong>，在<code>&lt;/body&gt;</code>前面一行增加<code>&lt;%- partial(&#39;_partial/article-copy-code&#39;)%&gt;</code>，如下：</p>
+<p><strong>③ 插入到界面</strong> 编辑
+<strong>/themes/pure/layout/layout.ejs</strong>，在<code>&lt;/body&gt;</code>前面一行增加<code>&lt;%- partial('_partial/article-copy-code')%&gt;</code>，如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  &lt;%- body %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;_common/footer&#x27;, null, &#123;cache: !config.relative_link&#125;) %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;_common/script&#x27;, &#123;post: page&#125;) %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;_partial/article-copy-code&#x27;) %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>注：理论上可以在其他地方添加，但是必须保证代码在jq以及页面dom加载后运行。</p>
-<p><strong>④ 增加语言文件</strong><br>在 <strong>/themes/pure/languages</strong>目录下选择对应的语言文件，在文件后面增加如下代码：</p>
+<p><strong>④ 增加语言文件</strong> 在
+<strong>/themes/pure/languages</strong>目录下选择对应的语言文件，在文件后面增加如下代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  copy_button: 复制</span><br><span class="line">  copy_success: 复制成功</span><br><span class="line">  copy_failure: 复制失败</span><br></pre></td></tr></table></figure>
 <p>注：理论上只需添加当前语言文件即可，但是为了以后方便切换语音，建议所有语音文件都加上相应的配置。</p>
-<p><strong>⑤ 增加主题配置文件</strong><br>在主题配置文件末尾添加如下代码：</p>
+<p><strong>⑤ 增加主题配置文件</strong>
+在主题配置文件末尾添加如下代码：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">codeblock:</span> </span><br><span class="line">  <span class="attr">copy_button:</span> </span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">result:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">copyright:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">content:</span> <span class="string">\n/**\n*</span> <span class="string">感谢您复制代码，使用代码请注明引用出处\n*</span> <span class="string">雀栎</span> <span class="string">@</span> <span class="string">https://skylark1003.gitee.io/\n*/</span></span><br></pre></td></tr></table></figure>
-<h4 id="移动到顶端按钮"><a href="#移动到顶端按钮" class="headerlink" title="移动到顶端按钮"></a>移动到顶端按钮</h4><blockquote>
+<h4 id="移动到顶端按钮">移动到顶端按钮</h4>
+<blockquote>
 <p>2024.03.01注：该按钮存在问题，移动到顶端后页面会强制保留在顶端。因此新版博客中未添加改按钮。</p>
 </blockquote>
-<p>在 <strong>/themes/pure/layout/_common/script.ejs</strong>增加如下代码：**</p>
+<p>在
+**/themes/pure/layout/_common/script.ejs<strong>增加如下代码：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- partial(&#x27;_script/go-top&#x27;) %&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>在</strong> /themes/pure/layout/_script<strong>目录新增</strong>go-top.ejs**文件，其内容为：</p>
+<p><strong>在</strong>
+/themes/pure/layout/_script<strong>目录新增</strong>go-top.ejs**文件，其内容为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;go-top&quot;&gt;&lt;/div&gt;&lt;style type=&quot;text/css&quot;&gt;#go-top &#123;width:40px;height:36px;background-color:#303030;position:relative;border-radius:2px;position:fixed;right:10px;bottom:60px;cursor:pointer;display:none&#125; #go-top:after &#123;content:&quot; &quot;;position:absolute;left:14px;top:14px;border-top:2px solid white;border-right:2px solid white;width:12px;height:12px;transform:rotate(-45deg)&#125;#go-top:hover &#123;background-color:#303030&#125;&lt;/style&gt;&lt;script&gt;$(function() &#123; var o = $(&quot;#go-top&quot;);$(window).scroll(function() &#123; 300 &lt; $(window).scrollTop() ? o.show(300) : o.hide(200), $(&quot;#go-top&quot;).click(function() &#123; return $(&quot;body,html&quot;).animate(&#123; scrollTop: 0 &#125;) &#125;) &#125;) &#125;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>可以修改其中的按钮的颜色。</p>
-<h4 id="背景动画"><a href="#背景动画" class="headerlink" title="背景动画"></a>背景动画</h4><p><a target="_blank" rel="noopener" href="https://github.com/hustcc/canvas-nest.js">背景动画</a>基于canvas，在 <strong>.ejs</strong>的<body>中面添加以下代码，由于我认为有些花哨所以没有添加，具体颜色数量等配置可以参考作者仓库的README。</p>
+<h4 id="背景动画">背景动画</h4>
+<a
+target="_blank" rel="noopener" href="https://github.com/hustcc/canvas-nest.js">背景动画</a>基于canvas，在
+<strong>.ejs</strong>的
+<body>
+<p>中面添加以下代码，由于我认为有些花哨所以没有添加，具体颜色数量等配置可以参考作者仓库的README。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>由于我对JavaScript语言知之甚少，所以对于主页的其他板块基本未进行修改，上述内容也均来自提到的参考资料，大家有需要的话可以对layout中的ejs文件和source中的js文件进行进一步优化修改。</strong></p>
 </blockquote>
-<h3 id="CSS修改"><a href="#CSS修改" class="headerlink" title="CSS修改"></a>CSS修改</h3><p>该部分主要对主页的样式进行修改，例如文字的字体、大小、颜色，板块间的间隔（padding）、按钮的颜色等，需要掌握基础的css语法。</p>
+<h3 id="css修改">CSS修改</h3>
+<p>该部分主要对主页的样式进行修改，例如文字的字体、大小、颜色，板块间的间隔（padding）、按钮的颜色等，需要掌握基础的css语法。</p>
 <p>主要流程是在浏览器中打开主页并<strong>右击-&gt;检查</strong>，通过这种方式定位某部分样式在css文件代码中的位置，可以先在浏览器中修改预览效果，后在<strong>themes/pure/source/css/style.css</strong>文件中进行修改。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/css.png" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/css.png" /></p>
 <p>我主要修改了左侧name、title、nav的字体，下方打赏按钮的字体和背景颜色以及代码段的字体。</p>
 <p>另外该主题的六级标题显示存在一点问题，虽然规定了其大小（如图），但h1和h2未生效，导致二级标题的字体大小比三级标题要小。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/fontsize.png" alt="img" style="zoom:67%;" /></p>
 <p>解决方法是将如图所示的两个font-size注释掉即可。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/h1.png" alt=""></p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/h2.png" alt=""></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/h1.png" /></p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/h2.png" /></p>
 <p>如有其他需要的可自行修改。</p>
-<h3 id="添加对数学公式的支持"><a href="#添加对数学公式的支持" class="headerlink" title="添加对数学公式的支持"></a>添加对数学公式的支持</h3><h4 id="安装hexo-math"><a href="#安装hexo-math" class="headerlink" title="安装hexo-math"></a>安装hexo-math</h4><p>安装hexo-math插件：<code>npm install hexo-math --save</code></p>
+<h3 id="添加对数学公式的支持">添加对数学公式的支持</h3>
+<h4 id="安装hexo-math">安装hexo-math</h4>
+<p>安装hexo-math插件：<code>npm install hexo-math --save</code></p>
 <p>安装渲染工具：<code>npm install hexo-renderer-pandoc --save</code></p>
-<h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>在<strong>站点配置文件</strong>（config.yml）中添加：</p>
+<h4 id="修改站点配置文件">修改站点配置文件</h4>
+<p>在<strong>站点配置文件</strong>（config.yml）中添加：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">none</span> <span class="comment"># or &#x27;ams&#x27; or &#x27;all&#x27;</span></span><br><span class="line">  <span class="attr">single_dollars:</span> <span class="literal">true</span> <span class="comment"># enable single dollar signs as in-line math delimiters</span></span><br><span class="line">  <span class="attr">cjk_width:</span> <span class="number">0.9</span> <span class="comment"># relative CJK char width</span></span><br><span class="line">  <span class="attr">normal_width:</span> <span class="number">0.6</span> <span class="comment"># relative normal (monospace) width</span></span><br><span class="line">  <span class="attr">append_css:</span> <span class="literal">true</span> <span class="comment"># add CSS to pages rendered by MathJax</span></span><br><span class="line">  <span class="attr">every_page:</span> <span class="literal">false</span> <span class="comment"># if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter</span></span><br></pre></td></tr></table></figure>
-<h4 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h4><p>在<strong>主题配置文件</strong>（config.yml）中添加：</p>
+<h4 id="修改主题配置文件">修改主题配置文件</h4>
+<p>在<strong>主题配置文件</strong>（config.yml）中添加：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">mathjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>其中 per_page 根据提示，表示默认不加载 mathjax/katex 脚本，如果设置为 false，则是每篇文章都会去加载 mathjax 脚本，该处设置为false，如果不加载，则需要加载的文章抬头添加 mathjax: false 。 公式可以通过Latex语法规则编辑，同时也可以通过Writage插件，将Word中编辑好的公式，转化成markdown格式后使用。</p>
-<p>2024.03.01更新：如果出现安装失败，可以换一个新的npm源：npm config set registry <a target="_blank" rel="noopener" href="https://registry.npmmirror.com">https://registry.npmmirror.com</a></p>
+<p>其中 per_page 根据提示，表示默认不加载 mathjax/katex 脚本，如果设置为
+false，则是每篇文章都会去加载 mathjax
+脚本，该处设置为false，如果不加载，则需要加载的文章抬头添加 mathjax:
+false 。
+公式可以通过Latex语法规则编辑，同时也可以通过Writage插件，将Word中编辑好的公式，转化成markdown格式后使用。</p>
 </blockquote>
-<h4 id="添加公式后表格表头渲染异常"><a href="#添加公式后表格表头渲染异常" class="headerlink" title="添加公式后表格表头渲染异常"></a>添加公式后表格表头渲染异常</h4><p><strong>原因：</strong>在于表格的表头使用到了重复的 <code>header</code> 样式类，而这个样式类原计划仅使用于博客的顶部 Header，这个问题源于未能使用样式隔离。</p>
+<blockquote>
+<p>2024.03.01更新：如果出现安装失败，可以换一个新的npm源：npm config set
+registry https://registry.npmmirror.com</p>
+</blockquote>
+<h4 id="添加公式后表格表头渲染异常">添加公式后表格表头渲染异常</h4>
+<p><strong>原因：</strong>在于表格的表头使用到了重复的
+<code>header</code> 样式类，而这个样式类原计划仅使用于博客的顶部
+Header，这个问题源于未能使用样式隔离。</p>
 <p><strong>解决：</strong>根据我浅显的理解，如果找到表格表头tr的定义，去掉其“header”选择器即可，但我没有找到，所以我采用了最笨的办法，将博客顶部Header重命名为了aheader（路径为pure/layout/_commom/header.ejs），并将CSS文件中所有.header均改为了.aheader。</p>
-<h1 id="搭建图床"><a href="#搭建图床" class="headerlink" title="搭建图床"></a>搭建图床</h1><p>写博客不可避免地需要一个稳定的图床，用于存放图片。由于github需要科学上网，在其他设备显示可能存在问题，gitee由于开源需要审核，用作图床会导致无法开源，且上传图片有2MB的大小限制，所以最终选择了阿里云OSS搭配PicGo进行搭建。</p>
-<h2 id="阿里云OSS"><a href="#阿里云OSS" class="headerlink" title="阿里云OSS"></a>阿里云OSS</h2><h3 id="购买阿里云OSS"><a href="#购买阿里云OSS" class="headerlink" title="购买阿里云OSS"></a>购买阿里云OSS</h3><p>在<a target="_blank" rel="noopener" href="https://www.aliyun.com/product/oss?spm=5176.19720258.J_3207526240.36.7d7776f4Rd5Evq">阿里云对象存储OSS</a>页面点击折扣套餐，选择所需服务，我买了三年的，总共27元，直接用支付宝账号登录即可。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/oss.png" alt=""> <img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/buyoss.png" alt="img"></p>
-<h3 id="创建Bucket"><a href="#创建Bucket" class="headerlink" title="创建Bucket"></a>创建Bucket</h3><p>在产品与服务中找到对象存储OSS服务，点击创建Bucket，读写权限选择公共读。</p>
-<p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newbucket.png" alt=""> </p>
+<h1 id="搭建图床">搭建图床</h1>
+<p>写博客不可避免地需要一个稳定的图床，用于存放图片。由于github需要科学上网，在其他设备显示可能存在问题，gitee由于开源需要审核，用作图床会导致无法开源，且上传图片有2MB的大小限制，所以最终选择了阿里云OSS搭配PicGo进行搭建。</p>
+<h2 id="阿里云oss">阿里云OSS</h2>
+<h3 id="购买阿里云oss">购买阿里云OSS</h3>
+<p>在<a
+target="_blank" rel="noopener" href="https://www.aliyun.com/product/oss?spm=5176.19720258.J_3207526240.36.7d7776f4Rd5Evq">阿里云对象存储OSS</a>页面点击折扣套餐，选择所需服务，我买了三年的，总共27元，直接用支付宝账号登录即可。</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/oss.png" />
+<img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/buyoss.png"
+alt="img" /></p>
+<h3 id="创建bucket">创建Bucket</h3>
+<p>在产品与服务中找到对象存储OSS服务，点击创建Bucket，读写权限选择公共读。</p>
+<p><img
+src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/newbucket.png" /></p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/bucketmsg.png" alt="img" style="zoom: 67%;" /></p>
-<h3 id="创建AccessKey"><a href="#创建AccessKey" class="headerlink" title="创建AccessKey"></a>创建AccessKey</h3><p>在管理AccessKey中点击创建AccessKey，即可获得AccessKey ID和AccessKey Secret。</p>
+<h3 id="创建accesskey">创建AccessKey</h3>
+<p>在管理AccessKey中点击创建AccessKey，即可获得AccessKey ID和AccessKey
+Secret。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/accesskey.png" alt="img" style="zoom: 80%;" /></p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/key.png" alt="img" style="zoom:80%;" /></p>
-<h2 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h2><p>在<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">PicGo仓库</a>进行下载，安装好后打开。</p>
+<h2 id="picgo">PicGo</h2>
+<p>在<a
+target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">PicGo仓库</a>进行下载，安装好后打开。</p>
 <p>在图床设置中选择阿里云OSS，填写相应信息，确定并设置为默认。</p>
 <p><img src="https://skylark-blog.oss-cn-beijing.aliyuncs.com/img/picgomessage.png" alt="img" style="zoom:80%;" /></p>
 <p>另外还可以在PicGo设置中选择是否上传前重命名。</p>
 <p>配置完之后就可以使用了，在上传区可以通过拖拽或点击上传图片，上传后自动复制url至剪贴板，在相册中可以对图片进行操作。</p>
-<hr>
+<hr />
 <p><strong>以上就是我搭建个人博客的全部流程了，记录下来供大家参考，如果有任何疑问或错误欢迎大家交流学习和批评指正。</strong></p>
-<hr>
+<hr />
 <blockquote>
 <p>2024.03.01更新：</p>
 <p>由于之前电脑重装系统，本地文件夹的内容没有备份，只有Github上留存的静态网页，导致博客废止了很长时间，今天总算重新搭建起来了。只是可惜因为时间成本太高，所以只保留了几篇之前的文章，大量的leetcode笔记全部舍弃了，真是令人心痛，但好在那些内容琐碎并没有很高的复看价值。</p>
